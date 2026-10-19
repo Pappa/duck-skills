@@ -1,6 +1,6 @@
 # Agent skills (Pappa)
 
-Personal agent skills for software engineering — inspired by [Matt Pocock's skills](https://github.com/mattpocock/skills), rewritten for my workflow.
+Personal agent skills for software engineering — heavily influenced by (like, copied from) [Matt Pocock's skills](https://github.com/mattpocock/skills), rewritten for my workflow.
 
 ## Use in this repo
 
@@ -28,7 +28,7 @@ Supports GitHub, GitLab, Azure DevOps Boards, local markdown, or a custom tracke
 
 | Skill | Invocation | Purpose |
 |-------|------------|---------|
-| `setup-pappa-skills` | Explicit | Configure tracker, domain docs, optional triage labels |
+| `setup-pappa-skills` | Explicit | Configure tracker, domain docs, optional ticket labels |
 | `rubber-duck` | Explicit | Design interview + glossary/ADR updates (`interrogate` + `software-design`) |
 | `interrogate` | Auto-suggested | Round-based design interview |
 | `software-design` | Auto-suggested | Glossary and ADR updates while designing |

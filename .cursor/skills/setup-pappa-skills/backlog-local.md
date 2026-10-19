@@ -7,7 +7,7 @@ Specs and tickets live under `.backlog/`.
 - One feature per directory: `.backlog/<feature-slug>/`
 - Spec: `.backlog/<feature-slug>/spec.md`
 - Tickets: `.backlog/<feature-slug>/issues/<NN>-<slug>.md` (numbered from `01`)
-- Status: `Status:` line near top (see `triage-labels.md`)
+- Status: `Status:` line near top (see `ticket-labels.md`)
 - Thread: append under `## Comments`
 
 ## When a skill says "publish to the backlog"

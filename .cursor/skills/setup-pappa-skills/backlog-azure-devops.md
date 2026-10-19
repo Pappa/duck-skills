@@ -17,7 +17,7 @@ Infer org/project from `git remote` when possible (`dev.azure.com/<org>/<project
 - **Read**: `az boards work-item show --id <id> --open`
 - **List**: `az boards query --wiql "SELECT [System.Id], [System.Title] FROM WorkItems WHERE [System.TeamProject] = '<project>' AND [System.State] <> 'Closed'"`
 - **Comment**: `az boards work-item update --id <id> --discussion "..."`
-- **Tags** (labels): `az boards work-item update --id <id> --fields "System.Tags=ready-for-agent;epic-duck:map"`
+- **Tags** (labels): `az boards work-item update --id <id> --fields "System.Tags=ready;epic-duck:map"`
 - **Close / resolve**: set `System.State` to the team's Done/Closed state via `--fields`.
 
 Parent/child and dependency links use **relation types**:

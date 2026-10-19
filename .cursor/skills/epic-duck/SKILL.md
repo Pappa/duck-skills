@@ -48,7 +48,7 @@ Open tickets are **not** listed on the map — query the tracker.
 The decision or investigation this ticket resolves.
 ```
 
-Label `epic-duck:<type>`: `spike` | `interrogate` | `task`. Epic duck tickets do **not** use `ready-for-agent`.
+Label `epic-duck:<type>`: `spike` | `interrogate` | `task`. Epic duck tickets do **not** use `ready`.
 
 **Claim** before work (assignee / `Status: claimed`). **Blocking** uses native relations or the tracker's body convention. **Frontier** = open, unblocked, unclaimed children.
 

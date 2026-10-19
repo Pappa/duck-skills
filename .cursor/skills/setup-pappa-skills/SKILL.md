@@ -1,6 +1,6 @@
 ---
 name: setup-pappa-skills
-description: Configure a repo for Pappa planning skills — backlog tracker (GitHub, GitLab, Azure DevOps, local markdown, or custom), optional triage labels, and domain doc layout. Run once per repo before using epic-duck or rubber-duck.
+description: Configure a repo for Pappa planning skills — backlog tracker (GitHub, GitLab, Azure DevOps, local markdown, or custom), optional ticket labels, and domain doc layout. Run once per repo before using epic-duck or rubber-duck.
 disable-model-invocation: true
 ---
 
@@ -52,7 +52,7 @@ Record the choice in `docs/agents/backlog.md` using a seed template from this fo
 
 > Keep default label strings? (recommended: **yes**)
 
-Defaults: `needs-triage`, `needs-detail`, `ready-for-agent`, `ready-for-human`, `wontfix`. On yes, write [triage-labels.md](./triage-labels.md) as-is. On no, collect overrides.
+Defaults: `needs-triage`, `needs-detail`, `ready`, `wontfix`. On yes, write [ticket-labels.md](./ticket-labels.md) as-is. On no, collect overrides.
 
 **Section C: Domain docs**
 
@@ -65,7 +65,7 @@ Offer **multi-context** only when monorepo signals appeared: root `GLOSSARY-MAP.
 Show drafts of:
 
 - The `## Agent skills` block for `CLAUDE.md` or `AGENTS.md`
-- `docs/agents/backlog.md`, `docs/agents/domain.md`, and `docs/agents/triage-labels.md` (if Section B ran)
+- `docs/agents/backlog.md`, `docs/agents/domain.md`, and `docs/agents/ticket-labels.md` (if Section B ran)
 
 Let the user edit before writing.
 
@@ -89,14 +89,14 @@ Update an existing `## Agent skills` block in place; do not duplicate.
 
 ### Triage labels
 
-[one-line summary]. See `docs/agents/triage-labels.md`.
+[one-line summary]. See `docs/agents/ticket-labels.md`.
 
 ### Domain docs
 
 [single-context or multi-context]. See `docs/agents/domain.md`.
 ```
 
-Omit the triage subsection and `triage-labels.md` when Section B was skipped.
+Omit the triage subsection and `ticket-labels.md` when Section B was skipped.
 
 On GitHub or GitLab, create any configured labels that are missing (`gh label create` / `glab label create`).
 
@@ -107,7 +107,7 @@ On GitHub or GitLab, create any configured labels that are missing (`gh label cr
 - [backlog-azure-devops.md](./backlog-azure-devops.md)
 - [backlog-local.md](./backlog-local.md)
 - [domain.md](./domain.md)
-- [triage-labels.md](./triage-labels.md) (optional)
+- [ticket-labels.md](./ticket-labels.md) (optional)
 
 For custom trackers, write `docs/agents/backlog.md` from the user's description.
 
