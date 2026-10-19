@@ -1,11 +1,11 @@
 ---
 name: 3-amigos
-description: Reviews backlog tickets and requirements before publish — fit to the user's request, completeness, unambiguous acceptance criteria, ISO 24495 plain language, and INVEST. Use when creating or updating a backlog ticket, user story, work item, or issue; when drafting acceptance criteria; when the user invokes 3-amigos; or when another skill is about to publish to the issue tracker.
+description: Reviews backlog tickets and requirements before publish — fit to the user's request, completeness, unambiguous acceptance criteria, ISO 24495 plain language, and INVEST. Use when creating or updating a backlog ticket, user story, work item, or issue; when drafting acceptance criteria; when the user invokes 3-amigos; or when another skill is about to publish to the backlog.
 ---
 
 # 3 amigos
 
-Run this **before** creating or updating a backlog ticket on the issue tracker (including tickets drafted by epic-duck, implement flows, or ad-hoc agent work). Do not publish until the review passes or the user explicitly accepts documented gaps.
+Run this **before** creating or updating a backlog ticket on the backlog (including tickets drafted by epic-duck, implement flows, or ad-hoc agent work). Do not publish until the review passes or the user explicitly accepts documented gaps.
 
 ## Inputs
 

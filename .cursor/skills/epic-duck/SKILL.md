@@ -1,10 +1,10 @@
 ---
 name: epic-duck
-description: Chart a large, foggy effort as a map of decision tickets on the issue tracker, then resolve one decision per session until the route to the destination is clear. Use for multi-session planning, unclear scope, epic-duck, or map-based planning.
+description: Chart a large, foggy effort as a map of decision tickets on the backlog, then resolve one decision per session until the route to the destination is clear. Use for multi-session planning, unclear scope, epic-duck, or map-based planning.
 disable-model-invocation: true
 ---
 
-A **destination** is too big to implement in one session and still wrapped in **fog** — the path is not visible yet. **Epic duck** finds the path as a **map** on the issue tracker, then works **decision tickets** one at a time. Default mode is **plan, don't do**: tickets resolve decisions, not deliverables, unless the map's **Notes** say otherwise.
+A **destination** is too big to implement in one session and still wrapped in **fog** — the path is not visible yet. **Epic duck** finds the path as a **map** on the backlog, then works **decision tickets** one at a time. Default mode is **plan, don't do**: tickets resolve decisions, not deliverables, unless the map's **Notes** say otherwise.
 
 Read `docs/agents/backlog.md` (Epic duck operations). If missing, run `/setup-pappa-skills`.
 
@@ -48,14 +48,13 @@ Open tickets are **not** listed on the map — query the tracker.
 The decision or investigation this ticket resolves.
 ```
 
-Label `epic-duck:<type>`: `research` | `prototype` | `interrogate` | `task`. Epic duck tickets do **not** use `ready-for-agent`.
+Label `epic-duck:<type>`: `research` | `interrogate` | `task`. Epic duck tickets do **not** use `ready-for-agent`.
 
 **Claim** before work (assignee / `Status: claimed`). **Blocking** uses native relations or the tracker's body convention. **Frontier** = open, unblocked, unclaimed children.
 
 ## Ticket types
 
 - **research** (AFK): facts from docs or APIs — delegate to the `research` skill in a subagent.
-- **prototype** (HITL): cheap artifact to react to — `prototype` skill; link assets on the ticket.
 - **interrogate** (HITL): live interview — `interrogate` or `rubber-duck` skill; agent never answers for the human.
 - **task** (HITL or AFK): manual unblocker (access, signup, data move) before a decision can be made.
 

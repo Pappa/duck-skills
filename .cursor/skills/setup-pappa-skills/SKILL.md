@@ -1,6 +1,6 @@
 ---
 name: setup-pappa-skills
-description: Configure a repo for Pappa planning skills — backlog tracker (GitHub, GitLab, Linear, Azure DevOps, local markdown, or custom), optional triage labels, and domain doc layout. Run once per repo before using epic-duck or rubber-duck.
+description: Configure a repo for Pappa planning skills — backlog tracker (GitHub, GitLab, Azure DevOps, local markdown, or custom), optional triage labels, and domain doc layout. Run once per repo before using epic-duck or rubber-duck.
 disable-model-invocation: true
 ---
 
@@ -23,7 +23,7 @@ Read what exists; do not assume defaults:
 - `git remote -v` and `.git/config` — GitHub, GitLab, `dev.azure.com` / `visualstudio.com`, Origin, or none?
 - `AGENTS.md` / `CLAUDE.md` — existing `## Agent skills` section?
 - `GLOSSARY.md`, `GLOSSARY-MAP.md`, `docs/adr/`, `docs/agents/`
-- `.scratch/` — local-markdown tracker already in use?
+- `.backlog/` — local-markdown tracker already in use?
 - Monorepo signals: `pnpm-workspace.yaml`, `package.json` workspaces, multiple `packages/*` with their own `src/`
 
 ### 2. Present findings and ask
@@ -41,8 +41,7 @@ Recommend from remotes:
 | `github.com` remote | GitHub Issues (`gh`) |
 | GitLab remote | GitLab Issues (`glab`) |
 | `dev.azure.com` / Azure DevOps remote | Azure DevOps Boards (`az boards` / REST) |
-| User names Linear | Linear |
-| No remote / solo | Local markdown under `.scratch/` |
+| No remote repo | Local markdown under `.backlog/` |
 | Other | Freeform paragraph from the user |
 
 For **Azure DevOps**, also confirm org, project, and team (for area path defaults) and record them in `docs/agents/backlog.md`.
@@ -53,7 +52,7 @@ Record the choice in `docs/agents/backlog.md` using a seed template from this fo
 
 > Keep default label strings? (recommended: **yes**)
 
-Defaults: `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`. On yes, write [triage-labels.md](./triage-labels.md) as-is. On no, collect overrides.
+Defaults: `needs-triage`, `needs-detail`, `ready-for-agent`, `ready-for-human`, `wontfix`. On yes, write [triage-labels.md](./triage-labels.md) as-is. On no, collect overrides.
 
 **Section C: Domain docs**
 
@@ -74,8 +73,9 @@ Let the user edit before writing.
 
 **Agent config file:**
 
-- If `CLAUDE.md` exists → edit it.
-- Else if `AGENTS.md` exists → edit it.
+- If `AGENTS.md` exists → edit it.
+- Else if `CLAUDE.md` exists → edit it.
+- Else if `.cursor/rules/` exists → ask the user if you should add/edit rules there or create an `AGENTS.md` file.
 - Else ask which to create.
 
 Update an existing `## Agent skills` block in place; do not duplicate.
@@ -104,7 +104,6 @@ On GitHub or GitLab, create any configured labels that are missing (`gh label cr
 
 - [backlog-github.md](./backlog-github.md)
 - [backlog-gitlab.md](./backlog-gitlab.md)
-- [backlog-linear.md](./backlog-linear.md)
 - [backlog-azure-devops.md](./backlog-azure-devops.md)
 - [backlog-local.md](./backlog-local.md)
 - [domain.md](./domain.md)

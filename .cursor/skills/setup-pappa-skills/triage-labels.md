@@ -5,8 +5,8 @@ Planning skills use one label when publishing agent-ready work: `ready-for-agent
 | Role | Label in this repo | Meaning |
 |------|-------------------|---------|
 | `needs-triage` | `needs-triage` | Maintainer needs to evaluate |
-| `needs-info` | `needs-info` | Waiting on reporter |
-| `ready-for-agent` | `ready-for-agent` | Specified enough for an AFK agent |
+| `needs-detail` | `needs-detail` | Waiting on reporter |
+| `ready-for-agent` | `ready-for-agent` | Requirements specified in enough detail for an agent to complete the task. |
 | `ready-for-human` | `ready-for-human` | Needs human implementation |
 | `wontfix` | `wontfix` | Will not be actioned |
 

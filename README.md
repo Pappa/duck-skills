@@ -22,7 +22,7 @@ Planning skills expect `docs/agents/backlog.md` (and usually `domain.md`). Run o
 /setup-pappa-skills
 ```
 
-Supports GitHub, GitLab, Linear, **Azure DevOps Boards**, local markdown, or a custom tracker.
+Supports GitHub, GitLab, Azure DevOps Boards, local markdown, or a custom tracker.
 
 ## Skills catalog
 

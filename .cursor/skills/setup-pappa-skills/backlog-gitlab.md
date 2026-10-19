@@ -11,7 +11,7 @@ Issues and specs live as GitLab issues. Use [`glab`](https://gitlab.com/gitlab-o
 - **Labels**: `glab issue update <number> --label "..."` / `--unlabel "..."`
 - **Close**: note with explanation, then `glab issue close <number>`
 
-## When a skill says "publish to the issue tracker"
+## When a skill says "publish to the backlog"
 
 Apply **3-amigos** to the draft, then create a GitLab issue.
 

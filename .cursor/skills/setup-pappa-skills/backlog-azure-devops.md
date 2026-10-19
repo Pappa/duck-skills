@@ -25,7 +25,7 @@ Parent/child and dependency links use **relation types**:
 - **Parent**: `az boards work-item relation add --id <child> --relation-type parent --target-id <parent>`
 - **Blocked by** (predecessor): `az boards work-item relation add --id <blocked> --relation-type predecessor --target-id <blocker>` (confirm relation name matches your process template; use `System.LinkTypes.Dependency` / predecessor-successor in REST if CLI differs).
 
-## When a skill says "publish to the issue tracker"
+## When a skill says "publish to the backlog"
 
 Apply **3-amigos** to the draft, then create a work item in the configured project.
 
@@ -36,7 +36,7 @@ Apply **3-amigos** to the draft, then create a work item in the configured proje
 ## Epic duck operations
 
 - **Map**: one work item tagged `epic-duck:map` holding Destination / Notes / Decisions / Fog in the description.
-- **Child ticket**: child of the map work item; tag `epic-duck:<type>` (`research` | `prototype` | `interrogate` | `task`).
+- **Child ticket**: child of the map work item; tag `epic-duck:<type>` (`research` | `interrogate` | `task`).
 - **Blocking**: predecessor link from child to each blocker; unblocked when all predecessors are closed.
 - **Frontier**: open children with no open predecessors and unassigned (or not claimed); map order.
 - **Claim**: assign to the driving user (`System.AssignedTo`) before other edits.
