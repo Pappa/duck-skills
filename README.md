@@ -1,2 +1,55 @@
-# skills
-An attempt to craft my own skills for agentic software engineering.
+# Agent skills (Pappa)
+
+Personal agent skills for software engineering — inspired by [Matt Pocock's skills](https://github.com/mattpocock/skills), rewritten for my workflow.
+
+## Use in this repo
+
+Skills live in **`.cursor/skills/`**. Open this repository in Cursor and invoke with `/skill-name` or attach the skill in chat — no symlink needed while iterating here.
+
+## Use in other repos
+
+Symlink individual skills (or the whole folder) into `~/.cursor/skills/`:
+
+```bash
+ln -sfn "$(pwd)/.cursor/skills/rubber-duck" ~/.cursor/skills/rubber-duck
+```
+
+## Per-repo setup
+
+Planning skills expect `docs/agents/backlog.md` (and usually `domain.md`). Run once per repository:
+
+```
+/setup-pappa-skills
+```
+
+Supports GitHub, GitLab, Linear, **Azure DevOps Boards**, local markdown, or a custom tracker.
+
+## Skills catalog
+
+| Skill | Invocation | Purpose |
+|-------|------------|---------|
+| `setup-pappa-skills` | Explicit | Configure tracker, domain docs, optional triage labels |
+| `rubber-duck` | Explicit | Design interview + glossary/ADR updates (`interrogate` + `software-design`) |
+| `interrogate` | Auto-suggested | Round-based design interview |
+| `software-design` | Auto-suggested | Glossary and ADR updates while designing |
+| `3-amigos` | Auto-suggested | Backlog ticket quality (fit, clarity, ISO 24495, INVEST) before publish |
+| `epic-duck` | Explicit | Large foggy efforts → decision map on tracker |
+
+## Typical planning flow
+
+```mermaid
+flowchart LR
+  idea[Idea in chat]
+  rd[rubber-duck]
+  ed[epic-duck]
+  idea --> rd
+  idea --> ed
+  ed --> rd
+```
+
+- **Clear enough to discuss**: `rubber-duck` (terms and ADRs as you decide)
+- **Large or foggy**: `epic-duck` to chart decisions, then `rubber-duck` on individual map tickets
+
+## Roadmap
+
+Planned next batches: build (`implement`, `tdd`), quality (`code-review`, `diagnosing-bugs`), ship (`pr`, CI loop).
