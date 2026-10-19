@@ -36,7 +36,7 @@ Apply **3-amigos** to the draft, then create a work item in the configured proje
 ## Epic duck operations
 
 - **Map**: one work item tagged `epic-duck:map` holding Destination / Notes / Decisions / Fog in the description.
-- **Child ticket**: child of the map work item; tag `epic-duck:<type>` (`research` | `interrogate` | `task`).
+- **Child ticket**: child of the map work item; tag `epic-duck:<type>` (`spike` | `interrogate` | `task`).
 - **Blocking**: predecessor link from child to each blocker; unblocked when all predecessors are closed.
 - **Frontier**: open children with no open predecessors and unassigned (or not claimed); map order.
 - **Claim**: assign to the driving user (`System.AssignedTo`) before other edits.

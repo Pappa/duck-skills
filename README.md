@@ -33,6 +33,7 @@ Supports GitHub, GitLab, Azure DevOps Boards, local markdown, or a custom tracke
 | `interrogate` | Auto-suggested | Round-based design interview |
 | `software-design` | Auto-suggested | Glossary and ADR updates while designing |
 | `3-amigos` | Auto-suggested | Backlog ticket quality (fit, clarity, ISO 24495, INVEST) before publish |
+| `spike` | Auto-suggested | Time-boxed investigation; findings as Markdown in the repo |
 | `epic-duck` | Explicit | Large foggy efforts → decision map on tracker |
 
 ## Typical planning flow

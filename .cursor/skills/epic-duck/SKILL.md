@@ -48,13 +48,13 @@ Open tickets are **not** listed on the map — query the tracker.
 The decision or investigation this ticket resolves.
 ```
 
-Label `epic-duck:<type>`: `research` | `interrogate` | `task`. Epic duck tickets do **not** use `ready-for-agent`.
+Label `epic-duck:<type>`: `spike` | `interrogate` | `task`. Epic duck tickets do **not** use `ready-for-agent`.
 
 **Claim** before work (assignee / `Status: claimed`). **Blocking** uses native relations or the tracker's body convention. **Frontier** = open, unblocked, unclaimed children.
 
 ## Ticket types
 
-- **research** (AFK): facts from docs or APIs — delegate to the `research` skill in a subagent.
+- **spike** (AFK): facts from docs or APIs — delegate to the `spike` skill in a subagent.
 - **interrogate** (HITL): live interview — `interrogate` or `rubber-duck` skill; agent never answers for the human.
 - **task** (HITL or AFK): manual unblocker (access, signup, data move) before a decision can be made.
 
@@ -72,9 +72,9 @@ User brings a loose idea.
 2. **Breadth-first pass** — surface open decisions across the space. If no fog remains (small enough for one session), stop and ask how to proceed without a map.
 3. **Create map** with Destination, Notes, empty Decisions, fog in **Not yet specified**.
 4. **Create tickets** you can specify now; run **3-amigos** on each deliverable backlog ticket before publish; **wire blocking in a second pass** (ids must exist).
-5. **Research tickets** — optional parallel subagents on `research/<name>` branches; link findings on tickets; do not merge throwaway branches.
+5. **Spike tickets** — optional parallel subagents on `spike/<name>` branches; link findings on tickets; do not merge throwaway branches.
 
-Stop after charting; do not resolve tickets in this session except parallel research.
+Stop after charting; do not resolve tickets in this session except parallel spikes.
 
 ## Work through the map (invocation)
 
@@ -86,6 +86,6 @@ User passes map id/URL; optional ticket.
 4. **Resolve**: answer comment, close ticket, append to map **Decisions so far**.
 5. Add new tickets; graduate fog; rule out-of-scope tickets.
 
-**One ticket per session** except parallel research during charting.
+**One ticket per session** except parallel spikes during charting.
 
 Expect concurrent editors on the tracker.

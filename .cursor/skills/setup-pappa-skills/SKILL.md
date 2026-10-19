@@ -113,4 +113,4 @@ For custom trackers, write `docs/agents/backlog.md` from the user's description.
 
 ### 5. Done
 
-Tell the user setup is complete and which skills read these files (`epic-duck`, `rubber-duck`, `interrogate`, `software-design`, `3-amigos`). They can edit `docs/agents/*.md` directly; re-run this skill only to switch trackers or restart config.
+Tell the user setup is complete and which skills read these files (`epic-duck`, `rubber-duck`, `interrogate`, `software-design`, `3-amigos`, `spike`). They can edit `docs/agents/*.md` directly; re-run this skill only to switch trackers or restart config.

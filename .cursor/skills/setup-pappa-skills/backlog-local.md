@@ -21,7 +21,7 @@ Read the path or file the user gave.
 ## Epic duck operations
 
 - **Map**: `.backlog/<effort>/map.md`
-- **Child**: `.backlog/<effort>/issues/NN-<slug>.md` with `Type:` and `Status:`
+- **Child**: `.backlog/<effort>/issues/NN-<slug>.md` with `Type:` (`spike` | `interrogate` | `task`) and `Status:`
 - **Blocking**: `Blocked by: NN, NN` — unblocked when blockers are `resolved`
 - **Frontier**: open, unblocked, unclaimed; lowest number first
 - **Claim**: set `Status: claimed` before work
