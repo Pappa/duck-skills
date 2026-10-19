@@ -7,6 +7,8 @@ Spin up a **background agent** to run the spike, so you keep working while it re
 
 Its job:
 
-1. Investigate the question against **primary sources** (official docs, source code, specs, first-party APIs), not a secondary write-up of them. Follow every claim back to the source that owns it.
-2. Write the findings to a single Markdown file, citing each claim's source.
-3. Save it where the repo already keeps such notes; match the existing convention, and if there is none, put it somewhere sensible and say where.
+1. Investigate the question against **primary sources** (official docs, source code, specs, APIs), not a secondary write-up of them. Follow every claim back to the source that owns it.
+2. For domain-specific spikes, search for authritative sources of domain-knowledge (academic papers, recognised industry bodies, technical books).
+3. Write the findings to a single Markdown file, citing each claim's source. Use clear, plain language, following the ISO 24495 standard. Avoid jargon that is not specific to the domain being investigated.
+4. Add a short (1-3 paragraph) summary of the findings under the first subheading, **TLDR**.
+5. Save it where the repo already keeps such notes; match the existing convention, and if there is none, put it somewhere sensible and say where.
