@@ -35,9 +35,9 @@ Supports GitHub, GitLab, Azure DevOps Boards, local markdown, or a custom tracke
 | Skill | Invocation | Purpose |
 |-------|------------|---------|
 | `setup-duck-skills` | Explicit | Configure tracker, domain docs, optional ticket labels |
-| `rubber-duck` | Explicit | Design interview + glossary/ADR updates (`interrogate` + `software-design`) |
+| `rubber-duck` | Explicit | Design interview + glossary/ADR updates (`interrogate` + `architect-duck`) |
 | `interrogate` | Auto-suggested | Round-based design interview |
-| `software-design` | Auto-suggested | Glossary and ADR updates while designing |
+| `architect-duck` | Auto-suggested | Glossary and ADR updates while designing |
 | `amigo-pato` | Auto-suggested | Backlog ticket quality (fit, clarity, ISO 24495, INVEST) before publish |
 | `spike` | Auto-suggested | Time-boxed investigation; findings as Markdown in the repo |
 | `epic-duck` | Explicit | Large, unclear or ambiguous piece of work → feature plan + decision issues on tracker |

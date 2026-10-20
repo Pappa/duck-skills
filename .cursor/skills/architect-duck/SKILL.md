@@ -1,9 +1,9 @@
 ---
-name: software-design
-description: Build and sharpen a project's domain model while designing — challenge terminology, stress-test scenarios, and update GLOSSARY.md and ADRs as decisions land. Use when discussing domain language, writing or editing a glossary, recording ADRs, or paired with interrogate in a design session.
+name: architect-duck
+description: Build and sharpen a project's domain model while designing — challenge terminology, stress-test scenarios, and update GLOSSARY.md and ADRs as decisions land. Use when discussing domain language, writing or editing a glossary, recording ADRs, paired with interrogate in a design session, or when the user invokes architect-duck.
 ---
 
-# Software design
+# Architect duck
 
 Actively build and sharpen the project's domain model as you design. This is the *active* discipline: challenging terms, inventing edge-case scenarios, and writing the glossary and decisions down the moment they crystallise. (Merely *reading* `GLOSSARY.md` for vocabulary is not this skill: that's a one-line habit any skill can do. This skill is for when you're changing the model, not just consuming it.)
 

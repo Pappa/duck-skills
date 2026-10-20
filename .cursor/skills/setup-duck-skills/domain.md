@@ -34,7 +34,7 @@ If a file does not exist, proceed silently. Do not nag the user to create glossa
 
 Use glossary terms in issue titles, specs, and ticket descriptions. Avoid synonyms the glossary rejects.
 
-If a needed concept is missing from the glossary, either reconsider the naming or note the gap for a future **software-design** pass.
+If a needed concept is missing from the glossary, either reconsider the naming or note the gap for a future **architect-duck** pass.
 
 ## ADR conflicts
 
