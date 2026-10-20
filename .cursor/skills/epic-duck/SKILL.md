@@ -131,7 +131,7 @@ User brings a loose idea (often after feature selection above).
 1. **Destination** — use `rubber-duck` or `interrogate` until scope and destination are clear.
 2. **Breadth-first pass** — surface open decisions. If no fog remains (small enough for one session), stop and ask how to proceed without a full feature chart.
 3. **Create or update feature** with Destination, Notes, empty Decisions, fog in **Not yet specified**, empty **Issues** / **Spikes** tables.
-4. **Create children** you can specify now; run **3-amigos** on each deliverable backlog ticket before publish; **wire blocking in a second pass** (numbers must exist).
+4. **Create children** you can specify now; run **amigo-pato** on each deliverable backlog ticket before publish; **wire blocking in a second pass** (numbers must exist).
 5. **Spike items** — optional parallel subagents on `spike/<name>` branches; link findings; do not merge throwaway branches.
 
 Stop after charting; do not resolve children in this session except parallel spikes.

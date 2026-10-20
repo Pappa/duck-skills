@@ -38,7 +38,7 @@ Supports GitHub, GitLab, Azure DevOps Boards, local markdown, or a custom tracke
 | `rubber-duck` | Explicit | Design interview + glossary/ADR updates (`interrogate` + `software-design`) |
 | `interrogate` | Auto-suggested | Round-based design interview |
 | `software-design` | Auto-suggested | Glossary and ADR updates while designing |
-| `3-amigos` | Auto-suggested | Backlog ticket quality (fit, clarity, ISO 24495, INVEST) before publish |
+| `amigo-pato` | Auto-suggested | Backlog ticket quality (fit, clarity, ISO 24495, INVEST) before publish |
 | `spike` | Auto-suggested | Time-boxed investigation; findings as Markdown in the repo |
 | `epic-duck` | Explicit | Large, unclear or ambiguous piece of work → feature plan + decision issues on tracker |
 
@@ -46,16 +46,19 @@ Supports GitHub, GitLab, Azure DevOps Boards, local markdown, or a custom tracke
 
 ```mermaid
 flowchart LR
-  idea[Idea in chat]
-  rd[rubber-duck]
+  idea[Big, complex idea]
+  idea2[Small, single-ticket idea]
+  plan[Feature plan]
+  issues[Issues on backlog]
   ed[epic-duck]
-  idea --> rd
-  idea --> ed
-  ed --> rd
+  rd[rubber-duck]
+  dd[dev-duck (TODO)]
+  idea --> ed --> plan --> issues --> dd
+  idea2 --> rd --> issues --> dd
 ```
 
-- **Clear enough to discuss**: `rubber-duck` (terms and ADRs as you decide)
-- **Large or foggy**: `epic-duck` to chart a feature, then `rubber-duck` on individual issues
+- **Small enough to complete in one session**: `rubber-duck` (terms and ADRs as you decide)
+- **Large, unclear or ambiguous piece of work**: `epic-duck` to chart a feature, then `rubber-duck` on individual issues
 
 ## Roadmap
 

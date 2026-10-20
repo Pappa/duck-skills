@@ -1,9 +1,9 @@
 ---
-name: 3-amigos
-description: Reviews backlog tickets and requirements before publish — fit to the user's request, completeness, unambiguous acceptance criteria, ISO 24495 plain language, and INVEST. Use when creating or updating a backlog ticket, user story, work item, or issue; when drafting acceptance criteria; when the user invokes 3-amigos; or when another skill is about to publish to the backlog.
+name: amigo-pato
+description: Reviews backlog tickets and requirements before publish — fit to the user's request, completeness, unambiguous acceptance criteria, ISO 24495 plain language, and INVEST. Use when creating or updating a backlog ticket, user story, work item, or issue; when drafting acceptance criteria; when the user invokes amigo-pato; or when another skill is about to publish to the backlog.
 ---
 
-# 3 amigos
+# amigo-pato
 
 Run this **before** creating or updating a backlog ticket on the backlog (including tickets drafted by epic-duck, implement flows, or ad-hoc agent work). Do not publish until the review passes or the user explicitly accepts documented gaps.
 
@@ -70,7 +70,7 @@ Epic-duck **decision** tickets (`epic-duck:spike`, `interrogate`, etc.): require
 ## Output format
 
 ```markdown
-## 3 amigos review
+## 3 amigos session
 
 **Verdict:** Approve | Revise
 

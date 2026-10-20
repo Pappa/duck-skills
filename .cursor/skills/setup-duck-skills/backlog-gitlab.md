@@ -13,7 +13,7 @@ Issues and specs live as GitLab issues. Use [`glab`](https://gitlab.com/gitlab-o
 
 ## When a skill says "publish to the backlog"
 
-Apply **3-amigos** to the draft, then create a GitLab issue.
+Apply **amigo-pato** to the draft, then create a GitLab issue.
 
 ## When a skill says "fetch the relevant ticket"
 
