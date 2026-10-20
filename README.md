@@ -1,4 +1,4 @@
-# Agent skills (duck-skills)
+# duck-skills
 
 Personal agent skills for software engineering — heavily influenced by (like, copied from) [Matt Pocock's skills](https://github.com/mattpocock/skills), rewritten for my workflow.
 
