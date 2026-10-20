@@ -1,6 +1,6 @@
 ---
-name: spike
-description: Investigate a question against high-trust primary sources and capture the findings as a Markdown file in the repo. Use when the user wants a time-boxed spike, docs or API facts gathered, or reading legwork delegated to a background agent.
+name: spike-duck
+description: Investigate a question against high-trust primary sources and capture the findings as a Markdown file in the repo. Use when the user wants a time-boxed spike, docs or API facts gathered, reading legwork delegated to a background agent, or when the user invokes spike-duck.
 ---
 
 Spin up a **background agent** to run the spike, so you keep working while it reads.

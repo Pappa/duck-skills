@@ -76,7 +76,7 @@ The decision or investigation this issue resolves.
 
 ### Spike item
 
-Separate file `.backlog/items/<NNNN>-spike-<slug>.md`; findings in `.backlog/spike/<NNNN>-<slug>.md`. Delegate investigation to the `spike` skill.
+Separate file `.backlog/items/<NNNN>-spike-<slug>.md`; findings in `.backlog/spike/<NNNN>-<slug>.md`. Delegate investigation to the `spike-duck` skill.
 
 ## Status vocabulary
 
@@ -86,7 +86,7 @@ Tasks, issues, and spikes use: `needs-detail`, `in-progress`, `resolved`, `out-o
 
 ## Ticket types (issues)
 
-- **spike** (AFK): use a **spike item** + `spike` skill.
+- **spike** (AFK): use a **spike item** + `spike-duck` skill.
 - **interrogate** (HITL): live interview — `interrogate` or `rubber-duck` skill; agent never answers for the human.
 - **task** (HITL or AFK): manual unblocker before a decision can be made.
 

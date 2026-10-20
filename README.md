@@ -47,7 +47,7 @@ Supports GitHub, GitLab, Azure DevOps Boards, local markdown, or a custom tracke
 | `interrogate`       | Round-based design interview |
 | `architect-duck`    | Glossary and ADR updates while designing |
 | `amigo-pato`        | Backlog ticket quality (fit, clarity, ISO 24495, INVEST) before publish |
-| `spike`             | Time-boxed investigation; findings as Markdown in the repo |
+| `spike-duck`        | Time-boxed investigation; findings as Markdown in the repo |
 
 
 ## Typical planning flow
