@@ -21,9 +21,11 @@ Apply **3-amigos** to the draft, then create a GitLab issue.
 
 ## Epic duck operations
 
-- **Map**: issue labelled `epic-duck:map`.
-- **Child**: `Part of #<map>` at top of description; label `epic-duck:<type>` (`spike` | `interrogate` | `task`).
+Used by **epic-duck**. **Feature** parent issue labelled `epic-duck:map`; children are issues. Status vocabulary: `not-specified`, `in-progress`, `resolved`, `out-of-scope` (labels or description).
+
+- **Feature**: issue labelled `epic-duck:map`.
+- **Child**: `Part of #<feature>` at top of description; label `epic-duck:<type>` (`spike` | `interrogate` | `task`).
 - **Blocking**: `/blocked_by #<n>` quick action as a note, or `Blocked by:` line when native blocking unavailable.
-- **Frontier**: open children, unblocked, unassigned; first in map order.
-- **Claim**: `glab issue update <n> --assignee @me`
-- **Resolve**: note answer, close, update map **Decisions so far**
+- **Frontier**: children `not-specified` / open, unblocked; lowest id first.
+- **Claim**: `glab issue update <n> --assignee @me` for the session.
+- **Resolve**: note answer, close or mark `resolved`, update feature **Decisions so far**. Remove blocking links when a blocker is `resolved` or `out-of-scope`.

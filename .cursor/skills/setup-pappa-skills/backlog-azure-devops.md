@@ -35,9 +35,11 @@ Apply **3-amigos** to the draft, then create a work item in the configured proje
 
 ## Epic duck operations
 
-- **Map**: one work item tagged `epic-duck:map` holding Destination / Notes / Decisions / Fog in the description.
-- **Child ticket**: child of the map work item; tag `epic-duck:<type>` (`spike` | `interrogate` | `task`).
-- **Blocking**: predecessor link from child to each blocker; unblocked when all predecessors are closed.
-- **Frontier**: open children with no open predecessors and unassigned (or not claimed); map order.
-- **Claim**: assign to the driving user (`System.AssignedTo`) before other edits.
-- **Resolve**: discussion note with answer, move to closed state, append gist + link to map **Decisions so far** in the map description.
+Used by **epic-duck**. **Feature** parent work item tagged `epic-duck:map`; children linked as child work items. Status vocabulary: `not-specified`, `in-progress`, `resolved`, `out-of-scope` (state or tags per process).
+
+- **Feature**: one work item tagged `epic-duck:map` holding Destination / Notes / Decisions / Fog in the description.
+- **Child**: child of the feature work item; tag `epic-duck:<type>` (`spike` | `interrogate` | `task`).
+- **Blocking**: predecessor link from child to each blocker; unblocked when all predecessors are `resolved` / closed / `out-of-scope`.
+- **Frontier**: children in active/not-specified state with no open predecessors; lowest id first.
+- **Claim**: assign to the driving user (`System.AssignedTo`) for the session.
+- **Resolve**: discussion note with answer, move to closed/resolved state, append gist + link to feature **Decisions so far**. Remove predecessor links when a blocker is resolved or out-of-scope.

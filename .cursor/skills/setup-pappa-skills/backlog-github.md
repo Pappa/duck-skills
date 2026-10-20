@@ -24,11 +24,11 @@ Apply **3-amigos** to the draft, then create a GitHub issue.
 
 ## Epic duck operations
 
-Used by `/epic-duck`. The **map** is one issue; **tickets** are child issues.
+Used by **epic-duck**. The **feature** (parent) is one issue labelled `epic-duck:map`; **children** are sub-issues. Use status vocabulary aligned with local markdown: `not-specified`, `in-progress`, `resolved`, `out-of-scope` (labels or body `Status:` — match team practice).
 
-- **Map**: issue labelled `epic-duck:map`.
-- **Child**: sub-issue of the map (or `Part of #<map>` in body). Label `epic-duck:<type>` (`spike` | `interrogate` | `task`).
+- **Feature**: issue labelled `epic-duck:map` (Destination, Notes, Decisions, fog, Out of scope in body).
+- **Child**: sub-issue of the feature (or `Part of #<parent>` in body). Label `epic-duck:<type>` (`spike` | `interrogate` | `task`).
 - **Blocking**: native issue dependencies — `gh api --method POST repos/<owner>/<repo>/issues/<child>/dependencies/blocked_by -f issue_id=<blocker-db-id>` where `issue_id` is the blocker's database id (`gh api repos/<owner>/<repo>/issues/<n> --jq .id`). Fallback: `Blocked by: #n` at top of body.
-- **Frontier**: open children with no open blockers and no assignee; first in map order.
-- **Claim**: `gh issue edit <n> --add-assignee @me` before other work.
-- **Resolve**: comment with answer, close issue, append gist + link to map **Decisions so far**.
+- **Frontier**: children in `not-specified` (or open) with no open blockers; lowest id first.
+- **Claim**: `gh issue edit <n> --add-assignee @me` before other work (session-long on remote; no per-round toggle).
+- **Resolve**: comment with answer, close or mark `resolved`, append gist + link to feature **Decisions so far**. When a blocker is `resolved` or `out-of-scope`, remove its blocking links from dependents.

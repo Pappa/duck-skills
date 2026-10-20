@@ -34,7 +34,7 @@ Supports GitHub, GitLab, Azure DevOps Boards, local markdown, or a custom tracke
 | `software-design` | Auto-suggested | Glossary and ADR updates while designing |
 | `3-amigos` | Auto-suggested | Backlog ticket quality (fit, clarity, ISO 24495, INVEST) before publish |
 | `spike` | Auto-suggested | Time-boxed investigation; findings as Markdown in the repo |
-| `epic-duck` | Explicit | Large foggy efforts → decision map on tracker |
+| `epic-duck` | Explicit | Large foggy efforts → feature + decision issues on tracker |
 
 ## Typical planning flow
 
@@ -49,7 +49,7 @@ flowchart LR
 ```
 
 - **Clear enough to discuss**: `rubber-duck` (terms and ADRs as you decide)
-- **Large or foggy**: `epic-duck` to chart decisions, then `rubber-duck` on individual map tickets
+- **Large or foggy**: `epic-duck` to chart a feature, then `rubber-duck` on individual issues
 
 ## Roadmap
 
