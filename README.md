@@ -19,7 +19,7 @@ ln -sfn "$(pwd)/.cursor/skills/rubber-duck" ~/.cursor/skills/rubber-duck
 Planning skills expect `docs/agents/backlog.md` (and usually `domain.md`). Run once per repository:
 
 ```
-/setup-pappa-skills
+/setup-duck-skills
 ```
 
 Supports GitHub, GitLab, Azure DevOps Boards, local markdown, or a custom tracker.
@@ -28,7 +28,7 @@ Supports GitHub, GitLab, Azure DevOps Boards, local markdown, or a custom tracke
 
 | Skill | Invocation | Purpose |
 |-------|------------|---------|
-| `setup-pappa-skills` | Explicit | Configure tracker, domain docs, optional ticket labels |
+| `setup-duck-skills` | Explicit | Configure tracker, domain docs, optional ticket labels |
 | `rubber-duck` | Explicit | Design interview + glossary/ADR updates (`interrogate` + `software-design`) |
 | `interrogate` | Auto-suggested | Round-based design interview |
 | `software-design` | Auto-suggested | Glossary and ADR updates while designing |

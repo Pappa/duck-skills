@@ -1,10 +1,10 @@
 ---
-name: setup-pappa-skills
-description: Configure a repo for Pappa planning skills — backlog tracker (GitHub, GitLab, Azure DevOps, local markdown, or custom), optional ticket labels, and domain doc layout. Run once per repo before using epic-duck or rubber-duck.
+name: setup-duck-skills
+description: Configure a repo for duck planning skills — backlog tracker (GitHub, GitLab, Azure DevOps, local markdown, or custom), optional ticket labels, and domain doc layout. Run once per repo before using epic-duck or rubber-duck.
 disable-model-invocation: true
 ---
 
-# Setup Pappa skills
+# Setup duck skills
 
 Scaffold per-repo configuration that planning skills assume:
 

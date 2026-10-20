@@ -13,6 +13,6 @@ In one session, apply both:
 1. **interrogate** — round-based decision tree until shared understanding.
 2. **software-design** — challenge vocabulary, stress-test scenarios, update `GLOSSARY.md` and `docs/adr/` when terms and decisions land.
 
-Read `docs/agents/domain.md` for glossary layout. If missing, tell the user to run `/setup-pappa-skills`.
+Read `docs/agents/domain.md` for glossary layout. If missing, tell the user to run `/setup-duck-skills`.
 
 Do not implement product code in this skill; stop at shared understanding plus updated domain docs unless the user explicitly asks to continue.

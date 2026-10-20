@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 A **destination** is too big to implement in one session and still wrapped in **fog** — the path is not visible yet. **Epic duck** finds the path as a **feature** on the backlog, then works **issues** and **spikes** one at a time. Default mode is **plan, don't do**: children resolve decisions, not deliverables, unless the feature's **Notes** say otherwise.
 
-Read `docs/agents/backlog.md` (Epic duck operations). If missing, run `/setup-pappa-skills`.
+Read `docs/agents/backlog.md` (Epic duck operations). If missing, run `/setup-duck-skills`.
 
 **Refer by name** in human-facing text: titles and overviews, not bare numbers.
 

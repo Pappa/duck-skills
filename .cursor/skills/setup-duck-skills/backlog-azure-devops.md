@@ -2,7 +2,7 @@
 
 Work items live in **Azure DevOps Boards** for this repo's project. Use the [Azure DevOps CLI](https://learn.microsoft.com/en-us/azure/devops/cli/?view=azure-devops) (`az extension add --name azure-devops`) or the REST API with `AZURE_DEVOPS_EXT_ORG`, project, and PAT or `az login`.
 
-Record after setup (fill in during `/setup-pappa-skills`):
+Record after setup (fill in during `/setup-duck-skills`):
 
 - **Organization**: `https://dev.azure.com/<org>`
 - **Project**: `<project name>`
