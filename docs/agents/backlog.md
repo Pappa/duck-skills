@@ -9,7 +9,7 @@ Specs, features, and tickets live under `.backlog/`.
 - **Feature list**: `.backlog/features.md` — markdown table with columns **Feature**, **Overview**, **Status**.
   - **Feature**: link to the feature file, e.g. `[0003-feature-auth.md](items/0003-feature-auth.md)`.
   - **Overview**: one sentence (same as **Destination** on the feature file).
-  - **Status**: one of `not-specified`, `in-progress`, `resolved`, `out-of-scope`.
+  - **Status**: one of `needs-detail`, `in-progress`, `resolved`, `out-of-scope`.
 
 ### Shared numbering
 
@@ -24,13 +24,13 @@ All backlog items share one counter under `.backlog/items/`. Next number = one g
 
 ### Status (features, issues, spikes)
 
-`not-specified` · `in-progress` · `resolved` · `out-of-scope`
+`needs-detail` · `in-progress` · `resolved` · `out-of-scope`
 
 - **Canonical**: `Status:` near the top of each item file. Update `features.md` and the feature’s **Issues** / **Spikes** tables in the same edit.
-- **Feature**: starts `not-specified`; becomes `in-progress` when the first child issue or spike is created; `resolved` / `out-of-scope` only by explicit choice (see epic duck).
+- **Feature**: starts `needs-detail`; becomes `in-progress` when the first child issue or spike is created; `resolved` / `out-of-scope` only by explicit choice (see epic duck).
 - **Issue / spike**: set `in-progress` when work starts; `resolved` when done (spike item when the result file exists).
 
-### Triage labels
+### Ticket labels
 
 Deliverable / agent-ready work may also use roles from `docs/agents/ticket-labels.md` (e.g. `Label: ready`) — separate from the four statuses above.
 
@@ -88,7 +88,7 @@ No `Type:` line on spike items. Findings live only in `.backlog/spike/<NNNN>-<sl
 ### Blocking
 
 - `Blocked by: 0004, 0007` — comma-separated shared item numbers (feature, issue, or spike).
-- **Frontier** (per feature): lowest `NNNN` among that feature’s issues and spikes with `not-specified` and empty `Blocked by`.
+- **Frontier** (per feature): lowest `NNNN` among that feature’s issues and spikes with `needs-detail` and empty `Blocked by`.
 - When any item becomes `resolved` or `out-of-scope`, remove its `NNNN` from every `Blocked by:` line in `.backlog/items/` (trim commas; delete the line if empty). Do not add a comment for the sweep alone.
 
 ### Thread
@@ -115,7 +115,7 @@ Used by **epic-duck**. A **feature** is the planning artifact (formerly “map�
 
 ### Starting a session (local)
 
-1. Resolve which feature to open (user input: path, `NNNN`, slug, or close name match — confirm with user; or list `not-specified` / `in-progress` from `features.md`; or chart a new feature).
+1. Resolve which feature to open (user input: path, `NNNN`, slug, or close name match — confirm with user; or list `needs-detail` / `in-progress` from `features.md`; or chart a new feature).
 2. **Git check** (once, before writes): if the feature file differs from `HEAD` (untracked file = plan-level change):
    - Hunks only under `## Issues` / `## Spikes` → warn that index tables changed; ask to continue.
    - Any change to plan sections (`Status`, Destination, Notes, Decisions, fog, out of scope, or above **Issues**) → list impact; ask how to proceed. Decline or wait → no writes.

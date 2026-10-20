@@ -9,7 +9,7 @@ disable-model-invocation: true
 Scaffold per-repo configuration that planning skills assume:
 
 - **Backlog**: where work items and decision maps live (`docs/agents/backlog.md`)
-- **Triage labels** (optional): canonical role strings if you use a triage skill later
+- **Ticket labels** (optional): canonical role strings if you use a triage skill later
 - **Domain docs**: where `GLOSSARY.md` and ADRs live, and how skills should read them
 
 Prompt-driven setup: explore the repo, present findings, confirm with the user, then write files.
@@ -48,7 +48,7 @@ For **Azure DevOps**, also confirm org, project, and team (for area path default
 
 Record the choice in `docs/agents/backlog.md` using a seed template from this folder.
 
-**Section B: Triage labels** — skip unless the user plans to use a triage skill.
+**Section B: Ticket labels** — skip unless the user plans to use a triage skill.
 
 > Keep default label strings? (recommended: **yes**)
 
@@ -87,7 +87,7 @@ Update an existing `## Agent skills` block in place; do not duplicate.
 
 [one-line summary]. See `docs/agents/backlog.md`.
 
-### Triage labels
+### Ticket labels
 
 [one-line summary]. See `docs/agents/ticket-labels.md`.
 

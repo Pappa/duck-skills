@@ -1,4 +1,4 @@
-# Triage labels
+# Ticket labels
 
 The skills use one label when publishing agent-ready work: `ready`. A full triage skill (if you add one later) uses all five roles.
 

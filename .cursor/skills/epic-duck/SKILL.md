@@ -68,23 +68,25 @@ Blocked by:
 The decision or investigation this issue resolves.
 ```
 
-`Type:` is `interrogate` or `task`. Epic-duck decision issues do **not** use triage `ready` unless **Notes** say otherwise.
+`Type:` is `interrogate`, `spike` or `task`.
 
 ### Spike item
 
-Separate file `.backlog/items/<NNNN>-spike-<slug>.md`; findings in `.backlog/spike/<NNNN>-<slug>.md`. No `Type:` on spike items. Delegate investigation to the `spike` skill.
+Separate file `.backlog/items/<NNNN>-spike-<slug>.md`; findings in `.backlog/spike/<NNNN>-<slug>.md`. Delegate investigation to the `spike` skill.
 
 ## Status vocabulary
 
-Features, issues, and spikes use: `not-specified`, `in-progress`, `resolved`, `out-of-scope`. Align remote tracker state/tags with `docs/agents/backlog.md` where configured.
+Features use: `needs-detail`, `in-progress`, `resolved`, `out-of-scope`. Align remote tracker state/tags with `docs/agents/backlog.md` where configured.
+
+Tasks, issues, and spikes use: `needs-detail`, `in-progress`, `resolved`, `out-of-scope`. Align remote tracker state/tags with `docs/agents/backlog.md` where configured.
 
 ## Ticket types (issues)
 
-- **spike** (AFK): use a **spike item** + `spike` skill — not `Type: spike` on an issue.
+- **spike** (AFK): use a **spike item** + `spike` skill.
 - **interrogate** (HITL): live interview — `interrogate` or `rubber-duck` skill; agent never answers for the human.
 - **task** (HITL or AFK): manual unblocker before a decision can be made.
 
-Set child `Status: in-progress` before work. **Blocking**: `Blocked by: NNNN, NNNN` (local) or native relations (remote). **Frontier** = `not-specified`, unblocked; lowest number first.
+Set child `Status: in-progress` before work. **Blocking**: `Blocked by: NNNN, NNNN` (local) or native relations (remote). **Frontier** = `needs-detail`, unblocked; lowest number first.
 
 When any item becomes `resolved` or `out-of-scope`, remove its number from every `Blocked by:` (local) or drop blocking links (remote). Clearing the last blocker does not change the blocked item's status.
 
@@ -100,7 +102,7 @@ When any item becomes `resolved` or `out-of-scope`, remove its number from every
 2. Input that references `NNNN` for a non-feature item → open that child and its `Feature:` parent.
 3. **Close name match** to a row in `features.md` → confirm filename, overview, and status with the user.
 4. Input that describes **new work** and no existing feature → chart a new feature (allocate `NNNN`, row in `features.md`, `Status: not-specified`).
-5. Otherwise → list every `not-specified` and `in-progress` feature from `features.md` (number order); user picks. Empty list → offer to chart.
+5. Otherwise → list every `needs-detail` and `in-progress` feature from `features.md` (number order); user picks. Empty list → offer to chart.
 
 `resolved` / `out-of-scope` features are not listed. If the user names one, confirm before setting `in-progress` and continuing.
 

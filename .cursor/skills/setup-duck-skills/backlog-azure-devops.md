@@ -35,7 +35,7 @@ Apply **3-amigos** to the draft, then create a work item in the configured proje
 
 ## Epic duck operations
 
-Used by **epic-duck**. **Feature** parent work item tagged `epic-duck:map`; children linked as child work items. Status vocabulary: `not-specified`, `in-progress`, `resolved`, `out-of-scope` (state or tags per process).
+Used by **epic-duck**. **Feature** parent work item tagged `epic-duck:map`; children linked as child work items. Status vocabulary: `needs-detail`, `in-progress`, `resolved`, `out-of-scope` (state or tags per process).
 
 - **Feature**: one work item tagged `epic-duck:map` holding Destination / Notes / Decisions / Fog in the description.
 - **Child**: child of the feature work item; tag `epic-duck:<type>` (`spike` | `interrogate` | `task`).
