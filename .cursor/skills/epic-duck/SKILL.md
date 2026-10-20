@@ -1,23 +1,27 @@
 ---
 name: epic-duck
-description: Chart a large, foggy effort as a feature with decision issues on the backlog, then resolve one decision per session until the route to the destination is clear. Use for multi-session planning, unclear scope, epic-duck, or feature-based planning.
+description: Chart a large, unclear or ambiguous piece of work as a plan with decision issues on the backlog, then resolve one decision per session until the route to the destination is clear. Use for multi-session planning, unclear scope, epic-duck, or feature-based planning.
 disable-model-invocation: true
 ---
 
-A **destination** is too big to implement in one session and still wrapped in **fog** — the path is not visible yet. **Epic duck** finds the path as a **feature** on the backlog, then works **issues** and **spikes** one at a time. Default mode is **plan, don't do**: children resolve decisions, not deliverables, unless the feature's **Notes** say otherwise.
+A **destination** is a feature too big to implement in one session and still ambiguous or unclear — the steps are not well defined. 
 
-Read `docs/agents/backlog.md` (Epic duck operations). If missing, run `/setup-duck-skills`.
+**Epic duck** help define the steps of the **plan** on the backlog, then resolves **issues** and **spikes** one at a time. Default mode is **plan, don't do**: each ticket resolve a decision, not deliverables.
 
 **Refer by name** in human-facing text: titles and overviews, not bare numbers.
 
-## Feature artifact
+## The Plan
 
-On local markdown, one file `.backlog/items/<NNNN>-feature-<slug>.md` indexed in `.backlog/features.md`. On GitHub/GitLab/Azure DevOps, the **feature** is still the parent work item labelled `epic-duck:map` (label rename deferred). Child issues/spikes are tickets. The feature file is an **index** — decisions live in child bodies and resolution sections, not duplicated on the feature.
+The plan is a single ticket on this repo's backlog, labelled `epic-duck:plan`. Its tickets are child issues of the feature the plan is working towards.
 
-### Feature body
+The plan is iterative and documents progress towards the goal, a completed feature. It lists the decisions made so far and acts as an index to the tickets that contain the decision's details.
+
+**Where to find the backlog** Details about the backlog and issue tracker can be found in `docs/agents/backlog.md`. If you can't find it, tell the user to run `/setup-duck-skills`. Consult the tracker doc's "Epic-duck operations" section for how to work with the backlog.
+
+### Plan body
 
 ```markdown
-Status: not-specified
+Status: needs-detail
 
 ## Destination
 
@@ -43,13 +47,13 @@ Work ruled beyond this destination (with links to closed items when relevant).
 
 | Issue | Overview | Status |
 |-------|----------|--------|
-| [0004-slug.md](0004-slug.md) | … | not-specified |
+| [0004-slug.md](0004-slug.md) | … | needs-detail |
 
 ## Spikes
 
 | Spike | Overview | Status |
 |-------|----------|--------|
-| [0005-spike-slug.md](0005-spike-slug.md) | … | not-specified |
+| [0005-spike-slug.md](0005-spike-slug.md) | … | needs-detail |
 ```
 
 Open children are listed in the tables — keep **Overview** and **Status** in sync with each child file.
@@ -57,8 +61,8 @@ Open children are listed in the tables — keep **Overview** and **Status** in s
 ### Issue body
 
 ```markdown
-Status: not-specified
-Feature: [0003-feature-auth.md](0003-feature-auth.md)
+Status: needs-detail
+Plan: [0003-plan-auth.md](0003-plan-auth.md)
 Overview: One sentence.
 Type: interrogate
 Blocked by:
@@ -76,7 +80,7 @@ Separate file `.backlog/items/<NNNN>-spike-<slug>.md`; findings in `.backlog/spi
 
 ## Status vocabulary
 
-Features use: `needs-detail`, `in-progress`, `resolved`, `out-of-scope`. Align remote tracker state/tags with `docs/agents/backlog.md` where configured.
+Plans use: `needs-detail`, `in-progress`, `resolved`, `out-of-scope`. Align remote tracker state/tags with `docs/agents/backlog.md` where configured.
 
 Tasks, issues, and spikes use: `needs-detail`, `in-progress`, `resolved`, `out-of-scope`. Align remote tracker state/tags with `docs/agents/backlog.md` where configured.
 
@@ -98,10 +102,10 @@ When any item becomes `resolved` or `out-of-scope`, remove its number from every
 
 ## Choose a feature (every session)
 
-1. Input that **names or references by number** an existing feature → open it (path, filename, `NNNN` for `NNNN-feature-*`, slug).
-2. Input that references `NNNN` for a non-feature item → open that child and its `Feature:` parent.
+1. Input that **names or references by number** an existing feature → open it (path, filename, `NNNN` for `NNNN-plan-*`, slug).
+2. Input that references `NNNN` for a non-feature item → open that child and its `Plan:` parent.
 3. **Close name match** to a row in `features.md` → confirm filename, overview, and status with the user.
-4. Input that describes **new work** and no existing feature → chart a new feature (allocate `NNNN`, row in `features.md`, `Status: not-specified`).
+4. Input that describes **new work** and no existing feature → chart a new feature (allocate `NNNN`, row in `features.md`, `Status: needs-detail`).
 5. Otherwise → list every `needs-detail` and `in-progress` feature from `features.md` (number order); user picks. Empty list → offer to chart.
 
 `resolved` / `out-of-scope` features are not listed. If the user names one, confirm before setting `in-progress` and continuing.

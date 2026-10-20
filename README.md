@@ -40,7 +40,7 @@ Supports GitHub, GitLab, Azure DevOps Boards, local markdown, or a custom tracke
 | `software-design` | Auto-suggested | Glossary and ADR updates while designing |
 | `3-amigos` | Auto-suggested | Backlog ticket quality (fit, clarity, ISO 24495, INVEST) before publish |
 | `spike` | Auto-suggested | Time-boxed investigation; findings as Markdown in the repo |
-| `epic-duck` | Explicit | Large foggy efforts → feature + decision issues on tracker |
+| `epic-duck` | Explicit | Large, unclear or ambiguous piece of work → feature plan + decision issues on tracker |
 
 ## Typical planning flow
 

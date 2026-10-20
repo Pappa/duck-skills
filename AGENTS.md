@@ -2,7 +2,7 @@
 
 ### Backlog
 
-Specs, features, and tickets live under `.backlog/`. See `docs/agents/backlog.md`.
+Plans, spikes and issues live under `.backlog/`. See `docs/agents/backlog.md`.
 
 ### Domain docs
 

@@ -18,8 +18,8 @@ Its job:
 When the repo uses `.backlog/`:
 
 1. Allocate the next shared `NNNN` under `.backlog/items/` (same counter as features and issues).
-2. Create or update the spike **item** at `.backlog/items/<NNNN>-spike-<slug>.md` with `Feature:` backlink, `Overview:`, `Question`, and `Result:` pointing to the findings path.
+2. Create or update the spike **item** at `.backlog/items/<NNNN>-spike-<slug>.md` with `Plan:` backlink, `Overview:`, `Question`, and `Result:` pointing to the findings path.
 3. Write findings to `.backlog/spike/<NNNN>-<slug>.md`. At the top, link back: `Spike: [<NNNN>-spike-<slug>.md](../items/<NNNN>-spike-<slug>.md)`.
-4. Set spike item `Status: resolved` when the result file is complete; update the parent feature **Spikes** table and **Decisions so far** when epic-duck or the user expects it.
+4. Set spike item `Status: resolved` when the result file is complete; update the parent feature plan **Spikes** table and **Decisions so far** when epic-duck or the user expects it.
 
 If the repo has no `.backlog/` convention yet, put the file somewhere sensible and say where.

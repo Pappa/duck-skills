@@ -1,13 +1,13 @@
 # Issue tracker: Local markdown
 
-Specs, features, and tickets live under `.backlog/`.
+Plans, spikes and issues live under `.backlog/`.
 
 ## Conventions
 
 ### Index
 
-- **Feature list**: `.backlog/features.md` — markdown table with columns **Feature**, **Overview**, **Status**.
-  - **Feature**: link to the feature file, e.g. `[0003-feature-auth.md](items/0003-feature-auth.md)`.
+- **Plan list**: `.backlog/features.md` — markdown table with columns **Plan**, **Overview**, **Status**.
+  - **Plan**: link to the feature file, e.g. `[0003-plan-auth.md](items/0003-plan-auth.md)`.
   - **Overview**: one sentence (same as **Destination** on the feature file).
   - **Status**: one of `needs-detail`, `in-progress`, `resolved`, `out-of-scope`.
 
@@ -17,7 +17,7 @@ All backlog items share one counter under `.backlog/items/`. Next number = one g
 
 | Kind | Path |
 |------|------|
-| Feature | `.backlog/items/<NNNN>-feature-<feature-slug>.md` |
+| Plan | `.backlog/items/<NNNN>-plan-<feature-slug>.md` |
 | Issue | `.backlog/items/<NNNN>-<slug>.md` — slug must **not** start with `feature-` or `spike-` |
 | Spike (item) | `.backlog/items/<NNNN>-spike-<slug>.md` |
 | Spike (findings) | `.backlog/spike/<NNNN>-<slug>.md` |
@@ -27,14 +27,14 @@ All backlog items share one counter under `.backlog/items/`. Next number = one g
 `needs-detail` · `in-progress` · `resolved` · `out-of-scope`
 
 - **Canonical**: `Status:` near the top of each item file. Update `features.md` and the feature’s **Issues** / **Spikes** tables in the same edit.
-- **Feature**: starts `needs-detail`; becomes `in-progress` when the first child issue or spike is created; `resolved` / `out-of-scope` only by explicit choice (see epic duck).
+- **Plan**: starts `needs-detail`; becomes `in-progress` when the first child issue or spike is created; `resolved` / `out-of-scope` only by explicit choice (see epic duck).
 - **Issue / spike**: set `in-progress` when work starts; `resolved` when done (spike item when the result file exists).
 
 ### Ticket labels
 
 Deliverable / agent-ready work may also use roles from `docs/agents/ticket-labels.md` (e.g. `Label: ready`) — separate from the four statuses above.
 
-### Feature file body
+### Plan file body
 
 Order of sections:
 
@@ -47,13 +47,13 @@ Order of sections:
 7. **Issues** — table: **Issue**, **Overview**, **Status** (all children, including closed)
 8. **Spikes** — table: **Spike**, **Overview**, **Status**
 
-Feature, issue, and spike item files all live in `.backlog/items/`. Link children from the feature file with same-directory paths, e.g. `[0004-login-flow.md](0004-login-flow.md)`. Link spike results with `[0006-oauth.md](../spike/0006-oauth.md)`.
+Plan, issue, and spike item files all live in `.backlog/items/`. Link children from the feature file with same-directory paths, e.g. `[0004-login-flow.md](0004-login-flow.md)`. Link spike results with `[0006-oauth.md](../spike/0006-oauth.md)`.
 
 ### Issue file body
 
 ```markdown
-Status: not-specified
-Feature: [0003-feature-auth.md](0003-feature-auth.md)
+Status: needs-detail
+Plan: [0003-plan-auth.md](0003-plan-auth.md)
 Overview: One sentence for the index table.
 Type: interrogate
 Blocked by:
@@ -70,8 +70,8 @@ Blocked by:
 ### Spike item file body
 
 ```markdown
-Status: not-specified
-Feature: [0003-feature-auth.md](0003-feature-auth.md)
+Status: needs-detail
+Plan: [0003-plan-auth.md](0003-plan-auth.md)
 Overview: One sentence for the index table.
 Result: [0006-oauth.md](../spike/0006-oauth.md)
 Blocked by:
@@ -103,12 +103,12 @@ Apply **3-amigos** to the draft, then create the item file(s) under `.backlog/it
 
 Read the path or file the user gave.
 
-## Epic duck operations
+## Epic-duck operations
 
-Used by **epic-duck**. A **feature** is the planning artifact (formerly “map”); **issues** and **spike items** are children.
+Used by **epic-duck**. A **feature plan** is the planning artifact; **issues** and **spike items** are children.
 
-- **Feature file**: `.backlog/items/<NNNN>-feature-<slug>.md` (sections above).
-- **Child issue**: `.backlog/items/<NNNN>-<slug>.md` with `Feature:` backlink, `Type:` (`interrogate` | `task`), `Status:`.
+- **Plan file**: `.backlog/items/<NNNN>-plan-<slug>.md` (sections above).
+- **Child issue**: `.backlog/items/<NNNN>-<slug>.md` with `Plan:` backlink, `Type:` (`interrogate` | `task`), `Status:`.
 - **Child spike**: `.backlog/items/<NNNN>-spike-<slug>.md` plus result under `.backlog/spike/`.
 - **Resolve issue**: `## Answer`, `Status: resolved`, one bullet under feature **Decisions so far**, blocker sweep, refresh tables.
 - **Resolve spike**: result file written, spike item `Status: resolved`, update **Spikes** table and **Decisions so far** when appropriate.
@@ -121,6 +121,6 @@ Used by **epic-duck**. A **feature** is the planning artifact (formerly “map�
    - Any change to plan sections (`Status`, Destination, Notes, Decisions, fog, out of scope, or above **Issues**) → list impact; ask how to proceed. Decline or wait → no writes.
 3. Pick child: user-named issue/spike, else lowest `in-progress` child, else frontier → `in-progress`, else continue charting.
 
-### Feature completion
+### Plan completion
 
 When every child is `resolved` or `out-of-scope` and **Not yet specified** is empty, ask whether the feature is `resolved`, `out-of-scope`, or still `in-progress` with more work (new items or a fog line).

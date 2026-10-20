@@ -22,11 +22,11 @@ Apply **3-amigos** to the draft, then create a GitHub issue.
 
 `gh issue view` as above.
 
-## Epic duck operations
+## Epic-duck operations
 
-Used by **epic-duck**. The **feature** (parent) is one issue labelled `epic-duck:map`; **children** are sub-issues. Use status vocabulary aligned with local markdown: `needs-detail`, `in-progress`, `resolved`, `out-of-scope` (labels or body `Status:` — match team practice).
+Used by **epic-duck**. The **feature** (parent) is one issue labelled `epic-duck:plan`; **children** are sub-issues. Use status vocabulary aligned with local markdown: `needs-detail`, `in-progress`, `resolved`, `out-of-scope` (labels or body `Status:` — match team practice).
 
-- **Feature**: issue labelled `epic-duck:map` (Destination, Notes, Decisions, fog, Out of scope in body).
+- **Plan**: issue labelled `epic-duck:plan` (Destination, Notes, Decisions, fog, Out of scope in body).
 - **Child**: sub-issue of the feature (or `Part of #<parent>` in body). Label `epic-duck:<type>` (`spike` | `interrogate` | `task`).
 - **Blocking**: native issue dependencies — `gh api --method POST repos/<owner>/<repo>/issues/<child>/dependencies/blocked_by -f issue_id=<blocker-db-id>` where `issue_id` is the blocker's database id (`gh api repos/<owner>/<repo>/issues/<n> --jq .id`). Fallback: `Blocked by: #n` at top of body.
 - **Frontier**: children in `needs-detail` (or open) with no open blockers; lowest id first.

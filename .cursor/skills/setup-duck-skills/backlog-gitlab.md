@@ -19,11 +19,11 @@ Apply **3-amigos** to the draft, then create a GitLab issue.
 
 `glab issue view <number> --comments`
 
-## Epic duck operations
+## Epic-duck operations
 
-Used by **epic-duck**. **Feature** parent issue labelled `epic-duck:map`; children are issues. Status vocabulary: `needs-detail`, `in-progress`, `resolved`, `out-of-scope` (labels or description).
+Used by **epic-duck**. **Plan** parent issue labelled `epic-duck:plan`; children are issues. Status vocabulary: `needs-detail`, `in-progress`, `resolved`, `out-of-scope` (labels or description).
 
-- **Feature**: issue labelled `epic-duck:map`.
+- **Plan**: issue labelled `epic-duck:plan`.
 - **Child**: `Part of #<feature>` at top of description; label `epic-duck:<type>` (`spike` | `interrogate` | `task`).
 - **Blocking**: `/blocked_by #<n>` quick action as a note, or `Blocked by:` line when native blocking unavailable.
 - **Frontier**: children `needs-detail` / open, unblocked; lowest id first.
