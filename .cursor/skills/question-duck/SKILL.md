@@ -1,6 +1,6 @@
 ---
-name: interrogate
-description: Stress-test a plan or design through a relentless, round-based interview until shared understanding is reached. Use when the user wants to interrogate an idea, stress-test a design, or refine decisions before writing docs or code.
+name: question-duck
+description: Stress-test a plan or design through a relentless, round-based interview until shared understanding is reached. Use when the user wants to interrogate an idea, stress-test a design, refine decisions before writing docs or code, or when the user invokes question-duck.
 ---
 
 Interview the user until you reach **shared understanding**. Model the work as a **design tree**: decisions branch into dependent decisions.

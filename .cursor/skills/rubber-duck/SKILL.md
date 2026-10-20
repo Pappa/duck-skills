@@ -10,7 +10,7 @@ Sharpen a plan or design in conversation **and** persist the domain model as you
 
 In one session, apply both:
 
-1. **interrogate** — round-based decision tree until shared understanding.
+1. **question-duck** — round-based decision tree until shared understanding.
 2. **architect-duck** — challenge vocabulary, stress-test scenarios, update `GLOSSARY.md` and `docs/adr/` when terms and decisions land.
 
 Read `docs/agents/domain.md` for glossary layout. If missing, tell the user to run `/setup-duck-skills`.

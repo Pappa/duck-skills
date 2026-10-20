@@ -87,7 +87,7 @@ Tasks, issues, and spikes use: `needs-detail`, `in-progress`, `resolved`, `out-o
 ## Ticket types (issues)
 
 - **spike** (AFK): use a **spike item** + `spike-duck` skill.
-- **interrogate** (HITL): live interview — `interrogate` or `rubber-duck` skill; agent never answers for the human.
+- **interrogate** (HITL): live interview — `question-duck` or `rubber-duck` skill; agent never answers for the human.
 - **task** (HITL or AFK): manual unblocker before a decision can be made.
 
 Set child `Status: in-progress` before work. **Blocking**: `Blocked by: NNNN, NNNN` (local) or native relations (remote). **Frontier** = `needs-detail`, unblocked; lowest number first.
@@ -128,7 +128,7 @@ User-named issue or spike → that item. Else lowest-numbered `in-progress` chil
 
 User brings a loose idea (often after feature selection above).
 
-1. **Destination** — use `rubber-duck` or `interrogate` until scope and destination are clear.
+1. **Destination** — use `rubber-duck` or `question-duck` until scope and destination are clear.
 2. **Breadth-first pass** — surface open decisions. If no fog remains (small enough for one session), stop and ask how to proceed without a full feature chart.
 3. **Create or update feature** with Destination, Notes, empty Decisions, fog in **Not yet specified**, empty **Issues** / **Spikes** tables.
 4. **Create children** you can specify now; run **amigo-pato** on each deliverable backlog ticket before publish; **wire blocking in a second pass** (numbers must exist).
