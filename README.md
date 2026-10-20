@@ -1,6 +1,12 @@
-# Agent skills (Pappa)
+# Agent skills (duck-skills)
 
 Personal agent skills for software engineering — heavily influenced by (like, copied from) [Matt Pocock's skills](https://github.com/mattpocock/skills), rewritten for my workflow.
+
+## Why "duck" skills?
+
+The name comes from the practice of ["rubber ducking"](https://en.wikipedia.org/wiki/Rubber_duck_debugging) in Software Engineering, originally described in [The Pragmatic Programmer](https://en.wikipedia.org/wiki/The_Pragmatic_Programmer) by Andrew Hunt and David Thomas. It refers to solving problems by simply explaining the problem to another person (or originally an actual rubber duck). In the process of articulating the problem, we very often find the solution without any actual response from the "duck". In practice, people often use the term to also mean hashing out ideas together.
+
+But mostly, I just needed to find some skill names that didn't clash with other commonly used skills.
 
 ## Use in this repo
 
