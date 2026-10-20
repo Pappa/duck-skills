@@ -1,6 +1,6 @@
 ---
 name: question-duck
-description: Stress-test a plan or design through a relentless, round-based interview until shared understanding is reached. Use when the user wants to planning an idea, stress-test a design, refine decisions before writing docs or code, or when the user invokes question-duck.
+description: Interrogate a plan or design usinga thorough, round-based Q&A until; all assumptions are documented, no ambiguities remain, and a shared understanding with the user is reached. Use when the user wants to planning an idea, develop or stress-test a design, refine decisions before writing docs or code, or when the user explicitly invokes question-duck.
 ---
 
 Interview the user until you reach **shared understanding**. Model the work as a **design tree**: decisions branch into dependent decisions.

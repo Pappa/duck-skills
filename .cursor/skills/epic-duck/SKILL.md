@@ -8,7 +8,7 @@ A **destination** is a feature too big to implement in one session and still amb
 
 **Epic duck** help define the steps of the **plan** on the backlog, then resolves **issues** and **spikes** one at a time. Default mode is **plan, don't do**: each ticket resolve a decision, not deliverables.
 
-**Refer by name** in human-facing text: titles and overviews, not bare numbers.
+**Refer by name** in human-readable plain langauge: titles and overviews, not bare numbers.
 
 ## The Plan
 
@@ -17,6 +17,12 @@ The plan is a single ticket on this repo's backlog, labelled `epic-duck:plan`. I
 The plan is iterative and documents progress towards the goal, a completed feature. It lists the decisions made so far and acts as an index to the tickets that contain the decision's details.
 
 **Where to find the backlog** Details about the backlog and issue tracker can be found in `docs/agents/backlog.md`. If you can't find it, tell the user to run `/setup-duck-skills`. Consult the tracker doc's "Epic-duck operations" section for how to work with the backlog.
+
+### Creating the plan
+
+Don't assume you understand the users inital request, plan or idea. **Always**, use the `question-duck` skill to dig into the idea, ask questions to clarify requirements and edge cases, ensure all assumptions are documented and that you and the user have a **shared understanding**.
+
+Use the `amigo-pato` skill to review the draft ticket, and take their suggestions on board to update the ticket before adding it to the backlog.
 
 ### Plan body
 
@@ -86,9 +92,11 @@ Tasks, issues, and spikes use: `needs-detail`, `in-progress`, `resolved`, `out-o
 
 ## Ticket types (issues)
 
-- **spike** (AFK): use a **spike item** + `spike-duck` skill.
-- **planning** (HITL): live interview — `question-duck` or `rubber-duck` skill; agent never answers for the human.
+- **spike** (AFK): use a **spike item** + `spike-duck` skill. 
+- **planning** (HITL): live interview — `question-duck` skill; agent never answers for the human.
 - **task** (HITL or AFK): manual unblocker before a decision can be made.
+
+For all ticket types, use the `amigo-pato` skill to review and improve the ticket requirements.
 
 Set child `Status: in-progress` before work. **Blocking**: `Blocked by: NNNN, NNNN` (local) or native relations (remote). **Frontier** = `needs-detail`, unblocked; lowest number first.
 
@@ -102,10 +110,10 @@ When any item becomes `resolved` or `out-of-scope`, remove its number from every
 
 ## Choose a feature (every session)
 
-1. Input that **names or references by number** an existing feature → open it (path, filename, `NNNN` for `NNNN-plan-*`, slug).
-2. Input that references `NNNN` for a non-feature item → open that child and its `Plan:` parent.
-3. **Close name match** to a row in `features.md` → confirm filename, overview, and status with the user.
-4. Input that describes **new work** and no existing feature → chart a new feature (allocate `NNNN`, row in `features.md`, `Status: needs-detail`).
+1. User input that **names or references by number** an existing feature → open it (path, filename, `NNNN` for `NNNN-plan-*`, slug).
+2. User input that references `NNNN` for a non-feature item → open that child and its `Plan:` parent.
+3. User input that is a **close name match** to a row in `features.md` → confirm filename, overview, and status with the user.
+4. User input that describes **new work** and no existing feature → chart a new feature (allocate `NNNN`, row in `features.md`, `Status: needs-detail`).
 5. Otherwise → list every `needs-detail` and `in-progress` feature from `features.md` (number order); user picks. Empty list → offer to chart.
 
 `resolved` / `out-of-scope` features are not listed. If the user names one, confirm before setting `in-progress` and continuing.
@@ -128,7 +136,7 @@ User-named issue or spike → that item. Else lowest-numbered `in-progress` chil
 
 User brings a loose idea (often after feature selection above).
 
-1. **Destination** — use `rubber-duck` or `question-duck` until scope and destination are clear.
+1. **Destination** — use `question-duck` until scope and destination are clear.
 2. **Breadth-first pass** — surface open decisions. If no fog remains (small enough for one session), stop and ask how to proceed without a full feature chart.
 3. **Create or update feature** with Destination, Notes, empty Decisions, fog in **Not yet specified**, empty **Issues** / **Spikes** tables.
 4. **Create children** you can specify now; run **amigo-pato** on each deliverable backlog ticket before publish; **wire blocking in a second pass** (numbers must exist).
