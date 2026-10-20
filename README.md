@@ -22,7 +22,7 @@ ln -sfn "$(pwd)/.cursor/skills/rubber-duck" ~/.cursor/skills/rubber-duck
 
 ## Per-repo setup
 
-Planning skills expect `docs/agents/backlog.md` (and usually `domain.md`). Run once per repository:
+duck-skills expect `docs/agents/backlog.md` (and usually `domain.md`). Run once per repository:
 
 ```
 /setup-duck-skills

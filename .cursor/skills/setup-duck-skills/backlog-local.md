@@ -55,7 +55,7 @@ Plan, issue, and spike item files all live in `.backlog/items/`. Link children f
 Status: needs-detail
 Plan: [0003-plan-auth.md](0003-plan-auth.md)
 Overview: One sentence for the index table.
-Type: interrogate
+Type: planning
 Blocked by:
 
 ## Question
@@ -65,7 +65,7 @@ Blocked by:
 ## Comments
 ```
 
-`Type:` is `interrogate` or `task` (not `spike` — spikes are separate item files).
+`Type:` is `planning` or `task` (not `spike` — spikes are separate item files).
 
 ### Spike item file body
 
@@ -108,7 +108,7 @@ Read the path or file the user gave.
 Used by **epic-duck**. A **feature plan** is the planning artifact; **issues** and **spike items** are children.
 
 - **Plan file**: `.backlog/items/<NNNN>-plan-<slug>.md` (sections above).
-- **Child issue**: `.backlog/items/<NNNN>-<slug>.md` with `Plan:` backlink, `Type:` (`interrogate` | `task`), `Status:`.
+- **Child issue**: `.backlog/items/<NNNN>-<slug>.md` with `Plan:` backlink, `Type:` (`planning` | `task`), `Status:`.
 - **Child spike**: `.backlog/items/<NNNN>-spike-<slug>.md` plus result under `.backlog/spike/`.
 - **Resolve issue**: `## Answer`, `Status: resolved`, one bullet under feature **Decisions so far**, blocker sweep, refresh tables.
 - **Resolve spike**: result file written, spike item `Status: resolved`, update **Spikes** table and **Decisions so far** when appropriate.

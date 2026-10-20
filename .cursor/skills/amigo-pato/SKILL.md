@@ -58,7 +58,7 @@ When the item is a deliverable backlog ticket (not an epic-duck **decision** tic
 | **Small** | Completable in one iteration; split if not. |
 | **Testable** | Acceptance criteria prove done. |
 
-Epic-duck **decision** tickets (`epic-duck:spike`, `interrogate`, etc.): require clear **Question** and resolution criteria; INVEST applies lightly (valuable + testable resolution), not full story sizing.
+Epic-duck **decision** tickets (`epic-duck:spike`, `planning`, etc.): require clear **Question** and resolution criteria; INVEST applies lightly (valuable + testable resolution), not full story sizing.
 
 ## Process
 

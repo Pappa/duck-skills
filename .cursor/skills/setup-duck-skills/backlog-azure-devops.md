@@ -38,7 +38,7 @@ Apply **amigo-pato** to the draft, then create a work item in the configured pro
 Used by **epic-duck**. **Plan** parent work item tagged `epic-duck:plan`; children linked as child work items. Status vocabulary: `needs-detail`, `in-progress`, `resolved`, `out-of-scope` (state or tags per process).
 
 - **Plan**: one work item tagged `epic-duck:plan` holding Destination / Notes / Decisions / Fog in the description.
-- **Child**: child of the feature work item; tag `epic-duck:<type>` (`spike` | `interrogate` | `task`).
+- **Child**: child of the feature work item; tag `epic-duck:<type>` (`spike` | `planning` | `task`).
 - **Blocking**: predecessor link from child to each blocker; unblocked when all predecessors are `resolved` / closed / `out-of-scope`.
 - **Frontier**: children in active/needs-detail state with no open predecessors; lowest id first.
 - **Claim**: assign to the driving user (`System.AssignedTo`) for the session.

@@ -1,5 +1,5 @@
 interface:
   display_name: "setup-duck-skills"
-  short_description: "Configure a repo for duck planning skills — backlog tracker (GitHub, GitLab, Azure DevOps, local markdown, or custom), optional ticket labels, and domain doc layout. Run once per repo before using epic-duck or rubber-duck."
+  short_description: "Configure a repo for duck-skills — backlog tracker (GitHub, GitLab, Azure DevOps, local markdown, or custom), optional ticket labels, and domain doc layout. Run once per repo before using epic-duck or rubber-duck."
 policy:
   allow_implicit_invocation: false

@@ -1,12 +1,12 @@
 ---
 name: setup-duck-skills
-description: Configure a repo for duck planning skills — backlog tracker (GitHub, GitLab, Azure DevOps, local markdown, or custom), optional ticket labels, and domain doc layout. Run once per repo before using epic-duck or rubber-duck.
+description: Configure a repo for duck-skills — backlog tracker (GitHub, GitLab, Azure DevOps, local markdown, or custom), optional ticket labels, and domain doc layout. Run once per repo before using epic-duck or rubber-duck.
 disable-model-invocation: true
 ---
 
 # Setup duck skills
 
-Scaffold per-repo configuration that planning skills assume:
+Scaffold per-repo configuration that duck-skills assume:
 
 - **Backlog**: where work items and decision maps live (`docs/agents/backlog.md`)
 - **Ticket labels** (optional): canonical role strings if you use a triage skill later

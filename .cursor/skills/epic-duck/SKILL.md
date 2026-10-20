@@ -64,7 +64,7 @@ Open children are listed in the tables — keep **Overview** and **Status** in s
 Status: needs-detail
 Plan: [0003-plan-auth.md](0003-plan-auth.md)
 Overview: One sentence.
-Type: interrogate
+Type: planning
 Blocked by:
 
 ## Question
@@ -72,7 +72,7 @@ Blocked by:
 The decision or investigation this issue resolves.
 ```
 
-`Type:` is `interrogate`, `spike` or `task`.
+`Type:` is `planning`, `spike` or `task`.
 
 ### Spike item
 
@@ -87,7 +87,7 @@ Tasks, issues, and spikes use: `needs-detail`, `in-progress`, `resolved`, `out-o
 ## Ticket types (issues)
 
 - **spike** (AFK): use a **spike item** + `spike-duck` skill.
-- **interrogate** (HITL): live interview — `question-duck` or `rubber-duck` skill; agent never answers for the human.
+- **planning** (HITL): live interview — `question-duck` or `rubber-duck` skill; agent never answers for the human.
 - **task** (HITL or AFK): manual unblocker before a decision can be made.
 
 Set child `Status: in-progress` before work. **Blocking**: `Blocked by: NNNN, NNNN` (local) or native relations (remote). **Frontier** = `needs-detail`, unblocked; lowest number first.
