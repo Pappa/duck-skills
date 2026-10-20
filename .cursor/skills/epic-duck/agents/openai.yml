@@ -1,0 +1,5 @@
+interface:
+  display_name: "epic-duck"
+  short_description: "Chart a large, unclear or ambiguous piece of work as a plan with decision issues on the backlog, then resolve one decision per session until the route to the destination is clear. Use for multi-session planning, unclear scope, epic-duck, or feature-based planning."
+policy:
+  allow_implicit_invocation: false

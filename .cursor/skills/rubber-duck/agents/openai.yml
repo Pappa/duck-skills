@@ -1,0 +1,5 @@
+interface:
+  display_name: "rubber-duck"
+  short_description: "Relentless interview to sharpen a plan or design while updating glossary entries and ADRs as terms and decisions crystallise. Use for rubber-duck sessions, collaborative design, or when the user invokes rubber-duck."
+policy:
+  allow_implicit_invocation: false
