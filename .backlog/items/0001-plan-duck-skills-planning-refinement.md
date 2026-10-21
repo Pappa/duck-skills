@@ -50,6 +50,7 @@ Planning and refinement duck-skills in this repo produce concise, unambiguous ba
 | [0008-decision-setup-duck-skills-verification.md](0008-decision-setup-duck-skills-verification.md) | Expected setup behavior and how evals assert it. | out-of-scope |
 | [0012-decision-amigo-duck-eval-golden-set.md](0012-decision-amigo-duck-eval-golden-set.md) | Define a golden set to validate amigo-duck verdicts before eval automation trusts it. | out-of-scope |
 | [0013-decision-skill-usage-eval-scenarios.md](0013-decision-skill-usage-eval-scenarios.md) | Define eval scenarios that detect agents misusing or misunderstanding skill and doc text. | out-of-scope |
+| [0014-decision-skill-inventory-remediation.md](0014-decision-skill-inventory-remediation.md) | Close every open discrepancy from spike 0003 (v2.4 register + v2.1 follow-ons). | ready |
 
 ## Tasks
 
