@@ -1,6 +1,6 @@
 ---
 name: question-duck
-description: Interrogate a plan or design usinga thorough, round-based Q&A until; all assumptions are documented, no ambiguities remain, and a shared understanding with the user is reached. Use when the user wants to planning an idea, develop or stress-test a design, refine decisions before writing docs or code, or when the user explicitly invokes question-duck.
+description: Interrogate a plan or design using a thorough, round-based Q&A until all assumptions are documented, no ambiguities remain, and a shared understanding with the user is reached. Use when the user wants to plan an idea, develop or stress-test a design, refine decisions before writing docs or code, or when the user explicitly invokes question-duck.
 ---
 
 Interview the user until you reach **shared understanding**. Model the work as a **design tree**: decisions branch into dependent decisions.

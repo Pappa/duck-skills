@@ -21,7 +21,7 @@ Planning and refinement duck-skills in this repo produce concise, unambiguous ba
 
 - [Ready ticket quality bar](0002-decision-ready-ticket-quality-bar.md): One ticket family; amigo-duck gate for **`Status: ready`**; scored evals (Ticket quality, Decision resolution metric, Skill usage, Usability) with per-skill pass thresholds; v1 no accepted-gaps workflow.
 - [Eval harness scope](0007-spike-eval-harness-design.md): Single spike **0007** designs one harness with meta-eval (amigo-duck + gold from **0012**) and skill-path layers; **temporarily out of scope** (token budget; may reprioritise later).
-- [Skill inventory](0003-skill-inventory.md): Eight in-repo skills mapped; **triage-duck** missing; epic-duck vs `backlog.md` spike/`Type` contradiction flagged for **0005**.
+- [Skill inventory](../spike/0003-skill-inventory-v2.4.md): v2 synthesis — seven skills in repo, **triage-duck** missing; ADR 0001 shapes aligned; **0004** vs epic/rubber `SKILL.md` choreography drift (high); v1 retained at [0003-skill-inventory.md](../spike/0003-skill-inventory.md).
 - [Ticket shapes and fields](0005-decision-ticket-shapes-and-fields.md): `Type: epic-duck:*` (first line), unified **`Status:`** (incl. `ready`), deliverable task body sections, spike findings TLDR; ADR `docs/adr/0001-backlog-ticket-shapes.md`.
 - [Common fields](0011-common-fields-and-skill-needs.md): Spike input to **0005**; superseded for headers by ADR 0001.
 - [Planning pipeline choreography](0004-decision-planning-pipeline-choreography.md): Epic = plans + all ticket types; rubber = single-session decisions/tasks/spikes on confirmed feature; amigo-duck before publish; missing backlog → setup-duck-skills; v1 spikes via epic-duck; question/architect only via epic or rubber.
