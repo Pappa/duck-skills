@@ -4,7 +4,7 @@ Spike: [0011-spike-common-fields-and-skill-needs.md](../items/0011-spike-common-
 
 ## TLDR
 
-Use a **shared common-fields header** on every `.backlog/items/*` file (`Status`, `Overview` where applicable, `Plan:` backlink, `Blocked by:`), then **body profiles** by kind. **`docs/agents/backlog.md` is the single source of truth** for local markdown; fix **epic-duck** to drop `Type: spike` on issues (inventory C1–C2). **`Type: planning`** is the main body exception (`## Question` / `## Answer`). **`Label: ready`** on **`Type: task`** is the second exception (`## Acceptance criteria`, full amigo-pato). **Spike items** add `Result:`; **spike findings** are free-form research docs with `Spike:` backlink + **TLDR**. **Plans** use `Destination` instead of `Overview` and omit `Plan:`. Record the canon in an ADR via **0005**; align **amigo-pato** to local kinds (not `epic-duck:spike` on files).
+Use a **shared common-fields header** on every `.backlog/items/*` file (`Status`, `Overview` where applicable, `Plan:` backlink, `Blocked by:`), then **body profiles** by kind. **`docs/agents/backlog.md` is the single source of truth** for local markdown; fix **epic-duck** to drop `Type: spike` on issues (inventory C1–C2). **`Type: planning`** is the main body exception (`## Question` / `## Answer`). **`Label: ready`** on **`Type: task`** is the second exception (`## Acceptance criteria`, full amigo-duck). **Spike items** add `Result:`; **spike findings** are free-form research docs with `Spike:` backlink + **TLDR**. **Plans** use `Destination` instead of `Overview` and omit `Plan:`. Record the canon in an ADR via **0005**; align **amigo-duck** to local kinds (not `epic-duck:spike` on files).
 
 Upstream **writing-for-agents** favours checkable completion criteria and one authoritative doc—maps to testable AC and `backlog.md`. **pr** skill favours fixed sections (Summary, Evidence)—maps to optional `## Evidence` on large ready tasks only.
 
@@ -21,7 +21,7 @@ Sources: `docs/agents/backlog.md`, `.cursor/skills/*/SKILL.md`, `.backlog/spike/
 | **Issue — task** | same | + `Type: task`, optional `Label:` | **Branch A — unblocker:** `## Question` (+ `## Answer` when resolved). **Branch B — ready:** `Label: ready` + `## Acceptance criteria` (+ optional `## User intent`, `## Out of scope for this ticket`) |
 | **Spike item** | `*-spike-*.md` | + `Plan`, `Overview`, `Result`, `Blocked by` (no `Type:`) | `## Question`; `## Comments` |
 | **Spike findings** | `.backlog/spike/<NNNN>-*.md` | `Spike:` link line | **TLDR**; research sections; cite sources |
-| **Ready deliverable** | Issue with `Label: ready` | Same as task branch B | amigo-pato treats draft as story + AC (INVEST full) |
+| **Ready deliverable** | Issue with `Label: ready` | Same as task branch B | amigo-duck treats draft as story + AC (INVEST full) |
 
 **Do not** use `Type: spike` on issue files. Spikes are always spike **items** (+ findings file).
 
@@ -48,7 +48,7 @@ Blocked by:                    # optional; comma-separated NNNN
 
 ## Body profiles and skill needs
 
-### amigo-pato
+### amigo-duck
 
 | Input kind | Required body for review | INVEST |
 |------------|--------------------------|--------|
@@ -57,7 +57,7 @@ Blocked by:                    # optional; comma-separated NNNN
 | `Type: task` (no ready) | `## Question` or spec pointer; deliverable clear | Light–medium |
 | Spike item (pre-publish) | `## Question` | Light |
 
-**Skill change (0005):** Replace `` `epic-duck:spike` `` with “spike **item**” / “findings file”; rename output heading from `## 3 amigos session` to `## amigo-pato review` (eval artefacts depend on stable heading).
+**Skill change (0005):** Replace `` `epic-duck:spike` `` with “spike **item**” / “findings file”; rename output heading from `## 3 amigos session` to `## amigo-duck review` (eval artefacts depend on stable heading).
 
 ### epic-duck
 
@@ -99,7 +99,7 @@ No third `Type:` value needed if **ready** is expressed via `Label:` on `Type: t
 | ID | Action |
 |----|--------|
 | C1–C2 | Edit `epic-duck/SKILL.md`: `Type:` only `planning` \| `task`; spikes = spike item files only. |
-| C3 | Edit `amigo-pato/SKILL.md`: local kind names (`planning`, `task`, spike item, `Label: ready`). |
+| C3 | Edit `amigo-duck/SKILL.md`: local kind names (`planning`, `task`, spike item, `Label: ready`). |
 | C6 | Document in `backlog.md`: local plan ≡ remote `epic-duck:plan` via `features.md` + filename. |
 | 0009 pattern | Migrate implement tasks to `Label: ready` + AC **or** formal `## Spec` section (0005 decision). |
 

@@ -11,11 +11,11 @@ How should `evals/sandbox_project` and **one** lightweight harness under `evals/
 
 Do **not** split into separate harness spikes: a single design covers two **layers** in one result doc (per [0002-ready-ticket-quality-bar.md](0002-ready-ticket-quality-bar.md)):
 
-1. **Meta-eval layer** — invoke **amigo-pato** on fixtures; compare output to the golden set from [0012-amigo-pato-eval-golden-set.md](0012-amigo-pato-eval-golden-set.md); persist verdicts under `evals/runs/artefacts/<scenario>-<date>/`.
+1. **Meta-eval layer** — invoke **amigo-duck** on fixtures; compare output to the golden set from [0012-amigo-duck-eval-golden-set.md](0012-amigo-duck-eval-golden-set.md); persist verdicts under `evals/runs/artefacts/<scenario>-<date>/`.
 2. **Skill-path layer** — sandbox + setup → epic or rubber (and triage when defined); score **Planning resolution**, **Skill usage** (per [0013-skill-usage-eval-scenarios.md](0013-skill-usage-eval-scenarios.md)), and **Usability**; roll up weighted **Ticket quality** and total score with per-skill thresholds.
 
-Resolution must propose: directory layout; run log + artefact schema (`score`, `model_id`, saved amigo-pato output); 1–2 minimal **integration** scenarios (pipeline smoke, not full case catalogs); copy vs in-repo execution; what stays in **0012** / **0013** vs this spike; and what is out of scope for v1.
+Resolution must propose: directory layout; run log + artefact schema (`score`, `model_id`, saved amigo-duck output); 1–2 minimal **integration** scenarios (pipeline smoke, not full case catalogs); copy vs in-repo execution; what stays in **0012** / **0013** vs this spike; and what is out of scope for v1.
 
 ## Comments
 
-Recorded decision: no second spike for amigo-pato-only harness; case lists and skill-usage traps remain planning issues **0012** / **0013**.
+Recorded decision: no second spike for amigo-duck-only harness; case lists and skill-usage traps remain planning issues **0012** / **0013**.

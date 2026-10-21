@@ -22,7 +22,7 @@ The plan is iterative and documents progress towards the goal, a completed featu
 
 Don't assume you understand the users inital request, plan or idea. **Always**, use the `question-duck` skill to dig into the idea, ask questions to clarify requirements and edge cases, ensure all assumptions are documented and that you and the user have a **shared understanding**.
 
-Use the `amigo-pato` skill to review the draft ticket, and take their suggestions on board to update the ticket before adding it to the backlog.
+Use the `amigo-duck` skill to review the draft ticket, and take their suggestions on board to update the ticket before adding it to the backlog.
 
 ### Plan body
 
@@ -96,7 +96,7 @@ Tasks, issues, and spikes use: `needs-detail`, `in-progress`, `resolved`, `out-o
 - **planning** (HITL): live interview — `question-duck` skill; agent never answers for the human.
 - **task** (HITL or AFK): manual unblocker before a decision can be made.
 
-For all ticket types, use the `amigo-pato` skill to review and improve the ticket requirements.
+For all ticket types, use the `amigo-duck` skill to review and improve the ticket requirements.
 
 Set child `Status: in-progress` before work. **Blocking**: `Blocked by: NNNN, NNNN` (local) or native relations (remote). **Frontier** = `needs-detail`, unblocked; lowest number first.
 
@@ -139,7 +139,7 @@ User brings a loose idea (often after feature selection above).
 1. **Destination** — use `question-duck` until scope and destination are clear.
 2. **Breadth-first pass** — surface open decisions. If no fog remains (small enough for one session), stop and ask how to proceed without a full feature chart.
 3. **Create or update feature** with Destination, Notes, empty Decisions, fog in **Not yet specified**, empty **Issues** / **Spikes** tables.
-4. **Create children** you can specify now; run **amigo-pato** on each deliverable backlog ticket before publish; **wire blocking in a second pass** (numbers must exist).
+4. **Create children** you can specify now; run **amigo-duck** on each deliverable backlog ticket before publish; **wire blocking in a second pass** (numbers must exist).
 5. **Spike items** — optional parallel subagents on `spike/<name>` branches; link findings; do not merge throwaway branches.
 
 Stop after charting; do not resolve children in this session except parallel spikes.

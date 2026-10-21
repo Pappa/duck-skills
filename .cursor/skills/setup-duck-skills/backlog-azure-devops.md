@@ -27,7 +27,7 @@ Parent/child and dependency links use **relation types**:
 
 ## When a skill says "publish to the backlog"
 
-Apply **amigo-pato** to the draft, then create a work item in the configured project.
+Apply **amigo-duck** to the draft, then create a work item in the configured project.
 
 ## When a skill says "fetch the relevant ticket"
 

@@ -8,7 +8,7 @@ Blocked by:
 
 What is the canonical quality bar for backlog tickets this toolkit must produce (decision issues vs `ready` deliverables), and how do evals decide pass vs fail besides ad-hoc judgment?
 
-Resolution must cover: relationship to **amigo-pato** axes; minimum fields per ticket type; handling accepted gaps; friction log format for eval runs.
+Resolution must cover: relationship to **amigo-duck** axes; minimum fields per ticket type; handling accepted gaps; friction log format for eval runs.
 
 ## Answer
 
@@ -20,21 +20,21 @@ Resolution must cover: relationship to **amigo-pato** axes; minimum fields per t
 
 ### Quality gate (tickets)
 
-- **`Label: ready` deliverables:** Must reach **amigo-pato Verdict: Approve** on all four axes (fit, complete/unambiguous, ISO plain language, full INVEST) before publish.
-- **Non-ready issues (task, spike items, etc.):** **amigo-pato** on fit + complete/unambiguous + plain language; INVEST applied per amigo-pato (light for decision-shaped work).
-- **`Type: planning`:** Same amigo-pato path as other decision issues, **plus** the **Planning resolution** metric below on eval runs.
-- **Meta-quality:** Ship evals that validate **amigo-pato** behavior (golden set) and **skill usage** (agents follow invoked skills and docs) before treating amigo-pato as a hard gate in automation — see issues [0012-amigo-pato-eval-golden-set.md](0012-amigo-pato-eval-golden-set.md) and [0013-skill-usage-eval-scenarios.md](0013-skill-usage-eval-scenarios.md).
+- **`Label: ready` deliverables:** Must reach **amigo-duck Verdict: Approve** on all four axes (fit, complete/unambiguous, ISO plain language, full INVEST) before publish.
+- **Non-ready issues (task, spike items, etc.):** **amigo-duck** on fit + complete/unambiguous + plain language; INVEST applied per amigo-duck (light for decision-shaped work).
+- **`Type: planning`:** Same amigo-duck path as other decision issues, **plus** the **Planning resolution** metric below on eval runs.
+- **Meta-quality:** Ship evals that validate **amigo-duck** behavior (golden set) and **skill usage** (agents follow invoked skills and docs) before treating amigo-duck as a hard gate in automation — see issues [0012-amigo-duck-eval-golden-set.md](0012-amigo-duck-eval-golden-set.md) and [0013-skill-usage-eval-scenarios.md](0013-skill-usage-eval-scenarios.md).
 
 ### Accepted gaps (v1 and future)
 
 - **v1:** No **accepted gaps** workflow in tickets. Anything short of **Approve** lowers the **Ticket quality** subscore; operator context goes under **Usability** in the run record.
-- **Future (plan backlog):** Allow an operator to tolerate specific quality findings for a run, with a **score penalty** instead of blocking publish. Working term **Accepted gaps** (rename TBD): *quality findings from amigo-pato or the eval metrics that the operator explicitly tolerates for that run instead of requiring a fix before publish.*
+- **Future (plan backlog):** Allow an operator to tolerate specific quality findings for a run, with a **score penalty** instead of blocking publish. Working term **Accepted gaps** (rename TBD): *quality findings from amigo-duck or the eval metrics that the operator explicitly tolerates for that run instead of requiring a fix before publish.*
 
 ### Eval model: score, then threshold
 
 - Eval runs **score**; they do not emit a single boolean pass/fail unless a **threshold** is applied for a given **skill** or scenario.
 - **Subscores (0–5 each):**
-  1. **Ticket quality** — derived from **amigo-pato** (Approve ≈ 5; Revise maps down by severity of findings).
+  1. **Ticket quality** — derived from **amigo-duck** (Approve ≈ 5; Revise maps down by severity of findings).
   2. **Planning resolution** — only for `Type: planning`; see metric below. Omit or mark N/A for other types.
   3. **Skill usage** — agent followed the invoked skill(s) and relevant repo docs (setup, backlog, ticket-labels, SKILL.md).
   4. **Usability** — operator burden: extra turns, confusion, manual edits, tooling friction (higher = worse unless inverted in harness docs).
@@ -43,7 +43,7 @@ Resolution must cover: relationship to **amigo-pato** axes; minimum fields per t
 
 ### Planning resolution metric
 
-Measures whether a planning ticket fulfilled its **decision** job (not a duplicate full amigo-pato review). Score **0–5** = count of criteria met (1 point each):
+Measures whether a planning ticket fulfilled its **decision** job (not a duplicate full amigo-duck review). Score **0–5** = count of criteria met (1 point each):
 
 | Criterion | Pass (1) |
 |-----------|----------|
@@ -58,13 +58,13 @@ Measures whether a planning ticket fulfilled its **decision** job (not a duplica
 Each eval run produces:
 
 - A run log markdown file under `evals/runs/` (exact naming in **0007**).
-- An artefact directory: `evals/runs/artefacts/<scenario>-<date>/` containing at least: **`score`** (subscores + total), **`model_id`**, saved **amigo-pato** verdict output (file + link from run log), tickets produced (paths), **Usability** notes, and operator notes.
+- An artefact directory: `evals/runs/artefacts/<scenario>-<date>/` containing at least: **`score`** (subscores + total), **`model_id`**, saved **amigo-duck** verdict output (file + link from run log), tickets produced (paths), **Usability** notes, and operator notes.
 
 ### Follow-on work
 
 - Spike **0011** — common fields and skill needs (blocked by **0003**).
 - **0005** — field canon, backlog.md alignment, ADR (blocked by **0011**).
-- **0012**, **0013** — eval layers for amigo-pato and skill usage.
+- **0012**, **0013** — eval layers for amigo-duck and skill usage.
 - Implementation with **0007** / **0009**.
 
 ## Comments

@@ -97,7 +97,7 @@ Append discussion under `## Comments` on issues and spikes.
 
 ## When a skill says "publish to the backlog"
 
-Apply **amigo-pato** to the draft, then create the item file(s) under `.backlog/items/` and update the parent feature’s **Issues** table (and `features.md` when adding a feature).
+Apply **amigo-duck** to the draft, then create the item file(s) under `.backlog/items/` and update the parent feature’s **Issues** table (and `features.md` when adding a feature).
 
 ## When a skill says "fetch the relevant ticket"
 

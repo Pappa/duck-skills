@@ -6,7 +6,7 @@ Blocked by:
 
 ## Question
 
-When should a user (or agent) choose **epic-duck** vs **rubber-duck** vs standalone **question-duck** / **architect-duck**, and what is the ordered handoff between setup, planning, amigo-pato, spike-duck, and triage-duck?
+When should a user (or agent) choose **epic-duck** vs **rubber-duck** vs standalone **question-duck** / **architect-duck**, and what is the ordered handoff between setup, planning, amigo-duck, spike-duck, and triage-duck?
 
 Resolution must be documentable in skill text and exercisable in eval scenarios.
 
@@ -28,7 +28,7 @@ Resolution must be documentable in skill text and exercisable in eval scenarios.
 
 - **question-duck** — round-based Q&A until assumptions are documented and decisions are sharp.
 - **architect-duck** — challenge vocabulary, stress-test scenarios, update **GLOSSARY.md** / **docs/adr/** when decisions land. **Epic-duck invokes architect-duck directly** when needed; rubber does the same within its session. If the user explicitly wants a **rubber-style** domain pass during an epic session, epic-duck may **delegate to rubber-duck**.
-- **amigo-pato** — run **before publish** of any backlog **issue** or **spike item** created by epic or rubber.
+- **amigo-duck** — run **before publish** of any backlog **issue** or **spike item** created by epic or rubber.
 
 ### Rubber-duck backlog rules
 
@@ -47,9 +47,9 @@ If `docs/agents/backlog.md` or the configured tracker (e.g. `.backlog/`) is miss
 
 ### Golden paths (evals)
 
-**Epic:** `setup-duck-skills` (harness) → **epic-duck** → **question-duck** (per child) → **architect-duck** (when domain/docs need updating) → **amigo-pato** (pre-publish) → backlog → **spike-duck** (when a spike item exists) → resolve child.
+**Epic:** `setup-duck-skills` (harness) → **epic-duck** → **question-duck** (per child) → **architect-duck** (when domain/docs need updating) → **amigo-duck** (pre-publish) → backlog → **spike-duck** (when a spike item exists) → resolve child.
 
-**Rubber:** `setup-duck-skills` (harness) → **rubber-duck** (question-duck + architect-duck) → **amigo-pato** (per published issue/spike item) → backlog on **confirmed** feature.
+**Rubber:** `setup-duck-skills` (harness) → **rubber-duck** (question-duck + architect-duck) → **amigo-duck** (per published issue/spike item) → backlog on **confirmed** feature.
 
 ### Skill text follow-up
 

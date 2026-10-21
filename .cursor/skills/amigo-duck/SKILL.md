@@ -1,9 +1,9 @@
 ---
-name: amigo-pato
-description: Reviews backlog tickets and requirements before publish — fit to the user's request, completeness, unambiguous acceptance criteria, ISO 24495 plain language, and INVEST. Use when creating or updating a backlog ticket, user story, work item, or issue; when drafting acceptance criteria; when the user invokes amigo-pato; or when another skill is about to publish to the backlog.
+name: amigo-duck
+description: Reviews backlog tickets and requirements before publish — fit to the user's request, completeness, unambiguous acceptance criteria, ISO 24495 plain language, and INVEST. Use when creating or updating a backlog ticket, user story, work item, or issue; when drafting acceptance criteria; when the user invokes amigo-duck; or when another skill is about to publish to the backlog.
 ---
 
-# amigo-pato
+# amigo-duck
 
 Run this **before** creating or updating a backlog ticket on the backlog (including tickets drafted by epic-duck, implement flows, or ad-hoc agent work). Do not publish until the review passes or the user explicitly accepts documented gaps.
 
