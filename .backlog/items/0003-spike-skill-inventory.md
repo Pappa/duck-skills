@@ -9,7 +9,7 @@ Blocked by:
 
 For each in-scope skill under `.cursor/skills/`, what does it read and write (backlog files, glossary, ADRs, labels), and which other skills does it invoke?
 
-Does it contain information that is contradicted in the other skills or in the project docs?
+Does it contain information that is contradicted in the other skills, in the project docs or in AGENTS.md or README.md?
 
 ## Comments
 
