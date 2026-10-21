@@ -11,3 +11,5 @@ What **skill usage** eval scenarios (invoked skill, deliberate traps in SKILL.md
 Resolution must align with [0002-ready-ticket-quality-bar.md](0002-ready-ticket-quality-bar.md) scoring model and feed implementation in [0007-spike-eval-harness-design.md](0007-spike-eval-harness-design.md) / [0009-sandbox-project-and-harness.md](0009-sandbox-project-and-harness.md).
 
 ## Comments
+
+Spike [0007-spike-eval-harness-design.md](0007-spike-eval-harness-design.md) is blocked on this issue resolving (skill-path layer consumes these scenarios).
