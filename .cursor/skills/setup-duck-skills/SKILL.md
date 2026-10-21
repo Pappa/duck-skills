@@ -1,6 +1,6 @@
 ---
 name: setup-duck-skills
-description: Configure a repo for duck-skills — backlog tracker (GitHub, GitLab, Azure DevOps, local markdown, or custom), optional ticket labels, and domain doc layout. Run once per repo before using epic-duck or rubber-duck.
+description: Configure a repo for duck-skills — backlog tracker (GitHub, GitLab, Azure DevOps, local markdown, or custom), ticket status vocabulary, and domain doc layout. Run once per repo before using epic-duck or rubber-duck.
 disable-model-invocation: true
 ---
 
@@ -9,7 +9,7 @@ disable-model-invocation: true
 Scaffold per-repo configuration that duck-skills assume:
 
 - **Backlog**: where work items and decision maps live (`docs/agents/backlog.md`)
-- **Ticket labels** (optional): canonical role strings if you use a triage skill later
+- **Ticket status**: canonical `Status:` strings (`docs/agents/ticket-statuses.md`)
 - **Domain docs**: where `GLOSSARY.md` and ADRs live, and how skills should read them
 
 Prompt-driven setup: explore the repo, present findings, confirm with the user, then write files.
@@ -50,11 +50,11 @@ Record the choice in `docs/agents/backlog.md` using a seed template from this fo
 
 if the choice was a local backlog, create the empty backlog here: `.backlog/features.md`.
 
-**Section B: Ticket labels** — skip unless the user plans to use a triage skill.
+**Section B: Ticket status vocabulary**
 
-> Keep default label strings? (recommended: **yes**)
+> Keep default `Status:` strings? (recommended: **yes**)
 
-Defaults: `needs-triage`, `needs-detail`, `ready`, `wontfix`. On yes, write [ticket-labels.md](./ticket-labels.md) as-is. On no, collect overrides.
+Defaults: `needs-triage`, `needs-detail`, `ready`, `in-progress`, `resolved`, `wontfix`, `out-of-scope`. On yes, write [ticket-statuses.md](./ticket-statuses.md) to `docs/agents/ticket-statuses.md`. On no, collect overrides.
 
 **Section C: Domain docs**
 
@@ -67,7 +67,7 @@ Offer **multi-context** only when monorepo signals appeared: root `GLOSSARY-MAP.
 Show drafts of:
 
 - The `## Agent skills` block for `CLAUDE.md` or `AGENTS.md`
-- `docs/agents/backlog.md`, `docs/agents/domain.md`, and `docs/agents/ticket-labels.md` (if Section B ran)
+- `docs/agents/backlog.md`, `docs/agents/domain.md`, and `docs/agents/ticket-statuses.md`
 
 Let the user edit before writing.
 
@@ -89,18 +89,16 @@ Update an existing `## Agent skills` block in place; do not duplicate.
 
 [one-line summary]. See `docs/agents/backlog.md`.
 
-### Ticket labels
+### Ticket status
 
-[one-line summary]. See `docs/agents/ticket-labels.md`.
+[one-line summary]. See `docs/agents/ticket-statuses.md`.
 
 ### Domain docs
 
 [single-context or multi-context]. See `docs/agents/domain.md`.
 ```
 
-Omit the triage subsection and `ticket-labels.md` when Section B was skipped.
-
-On GitHub or GitLab, create any configured labels that are missing (`gh label create` / `glab label create`).
+On GitHub or GitLab, create tracker tags for status strings and `epic-duck:*` types if missing (`gh label create` / `glab label create`).
 
 **Seed templates:**
 
@@ -109,7 +107,7 @@ On GitHub or GitLab, create any configured labels that are missing (`gh label cr
 - [backlog-azure-devops.md](./backlog-azure-devops.md)
 - [backlog-local.md](./backlog-local.md)
 - [domain.md](./domain.md)
-- [ticket-labels.md](./ticket-labels.md) (optional)
+- [ticket-statuses.md](./ticket-statuses.md)
 
 For custom trackers, write `docs/agents/backlog.md` from the user's description.
 

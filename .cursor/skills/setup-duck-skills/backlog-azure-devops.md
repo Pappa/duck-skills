@@ -35,7 +35,7 @@ Apply **amigo-duck** to the draft, then create a work item in the configured pro
 
 ## Epic-duck operations
 
-Used by **epic-duck**. **Plan** parent work item tagged `epic-duck:plan`; children linked as child work items. Use **`Status:`** values from `docs/agents/ticket-labels.md` (state or tags per process).
+Used by **epic-duck**. **Plan** parent work item tagged `epic-duck:plan`; children linked as child work items. Use **`Status:`** values from `docs/agents/ticket-statuses.md` (state or tags per process).
 
 - **Plan**: one work item tagged `epic-duck:plan` holding Destination / Notes / Decisions / Fog in the description.
 - **Child**: child of the feature work item; tag `epic-duck:<type>` (`spike` | `decision` | `task`).

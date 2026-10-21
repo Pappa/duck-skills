@@ -36,7 +36,7 @@ Resolution must cover: relationship to **amigo-duck** axes; minimum fields per t
 - **Subscores (0–5 each):**
   1. **Ticket quality** — derived from **amigo-duck** (Approve ≈ 5; Revise maps down by severity of findings).
   2. **Decision resolution** — only for `Type: decision`; see metric below. Omit or mark N/A for other types.
-  3. **Skill usage** — agent followed the invoked skill(s) and relevant repo docs (setup, backlog, ticket-labels, SKILL.md).
+  3. **Skill usage** — agent followed the invoked skill(s) and relevant repo docs (setup, backlog, ticket-statuses, SKILL.md).
   4. **Usability** — operator burden: extra turns, confusion, manual edits, tooling friction (higher = worse unless inverted in harness docs).
 - **Total:** weighted sum (weights defined in harness spike [0007-spike-eval-harness-design.md](0007-spike-eval-harness-design.md)).
 - **Pass/fail:** per-skill (or per-scenario) **threshold on total**; optional **floor** on Ticket quality (e.g. must be ≥ 3).
@@ -69,4 +69,4 @@ Each eval run produces:
 
 ## Comments
 
-Field canon: [0005](0005-decision-ticket-shapes-and-fields.md) replaces **`Label: ready`** with **`Status: ready`** and documents `Type: epic-duck:*`. Quality gates in **Answer** above still apply with that wording.
+Field canon (headers, `Type: epic-duck:*`, **`Status: ready`** gate wording): [0005](0005-decision-ticket-shapes-and-fields.md), `docs/adr/0001-backlog-ticket-shapes.md`.

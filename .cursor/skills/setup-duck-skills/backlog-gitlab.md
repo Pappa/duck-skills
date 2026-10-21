@@ -21,7 +21,7 @@ Apply **amigo-duck** to the draft, then create a GitLab issue.
 
 ## Epic-duck operations
 
-Used by **epic-duck**. **Plan** parent issue labelled `epic-duck:plan`; children are issues. Use **`Status:`** values from `docs/agents/ticket-labels.md` (labels or description).
+Used by **epic-duck**. **Plan** parent issue labelled `epic-duck:plan`; children are issues. Use **`Status:`** values from `docs/agents/ticket-statuses.md` (labels or description).
 
 - **Plan**: issue labelled `epic-duck:plan`.
 - **Child**: `Part of #<feature>` at top of description; label `epic-duck:<type>` (`spike` | `decision` | `task`).

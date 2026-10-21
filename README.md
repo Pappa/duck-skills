@@ -36,7 +36,7 @@ Supports GitHub, GitLab, Azure DevOps Boards, local markdown, or a custom tracke
 
 | Skill               | Purpose |
 |---------------------|---------|
-| `setup-duck-skills` | Configure tracker, domain docs, optional ticket labels |
+| `setup-duck-skills` | Configure tracker, domain docs, ticket status vocabulary |
 | `epic-duck`         | Large, unclear or ambiguous piece of work → feature plan + decisions on tracker |
 | `rubber-duck`       | Design interview + glossary/ADR updates (`question-duck` + `architect-duck`) |
 

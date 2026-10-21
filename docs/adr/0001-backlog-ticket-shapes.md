@@ -44,7 +44,7 @@ Blocked by: <NNNN, …>  # omit line when empty
 
 ### Unified workflow (`Status:`)
 
-One field **`Status:`** — no separate `Label:` line. Vocabulary (see also `docs/agents/ticket-labels.md`):
+Workflow state is a single field **`Status:`** (see `docs/agents/ticket-statuses.md`):
 
 | Status | Meaning |
 |--------|---------|
@@ -78,7 +78,7 @@ Header **`Overview:`** remains one line for plan index tables.
 
 ### Quality gates
 
-- **`Status: ready`** on deliverable tasks: **amigo-duck Verdict: Approve** on all four axes before publish (per [0002](../../.backlog/items/0002-decision-ready-ticket-quality-bar.md), using `Status: ready` instead of former `Label: ready`).
+- **`Status: ready`** on deliverable tasks: **amigo-duck Verdict: Approve** on all four axes before publish (per [0002](../../.backlog/items/0002-decision-ready-ticket-quality-bar.md)).
 - **amigo-duck** review artefacts use heading **`## amigo-duck review`** (stable for evals).
 
 ### SSOT
@@ -93,6 +93,6 @@ Header **`Overview:`** remains one line for plan index tables.
 
 ## Consequences
 
-- Migrate existing `.backlog/items/*` to `Type: epic-duck:*` and drop `Label:`.
+- Backlog items use `Type: epic-duck:*` and the unified `Status:` vocabulary.
 - Update epic-duck, amigo-duck, setup-duck-skills backlog templates.
 - Triage-duck (**0006**) should assume unified `Status:` only.

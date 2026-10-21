@@ -2,13 +2,15 @@ Spike: [0003-spike-skill-inventory.md](../items/0003-spike-skill-inventory.md)
 
 # Skill inventory (planning duck-skills)
 
+> **Historical** (pre–ADR 0001). Current backlog shapes: `docs/adr/0001-backlog-ticket-shapes.md`.
+
 ## TLDR
 
 Eight skills are in scope for the planning-refinement feature; **`triage-duck` is not in the repo yet** (only referenced on the plan). **`setup-duck-skills`** seeds `docs/agents/*` and optional `.backlog/`; **`epic-duck`** is the only skill that routinely **writes** the local backlog. **`rubber-duck`** composes **question-duck** + **architect-duck** and updates **glossary/ADRs**, not backlog tickets. **`amigo-duck`** and **question-duck** are review/interview skills with no mandated file writes. **`spike-duck`** writes spike findings under `.backlog/spike/`.
 
-Remaining **doc gaps** for **0005** / **0011**: **amigo-duck** still uses a **“3 amigos session”** heading that does not match local ticket shape. Remote tracker templates under `setup-duck-skills/backlog-*.md` use **`epic-duck:<type>`** tags (`decision`, `task`, `spike`); local markdown uses filenames and **Decisions** / **Tasks** / **Spikes** tables instead—skills should not imply local items carry GitHub-style labels unless `Label:` is set. (Former epic-duck `Type: spike` on decision files — **resolved** with decision/task/spike split.)
+Remaining **doc gaps** at time of spike (since addressed in **0005** / ADR 0001): amigo-duck review heading, local `Type: epic-duck:*` on markdown items, spike item `Type` line. (Former `Type: spike` on decision files — **resolved** with decision/task/spike split.)
 
-Sources: `.cursor/skills/*/SKILL.md`, `docs/agents/backlog.md`, `docs/agents/domain.md`, `docs/agents/ticket-labels.md`, plan [0001](../items/0001-plan-duck-skills-planning-refinement.md).
+Sources: `.cursor/skills/*/SKILL.md`, `docs/agents/backlog.md`, `docs/agents/domain.md`, `docs/agents/ticket-statuses.md`, plan [0001](../items/0001-plan-duck-skills-planning-refinement.md).
 
 ---
 
@@ -34,10 +36,10 @@ Sources: `.cursor/skills/*/SKILL.md`, `docs/agents/backlog.md`, `docs/agents/dom
 | | |
 |--|--|
 | **Reads** | `git remote`, `AGENTS.md` / `CLAUDE.md`, `GLOSSARY.md`, `GLOSSARY-MAP.md`, `docs/adr/`, `docs/agents/`, `.backlog/` |
-| **Writes** | `docs/agents/backlog.md`, `docs/agents/domain.md`, optional `docs/agents/ticket-labels.md`, `AGENTS.md` or `CLAUDE.md` (Agent skills block), `.backlog/features.md` when local backlog chosen; may create GitHub/GitLab labels |
+| **Writes** | `docs/agents/backlog.md`, `docs/agents/domain.md`, optional `docs/agents/ticket-statuses.md`, `AGENTS.md` or `CLAUDE.md` (Agent skills block), `.backlog/features.md` when local backlog chosen; may create GitHub/GitLab labels |
 | **Backlog** | Seeds tracker doc; creates empty feature index for local mode |
 | **Domain** | Seeds `domain.md`; does not write glossary/ADR content |
-| **Labels** | Optional copy of `ticket-labels.md` defaults |
+| **Labels** | Optional copy of `ticket-statuses.md` defaults |
 
 Source: `.cursor/skills/setup-duck-skills/SKILL.md`.
 
@@ -49,7 +51,7 @@ Source: `.cursor/skills/setup-duck-skills/SKILL.md`.
 | **Writes** | `.backlog/items/*` (plans, decisions, tasks, spike items), `.backlog/features.md`, plan **Decisions** / **Tasks** / **Spikes** tables; spike **findings** via spike-duck |
 | **Backlog** | Primary writer for plans, decisions, tasks, spikes, blocking, status |
 | **Domain** | Does not update glossary/ADR |
-| **Labels** | Mentions `epic-duck:plan` (remote-oriented); local items use `Status:` and optional `Label: ready` per `ticket-labels.md` |
+| **Status** | Local items use `Status:` per `ticket-statuses.md`; remote uses tags including `epic-duck:*` |
 
 Source: `.cursor/skills/epic-duck/SKILL.md`.
 
@@ -106,9 +108,9 @@ Source: `.cursor/skills/spike-duck/SKILL.md`.
 
 ### triage-duck (planned)
 
-Not present under `.cursor/skills/`. Plan and `ticket-labels.md` assume future triage over `needs-triage`, `needs-detail`, `ready`, `wontfix`. **setup-duck-skills** skips label setup unless user plans triage.
+Not present under `.cursor/skills/`. Plan and `ticket-statuses.md` assume future triage over `needs-triage`, `needs-detail`, `ready`, `wontfix`. **setup-duck-skills** skips label setup unless user plans triage.
 
-Sources: `0001` plan Notes, `docs/agents/ticket-labels.md`.
+Sources: `0001` plan Notes, `docs/agents/ticket-statuses.md`.
 
 ---
 

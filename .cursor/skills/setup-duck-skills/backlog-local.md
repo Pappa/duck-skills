@@ -9,7 +9,7 @@ Plans, decisions, tasks, and spikes live under `.backlog/`. Rationale: `docs/adr
 - **Plan list**: `.backlog/features.md` — markdown table with columns **Plan**, **Overview**, **Status**.
   - **Plan**: link to the feature file, e.g. `[0003-plan-auth.md](items/0003-plan-auth.md)`.
   - **Overview**: one sentence (same as **Destination** on the feature file).
-  - **Status**: workflow value from `docs/agents/ticket-labels.md`.
+  - **Status**: workflow value from `docs/agents/ticket-statuses.md`.
 
 ### Shared numbering
 
@@ -35,7 +35,7 @@ All backlog items share one counter under `.backlog/items/`. Next number = one g
 - **Plan**: starts `needs-detail`; becomes `in-progress` when the first child is created; `resolved` / `out-of-scope` only by explicit choice (see epic duck).
 - **Child**: set `in-progress` when a session starts; `ready` when requirements are complete enough to pick up; `resolved` when done (spike item when the result file exists).
 
-Full meanings: `docs/agents/ticket-labels.md`.
+Full meanings: `docs/agents/ticket-statuses.md`.
 
 ### Plan file body
 

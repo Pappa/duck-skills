@@ -1,8 +1,8 @@
 # Ticket status vocabulary
 
-Skills use a single workflow field **`Status:`** on every backlog item (plans, decisions, tasks, spike items). There is no separate `Label:` line.
+Every backlog item (plans, decisions, tasks, spike items) uses one workflow field: **`Status:`**.
 
-Remote trackers (GitHub, GitLab, Azure DevOps) map the same strings via tags, labels, or description `Status:` — see `setup-duck-skills/backlog-*.md`.
+On remote trackers (GitHub, GitLab, Azure DevOps), map the same strings via tags or a `Status:` line in the body — see `setup-duck-skills/backlog-*.md`.
 
 | Status | Meaning |
 |--------|---------|
@@ -14,6 +14,6 @@ Remote trackers (GitHub, GitLab, Azure DevOps) map the same strings via tags, la
 | `wontfix` | Closed with **no action** (workflow ended, rejected). |
 | `out-of-scope` | Consciously excluded from the plan destination. |
 
-When a skill says **“set ready”** or **“apply the ready status”**, set **`Status: ready`** after requirements pass **amigo-duck** where that gate applies (see `docs/agents/backlog.md`).
+When a skill says **“set ready”**, set **`Status: ready`** after requirements pass **amigo-duck** where that gate applies (see `docs/agents/backlog.md`).
 
 Edit this table only when the workflow model changes (record rationale in `docs/adr/`).

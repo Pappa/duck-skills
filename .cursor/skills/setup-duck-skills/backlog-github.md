@@ -24,7 +24,7 @@ Apply **amigo-duck** to the draft, then create a GitHub issue.
 
 ## Epic-duck operations
 
-Used by **epic-duck**. The **feature** (parent) is one issue labelled `epic-duck:plan`; **children** are sub-issues. Use the same **`Status:`** strings as local markdown (`docs/agents/ticket-labels.md`) — as labels and/or `Status:` in the body (match team practice).
+Used by **epic-duck**. The **feature** (parent) is one issue labelled `epic-duck:plan`; **children** are sub-issues. Use the same **`Status:`** strings as local markdown (`docs/agents/ticket-statuses.md`) — as labels and/or `Status:` in the body (match team practice).
 
 - **Plan**: issue labelled `epic-duck:plan` (Destination, Notes, Decisions, fog, Out of scope in body).
 - **Child**: sub-issue of the feature (or `Part of #<parent>` in body). Label `epic-duck:<type>` (`spike` | `decision` | `task`).

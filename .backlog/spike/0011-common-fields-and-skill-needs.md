@@ -38,7 +38,7 @@ Status: <needs-detail|in-progress|resolved|out-of-scope>
 Plan: [<NNNN>-plan-<slug>.md](<same-dir>)
 Overview: <one sentence>
 Type: decision | task          # decisions and tasks only; omit on spike items
-Label: ready                   # optional; only roles from ticket-labels.md
+Label: ready                   # optional; only roles from ticket-statuses.md
 Blocked by:                    # optional; comma-separated NNNN
 ```
 
@@ -78,7 +78,7 @@ Blocked by:                    # optional; comma-separated NNNN
 
 ### setup-duck-skills / triage-duck (future)
 
-- Seeds `backlog.md` + `ticket-labels.md`. Future triage reads `Status` + optional `Label:`; do not conflate `Status:` (workflow) with `needs-detail` label (triage role)—document in **0006**.
+- Seeds `backlog.md` + `ticket-statuses.md`. Future triage reads `Status` + optional `Label:`; do not conflate `Status:` (workflow) with `needs-detail` label (triage role)—document in **0006**.
 
 ---
 

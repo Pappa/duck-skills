@@ -45,7 +45,7 @@ Planning and refinement duck-skills in this repo produce concise, unambiguous ba
 | [0002-decision-ready-ticket-quality-bar.md](0002-decision-ready-ticket-quality-bar.md) | Define the quality bar for `ready` tickets and eval pass/fail. | resolved |
 | [0004-decision-planning-pipeline-choreography.md](0004-decision-planning-pipeline-choreography.md) | When to use epic-duck vs rubber-duck and how skills hand off. | resolved |
 | [0005-decision-ticket-shapes-and-fields.md](0005-decision-ticket-shapes-and-fields.md) | Align ticket shapes with `docs/agents/backlog.md` and skill output. | resolved |
-| [0006-decision-triage-duck-activation.md](0006-decision-triage-duck-activation.md) | Decide triage-duck role, labels, and activation model. | needs-detail |
+| [0006-decision-triage-duck-activation.md](0006-decision-triage-duck-activation.md) | Decide triage-duck role, status workflow, and activation model. | needs-detail |
 | [0008-decision-setup-duck-skills-verification.md](0008-decision-setup-duck-skills-verification.md) | Expected setup behavior and how evals assert it. | needs-detail |
 | [0012-decision-amigo-duck-eval-golden-set.md](0012-decision-amigo-duck-eval-golden-set.md) | Define a golden set to validate amigo-duck verdicts before eval automation trusts it. | needs-detail |
 | [0013-decision-skill-usage-eval-scenarios.md](0013-decision-skill-usage-eval-scenarios.md) | Define eval scenarios that detect agents misusing or misunderstanding skill and doc text. | needs-detail |

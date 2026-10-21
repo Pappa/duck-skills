@@ -122,7 +122,7 @@ Findings in `.backlog/spike/<NNNN>-<slug>.md`. Delegate investigation to the `sp
 
 ## Status vocabulary
 
-Single field **`Status:`** on all items — `docs/agents/ticket-labels.md` (`needs-triage`, `needs-detail`, `ready`, `in-progress`, `resolved`, `wontfix`, `out-of-scope`). Align remote trackers with `docs/agents/backlog.md`.
+Single field **`Status:`** on all items — `docs/agents/ticket-statuses.md` (`needs-triage`, `needs-detail`, `ready`, `in-progress`, `resolved`, `wontfix`, `out-of-scope`). Align remote trackers with `docs/agents/backlog.md`.
 
 ## Ticket types
 

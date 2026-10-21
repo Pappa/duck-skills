@@ -14,7 +14,7 @@ What exact shapes and required fields must epic-duck decisions, tasks, spike ite
 
 - **`docs/adr/0001-backlog-ticket-shapes.md`** — rationale and rules.
 - **`docs/agents/backlog.md`** — agent-facing templates (SSOT for day-to-day work).
-- **`docs/agents/ticket-labels.md`** — unified **`Status:`** vocabulary (no separate `Label:` field).
+- **`docs/agents/ticket-statuses.md`** — **`Status:`** vocabulary.
 
 ### `Type:` namespace (local + remote)
 
@@ -31,7 +31,7 @@ Plans omit `Plan:` / `Overview:`; **Destination** is the index one-liner.
 
 Future **implementation** backlog items use a different `Type:` prefix (later feature). **`epic-duck:task`** is planning-only.
 
-### Unified `Status:` (replaces `Label:`)
+### Unified `Status:`
 
 `needs-triage` · `needs-detail` · `ready` · `in-progress` · `resolved` · `wontfix` · `out-of-scope`
 
@@ -39,7 +39,7 @@ Future **implementation** backlog items use a different `Type:` prefix (later fe
 - **`needs-triage`** — maintainer must classify; state not decidable without user input.
 - **`wontfix`** — closed, no action (parallel to **`resolved`** with outcome).
 
-Deliverable **`epic-duck:task`**: set **`Status: ready`** only after **amigo-duck Verdict: Approve** ([0002](0002-decision-ready-ticket-quality-bar.md), interpreted with **`Status: ready`** instead of former `Label: ready`).
+Deliverable **`epic-duck:task`**: set **`Status: ready`** only after **amigo-duck Verdict: Approve** ([0002](0002-decision-ready-ticket-quality-bar.md)).
 
 ### Body profiles
 

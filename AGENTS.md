@@ -18,7 +18,7 @@ Plans, decisions, tasks, and spikes under `.backlog/`. See `docs/agents/backlog.
 
 ### Ticket status
 
-Workflow **`Status:`** values on backlog items. See `docs/agents/ticket-labels.md`.
+Workflow **`Status:`** values on backlog items. See `docs/agents/ticket-statuses.md`.
 
 ### Domain docs
 

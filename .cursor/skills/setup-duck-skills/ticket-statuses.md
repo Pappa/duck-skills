@@ -1,14 +1,19 @@
-# Ticket labels
+# Ticket status vocabulary
 
-The skills use one label when publishing agent-ready work: `ready`. A full triage skill (if you add one later) uses all five roles.
+Every backlog item (plans, decisions, tasks, spike items) uses one workflow field: **`Status:`**.
 
-| Role | Label in this repo | Meaning |
-|------|-------------------|---------|
-| `needs-triage` | `needs-triage` | Maintainer needs to evaluate |
-| `needs-detail` | `needs-detail` | Waiting on reporter |
-| `ready` | `ready` | Requirements specified in enough detail for an AFK agent or a human to complete the task. |
-| `wontfix` | `wontfix` | Will not be actioned |
+On remote trackers (GitHub, GitLab, Azure DevOps), map the same strings via tags or a `Status:` line in the body — see `setup-duck-skills/backlog-*.md`.
 
-When a skill says "apply the ready label", use the string from the **Label in this repo** column.
+| Status | Meaning |
+|--------|---------|
+| `needs-triage` | Maintainer must evaluate or route; workflow state not yet decidable without human input. |
+| `needs-detail` | Waiting on clarity (reporter, fog, incomplete requirements). |
+| `ready` | Requirements complete and well-defined; OK for a human or AFK agent to **start** work on this item. |
+| `in-progress` | A session is actively working this item. |
+| `resolved` | Done; outcome recorded. |
+| `wontfix` | Closed with **no action**. |
+| `out-of-scope` | Consciously excluded from the plan destination. |
 
-Edit the second column to match your tracker's vocabulary.
+When a skill says **“set ready”**, set **`Status: ready`** after requirements pass **amigo-duck** where that gate applies.
+
+Edit this table only when the workflow model changes (record rationale in `docs/adr/`).
