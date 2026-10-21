@@ -19,7 +19,8 @@ Planning and refinement duck-skills in this repo produce concise, unambiguous ba
 ## Decisions so far
 
 - [Ready ticket quality bar](0002-ready-ticket-quality-bar.md): One ticket family with `planning` (and possibly other) exceptions; amigo-pato gate for `ready`; scored evals (Ticket quality, Planning resolution metric, Skill usage, Usability) with per-skill pass thresholds; v1 no accepted-gaps workflow; field canon via spike 0011 + 0005 + ADR.
-- [Eval harness scope](0007-spike-eval-harness-design.md): Single spike **0007** designs one harness with meta-eval (amigo-pato + gold from **0012**) and skill-path layers; golden cases and skill-usage scenarios stay in **0012** / **0013**; **0007** blocked by **0003**, **0012**, **0013**.
+- [Eval harness scope](0007-spike-eval-harness-design.md): Single spike **0007** designs one harness with meta-eval (amigo-pato + gold from **0012**) and skill-path layers; golden cases and skill-usage scenarios stay in **0012** / **0013**; **0007** blocked by **0012**, **0013**.
+- [Skill inventory](0003-skill-inventory.md): Eight in-repo skills mapped; **triage-duck** missing; epic-duck vs `backlog.md` spike/`Type` contradiction flagged for **0005**.
 
 ## Not yet specified
 
@@ -50,6 +51,6 @@ Planning and refinement duck-skills in this repo produce concise, unambiguous ba
 
 | Spike | Overview | Status |
 |-------|----------|--------|
-| [0003-spike-skill-inventory.md](0003-spike-skill-inventory.md) | Map in-scope skills, dependencies, and artefacts they touch. | needs-detail |
+| [0003-spike-skill-inventory.md](0003-spike-skill-inventory.md) | Map in-scope skills, dependencies, and artefacts they touch. | resolved |
 | [0007-spike-eval-harness-design.md](0007-spike-eval-harness-design.md) | Design one eval harness (meta-eval + skill-path layers), sandbox layout, and token budget. | needs-detail |
 | [0011-spike-common-fields-and-skill-needs.md](0011-spike-common-fields-and-skill-needs.md) | Recommend common ticket fields vs per-type exceptions from skill needs and upstream references. | needs-detail |

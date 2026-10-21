@@ -3,7 +3,6 @@ Plan: [0001-plan-duck-skills-planning-refinement.md](0001-plan-duck-skills-plann
 Overview: When to use epic-duck vs rubber-duck and how skills hand off.
 Type: planning
 Blocked by:
-0003
 
 ## Question
 

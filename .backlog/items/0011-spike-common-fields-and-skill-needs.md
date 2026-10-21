@@ -3,7 +3,6 @@ Plan: [0001-plan-duck-skills-planning-refinement.md](0001-plan-duck-skills-plann
 Overview: Recommend common ticket fields vs per-type exceptions from skill needs and upstream references.
 Result: [0011-common-fields-and-skill-needs.md](../spike/0011-common-fields-and-skill-needs.md)
 Blocked by:
-0003
 
 ## Question
 

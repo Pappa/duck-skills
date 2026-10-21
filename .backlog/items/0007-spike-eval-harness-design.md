@@ -3,7 +3,7 @@ Plan: [0001-plan-duck-skills-planning-refinement.md](0001-plan-duck-skills-plann
 Overview: Design one eval harness (meta-eval + skill-path layers), sandbox layout, and token budget.
 Result: [0007-eval-harness-design.md](../spike/0007-eval-harness-design.md)
 Blocked by:
-0003, 0012, 0013
+0012, 0013
 
 ## Question
 
