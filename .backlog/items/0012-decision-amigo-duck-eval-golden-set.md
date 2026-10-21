@@ -1,5 +1,5 @@
 Type: epic-duck:decision
-Status: needs-detail
+Status: out-of-scope
 Plan: [0001-plan-duck-skills-planning-refinement.md](0001-plan-duck-skills-planning-refinement.md)
 Overview: Define a golden set to validate amigo-duck verdicts before eval automation trusts it.
 Blocked by:
@@ -13,3 +13,5 @@ Resolution must cover: number of cases, ticket types represented (`ready`, `deci
 ## Comments
 
 Spike [0007-spike-eval-harness-design.md](0007-spike-eval-harness-design.md) is blocked on this decision resolving (meta-eval layer consumes the golden set).
+
+Temporarily **out of scope** on plan **0001** (eval token budget); may be reprioritised later.

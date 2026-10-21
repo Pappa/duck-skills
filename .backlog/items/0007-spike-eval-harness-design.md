@@ -1,9 +1,9 @@
 Type: epic-duck:spike
-Status: needs-detail
+Status: out-of-scope
 Plan: [0001-plan-duck-skills-planning-refinement.md](0001-plan-duck-skills-planning-refinement.md)
 Overview: Design one eval harness (meta-eval + skill-path layers), sandbox layout, and token budget.
 Result: [0007-eval-harness-design.md](../spike/0007-eval-harness-design.md)
-Blocked by: 0012, 0013
+Blocked by:
 
 ## Question
 
@@ -19,3 +19,5 @@ Resolution must propose: directory layout; run log + artefact schema (`score`, `
 ## Comments
 
 Recorded decision: no second spike for amigo-duck-only harness; case lists and skill-usage traps remain decisions **0012** / **0013**.
+
+Temporarily **out of scope** on plan **0001** (eval token budget); may be reprioritised later.
