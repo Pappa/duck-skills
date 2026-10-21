@@ -3,7 +3,6 @@ Plan: [0001-plan-duck-skills-planning-refinement.md](0001-plan-duck-skills-plann
 Overview: Decide triage-duck role, labels, and activation model.
 Type: planning
 Blocked by:
-0002
 
 ## Question
 

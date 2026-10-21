@@ -3,7 +3,7 @@ Plan: [0001-plan-duck-skills-planning-refinement.md](0001-plan-duck-skills-plann
 Overview: Align ticket shapes with `docs/agents/backlog.md` and skill output.
 Type: planning
 Blocked by:
-0002
+0011
 
 ## Question
 
