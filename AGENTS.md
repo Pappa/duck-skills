@@ -16,9 +16,9 @@ make an immediate correction to the skill to make things easier for you to compl
 
 Plans, decisions, tasks, and spikes under `.backlog/`. See `docs/agents/backlog.md`.
 
-### Ticket labels
+### Ticket status
 
-Role strings for triage and `ready` work. See `docs/agents/ticket-labels.md`.
+Workflow **`Status:`** values on backlog items. See `docs/agents/ticket-labels.md`.
 
 ### Domain docs
 

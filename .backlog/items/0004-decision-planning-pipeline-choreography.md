@@ -1,7 +1,7 @@
+Type: epic-duck:decision
 Status: resolved
 Plan: [0001-plan-duck-skills-planning-refinement.md](0001-plan-duck-skills-planning-refinement.md)
 Overview: When to use epic-duck vs rubber-duck and how skills hand off.
-Type: decision
 Blocked by:
 
 ## Question
@@ -16,7 +16,7 @@ Resolution must be documentable in skill text and exercisable in eval scenarios.
 
 | User situation | Skill | What it may change |
 |----------------|--------|-------------------|
-| Multi-session work, unclear route, or **large feature** | **epic-duck** | **Feature plan** and **any** child artefacts: decisions (`Type: decision`), tasks (`Type: task`, optional `Label: ready`), spike items, blocking, plan sections |
+| Multi-session work, unclear route, or **large feature** | **epic-duck** | **Feature plan** and **any** child artefacts: `Type: epic-duck:decision` / `task` / `spike`, **`Status: ready`** for pick-up-ready work, blocking, plan sections |
 | Single-session work at **one ticket / story scale** | **rubber-duck** | **One or more decisions, tasks, and/or spike items** on an **existing** feature only; glossary / ADR as needed. **No** new features or plans |
 | Eval / real repo without tracker | **setup-duck-skills** | Run once (eval harness runs this in test setup) |
 

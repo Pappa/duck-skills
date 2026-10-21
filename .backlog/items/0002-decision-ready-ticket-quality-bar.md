@@ -1,7 +1,7 @@
+Type: epic-duck:decision
 Status: resolved
 Plan: [0001-plan-duck-skills-planning-refinement.md](0001-plan-duck-skills-planning-refinement.md)
 Overview: Define the quality bar for `ready` tickets and eval pass/fail.
-Type: decision
 Blocked by:
 
 ## Question
@@ -68,3 +68,5 @@ Each eval run produces:
 - Implementation with **0007** / **0009**.
 
 ## Comments
+
+Field canon: [0005](0005-decision-ticket-shapes-and-fields.md) replaces **`Label: ready`** with **`Status: ready`** and documents `Type: epic-duck:*`. Quality gates in **Answer** above still apply with that wording.

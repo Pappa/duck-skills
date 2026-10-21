@@ -2,6 +2,8 @@ Spike: [0011-spike-common-fields-and-skill-needs.md](../items/0011-spike-common-
 
 # Common fields and ticket shapes
 
+> **Superseded** for field canon by decision [0005](../items/0005-decision-ticket-shapes-and-fields.md) and `docs/adr/0001-backlog-ticket-shapes.md`. Kept as spike research record.
+
 ## TLDR
 
 Use a **shared common-fields header** on every `.backlog/items/*` file (`Status`, `Overview` where applicable, `Plan:` backlink, `Blocked by:`), then **body profiles** by kind. **`docs/agents/backlog.md` is the single source of truth** for local markdown. **`Type: decision`** is the main body exception (`## Question` / `## Answer`). **`Label: ready`** on **`Type: task`** is the second exception (`## Acceptance criteria`, full amigo-duck). **Spike items** add `Result:`; **spike findings** are free-form research docs with `Spike:` backlink + **TLDR**. **Plans** use `Destination` instead of `Overview` and omit `Plan:`. Record the canon in an ADR via **0005**; align **amigo-duck** to local kinds (not `epic-duck:spike` on files).

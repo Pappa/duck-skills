@@ -27,6 +27,7 @@ Use the `amigo-duck` skill to review the draft ticket, and take their suggestion
 ### Plan body
 
 ```markdown
+Type: epic-duck:plan
 Status: needs-detail
 
 ## Destination
@@ -73,10 +74,10 @@ Open children are listed in the tables — keep **Overview** and **Status** in s
 ### Decision body
 
 ```markdown
+Type: epic-duck:decision
 Status: needs-detail
 Plan: [0003-plan-auth.md](0003-plan-auth.md)
 Overview: One sentence.
-Type: decision
 Blocked by:
 
 ## Question
@@ -84,15 +85,17 @@ Blocked by:
 The decision this ticket resolves.
 ```
 
-`Type:` is always `decision` on decision files.
+Set **`Status: ready`** when the question is sharp enough to resolve. `Type:` is always `epic-duck:decision` on decision files.
 
 ### Task body
 
+Unblocker:
+
 ```markdown
+Type: epic-duck:task
 Status: needs-detail
 Plan: [0003-plan-auth.md](0003-plan-auth.md)
 Overview: One sentence.
-Type: task
 Blocked by:
 
 ## Question
@@ -100,27 +103,46 @@ Blocked by:
 What must be done before a related decision can proceed (when used as an unblocker).
 ```
 
-Optional `Label: ready` and `## Acceptance criteria` for agent-ready deliverables — see `docs/agents/backlog.md`.
+Deliverable (`Status: ready` after **amigo-duck** **Approve**): **Problem Statement**, **Description**, optional **Notes** / **Out of Scope**, **Acceptance Criteria** — see `docs/agents/backlog.md`.
 
 ### Spike item
 
-Separate file `.backlog/items/<NNNN>-spike-<slug>.md`; findings in `.backlog/spike/<NNNN>-<slug>.md`. Delegate investigation to the `spike-duck` skill.
+```markdown
+Type: epic-duck:spike
+Status: needs-detail
+Plan: [0003-plan-auth.md](0003-plan-auth.md)
+Overview: One sentence.
+Result: [0005-oauth.md](../spike/0005-oauth.md)
+Blocked by:
+
+## Question
+```
+
+Findings in `.backlog/spike/<NNNN>-<slug>.md`. Delegate investigation to the `spike-duck` skill.
 
 ## Status vocabulary
 
-Plans use: `needs-detail`, `in-progress`, `resolved`, `out-of-scope`. Align remote tracker state/tags with `docs/agents/backlog.md` where configured.
-
-Decisions, tasks, and spikes use: `needs-detail`, `in-progress`, `resolved`, `out-of-scope`. Align remote tracker state/tags with `docs/agents/backlog.md` where configured.
+Single field **`Status:`** on all items — `docs/agents/ticket-labels.md` (`needs-triage`, `needs-detail`, `ready`, `in-progress`, `resolved`, `wontfix`, `out-of-scope`). Align remote trackers with `docs/agents/backlog.md`.
 
 ## Ticket types
 
-- **decision** (HITL): live interview — `question-duck` skill; agent never answers for the human.
-- **task** (HITL or AFK): work that unblocks the plan or delivers a concrete artefact; may use `Label: ready` for agent execution.
-- **spike** (AFK): use a **spike item** + `spike-duck` skill (separate item file, no `Type:` line).
+- **epic-duck:decision** (HITL): live interview — `question-duck` skill; agent never answers for the human.
+- **epic-duck:task** (HITL or AFK): unblocker (`## Question`) or deliverable (`Status: ready` + acceptance body).
+- **epic-duck:spike** (AFK): spike item + `spike-duck` skill.
 
 For all ticket types, use the `amigo-duck` skill to review and improve the ticket requirements.
 
-Set child `Status: in-progress` before work. **Blocking**: `Blocked by: NNNN, NNNN` (local) or native relations (remote). **Frontier** = `needs-detail`, unblocked; lowest number first.
+Set child `Status: in-progress` when **this session** starts work on that child (after any confirmation below). **Blocking**: `Blocked by: NNNN, NNNN` (local) or native relations (remote). **Frontier** = `needs-triage` or `needs-detail`, unblocked; lowest number first. **Session pool** = unblocked **`ready`** children.
+
+### Status and concurrent sessions
+
+- **`ready`** — requirements are complete; safe for epic-duck to offer for a new work session (with the user).
+- **`in-progress`** — a session has claimed the item (this chat or another clone/agent). Assume another actor may be editing until the user says otherwise.
+- **`resolved`** / **`wontfix`** / **`out-of-scope`** — closed; do not reopen without user confirmation.
+
+Before **any write** to a child whose `Status:` is **`in-progress`**, ask the user to confirm take-over or continuation — **including when they named that child** (they may have picked the wrong ticket). If they decline, pick a different child or wait.
+
+When **this session** begins work on a child that is `ready`, `needs-detail`, or `needs-triage`, set **`Status: in-progress`** (and sync the plan table) before substantive edits.
 
 When any item becomes `resolved` or `out-of-scope`, remove its number from every `Blocked by:` (local) or drop blocking links (remote). Clearing the last blocker does not change the blocked item's status.
 
@@ -152,7 +174,11 @@ Do not re-check mid-session. Other clones are invisible.
 
 ### Pick a child
 
-User-named decision, task, or spike → that item. Else lowest-numbered `in-progress` child for this feature. Else set frontier child to `in-progress`. If no children yet, continue **charting**.
+1. **User-named** decision, task, or spike → open that item. If its `Status:` is **`in-progress`**, **explicitly confirm** with the user before edits (wrong-ticket guard). Read-only peek does not require take-over confirmation.
+2. **No name** — do **not** auto-select. Among unblocked children with **`Status: ready`**, list the **lowest five** by `NNNN` (title/overview + status). If more than five exist, say how many are not shown and ask whether they want the **full list** before choosing. Wait for the user to pick one.
+3. If no **`ready`** children → list **`in-progress`** children (same five + overflow rule) and **ask** before any take-over; do not auto-continue.
+4. If neither **`ready`** nor **`in-progress`** candidates → list up to **five** **frontier** children (`needs-triage` or `needs-detail`, unblocked); same overflow rule; user picks. Set **`Status: in-progress`** when this session starts work on the chosen item.
+5. If no children yet, continue **charting**.
 
 ## Chart the feature (invocation)
 
@@ -171,7 +197,7 @@ Stop after charting; do not resolve children in this session except parallel spi
 User passes a feature (or child); optional named decision, task, or spike.
 
 1. Load feature body (not every child unless needed).
-2. Git check (local) and pick child (above). Set `in-progress` if not already.
+2. Git check (local) and pick child (above). Set `in-progress` when this session starts work (after confirmation if required).
 3. Resolve per `Type` or spike workflow. Use **Notes** for extra skills.
 4. **Resolve decision**: `## Answer`, `Status: resolved`, append **Decisions so far**, blocker sweep, refresh tables.
 5. Add new children; graduate fog; rule out-of-scope items.

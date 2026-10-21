@@ -1,9 +1,8 @@
+Type: epic-duck:task
 Status: needs-detail
 Plan: [0001-plan-duck-skills-planning-refinement.md](0001-plan-duck-skills-planning-refinement.md)
 Overview: Build `evals/sandbox_project` and the lightweight eval harness.
-Type: task
-Blocked by:
-0007, 0005, 0008
+Blocked by: 0007, 0008
 
 ## Question
 

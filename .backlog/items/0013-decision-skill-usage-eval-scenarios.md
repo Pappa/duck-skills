@@ -1,7 +1,7 @@
+Type: epic-duck:decision
 Status: needs-detail
 Plan: [0001-plan-duck-skills-planning-refinement.md](0001-plan-duck-skills-planning-refinement.md)
 Overview: Define eval scenarios that detect agents misusing or misunderstanding skill and doc text.
-Type: decision
 Blocked by:
 
 ## Question

@@ -1,3 +1,4 @@
+Type: epic-duck:spike
 Status: resolved
 Plan: [0001-plan-duck-skills-planning-refinement.md](0001-plan-duck-skills-planning-refinement.md)
 Overview: Recommend common ticket fields vs per-type exceptions from skill needs and upstream references.

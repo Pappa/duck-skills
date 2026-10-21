@@ -1,7 +1,7 @@
+Type: epic-duck:decision
 Status: needs-detail
 Plan: [0001-plan-duck-skills-planning-refinement.md](0001-plan-duck-skills-planning-refinement.md)
 Overview: Define a golden set to validate amigo-duck verdicts before eval automation trusts it.
-Type: decision
 Blocked by:
 
 ## Question

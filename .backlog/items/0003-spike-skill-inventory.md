@@ -1,3 +1,4 @@
+Type: epic-duck:spike
 Status: resolved
 Plan: [0001-plan-duck-skills-planning-refinement.md](0001-plan-duck-skills-planning-refinement.md)
 Overview: Map in-scope skills, dependencies, and artefacts they touch.

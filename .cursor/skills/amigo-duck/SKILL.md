@@ -58,7 +58,11 @@ When the item is a deliverable backlog ticket (not an epic-duck **decision** tic
 | **Small** | Completable in one iteration; split if not. |
 | **Testable** | Acceptance criteria prove done. |
 
-Epic-duck **`Type: decision`** tickets (remote: `epic-duck:decision`, `epic-duck:spike`, etc.): require clear **Question** and resolution criteria; INVEST applies lightly (valuable + testable resolution), not full story sizing.
+**`Type: epic-duck:decision`** tickets: require clear **Question** and resolution criteria; INVEST applies lightly (valuable + testable resolution), not full story sizing.
+
+**`Type: epic-duck:task`** with **`Status: ready`**: full INVEST on **Acceptance Criteria**; require **Problem Statement** and **Description**.
+
+**`Type: epic-duck:spike`** items (pre-publish): clear **Question**; INVEST light.
 
 ## Process
 
@@ -70,7 +74,7 @@ Epic-duck **`Type: decision`** tickets (remote: `epic-duck:decision`, `epic-duck
 ## Output format
 
 ```markdown
-## 3 amigos session
+## amigo-duck review
 
 **Verdict:** Approve | Revise
 

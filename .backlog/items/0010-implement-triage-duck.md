@@ -1,9 +1,8 @@
+Type: epic-duck:task
 Status: needs-detail
 Plan: [0001-plan-duck-skills-planning-refinement.md](0001-plan-duck-skills-planning-refinement.md)
 Overview: Add `triage-duck` skill per decided design.
-Type: task
-Blocked by:
-0006, 0005
+Blocked by: 0006
 
 ## Question
 

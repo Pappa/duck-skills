@@ -1,3 +1,4 @@
+Type: epic-duck:plan
 Status: in-progress
 
 ## Destination
@@ -18,10 +19,11 @@ Planning and refinement duck-skills in this repo produce concise, unambiguous ba
 
 ## Decisions so far
 
-- [Ready ticket quality bar](0002-decision-ready-ticket-quality-bar.md): One ticket family with `Type: decision` (and possibly other) exceptions; amigo-duck gate for `ready`; scored evals (Ticket quality, Decision resolution metric, Skill usage, Usability) with per-skill pass thresholds; v1 no accepted-gaps workflow; field canon via spike 0011 + 0005 + ADR.
+- [Ready ticket quality bar](0002-decision-ready-ticket-quality-bar.md): One ticket family; amigo-duck gate for **`Status: ready`**; scored evals (Ticket quality, Decision resolution metric, Skill usage, Usability) with per-skill pass thresholds; v1 no accepted-gaps workflow.
 - [Eval harness scope](0007-spike-eval-harness-design.md): Single spike **0007** designs one harness with meta-eval (amigo-duck + gold from **0012**) and skill-path layers; golden cases and skill-usage scenarios stay in **0012** / **0013**; **0007** blocked by **0012**, **0013**.
 - [Skill inventory](0003-skill-inventory.md): Eight in-repo skills mapped; **triage-duck** missing; epic-duck vs `backlog.md` spike/`Type` contradiction flagged for **0005**.
-- [Common fields](0011-common-fields-and-skill-needs.md): Shared header on items; body profiles for plan, decision, task, ready (`Label: ready` + AC), spike item/findings; terminology aligned in **0005** + ADR.
+- [Ticket shapes and fields](0005-decision-ticket-shapes-and-fields.md): `Type: epic-duck:*` (first line), unified **`Status:`** (incl. `ready`), deliverable task body sections, spike findings TLDR; ADR `docs/adr/0001-backlog-ticket-shapes.md`.
+- [Common fields](0011-common-fields-and-skill-needs.md): Spike input to **0005**; superseded for headers by ADR 0001.
 - [Planning pipeline choreography](0004-decision-planning-pipeline-choreography.md): Epic = plans + all ticket types; rubber = single-session decisions/tasks/spikes on confirmed feature; amigo-duck before publish; missing backlog → setup-duck-skills; v1 spikes via epic-duck; question/architect only via epic or rubber.
 
 ## Not yet specified
@@ -42,7 +44,7 @@ Planning and refinement duck-skills in this repo produce concise, unambiguous ba
 |----------|----------|--------|
 | [0002-decision-ready-ticket-quality-bar.md](0002-decision-ready-ticket-quality-bar.md) | Define the quality bar for `ready` tickets and eval pass/fail. | resolved |
 | [0004-decision-planning-pipeline-choreography.md](0004-decision-planning-pipeline-choreography.md) | When to use epic-duck vs rubber-duck and how skills hand off. | resolved |
-| [0005-decision-ticket-shapes-and-fields.md](0005-decision-ticket-shapes-and-fields.md) | Align ticket shapes with `docs/agents/backlog.md` and skill output. | needs-detail |
+| [0005-decision-ticket-shapes-and-fields.md](0005-decision-ticket-shapes-and-fields.md) | Align ticket shapes with `docs/agents/backlog.md` and skill output. | resolved |
 | [0006-decision-triage-duck-activation.md](0006-decision-triage-duck-activation.md) | Decide triage-duck role, labels, and activation model. | needs-detail |
 | [0008-decision-setup-duck-skills-verification.md](0008-decision-setup-duck-skills-verification.md) | Expected setup behavior and how evals assert it. | needs-detail |
 | [0012-decision-amigo-duck-eval-golden-set.md](0012-decision-amigo-duck-eval-golden-set.md) | Define a golden set to validate amigo-duck verdicts before eval automation trusts it. | needs-detail |
