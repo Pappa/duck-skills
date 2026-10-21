@@ -8,7 +8,7 @@ Planning and refinement duck-skills in this repo produce concise, unambiguous ba
 
 **In-scope skills (only):** `setup-duck-skills`, `epic-duck`, `rubber-duck`, `question-duck`, `architect-duck`, `amigo-pato`, `spike-duck`, and new `triage-duck`. Development, implementation, and testing skills are a separate future feature.
 
-**Composition (not duplication):** `rubber-duck` orchestrates `question-duck` + `architect-duck` in one session. `epic-duck` uses `question-duck`, `amigo-pato`, and `spike-duck` per its workflow. No merge/dedupe of those skills unless evals show systematic agent confusion.
+**Composition (not duplication):** `rubber-duck` and `epic-duck` both use `question-duck` and `architect-duck`; epic-duck also uses `amigo-pato` and `spike-duck` for plan/backlog work. `question-duck` / `architect-duck` are not standalone user entry points in v1. See [0004-planning-pipeline-choreography.md](0004-planning-pipeline-choreography.md). No merge/dedupe unless evals show systematic agent confusion.
 
 **Done signal:** An agent (or human) runs documented eval scenarios against `evals/sandbox_project` (or copy); run **scores** meet per-skill thresholds; produced tickets reach **amigo-pato Approve** where required (after amigo-pato meta-eval exists); **Usability** is logged in `evals/runs/` artefacts. Token use stays lightweight.
 
@@ -22,10 +22,12 @@ Planning and refinement duck-skills in this repo produce concise, unambiguous ba
 - [Eval harness scope](0007-spike-eval-harness-design.md): Single spike **0007** designs one harness with meta-eval (amigo-pato + gold from **0012**) and skill-path layers; golden cases and skill-usage scenarios stay in **0012** / **0013**; **0007** blocked by **0012**, **0013**.
 - [Skill inventory](0003-skill-inventory.md): Eight in-repo skills mapped; **triage-duck** missing; epic-duck vs `backlog.md` spike/`Type` contradiction flagged for **0005**.
 - [Common fields](0011-common-fields-and-skill-needs.md): Shared header on items; body profiles for plan, planning, task, ready (`Label: ready` + AC), spike item/findings; fix epic-duck/amigo-pato in **0005** + ADR.
+- [Planning pipeline choreography](0004-planning-pipeline-choreography.md): Epic = plans + all ticket types; rubber = single-session issues/spikes on confirmed feature; amigo-pato before publish; missing backlog → setup-duck-skills; v1 spikes via epic-duck; question/architect only via epic or rubber.
 
 ## Not yet specified
 
-- **Triage-duck activation:** user-invoked skill only vs also callable by other skills for auto-triage (see [0006-triage-duck-activation.md](0006-triage-duck-activation.md)).
+- **Triage-duck:** Deferred until evals and core skills are in good shape (see [0006-triage-duck-activation.md](0006-triage-duck-activation.md), [0010-implement-triage-duck.md](0010-implement-triage-duck.md)).
+- **Spike entry points (future):** v1 spikes opened through **epic-duck**; possible later: **rubber-duck** or direct **spike-duck** without forbidding other paths yet.
 - **Accepted gaps (future):** Quality findings (from amigo-pato or eval metrics) the **operator** explicitly tolerates for a run instead of requiring a fix before publish. v1: not used — sub-Approve lowers **Ticket quality**; notes in **Usability**. Later: optional acceptance with a **score penalty**; rename term TBD.
 
 ## Out of scope
@@ -39,7 +41,7 @@ Planning and refinement duck-skills in this repo produce concise, unambiguous ba
 | Issue | Overview | Status |
 |-------|----------|--------|
 | [0002-ready-ticket-quality-bar.md](0002-ready-ticket-quality-bar.md) | Define the quality bar for `ready` tickets and eval pass/fail. | resolved |
-| [0004-planning-pipeline-choreography.md](0004-planning-pipeline-choreography.md) | When to use epic-duck vs rubber-duck and how skills hand off. | needs-detail |
+| [0004-planning-pipeline-choreography.md](0004-planning-pipeline-choreography.md) | When to use epic-duck vs rubber-duck and how skills hand off. | resolved |
 | [0005-ticket-shapes-and-fields.md](0005-ticket-shapes-and-fields.md) | Align ticket shapes with `docs/agents/backlog.md` and skill output. | needs-detail |
 | [0006-triage-duck-activation.md](0006-triage-duck-activation.md) | Decide triage-duck role, labels, and activation model. | needs-detail |
 | [0008-setup-duck-skills-verification.md](0008-setup-duck-skills-verification.md) | Expected setup behavior and how evals assert it. | needs-detail |
