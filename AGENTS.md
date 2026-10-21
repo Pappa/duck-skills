@@ -2,7 +2,7 @@
 
 ### Backlog
 
-Plans, issues, and spikes under `.backlog/`. See `docs/agents/backlog.md`.
+Plans, decisions, tasks, and spikes under `.backlog/`. See `docs/agents/backlog.md`.
 
 ### Ticket labels
 

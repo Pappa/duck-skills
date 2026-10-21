@@ -1,7 +1,7 @@
 Status: needs-detail
 Plan: [0001-plan-duck-skills-planning-refinement.md](0001-plan-duck-skills-planning-refinement.md)
 Overview: Decide triage-duck role, labels, and activation model.
-Type: planning
+Type: decision
 Blocked by:
 
 ## Question

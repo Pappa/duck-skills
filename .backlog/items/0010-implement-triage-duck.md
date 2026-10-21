@@ -7,6 +7,6 @@ Blocked by:
 
 ## Question
 
-Implement `.cursor/skills/triage-duck/` and update `AGENTS.md` / related docs per the answer on [0006-triage-duck-activation.md](0006-triage-duck-activation.md).
+Implement `.cursor/skills/triage-duck/` and update `AGENTS.md` / related docs per the answer on [0006-decision-triage-duck-activation.md](0006-decision-triage-duck-activation.md).
 
 ## Comments

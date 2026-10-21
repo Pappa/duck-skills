@@ -24,7 +24,7 @@ Apply **amigo-duck** to the draft, then create a GitLab issue.
 Used by **epic-duck**. **Plan** parent issue labelled `epic-duck:plan`; children are issues. Status vocabulary: `needs-detail`, `in-progress`, `resolved`, `out-of-scope` (labels or description).
 
 - **Plan**: issue labelled `epic-duck:plan`.
-- **Child**: `Part of #<feature>` at top of description; label `epic-duck:<type>` (`spike` | `planning` | `task`).
+- **Child**: `Part of #<feature>` at top of description; label `epic-duck:<type>` (`spike` | `decision` | `task`).
 - **Blocking**: `/blocked_by #<n>` quick action as a note, or `Blocked by:` line when native blocking unavailable.
 - **Frontier**: children `needs-detail` / open, unblocked; lowest id first.
 - **Claim**: `glab issue update <n> --assignee @me` for the session.

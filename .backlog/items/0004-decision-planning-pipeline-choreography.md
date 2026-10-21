@@ -1,7 +1,7 @@
 Status: resolved
 Plan: [0001-plan-duck-skills-planning-refinement.md](0001-plan-duck-skills-planning-refinement.md)
 Overview: When to use epic-duck vs rubber-duck and how skills hand off.
-Type: planning
+Type: decision
 Blocked by:
 
 ## Question
@@ -16,8 +16,8 @@ Resolution must be documentable in skill text and exercisable in eval scenarios.
 
 | User situation | Skill | What it may change |
 |----------------|--------|-------------------|
-| Multi-session work, unclear route, or **large feature** | **epic-duck** | **Feature plan** and **any** child artefacts: issues (`Type: planning` \| `task`, optional `Label: ready`), spike items, blocking, plan sections |
-| Single-session work at **one ticket / story scale** | **rubber-duck** | **One or more issues and/or spike items** on an **existing** feature only; glossary / ADR as needed. **No** new features or plans |
+| Multi-session work, unclear route, or **large feature** | **epic-duck** | **Feature plan** and **any** child artefacts: decisions (`Type: decision`), tasks (`Type: task`, optional `Label: ready`), spike items, blocking, plan sections |
+| Single-session work at **one ticket / story scale** | **rubber-duck** | **One or more decisions, tasks, and/or spike items** on an **existing** feature only; glossary / ADR as needed. **No** new features or plans |
 | Eval / real repo without tracker | **setup-duck-skills** | Run once (eval harness runs this in test setup) |
 
 **question-duck** and **architect-duck** are **not** user-invoked on their own in v1. They run **inside epic-duck and rubber-duck** so shared understanding and recorded design decisions stay consistent.
@@ -28,13 +28,13 @@ Resolution must be documentable in skill text and exercisable in eval scenarios.
 
 - **question-duck** — round-based Q&A until assumptions are documented and decisions are sharp.
 - **architect-duck** — challenge vocabulary, stress-test scenarios, update **GLOSSARY.md** / **docs/adr/** when decisions land. **Epic-duck invokes architect-duck directly** when needed; rubber does the same within its session. If the user explicitly wants a **rubber-style** domain pass during an epic session, epic-duck may **delegate to rubber-duck**.
-- **amigo-duck** — run **before publish** of any backlog **issue** or **spike item** created by epic or rubber.
+- **amigo-duck** — run **before publish** of any backlog **decision**, **task**, or **spike item** created by epic or rubber.
 
 ### Rubber-duck backlog rules
 
 - Attach items to a **named feature plan**; if the user did not name it, **confirm the plan** with the user before writing.
-- May create **multiple** issues and/or spike items in one session.
-- Terminology: **issue** and **spike item** per `docs/agents/backlog.md` (not a separate “story” type until domain glossary exists).
+- May create **multiple** decisions, tasks, and/or spike items in one session.
+- Terminology: **decision**, **task**, and **spike item** per `docs/agents/backlog.md` (not a separate “story” type until domain glossary exists).
 
 ### Epic-duck backlog rules
 
@@ -49,7 +49,7 @@ If `docs/agents/backlog.md` or the configured tracker (e.g. `.backlog/`) is miss
 
 **Epic:** `setup-duck-skills` (harness) → **epic-duck** → **question-duck** (per child) → **architect-duck** (when domain/docs need updating) → **amigo-duck** (pre-publish) → backlog → **spike-duck** (when a spike item exists) → resolve child.
 
-**Rubber:** `setup-duck-skills` (harness) → **rubber-duck** (question-duck + architect-duck) → **amigo-duck** (per published issue/spike item) → backlog on **confirmed** feature.
+**Rubber:** `setup-duck-skills` (harness) → **rubber-duck** (question-duck + architect-duck) → **amigo-duck** (per published decision/task/spike item) → backlog on **confirmed** feature.
 
 ### Skill text follow-up
 

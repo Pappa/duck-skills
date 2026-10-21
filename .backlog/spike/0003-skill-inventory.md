@@ -6,7 +6,7 @@ Spike: [0003-spike-skill-inventory.md](../items/0003-spike-skill-inventory.md)
 
 Eight skills are in scope for the planning-refinement feature; **`triage-duck` is not in the repo yet** (only referenced on the plan). **`setup-duck-skills`** seeds `docs/agents/*` and optional `.backlog/`; **`epic-duck`** is the only skill that routinely **writes** the local backlog. **`rubber-duck`** composes **question-duck** + **architect-duck** and updates **glossary/ADRs**, not backlog tickets. **`amigo-duck`** and **question-duck** are review/interview skills with no mandated file writes. **`spike-duck`** writes spike findings under `.backlog/spike/`.
 
-Several **doc contradictions** matter for **0005** / **0011**: **epic-duck** still lists `Type: spike` on **issues** while **`docs/agents/backlog.md`** keeps spikes as separate item files; **amigo-duck** uses remote-style labels (`epic-duck:spike`) and a **“3 amigos session”** heading that does not match local ticket shape. Remote tracker templates under `setup-duck-skills/backlog-*.md` use **`epic-duck:<type>`** tags; local markdown uses filenames and **Issues** / **Spikes** tables instead—skills should not imply local items carry GitHub-style labels unless `Label:` is set.
+Remaining **doc gaps** for **0005** / **0011**: **amigo-duck** still uses a **“3 amigos session”** heading that does not match local ticket shape. Remote tracker templates under `setup-duck-skills/backlog-*.md` use **`epic-duck:<type>`** tags (`decision`, `task`, `spike`); local markdown uses filenames and **Decisions** / **Tasks** / **Spikes** tables instead—skills should not imply local items carry GitHub-style labels unless `Label:` is set. (Former epic-duck `Type: spike` on decision files — **resolved** with decision/task/spike split.)
 
 Sources: `.cursor/skills/*/SKILL.md`, `docs/agents/backlog.md`, `docs/agents/domain.md`, `docs/agents/ticket-labels.md`, plan [0001](../items/0001-plan-duck-skills-planning-refinement.md).
 
@@ -46,8 +46,8 @@ Source: `.cursor/skills/setup-duck-skills/SKILL.md`.
 | | |
 |--|--|
 | **Reads** | `docs/agents/backlog.md`, `.backlog/features.md`, plan and child item files, `git status` (feature-file check) |
-| **Writes** | `.backlog/items/*` (plans, issues, spike items), `.backlog/features.md`, plan **Issues** / **Spikes** tables; spike **findings** via spike-duck |
-| **Backlog** | Primary writer for plans, issues, spikes, blocking, status |
+| **Writes** | `.backlog/items/*` (plans, decisions, tasks, spike items), `.backlog/features.md`, plan **Decisions** / **Tasks** / **Spikes** tables; spike **findings** via spike-duck |
+| **Backlog** | Primary writer for plans, decisions, tasks, spikes, blocking, status |
 | **Domain** | Does not update glossary/ADR |
 | **Labels** | Mentions `epic-duck:plan` (remote-oriented); local items use `Status:` and optional `Label: ready` per `ticket-labels.md` |
 
@@ -141,14 +141,14 @@ flowchart LR
 
 | # | Topic | Skill / doc A | Skill / doc B | Severity |
 |---|--------|---------------|---------------|----------|
-| C1 | Issue `Type: spike` | epic-duck issue template: `Type:` is `planning`, `spike` or `task` | `docs/agents/backlog.md`: `Type:` is `planning` or `task`; spikes are separate files | **High** — agents may add invalid `Type: spike` on issues |
-| C2 | Spike as issue vs item | epic-duck **Ticket types**: “**spike** (AFK): use spike item” | Same file issue template includes `spike` as `Type` | **High** — duplicate/confusing spike model |
-| C3 | Remote labels on local tickets | amigo-duck: decision tickets `` `epic-duck:spike`, `planning` `` | Local backlog has no `epic-duck:*` tags; spikes have no `Type:` line | **Medium** — clarify local vs remote in amigo-duck |
+| C1 | Decision `Type: spike` | — | **Resolved** — `Type: decision` / `Type: task`; spikes are separate item files | — |
+| C2 | Spike as decision vs item | — | **Resolved** — spike item + spike-duck only | — |
+| C3 | Remote labels on local tickets | amigo-duck: remote `` `epic-duck:decision` `` etc. | Local backlog has no `epic-duck:*` tags; spikes have no `Type:` line | **Medium** — clarify local vs remote in amigo-duck |
 | C4 | Review heading | amigo-duck output: `## 3 amigos session` | Skill name is **amigo-duck**; separate `3-amigos` skill may exist elsewhere | **Low** — naming/consistency for eval artefacts |
 | C5 | Spike numbering | spike-duck: “Allocate the next shared `NNNN`” when creating spike item | epic-duck charting creates spike item first, then spike-duck fills result | **Low** — spike-duck should say “use existing spike item when `Result:` already linked” |
 | C6 | Plan label | epic-duck: plan labelled `epic-duck:plan` | Local tracker uses `features.md` + `*-plan-*.md` filename, not a label field | **Medium** — document local equivalent |
 | C7 | Rubber vs epic backlog | rubber-duck: no backlog writes | epic-duck: backlog-only planning | **None** — intentional; **0004** should document handoff |
-| C8 | Glossary in planning tickets | amigo-duck: define terms or point to `GLOSSARY.md` | epic-duck planning issues use `## Question` not AC | **Low** — amigo-duck already allows light INVEST for decisions |
+| C8 | Glossary in decision tickets | amigo-duck: define terms or point to `GLOSSARY.md` | epic-duck decisions use `## Question` not AC | **Low** — amigo-duck already allows light INVEST for decisions |
 
 **Not contradictions:** `setup-duck-skills/backlog-local.md` matches `docs/agents/backlog.md` in this repo (seed sync). Remote templates (`backlog-github.md`, etc.) intentionally describe labels/sub-issues instead of `.backlog/` paths.
 
@@ -157,7 +157,7 @@ flowchart LR
 ## Gaps for follow-on tickets
 
 - **0004** — choreography: when rubber-duck vs epic-duck; whether amigo-duck runs on rubber-duck outputs (not specified in rubber-duck).
-- **0005** / **0011** — align epic-duck SKILL with `backlog.md` (C1, C2); harmonise amigo-duck local vs remote vocabulary (C3).
+- **0005** / **0011** — ADR + harmonise amigo-duck local vs remote vocabulary (C3, C4).
 - **0010** — triage-duck artefact reads/writes once implemented.
 - **0008** — assert setup-duck-skills outputs before other skills run.
 
@@ -169,6 +169,6 @@ flowchart LR
 |-------|-------------|
 | Epic-duck invokes | `.cursor/skills/epic-duck/SKILL.md` (Creating the plan, Ticket types, Work through) |
 | Rubber-duck invokes | `.cursor/skills/rubber-duck/SKILL.md` |
-| Local issue `Type:` | `docs/agents/backlog.md` § Issue file body |
-| Epic issue `Type:` includes spike | `.cursor/skills/epic-duck/SKILL.md` § Issue body |
+| Local decision `Type:` | `docs/agents/backlog.md` § Decision file body |
+| Epic decision template | `.cursor/skills/epic-duck/SKILL.md` § Decision body |
 | In-scope list | `.backlog/items/0001-plan-duck-skills-planning-refinement.md` § Notes |

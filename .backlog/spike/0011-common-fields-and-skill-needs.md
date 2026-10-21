@@ -4,7 +4,7 @@ Spike: [0011-spike-common-fields-and-skill-needs.md](../items/0011-spike-common-
 
 ## TLDR
 
-Use a **shared common-fields header** on every `.backlog/items/*` file (`Status`, `Overview` where applicable, `Plan:` backlink, `Blocked by:`), then **body profiles** by kind. **`docs/agents/backlog.md` is the single source of truth** for local markdown; fix **epic-duck** to drop `Type: spike` on issues (inventory C1–C2). **`Type: planning`** is the main body exception (`## Question` / `## Answer`). **`Label: ready`** on **`Type: task`** is the second exception (`## Acceptance criteria`, full amigo-duck). **Spike items** add `Result:`; **spike findings** are free-form research docs with `Spike:` backlink + **TLDR**. **Plans** use `Destination` instead of `Overview` and omit `Plan:`. Record the canon in an ADR via **0005**; align **amigo-duck** to local kinds (not `epic-duck:spike` on files).
+Use a **shared common-fields header** on every `.backlog/items/*` file (`Status`, `Overview` where applicable, `Plan:` backlink, `Blocked by:`), then **body profiles** by kind. **`docs/agents/backlog.md` is the single source of truth** for local markdown. **`Type: decision`** is the main body exception (`## Question` / `## Answer`). **`Label: ready`** on **`Type: task`** is the second exception (`## Acceptance criteria`, full amigo-duck). **Spike items** add `Result:`; **spike findings** are free-form research docs with `Spike:` backlink + **TLDR**. **Plans** use `Destination` instead of `Overview` and omit `Plan:`. Record the canon in an ADR via **0005**; align **amigo-duck** to local kinds (not `epic-duck:spike` on files).
 
 Upstream **writing-for-agents** favours checkable completion criteria and one authoritative doc—maps to testable AC and `backlog.md`. **pr** skill favours fixed sections (Summary, Evidence)—maps to optional `## Evidence` on large ready tasks only.
 
@@ -16,26 +16,26 @@ Sources: `docs/agents/backlog.md`, `.cursor/skills/*/SKILL.md`, `.backlog/spike/
 
 | Kind | File pattern | Common fields | Body profile |
 |------|----------------|---------------|--------------|
-| **Plan** | `*-plan-*.md` | `Status` only at item level; indexed in `features.md` | Destination, Notes, Decisions, Not yet specified, Out of scope, Issues, Spikes |
-| **Issue — planning** | `<NNNN>-<slug>.md` | + `Plan`, `Overview`, `Type: planning`, `Blocked by` | `## Question`; when resolved `## Answer`; `## Comments` |
-| **Issue — task** | same | + `Type: task`, optional `Label:` | **Branch A — unblocker:** `## Question` (+ `## Answer` when resolved). **Branch B — ready:** `Label: ready` + `## Acceptance criteria` (+ optional `## User intent`, `## Out of scope for this ticket`) |
+| **Plan** | `*-plan-*.md` | `Status` only at item level; indexed in `features.md` | Destination, Notes, Decisions so far, Not yet specified, Out of scope, Decisions, Tasks, Spikes |
+| **Decision** | `<NNNN>-decision-<slug>.md` | + `Plan`, `Overview`, `Type: decision`, `Blocked by` | `## Question`; when resolved `## Answer`; `## Comments` |
+| **Task** | `<NNNN>-<slug>.md` (slug not `plan-`, `decision-`, `spike-`) | + `Type: task`, optional `Label:` | **Branch A — unblocker:** `## Question` (+ `## Answer` when resolved). **Branch B — ready:** `Label: ready` + `## Acceptance criteria` (+ optional `## User intent`, `## Out of scope for this ticket`) |
 | **Spike item** | `*-spike-*.md` | + `Plan`, `Overview`, `Result`, `Blocked by` (no `Type:`) | `## Question`; `## Comments` |
 | **Spike findings** | `.backlog/spike/<NNNN>-*.md` | `Spike:` link line | **TLDR**; research sections; cite sources |
-| **Ready deliverable** | Issue with `Label: ready` | Same as task branch B | amigo-duck treats draft as story + AC (INVEST full) |
+| **Ready deliverable** | Task with `Label: ready` | Same as task branch B | amigo-duck treats draft as story + AC (INVEST full) |
 
-**Do not** use `Type: spike` on issue files. Spikes are always spike **items** (+ findings file).
+Spikes are always spike **items** (+ findings file), never a `Type:` on decision or task files.
 
 ---
 
 ## Common fields (local markdown)
 
-Ordered block for **issues** and **spike items** (canonical order for **0005** / ADR):
+Ordered block for **decisions**, **tasks**, and **spike items** (canonical order for **0005** / ADR):
 
 ```markdown
 Status: <needs-detail|in-progress|resolved|out-of-scope>
 Plan: [<NNNN>-plan-<slug>.md](<same-dir>)
 Overview: <one sentence>
-Type: planning | task          # issues only; omit on spike items
+Type: decision | task          # decisions and tasks only; omit on spike items
 Label: ready                   # optional; only roles from ticket-labels.md
 Blocked by:                    # optional; comma-separated NNNN
 ```
@@ -53,7 +53,7 @@ Blocked by:                    # optional; comma-separated NNNN
 | Input kind | Required body for review | INVEST |
 |------------|--------------------------|--------|
 | `Label: ready` | `Overview` + testable `## Acceptance criteria` | Full |
-| `Type: planning` | `## Question` (+ `## Answer` if resolving) | Light |
+| `Type: decision` | `## Question` (+ `## Answer` if resolving) | Light |
 | `Type: task` (no ready) | `## Question` or spec pointer; deliverable clear | Light–medium |
 | Spike item (pre-publish) | `## Question` | Light |
 
@@ -61,8 +61,8 @@ Blocked by:                    # optional; comma-separated NNNN
 
 ### epic-duck
 
-- Publishes all shapes above; must match `backlog.md`, not the stale issue template listing `Type: spike`.
-- Resolved planning/task issues: require `## Answer` before `Status: resolved`.
+- Publishes all shapes above; must match `backlog.md`.
+- Resolved decisions: require `## Answer` before `Status: resolved`.
 - Charting: spike **item** first, `Result:` path, then spike-duck writes findings.
 
 ### spike-duck
@@ -84,9 +84,9 @@ Blocked by:                    # optional; comma-separated NNNN
 
 | Exception | Reason |
 |-----------|--------|
-| **Planning** | Decision unit: Question/Answer + Planning resolution metric (**0002**); not story AC. |
-| **Label: ready** | AFK/human execution needs INVEST AC, not a planning Question. |
-| **Plan** | Index + fog + decision log; not a child issue. |
+| **Decision** | Decision unit: Question/Answer + Decision resolution metric (**0002**); not story AC. |
+| **Label: ready** | AFK/human execution needs INVEST AC, not a decision Question. |
+| **Plan** | Index + fog + decision log; not a child ticket. |
 | **Spike findings** | Research narrative; spike item holds tracker metadata. |
 | **Task without ready** (e.g. implement when spec elsewhere) | Today uses `## Question` as spec pointer + ad-hoc deliverable in Comments (**0009**). **0005** should standardise: either `Label: ready` + AC, or `## Spec` + link to spike result—pick one pattern to reduce variance. |
 
@@ -98,8 +98,7 @@ No third `Type:` value needed if **ready** is expressed via `Label:` on `Type: t
 
 | ID | Action |
 |----|--------|
-| C1–C2 | Edit `epic-duck/SKILL.md`: `Type:` only `planning` \| `task`; spikes = spike item files only. |
-| C3 | Edit `amigo-duck/SKILL.md`: local kind names (`planning`, `task`, spike item, `Label: ready`). |
+| C3 | Edit `amigo-duck/SKILL.md`: local kind names (`decision`, `task`, spike item, `Label: ready`). |
 | C6 | Document in `backlog.md`: local plan ≡ remote `epic-duck:plan` via `features.md` + filename. |
 | 0009 pattern | Migrate implement tasks to `Label: ready` + AC **or** formal `## Spec` section (0005 decision). |
 
@@ -121,10 +120,10 @@ Create `docs/adr/0001-backlog-ticket-shapes.md` (or next free number) containing
 
 | Upstream idea | Application here |
 |---------------|------------------|
-| **writing-for-agents:** completion criteria must be checkable | `## Acceptance criteria` on ready tasks; `## Answer` completes planning |
+| **writing-for-agents:** completion criteria must be checkable | `## Acceptance criteria` on ready tasks; `## Answer` completes decisions |
 | **writing-for-agents:** single source of truth | `docs/agents/backlog.md` over epic-duck inline templates |
 | **writing-for-agents:** disclose by branch | Body profiles instead of one mega-template |
-| **pr:** fixed sections for human review | Optional `## Evidence` on ready tasks when verification is non-obvious (not required for planning spikes) |
+| **pr:** fixed sections for human review | Optional `## Evidence` on ready tasks when verification is non-obvious (not required for spike findings) |
 
 ---
 

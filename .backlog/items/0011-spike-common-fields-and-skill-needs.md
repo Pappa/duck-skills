@@ -6,9 +6,9 @@ Blocked by:
 
 ## Question
 
-Should epic-duck issues, spike items, spike findings, and `ready` deliverables share a single **common fields** set (metadata + body conventions), or do skill needs require deliberate per-type exceptions—including `Type: planning` and possibly others?
+Should epic-duck decisions, tasks, spike items, spike findings, and `ready` deliverables share a single **common fields** set (metadata + body conventions), or do skill needs require deliberate per-type exceptions—including `Type: decision` and possibly others?
 
-Investigate in-repo skills under `.cursor/skills/` (how each defines inputs/outputs and backlog artefacts) and compare to related **Matt Pocock** skills under `~/.agents/skills/` (e.g. `writing-for-agents`, `code-review`, `pr`) as an external reference. Deliver a recommendation for [0005-ticket-shapes-and-fields.md](0005-ticket-shapes-and-fields.md) and the ADR.
+Investigate in-repo skills under `.cursor/skills/` (how each defines inputs/outputs and backlog artefacts) and compare to related **Matt Pocock** skills under `~/.agents/skills/` (e.g. `writing-for-agents`, `code-review`, `pr`) as an external reference. Deliver a recommendation for [0005-decision-ticket-shapes-and-fields.md](0005-decision-ticket-shapes-and-fields.md) and the ADR.
 
 ## Comments
 

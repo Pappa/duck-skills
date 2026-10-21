@@ -1,18 +1,18 @@
 ---
 name: epic-duck
-description: Chart a large, unclear or ambiguous piece of work as a plan with decision issues on the backlog, then resolve one decision per session until the route to the destination is clear. Use for multi-session planning, unclear scope, epic-duck, or feature-based planning.
+description: Chart a large, unclear or ambiguous piece of work as a plan with decisions on the backlog, then resolve one decision per session until the route to the destination is clear. Use for multi-session planning, unclear scope, epic-duck, or feature-based planning.
 disable-model-invocation: true
 ---
 
 A **destination** is a feature too big to implement in one session and still ambiguous or unclear — the steps are not well defined. 
 
-**Epic duck** help define the steps of the **plan** on the backlog, then resolves **issues** and **spikes** one at a time. Default mode is **plan, don't do**: each ticket resolve a decision, not deliverables.
+**Epic duck** help define the steps of the **plan** on the backlog, then resolves **decisions**, **tasks**, and **spikes** one at a time. Default mode is **plan, don't do**: each decision ticket resolves a question, not deliverables.
 
 **Refer by name** in human-readable plain langauge: titles and overviews, not bare numbers.
 
 ## The Plan
 
-The plan is a single ticket on this repo's backlog, labelled `epic-duck:plan`. Its tickets are child issues of the feature the plan is working towards.
+The plan is a single ticket on this repo's backlog, labelled `epic-duck:plan`. Its tickets are child decisions, tasks, and spikes of the feature the plan is working towards.
 
 The plan is iterative and documents progress towards the goal, a completed feature. It lists the decisions made so far and acts as an index to the tickets that contain the decision's details.
 
@@ -49,11 +49,17 @@ Fog: in-scope questions not sharp enough to ticket yet.
 
 Work ruled beyond this destination (with links to closed items when relevant).
 
-## Issues
+## Decisions
 
-| Issue | Overview | Status |
-|-------|----------|--------|
-| [0004-slug.md](0004-slug.md) | … | needs-detail |
+| Decision | Overview | Status |
+|----------|----------|--------|
+| [0004-decision-slug.md](0004-decision-slug.md) | … | needs-detail |
+
+## Tasks
+
+| Task | Overview | Status |
+|------|----------|--------|
+| [0009-sandbox-slug.md](0009-sandbox-slug.md) | … | needs-detail |
 
 ## Spikes
 
@@ -64,21 +70,37 @@ Work ruled beyond this destination (with links to closed items when relevant).
 
 Open children are listed in the tables — keep **Overview** and **Status** in sync with each child file.
 
-### Issue body
+### Decision body
 
 ```markdown
 Status: needs-detail
 Plan: [0003-plan-auth.md](0003-plan-auth.md)
 Overview: One sentence.
-Type: planning
+Type: decision
 Blocked by:
 
 ## Question
 
-The decision or investigation this issue resolves.
+The decision this ticket resolves.
 ```
 
-`Type:` is `planning`, `spike` or `task`.
+`Type:` is always `decision` on decision files.
+
+### Task body
+
+```markdown
+Status: needs-detail
+Plan: [0003-plan-auth.md](0003-plan-auth.md)
+Overview: One sentence.
+Type: task
+Blocked by:
+
+## Question
+
+What must be done before a related decision can proceed (when used as an unblocker).
+```
+
+Optional `Label: ready` and `## Acceptance criteria` for agent-ready deliverables — see `docs/agents/backlog.md`.
 
 ### Spike item
 
@@ -88,13 +110,13 @@ Separate file `.backlog/items/<NNNN>-spike-<slug>.md`; findings in `.backlog/spi
 
 Plans use: `needs-detail`, `in-progress`, `resolved`, `out-of-scope`. Align remote tracker state/tags with `docs/agents/backlog.md` where configured.
 
-Tasks, issues, and spikes use: `needs-detail`, `in-progress`, `resolved`, `out-of-scope`. Align remote tracker state/tags with `docs/agents/backlog.md` where configured.
+Decisions, tasks, and spikes use: `needs-detail`, `in-progress`, `resolved`, `out-of-scope`. Align remote tracker state/tags with `docs/agents/backlog.md` where configured.
 
-## Ticket types (issues)
+## Ticket types
 
-- **spike** (AFK): use a **spike item** + `spike-duck` skill. 
-- **planning** (HITL): live interview — `question-duck` skill; agent never answers for the human.
-- **task** (HITL or AFK): manual unblocker before a decision can be made.
+- **decision** (HITL): live interview — `question-duck` skill; agent never answers for the human.
+- **task** (HITL or AFK): work that unblocks the plan or delivers a concrete artefact; may use `Label: ready` for agent execution.
+- **spike** (AFK): use a **spike item** + `spike-duck` skill (separate item file, no `Type:` line).
 
 For all ticket types, use the `amigo-duck` skill to review and improve the ticket requirements.
 
@@ -123,14 +145,14 @@ When any item becomes `resolved` or `out-of-scope`, remove its number from every
 If `git status` shows changes to the **feature file only**:
 
 - Diff vs `HEAD` (untracked feature file = plan-level change).
-- Hunks only under `## Issues` / `## Spikes` → warn; ask to continue.
+- Hunks only under **Decisions** / **Tasks** / **Spikes** → warn; ask to continue.
 - Any plan section changed → ask how to proceed. Decline or wait → no writes.
 
 Do not re-check mid-session. Other clones are invisible.
 
 ### Pick a child
 
-User-named issue or spike → that item. Else lowest-numbered `in-progress` child for this feature. Else set frontier child to `in-progress`. If no children yet, continue **charting**.
+User-named decision, task, or spike → that item. Else lowest-numbered `in-progress` child for this feature. Else set frontier child to `in-progress`. If no children yet, continue **charting**.
 
 ## Chart the feature (invocation)
 
@@ -138,7 +160,7 @@ User brings a loose idea (often after feature selection above).
 
 1. **Destination** — use `question-duck` until scope and destination are clear.
 2. **Breadth-first pass** — surface open decisions. If no fog remains (small enough for one session), stop and ask how to proceed without a full feature chart.
-3. **Create or update feature** with Destination, Notes, empty Decisions, fog in **Not yet specified**, empty **Issues** / **Spikes** tables.
+3. **Create or update feature** with Destination, Notes, empty Decisions so far, fog in **Not yet specified**, empty **Decisions** / **Tasks** / **Spikes** tables.
 4. **Create children** you can specify now; run **amigo-duck** on each deliverable backlog ticket before publish; **wire blocking in a second pass** (numbers must exist).
 5. **Spike items** — optional parallel subagents on `spike/<name>` branches; link findings; do not merge throwaway branches.
 
@@ -146,12 +168,12 @@ Stop after charting; do not resolve children in this session except parallel spi
 
 ## Work through the feature (invocation)
 
-User passes a feature (or child); optional named issue/spike.
+User passes a feature (or child); optional named decision, task, or spike.
 
 1. Load feature body (not every child unless needed).
 2. Git check (local) and pick child (above). Set `in-progress` if not already.
 3. Resolve per `Type` or spike workflow. Use **Notes** for extra skills.
-4. **Resolve issue**: `## Answer`, `Status: resolved`, append **Decisions so far**, blocker sweep, refresh tables.
+4. **Resolve decision**: `## Answer`, `Status: resolved`, append **Decisions so far**, blocker sweep, refresh tables.
 5. Add new children; graduate fog; rule out-of-scope items.
 6. When all children are `resolved` or `out-of-scope` and **Not yet specified** is empty, ask whether the feature is `resolved`, `out-of-scope`, or still `in-progress` with more work.
 

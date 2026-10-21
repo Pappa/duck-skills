@@ -1,7 +1,7 @@
 Status: needs-detail
 Plan: [0001-plan-duck-skills-planning-refinement.md](0001-plan-duck-skills-planning-refinement.md)
 Overview: Expected setup behavior and how evals assert it.
-Type: planning
+Type: decision
 Blocked by:
 0007
 
