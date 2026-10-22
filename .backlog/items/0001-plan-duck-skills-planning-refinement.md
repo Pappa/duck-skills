@@ -24,7 +24,8 @@ Planning and refinement duck-skills in this repo produce concise, unambiguous ba
 - [Skill inventory](../spike/0003-skill-inventory-v2.4.md): v2 synthesis — seven skills in repo, **triage-duck** missing; ADR 0001 shapes aligned; **0004** vs epic/rubber `SKILL.md` choreography drift (high); v1 retained at [0003-skill-inventory.md](../spike/0003-skill-inventory.md).
 - [Ticket shapes and fields](0005-decision-ticket-shapes-and-fields.md): `Type: epic-duck:*` (first line), unified **`Status:`** (incl. `ready`), deliverable task body sections, spike findings TLDR; ADR `docs/adr/0001-backlog-ticket-shapes.md`.
 - [Common fields](0011-common-fields-and-skill-needs.md): Spike input to **0005**; superseded for headers by ADR 0001.
-- [Planning pipeline choreography](0004-decision-planning-pipeline-choreography.md): Epic = plans + all ticket types; rubber = single-session decisions/tasks/spikes on confirmed feature; amigo-duck before publish; missing backlog → setup-duck-skills; v1 spikes via epic-duck; question/architect only via epic or rubber.
+- [Planning pipeline choreography](0004-decision-planning-pipeline-choreography.md): Epic = plans + planning `epic-duck:*` children; rubber = single-session impl **`Type: task`** / **`Type: spike`** (and clarity/doc/code); amigo-duck before publish; see **0014** for full split (amends **0004** in remediation).
+- [Skill inventory remediation](0014-decision-skill-inventory-remediation.md): Dispositions for spike **0003** register; planning vs impl backlog families; unanchored `Plan: (unanchored)`; question-duck open/closed rounds.
 
 ## Not yet specified
 
@@ -50,7 +51,7 @@ Planning and refinement duck-skills in this repo produce concise, unambiguous ba
 | [0008-decision-setup-duck-skills-verification.md](0008-decision-setup-duck-skills-verification.md) | Expected setup behavior and how evals assert it. | out-of-scope |
 | [0012-decision-amigo-duck-eval-golden-set.md](0012-decision-amigo-duck-eval-golden-set.md) | Define a golden set to validate amigo-duck verdicts before eval automation trusts it. | out-of-scope |
 | [0013-decision-skill-usage-eval-scenarios.md](0013-decision-skill-usage-eval-scenarios.md) | Define eval scenarios that detect agents misusing or misunderstanding skill and doc text. | out-of-scope |
-| [0014-decision-skill-inventory-remediation.md](0014-decision-skill-inventory-remediation.md) | Close every open discrepancy from spike 0003 (v2.4 register + v2.1 follow-ons). | ready |
+| [0014-decision-skill-inventory-remediation.md](0014-decision-skill-inventory-remediation.md) | Close every open discrepancy from spike 0003 (v2.4 register + v2.1 follow-ons). | resolved |
 
 ## Tasks
 
@@ -58,6 +59,7 @@ Planning and refinement duck-skills in this repo produce concise, unambiguous ba
 |------|----------|--------|
 | [0009-sandbox-project-and-harness.md](0009-sandbox-project-and-harness.md) | Build `evals/sandbox_project` and the lightweight eval harness. | out-of-scope |
 | [0010-implement-triage-duck.md](0010-implement-triage-duck.md) | Add `triage-duck` skill per decided design. | needs-detail |
+| [0015-remediate-skill-inventory-findings.md](0015-remediate-skill-inventory-findings.md) | Apply decision 0014 across skills, docs, and backlog canon. | ready |
 
 ## Spikes
 
