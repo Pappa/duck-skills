@@ -20,7 +20,6 @@ Planning and refinement duck-skills in this repo produce concise, unambiguous ba
 ## Decisions so far
 
 - [Ready ticket quality bar](0002-decision-ready-ticket-quality-bar.md): One ticket family; amigo-duck gate for **`Status: ready`**; scored evals (Ticket quality, Decision resolution metric, Skill usage, Usability) with per-skill pass thresholds; v1 no accepted-gaps workflow.
-- [Eval harness scope](0007-spike-eval-harness-design.md): Single spike **0007** designs one harness with meta-eval (amigo-duck + gold from **0012**) and skill-path layers; **temporarily out of scope** (token budget; may reprioritise later).
 - [Skill inventory](../spike/0003-skill-inventory-v2.4.md): v2 synthesis — seven skills in repo, **triage-duck** missing; ADR 0001 shapes aligned; **0004** vs epic/rubber `SKILL.md` choreography drift (high); v1 retained at [0003-skill-inventory.md](../spike/0003-skill-inventory.md).
 - [Ticket shapes and fields](0005-decision-ticket-shapes-and-fields.md): `Type: epic-duck:*` (first line), unified **`Status:`** (incl. `ready`), deliverable task body sections, spike findings TLDR; ADR `docs/adr/0001-backlog-ticket-shapes.md`.
 - [Common fields](0011-common-fields-and-skill-needs.md): Spike input to **0005**; superseded for headers by ADR 0001.
@@ -35,7 +34,7 @@ Planning and refinement duck-skills in this repo produce concise, unambiguous ba
 
 ## Out of scope
 
-- **Eval harness (temporary):** Golden-set meta-eval (**0012**), skill-usage scenarios (**0013**), harness design spike (**0007**), setup assertions for evals (**0008**), and sandbox + harness implementation (**0009**). Descoped to limit token spend on repeated model runs; **may be prioritised again later** (cost spike or incremental tiers first). Resolved quality bar in **0002** still describes the target model when evals resume.
+- **Eval harness:** Automated golden-set meta-eval, skill-usage scenarios, harness design, setup assertions, and sandbox implementation. Descoped to limit token spend on repeated model runs; **may be prioritised again later** (new tickets). Resolved quality bar in **0002** still describes the target model when evals resume.
 - Cursor-global or team-kit skills not shipped under this repo’s `.cursor/skills/`.
 - Implementation, coding, and testing agent skills (later feature).
 - Hosted CI or mandatory cloud eval runners for v1.
@@ -48,16 +47,12 @@ Planning and refinement duck-skills in this repo produce concise, unambiguous ba
 | [0004-decision-planning-pipeline-choreography.md](0004-decision-planning-pipeline-choreography.md) | When to use epic-duck vs rubber-duck and how skills hand off. | resolved |
 | [0005-decision-ticket-shapes-and-fields.md](0005-decision-ticket-shapes-and-fields.md) | Align ticket shapes with `docs/agents/backlog.md` and skill output. | resolved |
 | [0006-decision-triage-duck-activation.md](0006-decision-triage-duck-activation.md) | Decide triage-duck role, status workflow, and activation model. | needs-detail |
-| [0008-decision-setup-duck-skills-verification.md](0008-decision-setup-duck-skills-verification.md) | Expected setup behavior and how evals assert it. | out-of-scope |
-| [0012-decision-amigo-duck-eval-golden-set.md](0012-decision-amigo-duck-eval-golden-set.md) | Define a golden set to validate amigo-duck verdicts before eval automation trusts it. | out-of-scope |
-| [0013-decision-skill-usage-eval-scenarios.md](0013-decision-skill-usage-eval-scenarios.md) | Define eval scenarios that detect agents misusing or misunderstanding skill and doc text. | out-of-scope |
 | [0014-decision-skill-inventory-remediation.md](0014-decision-skill-inventory-remediation.md) | Close every open discrepancy from spike 0003 (v2.4 register + v2.1 follow-ons). | resolved |
 
 ## Tasks
 
 | Task | Overview | Status |
 |------|----------|--------|
-| [0009-sandbox-project-and-harness.md](0009-sandbox-project-and-harness.md) | Build `evals/sandbox_project` and the lightweight eval harness. | out-of-scope |
 | [0010-implement-triage-duck.md](0010-implement-triage-duck.md) | Add `triage-duck` skill per decided design. | needs-detail |
 | [0015-remediate-skill-inventory-findings.md](0015-remediate-skill-inventory-findings.md) | Apply decision 0014 across skills, docs, and backlog canon. | resolved |
 
@@ -66,5 +61,4 @@ Planning and refinement duck-skills in this repo produce concise, unambiguous ba
 | Spike | Overview | Status |
 |-------|----------|--------|
 | [0003-spike-skill-inventory.md](0003-spike-skill-inventory.md) | Map in-scope skills, dependencies, and artefacts they touch. | resolved |
-| [0007-spike-eval-harness-design.md](0007-spike-eval-harness-design.md) | Design one eval harness (meta-eval + skill-path layers), sandbox layout, and token budget. | out-of-scope |
 | [0011-spike-common-fields-and-skill-needs.md](0011-spike-common-fields-and-skill-needs.md) | Recommend common ticket fields vs per-type exceptions from skill needs and upstream references. | resolved |

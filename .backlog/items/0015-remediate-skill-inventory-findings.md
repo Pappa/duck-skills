@@ -29,7 +29,7 @@ Update **`docs/agents/backlog.md`** (and setup seeds that mirror it) with implem
 ## Out of Scope
 
 - **triage-duck** skill (**0006** / **0010**)
-- Eval harness (**0013** and related)
+- Eval harness (descoped on plan **0001**)
 - New ADR number unless required — prefer extending `backlog.md` + short note in ADR 0001 consequences if needed
 
 ## Acceptance Criteria

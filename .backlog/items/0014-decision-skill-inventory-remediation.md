@@ -43,7 +43,7 @@ Resolution must produce a single **`## Answer`** that addresses **every row** be
 ### Explicitly out of this decision’s scope
 
 - **triage-duck** behaviour and activation — decision **0006** and task **0010**
-- **Eval harness** findings and **0013** — out of scope on plan **0001**
+- **Eval harness** — out of scope on plan **0001**
 - **v1 C1–C2** — already resolved (ADR 0001); no action unless Answer records “verified closed”
 - **R9** / v2.4 “resolved since v1” rows — confirm closed only; no new design
 

@@ -90,7 +90,7 @@ Blocked by:                    # optional; comma-separated NNNN
 | **Label: ready** | AFK/human execution needs INVEST AC, not a decision Question. |
 | **Plan** | Index + fog + decision log; not a child ticket. |
 | **Spike findings** | Research narrative; spike item holds tracker metadata. |
-| **Task without ready** (e.g. implement when spec elsewhere) | Today uses `## Question` as spec pointer + ad-hoc deliverable in Comments (**0009**). **0005** should standardise: either `Label: ready` + AC, or `## Spec` + link to spike result—pick one pattern to reduce variance. |
+| **Task without ready** (e.g. implement when spec elsewhere) | Historically used `## Question` as spec pointer + ad-hoc deliverable in Comments. **0005** should standardise: either `Label: ready` + AC, or `## Spec` + link to spike result—pick one pattern to reduce variance. |
 
 No third `Type:` value needed if **ready** is expressed via `Label:` on `Type: task`.
 
@@ -102,7 +102,7 @@ No third `Type:` value needed if **ready** is expressed via `Label:` on `Type: t
 |----|--------|
 | C3 | Edit `amigo-duck/SKILL.md`: local kind names (`decision`, `task`, spike item, `Label: ready`). |
 | C6 | Document in `backlog.md`: local plan ≡ remote `epic-duck:plan` via `features.md` + filename. |
-| 0009 pattern | Migrate implement tasks to `Label: ready` + AC **or** formal `## Spec` section (0005 decision). |
+| Implement-without-ready pattern | Migrate implement tasks to `Label: ready` + AC **or** formal `## Spec` section (0005 decision). |
 
 ---
 
@@ -131,4 +131,4 @@ Create `docs/adr/0001-backlog-ticket-shapes.md` (or next free number) containing
 
 ## Open choice for 0005 (not blocking spike)
 
-**Implement-style tasks** without `Label: ready` today (**0009**): adopt **(a)** require `Label: ready` + AC before agent execution, or **(b)** keep `Type: task` + `## Spec` linking spike/ADR. Recommendation: **(a)** for anything an agent runs AFK; **(b)** only for human-only chores.
+**Implement-style tasks** without `Label: ready`: adopt **(a)** require `Label: ready` + AC before agent execution, or **(b)** keep `Type: task` + `## Spec` linking spike/ADR. Recommendation: **(a)** for anything an agent runs AFK; **(b)** only for human-only chores.

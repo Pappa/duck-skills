@@ -185,7 +185,7 @@ Spike: [0006-spike-oauth.md](../items/0006-spike-oauth.md)
 
 ### Blocking
 
-- `Blocked by: 0004, 0007` — comma-separated shared item numbers (plan, decision, task, or spike).
+- `Blocked by: 0004, 0006` — comma-separated shared item numbers (plan, decision, task, or spike).
 - **Frontier** (per feature): lowest `NNNN` among that feature’s children with `needs-triage` or `needs-detail`, empty `Blocked by`, and not terminal (`resolved`, `wontfix`, `out-of-scope`).
 - **Session pool** (per feature): unblocked children with **`Status: ready`** — preferred targets when working through the plan.
 - **`in-progress`**: treat as likely owned by an active session (possibly another agent). **Confirm with the user** before modifying an `in-progress` child — **even if they named it** (wrong-ticket guard).

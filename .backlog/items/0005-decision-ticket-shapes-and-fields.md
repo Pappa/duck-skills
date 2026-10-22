@@ -62,7 +62,7 @@ No separate **`## Spec`** branch; spec pointers use unblocker **Question** or be
 ### Follow-on
 
 - **0006** triage-duck assumes unified **`Status:`** only.
-- **0009** / **0010**: move to **`Status: ready`** + deliverable body when unblocked and spec-complete.
+- **0010**: move to **`Status: ready`** + deliverable body when unblocked and spec-complete.
 
 ### Session semantics (epic-duck)
 

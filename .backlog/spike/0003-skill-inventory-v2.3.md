@@ -195,7 +195,6 @@ Sorted by severity (Critical → Low). IDs are **v2.3** (v1 C1–C2 marked resol
 | **rubber-duck/SKILL.md** | H1, H3: confirmed feature, child item writes, amigo-duck gate |
 | **epic-duck/SKILL.md** | H2: architect-duck (and optional rubber-duck) in Work through / decision resolution |
 | **spike-duck/SKILL.md** | M3: “use existing spike item when `Result:` / item file exists” |
-| **0013** (out of scope) | Skill-usage scenarios for both golden paths in 0004 |
 | **GLOSSARY** (optional) | M1: disambiguate “frontier” (interview vs backlog) |
 
 ---

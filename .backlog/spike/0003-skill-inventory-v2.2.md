@@ -251,7 +251,6 @@ flowchart LR
 
 - **0006 / 0010** — triage-duck reads/writes **`Status:`** only; define who sets **`ready`** vs amigo-duck.
 - **0002 hygiene** — align Answer text with 0005 (`Status: ready`, `Type: epic-duck:*`).
-- **0008** — evals assert setup outputs before epic-duck / rubber-duck.
 - **0004** — choreography; amigo-duck on rubber-duck outputs not specified in rubber-duck.
 - **epic-duck / spike-duck / backlog-github** — small wording fixes (D3, D4, D6).
 

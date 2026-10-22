@@ -24,7 +24,7 @@ Resolution must cover: relationship to **amigo-duck** axes; minimum fields per t
 - **`Status: ready` deliverables** (`Type: epic-duck:task` or **`Type: task`**): Must reach **amigo-duck Verdict: Approve** on all four axes (fit, complete/unambiguous, ISO plain language, full INVEST) before publish.
 - **Non-ready tasks and spike items:** **amigo-duck** on fit + complete/unambiguous + plain language; INVEST per amigo-duck (light for decision-shaped and spike-item work).
 - **`Type: epic-duck:decision`:** Same amigo-duck path as other decisions, **plus** the **Decision resolution** metric below on eval runs (when evals are in scope).
-- **Meta-quality:** Ship evals that validate **amigo-duck** behavior (golden set) and **skill usage** (agents follow invoked skills and docs) before treating amigo-duck as a hard gate in automation — see [0012-decision-amigo-duck-eval-golden-set.md](0012-decision-amigo-duck-eval-golden-set.md) and [0013-decision-skill-usage-eval-scenarios.md](0013-decision-skill-usage-eval-scenarios.md).
+- **Meta-quality:** Ship evals that validate **amigo-duck** behavior (golden set) and **skill usage** (agents follow invoked skills and docs) before treating amigo-duck as a hard gate in automation (eval harness work descoped from plan **0001**; details TBD if reprioritised).
 
 ### Accepted gaps (v1 and future)
 
@@ -39,7 +39,7 @@ Resolution must cover: relationship to **amigo-duck** axes; minimum fields per t
   2. **Decision resolution** — only for `Type: epic-duck:decision`; see metric below. Omit or mark N/A for other types.
   3. **Skill usage** — agent followed the invoked skill(s) and relevant repo docs (setup, backlog, ticket-statuses, SKILL.md).
   4. **Usability** — operator burden: extra turns, confusion, manual edits, tooling friction (higher = worse unless inverted in harness docs).
-- **Total:** weighted sum (weights defined in harness spike [0007-spike-eval-harness-design.md](0007-spike-eval-harness-design.md)).
+- **Total:** weighted sum (weights TBD when harness work is reprioritised).
 - **Pass/fail:** per-skill (or per-scenario) **threshold on total**; optional **floor** on Ticket quality (e.g. must be ≥ 3).
 
 ### Decision resolution metric
@@ -58,15 +58,13 @@ Measures whether a decision ticket fulfilled its **decision** job (not a duplica
 
 Each eval run produces:
 
-- A run log markdown file under `evals/runs/` (exact naming in **0007**).
+- A run log markdown file under `evals/runs/` (exact naming TBD).
 - An artefact directory: `evals/runs/artefacts/<scenario>-<date>/` containing at least: **`score`** (subscores + total), **`model_id`**, saved **amigo-duck** verdict output (file + link from run log), tickets produced (paths), **Usability** notes, and operator notes.
 
 ### Follow-on work
 
 - Spike **0011** — common fields and skill needs (blocked by **0003**).
 - **0005** — field canon, backlog.md alignment, ADR (blocked by **0011**).
-- **0012**, **0013** — eval layers for amigo-duck and skill usage.
-- Implementation with **0007** / **0009**.
 
 ## Comments
 

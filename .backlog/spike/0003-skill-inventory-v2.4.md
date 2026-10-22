@@ -10,7 +10,7 @@ All three parallel passes agree: **seven in-scope skills ship in `.cursor/skills
 
 The **main open problem is choreography drift**: resolved **[0004](../items/0004-decision-planning-pipeline-choreography.md)** says **rubber-duck** may write backlog children (with **amigo-duck** before publish) and **epic-duck** may invoke **architect-duck** (or delegate **rubber-duck**), but **`epic-duck/SKILL.md` and `rubber-duck/SKILL.md` still describe the older split** (epic = backlog only; rubber = glossary/ADR only). **README** still oversimplifies rubber → “tickets.” Secondary drift: **0002** and **0011** retain **`Label: ready`** / bare **`Type: decision`** prose; **epic-duck** “labelled `epic-duck:plan`” wording confuses local **`Type:`** readers; **spike-duck** vs **epic-duck** spike-item numbering can duplicate `NNNN` if both allocate.
 
-**Recommended follow-ups:** skill edits for **0004** golden paths (was **0013**, now out of scope — do via direct task or skill PR); **0006** for triage; optional **0002** Answer hygiene; README alignment.
+**Recommended follow-ups:** skill edits for **0004** golden paths ([0015](../items/0015-remediate-skill-inventory-findings.md)); **0006** for triage; optional **0002** Answer hygiene; README alignment.
 
 ---
 
@@ -110,9 +110,9 @@ Solid = stated in orchestrator `SKILL.md`. Dashed = **0004** only.
 | **Rubber vs epic backlog** | **High** (R1): 0004 vs rubber SKILL | **D8 “None”** — intentional handoff epic backlog / rubber domain **without** citing 0004 rubber backlog rules | **High H1–H3**: rubber backlog + amigo + epic/architect gaps vs 0004 |
 | **Stale 0002 / 0011 `Label: ready`** | Mentioned via R9 / historical 0011 | **Central** (D1–D2); detailed three-concept table | **Medium M2** in register |
 | **README issues** | **R3** rubber → tickets; flow omits amigo/spike | **D9** AGENTS vs README as non-contradiction | Brief README vs 0004 entry points (**L2**) |
-| **Unique artifacts** | Planned triage section; ADR cross-check matrix; follow-on table citing 0013 | Alignment checklist per skill; Azure tag example; question-duck typo callout | Mermaid artefact flow; **severity scale**; explicit “no Critical” |
+| **Unique artifacts** | Planned triage section; ADR cross-check matrix; follow-on table | Alignment checklist per skill; Azure tag example; question-duck typo callout | Mermaid artefact flow; **severity scale**; explicit “no Critical” |
 | **spike-duck numbering** | R5 low | D6 low | M3 medium |
-| **Follow-on emphasis** | 0013 skill-text sync, README, 0008 eval | 0006 triage, 0002 hygiene, 0008, 0004 rubber amigo | rubber + epic SKILL edits; 0013 out of scope note |
+| **Follow-on emphasis** | 0015 skill-text sync, README | 0006 triage, 0002 hygiene, 0004 rubber amigo | rubber + epic SKILL edits |
 
 ### Interpretation
 

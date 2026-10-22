@@ -161,7 +161,6 @@ flowchart LR
 - **0004** — choreography: when rubber-duck vs epic-duck; whether amigo-duck runs on rubber-duck outputs (not specified in rubber-duck).
 - **0005** / **0011** — ADR + harmonise amigo-duck local vs remote vocabulary (C3, C4).
 - **0010** — triage-duck artefact reads/writes once implemented.
-- **0008** — assert setup-duck-skills outputs before other skills run.
 
 ---
 
