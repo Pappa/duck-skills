@@ -1,6 +1,6 @@
 ---
 name: setup-duck-skills
-description: Configure a repo for duck-skills — backlog tracker (GitHub, GitLab, Azure DevOps, local markdown, or custom), ticket status vocabulary, and domain doc layout. Run once per repo before using epic-duck or rubber-duck.
+description: Configure a repo for duck-skills — backlog tracker (GitHub, GitLab, Azure DevOps, local markdown, or custom), ticket status vocabulary, and domain doc layout. Run once per repo before using other duck skills.
 disable-model-invocation: true
 ---
 

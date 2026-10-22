@@ -1,5 +1,5 @@
 interface:
   display_name: "architect-duck"
-  short_description: "Glossary and ADR updates while designing; used inside epic-duck or rubber-duck."
+  short_description: "Build and sharpen a project's domain model while designing — challenge terminology, stress-test scenarios, and update GLOSSARY.md and ADRs as significant decisions are made."
 policy:
   allow_implicit_invocation: true

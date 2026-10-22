@@ -1,6 +1,6 @@
 ---
 name: architect-duck
-description: Build and sharpen a project's domain model while designing — challenge terminology, stress-test scenarios, and update GLOSSARY.md and ADRs as decisions land. Used inside epic-duck or rubber-duck; not a user entry point.
+description: Build and sharpen a project's domain model while designing — challenge terminology, stress-test scenarios, and update GLOSSARY.md and ADRs as significant decisions are made.
 disable-model-invocation: true
 ---
 

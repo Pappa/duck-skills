@@ -1,6 +1,6 @@
 ---
 name: question-duck
-description: Round-based design interview inside epic-duck or rubber-duck until shared understanding is reached. Not a user entry point — invoked by those orchestrators.
+description: Round-based Q&A to remove ambiguities and reach a shared understanding with the user.
 disable-model-invocation: true
 ---
 
