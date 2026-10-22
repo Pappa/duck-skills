@@ -37,36 +37,43 @@ Supports GitHub, GitLab, Azure DevOps Boards, local markdown, or a custom tracke
 | Skill               | Purpose |
 |---------------------|---------|
 | `setup-duck-skills` | Configure tracker, domain docs, ticket status vocabulary |
-| `epic-duck`         | Large, unclear or ambiguous piece of work → feature plan + decisions on tracker |
-| `rubber-duck`       | Design interview + glossary/ADR updates (`question-duck` + `architect-duck`) |
+| `epic-duck`         | Large, unclear work → feature plan + **planning** backlog items (`Type: epic-duck:*`) |
+| `rubber-duck`       | Single-session outcomes: clarity, docs/code, **implementation** `Type: task` / `Type: spike` |
 
-### Model-invoked skills
+### Composed skills (not user entry points)
 
-| Skill               | Purpose |
-|---------------------|---------|
-| `question-duck`     | Round-based design interview |
-| `architect-duck`    | Glossary and ADR updates while designing |
-| `amigo-duck`        | Backlog ticket quality (fit, clarity, ISO 24495, INVEST) before publish |
-| `spike-duck`        | Time-boxed investigation; findings as Markdown in the repo |
+Used inside **epic-duck** or **rubber-duck** only:
+
+| Skill            | Purpose |
+|------------------|---------|
+| `question-duck`  | Round-based design interview |
+| `architect-duck` | Glossary and ADR updates while designing |
+
+### Other skills (model may invoke)
+
+| Skill        | Purpose |
+|--------------|---------|
+| `amigo-duck` | Backlog ticket quality before publish |
+| `spike-duck` | Time-boxed investigation; findings as Markdown |
 
 
 ## Typical planning flow
 
 ```mermaid
 flowchart LR
-  idea[Big, complex idea]
-  idea2[Small, single-ticket idea]
+  big[Large or unclear work]
+  small[Single-session outcome]
   plan[Feature plan]
-  tickets[Decisions and tasks on backlog]
+  planItems[Planning items epic-duck:*]
+  implItems[Implementation task or spike]
   ed[epic-duck]
   rd[rubber-duck]
-  dd[dev-duck (TODO)]
-  idea --> ed --> plan --> tickets --> dd
-  idea2 --> rd --> tickets --> dd
+  big --> ed --> plan --> planItems
+  small --> rd --> implItems
 ```
 
-- **Small enough to complete in one session**: `rubber-duck` (terms and ADRs as you decide)
-- **Large, unclear or ambiguous piece of work**: `epic-duck` to chart a feature, then `rubber-duck` on individual decisions
+- **epic-duck** — chart a feature and resolve **planning** decisions, tasks, and spikes on the backlog.
+- **rubber-duck** — one session: shared understanding, domain docs, or **implementation** backlog items (not planning `epic-duck:decision` items).
 
 ## Roadmap
 

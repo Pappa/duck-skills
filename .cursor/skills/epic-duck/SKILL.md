@@ -12,7 +12,7 @@ A **destination** is a feature too big to implement in one session and still amb
 
 ## The Plan
 
-The plan is a single ticket on this repo's backlog, labelled `epic-duck:plan`. Its tickets are child decisions, tasks, and spikes of the feature the plan is working towards.
+The plan is a single ticket on this repo's backlog. On **local** markdown use **`Type: epic-duck:plan`** (first line), `features.md`, and `*-plan-*.md`. On **remote** trackers, label/tag **`epic-duck:plan`**. Its children are **planning-era** items: `epic-duck:decision`, `epic-duck:task`, and `epic-duck:spike` only (not implementation `Type: task` / `Type: spike` from **rubber-duck** — see `docs/agents/backlog.md`).
 
 The plan is iterative and documents progress towards the goal, a completed feature. It lists the decisions made so far and acts as an index to the tickets that contain the decision's details.
 
@@ -83,6 +83,8 @@ Blocked by:
 ## Question
 
 The decision this ticket resolves.
+
+## Comments
 ```
 
 Set **`Status: ready`** when the question is sharp enough to resolve. `Type:` is always `epic-duck:decision` on decision files.
@@ -101,6 +103,8 @@ Blocked by:
 ## Question
 
 What must be done before a related decision can proceed (when used as an unblocker).
+
+## Comments
 ```
 
 Deliverable (`Status: ready` after **amigo-duck** **Approve**): **Problem Statement**, **Description**, optional **Notes** / **Out of Scope**, **Acceptance Criteria** — see `docs/agents/backlog.md`.
@@ -116,9 +120,18 @@ Result: [0005-oauth.md](../spike/0005-oauth.md)
 Blocked by:
 
 ## Question
+
+## Comments
 ```
 
 Findings in `.backlog/spike/<NNNN>-<slug>.md`. Delegate investigation to the `spike-duck` skill.
+
+### Skills invoked
+
+- **question-duck** — plan creation, charting, resolving decisions (HITL).
+- **architect-duck** — when glossary or ADRs need updating during epic work (same role as within **rubber-duck**).
+- **amigo-duck** — before publish of any planning child.
+- **spike-duck** — spike children (findings file).
 
 ## Status vocabulary
 
@@ -200,8 +213,11 @@ User passes a feature (or child); optional named decision, task, or spike.
 2. Git check (local) and pick child (above). Set `in-progress` when this session starts work (after confirmation if required).
 3. Resolve per `Type` or spike workflow. Use **Notes** for extra skills.
 4. **Resolve decision**: `## Answer`, `Status: resolved`, append **Decisions so far**, blocker sweep, refresh tables.
-5. Add new children; graduate fog; rule out-of-scope items.
-6. When all children are `resolved` or `out-of-scope` and **Not yet specified** is empty, ask whether the feature is `resolved`, `out-of-scope`, or still `in-progress` with more work.
+5. **Resolve spike**: findings file complete (via **spike-duck**), spike item `Status: resolved`, update plan **Spikes** table and **Decisions so far** when appropriate (`docs/agents/backlog.md`).
+6. Add new children; graduate fog; rule out-of-scope items.
+7. When all children are `resolved` or `out-of-scope` and **Not yet specified** is empty, ask whether the feature is `resolved`, `out-of-scope`, or still `in-progress` with more work.
+
+When attaching an unanchored implementation item (`Plan: (unanchored)` from **rubber-duck**), set a real **`Plan:`** link on that item and move **`Status:`** off `needs-triage` when the user confirms the feature.
 
 **One child per session** except parallel spikes during charting.
 

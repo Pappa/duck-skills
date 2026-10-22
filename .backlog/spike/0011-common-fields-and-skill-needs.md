@@ -2,11 +2,11 @@ Spike: [0011-spike-common-fields-and-skill-needs.md](../items/0011-spike-common-
 
 # Common fields and ticket shapes
 
-> **Superseded** for field canon by decision [0005](../items/0005-decision-ticket-shapes-and-fields.md) and `docs/adr/0001-backlog-ticket-shapes.md`. Kept as spike research record.
+> **Superseded** for field canon by decision [0005](../items/0005-decision-ticket-shapes-and-fields.md), ADR 0001, and decision **[0014](../items/0014-decision-skill-inventory-remediation.md)** (implementation `Type: task` / `Type: spike`). Below tables retain spike-era research; **do not** follow `Label:` or bare `Type: decision` rows.
 
 ## TLDR
 
-Use a **shared common-fields header** on every `.backlog/items/*` file (`Status`, `Overview` where applicable, `Plan:` backlink, `Blocked by:`), then **body profiles** by kind. **`docs/agents/backlog.md` is the single source of truth** for local markdown. **`Type: decision`** is the main body exception (`## Question` / `## Answer`). **`Label: ready`** on **`Type: task`** is the second exception (`## Acceptance criteria`, full amigo-duck). **Spike items** add `Result:`; **spike findings** are free-form research docs with `Spike:` backlink + **TLDR**. **Plans** use `Destination` instead of `Overview` and omit `Plan:`. Record the canon in an ADR via **0005**; align **amigo-duck** to local kinds (not `epic-duck:spike` on files).
+**Canon:** `docs/agents/backlog.md` and ADR 0001. First line **`Type:`**, then **`Status:`**. **Planning:** `epic-duck:plan`, `epic-duck:decision`, `epic-duck:task`, `epic-duck:spike` (**epic-duck**). **Implementation:** `task`, `spike` with `NNNN-task-<slug>.md` / `NNNN-spike-<slug>.md` (**rubber-duck**). Deliverable work uses **`Status: ready`** (not `Label:`). **amigo-duck** reviews per kind. Spike **findings**: `Spike:` link + **TLDR** only.
 
 Upstream **writing-for-agents** favours checkable completion criteria and one authoritative doc—maps to testable AC and `backlog.md`. **pr** skill favours fixed sections (Summary, Evidence)—maps to optional `## Evidence` on large ready tasks only.
 

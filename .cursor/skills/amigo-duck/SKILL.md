@@ -64,6 +64,18 @@ When the item is a deliverable backlog ticket (not an epic-duck **decision** tic
 
 **`Type: epic-duck:spike`** items (pre-publish): clear **Question**; INVEST light.
 
+### Implementation items (**rubber-duck**)
+
+Published with plain **`Type: task`** or **`Type: spike`** (no `epic-duck:` prefix). See `docs/agents/backlog.md`.
+
+**`Type: task`** with **`Status: ready`**: same deliverable bar as **`Type: epic-duck:task`** — **Problem Statement**, **Description**, **Acceptance Criteria**, full INVEST on AC.
+
+**`Type: task`** / **`Type: spike`** not yet ready: **amigo-duck** on fit, complete/unambiguous, and plain language; light INVEST.
+
+**`Plan: (unanchored)`** with **`Status: needs-triage`**: flag that the item must be linked to a feature before execution; fit review should note missing plan context.
+
+**`Type: spike`** (implementation): clear **Question** on the item; findings file uses **TLDR** only (no `Type:` on findings).
+
 ## Process
 
 1. Run the four axes against the draft.

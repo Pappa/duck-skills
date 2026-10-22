@@ -1,5 +1,5 @@
 Type: epic-duck:task
-Status: ready
+Status: resolved
 Plan: [0001-plan-duck-skills-planning-refinement.md](0001-plan-duck-skills-planning-refinement.md)
 Overview: Apply decision 0014 — align skills, docs, and backlog canon to planning vs implementation items and spike 0003 register.
 Blocked by:
@@ -34,21 +34,21 @@ Update **`docs/agents/backlog.md`** (and setup seeds that mirror it) with implem
 
 ## Acceptance Criteria
 
-- [ ] **`rubber-duck/SKILL.md`**: documents session outcomes (clarity, doc/code change, impl **task**/**spike**); **question-duck** + **architect-duck** (architect never invokes rubber); **no** `epic-duck:decision`; **no** epic↔rubber delegation prose; unanchored publish rule + user-facing triage message; **amigo-duck** before publish.
-- [ ] **`epic-duck/SKILL.md`**: invokes **architect-duck** (aligned wording with rubber); **no** delegate-to-rubber; planning types only; **C-epic-labelled**, **R6**, **R7** (spike resolve + optional Comments in templates) addressed in same file edit.
-- [ ] **`question-duck/SKILL.md`**: open/closed round rules (lines 8, 26, 30); `disable-model-invocation: true`.
-- [ ] **`architect-duck/SKILL.md`**: `disable-model-invocation: true`.
-- [ ] **`question-duck/agents/openai.yml`** and **`architect-duck/agents/openai.yml`**: `policy.allow_implicit_invocation: true`; interface text matches SKILL (no typos).
-- [ ] **`spike-duck/SKILL.md`**: prefer existing spike item when epic set `Result:`; fix **L3** typo; numbering guidance **C-spike-NNNN**.
-- [ ] **`docs/agents/backlog.md`** (+ **`setup-duck-skills/backlog-local.md`** parity): implementation **`Type: task`** / **`Type: spike`**; filenames; **`Plan: (unanchored)`**; rubber vs epic planning table; backlog **Frontier** unchanged.
-- [ ] **`setup-duck-skills/backlog-github.md`**: frontier includes **`needs-triage`** (**C-github-frontier**); **R8** triage-duck mention in setup consumer list when shipped.
-- [ ] **`README.md`**: planning flow matches **0014**; rubber vs epic; **question-duck** / **architect-duck** not user entry points (**C-readme-rubber**, **R4**).
-- [ ] **`amigo-duck/SKILL.md`**: distinct review paths for **`Type: epic-duck:*`** vs **`Type: task`** / **`Type: spike`** (**Q8**).
-- [ ] **`0004-decision-planning-pipeline-choreography.md`**: Answer rewritten — rubber impl items only, no rubber decisions, no epic↔rubber delegation, architect via epic/rubber only (**Q10**).
-- [ ] **`0002-decision-ready-ticket-quality-bar.md`**: Answer uses **`Status: ready`**, **`Type: epic-duck:*`** only — no `Label:` or bare `Type: decision` (**Q2**).
-- [ ] **`../spike/0011-common-fields-and-skill-needs.md`**: historical `Label:` / pre-namespace prose removed or rewritten to ADR canon (**C-0011-stale**).
-- [ ] Plan **0001** Notes: still states epic uses **architect-duck**; consistent with epic skill (**C-plan-notes**).
-- [ ] **v1 C1–C2**: recorded as verified closed in **0014** (no code change required unless audit finds regression).
+- [x] **`rubber-duck/SKILL.md`**: documents session outcomes (clarity, doc/code change, impl **task**/**spike**); **question-duck** + **architect-duck** (architect never invokes rubber); **no** `epic-duck:decision`; **no** epic↔rubber delegation prose; unanchored publish rule + user-facing triage message; **amigo-duck** before publish.
+- [x] **`epic-duck/SKILL.md`**: invokes **architect-duck** (aligned wording with rubber); **no** delegate-to-rubber; planning types only; **C-epic-labelled**, **R6**, **R7** (spike resolve + optional Comments in templates) addressed in same file edit.
+- [x] **`question-duck/SKILL.md`**: open/closed round rules (lines 8, 26, 30); `disable-model-invocation: true`.
+- [x] **`architect-duck/SKILL.md`**: `disable-model-invocation: true`.
+- [x] **`question-duck/agents/openai.yml`** and **`architect-duck/agents/openai.yml`**: `policy.allow_implicit_invocation: true`; interface text matches SKILL (no typos).
+- [x] **`spike-duck/SKILL.md`**: prefer existing spike item when epic set `Result:`; fix **L3** typo; numbering guidance **C-spike-NNNN**.
+- [x] **`docs/agents/backlog.md`** (+ **`setup-duck-skills/backlog-local.md`** parity): implementation **`Type: task`** / **`Type: spike`**; filenames; **`Plan: (unanchored)`**; rubber vs epic planning table; backlog **Frontier** unchanged.
+- [x] **`setup-duck-skills/backlog-github.md`**: frontier includes **`needs-triage`** (**C-github-frontier**); **R8** triage-duck mention in setup consumer list when shipped.
+- [x] **`README.md`**: planning flow matches **0014**; rubber vs epic; **question-duck** / **architect-duck** not user entry points (**C-readme-rubber**, **R4**).
+- [x] **`amigo-duck/SKILL.md`**: distinct review paths for **`Type: epic-duck:*`** vs **`Type: task`** / **`Type: spike`** (**Q8**).
+- [x] **`0004-decision-planning-pipeline-choreography.md`**: Answer rewritten — rubber impl items only, no rubber decisions, no epic↔rubber delegation, architect via epic/rubber only (**Q10**).
+- [x] **`0002-decision-ready-ticket-quality-bar.md`**: Answer uses **`Status: ready`**, **`Type: epic-duck:*`** only — no `Label:` or bare `Type: decision` (**Q2**).
+- [x] **`../spike/0011-common-fields-and-skill-needs.md`**: historical `Label:` / pre-namespace prose removed or rewritten to ADR canon (**C-0011-stale**).
+- [x] Plan **0001** Notes: still states epic uses **architect-duck**; consistent with epic skill (**C-plan-notes**).
+- [x] **v1 C1–C2**: recorded as verified closed in **0014** (no code change required unless audit finds regression).
 
 ## Comments
 

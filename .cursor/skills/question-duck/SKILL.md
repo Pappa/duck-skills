@@ -1,11 +1,14 @@
 ---
 name: question-duck
-description: Interrogate a plan or design using a thorough, round-based Q&A until all assumptions are documented, no ambiguities remain, and a shared understanding with the user is reached. Use when the user wants to plan an idea, develop or stress-test a design, refine decisions before writing docs or code, or when the user explicitly invokes question-duck.
+description: Round-based design interview inside epic-duck or rubber-duck until shared understanding is reached. Not a user entry point — invoked by those orchestrators.
+disable-model-invocation: true
 ---
+
+Interrogate a plan or design using a thorough, round-based Q&A interview until all assumptions are documented, no ambiguities remain, and a shared understanding with the user is reached. Use this skill when refining a feature, resolving a planning decision, or sharpening a design before making changes to docs, requirements, backlog items, or code.
 
 Interview the user until you reach **shared understanding**. Model the work as a **design tree**: decisions branch into dependent decisions.
 
-Work in **rounds**. The **frontier** is every question whose prerequisites are already settled — ask the whole frontier each round. Number questions; give a **recommended answer** per question; wait for answers before the next round.
+Work in **rounds**. Each round, ask every question that is still **open**, as long as every question it **depends on** is already **closed**. Ask all of those in one round (numbered, with a recommended answer each); then wait for answers.
 
 Format:
 
@@ -23,8 +26,8 @@ Format:
 
 Phrase questions so "yes" accepts the recommendation.
 
-After each round, recompute the frontier. Do not ask questions that depend on unsettled answers in the same round.
+After each round, update which questions are **closed**, then compute the next **open** set. Do not ask **open** questions in the same round if they still depend on another **open** question.
 
 **Facts are yours to find** — dispatch subagents for filesystem, docs, or tooling lookups. Do not ask the user for what you can look up. Decisions stay with the user.
 
-Stop when the frontier is empty. Do not implement until the user confirms shared understanding.
+Stop when there are no **open** questions left. Do not implement until the user confirms shared understanding.

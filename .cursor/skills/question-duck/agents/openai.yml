@@ -1,7 +1,5 @@
 interface:
   display_name: "question-duck"
-  short_description: |
-    Interrogate a plan or design usinga thorough, round-based Q&A until; all assumptions are documented, 
-    no ambiguities remain, and a shared understanding with the user is reached. Use when the user wants 
-    to planning an idea, develop or stress-test a design, refine decisions before writing docs or code, 
-    or when the user explicitly invokes question-duck.
+  short_description: "Round-based design interview inside epic-duck or rubber-duck until shared understanding is reached."
+policy:
+  allow_implicit_invocation: true

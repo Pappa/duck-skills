@@ -1,6 +1,7 @@
 ---
 name: architect-duck
-description: Build and sharpen a project's domain model while designing — challenge terminology, stress-test scenarios, and update GLOSSARY.md and ADRs as decisions land. Use when discussing domain language, writing or editing a glossary, recording ADRs, paired with question-duck in a design session, or when the user invokes architect-duck.
+description: Build and sharpen a project's domain model while designing — challenge terminology, stress-test scenarios, and update GLOSSARY.md and ADRs as decisions land. Used inside epic-duck or rubber-duck; not a user entry point.
+disable-model-invocation: true
 ---
 
 # Architect duck

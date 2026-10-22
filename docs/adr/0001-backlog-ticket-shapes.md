@@ -93,6 +93,7 @@ Header **`Overview:`** remains one line for plan index tables.
 
 ## Consequences
 
-- Backlog items use `Type: epic-duck:*` and the unified `Status:` vocabulary.
-- Update epic-duck, amigo-duck, setup-duck-skills backlog templates.
+- Planning backlog items use `Type: epic-duck:*` and the unified `Status:` vocabulary.
+- Implementation items use plain **`Type: task`** and **`Type: spike`** (rubber-duck); documented in `docs/agents/backlog.md` (decision **0014**).
+- Update epic-duck, rubber-duck, amigo-duck, setup-duck-skills backlog templates.
 - Triage-duck (**0006**) should assume unified `Status:` only.

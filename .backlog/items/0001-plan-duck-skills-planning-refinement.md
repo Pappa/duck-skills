@@ -9,7 +9,7 @@ Planning and refinement duck-skills in this repo produce concise, unambiguous ba
 
 **In-scope skills (only):** `setup-duck-skills`, `epic-duck`, `rubber-duck`, `question-duck`, `architect-duck`, `amigo-duck`, `spike-duck`, and new `triage-duck`. Development, implementation, and testing skills are a separate future feature.
 
-**Composition (not duplication):** `rubber-duck` and `epic-duck` both use `question-duck` and `architect-duck`; epic-duck also uses `amigo-duck` and `spike-duck` for plan/backlog work. `question-duck` / `architect-duck` are not standalone user entry points in v1. See [0004-decision-planning-pipeline-choreography.md](0004-decision-planning-pipeline-choreography.md). No merge/dedupe unless evals show systematic agent confusion.
+**Composition (not duplication):** `rubber-duck` and `epic-duck` both use `question-duck` and `architect-duck` (orchestrators invoke them; not user entry points). **epic-duck** also uses `amigo-duck` and `spike-duck` for planning backlog work. **epic-duck** publishes `epic-duck:*` planning items; **rubber-duck** publishes implementation `Type: task` / `Type: spike`. See [0004-decision-planning-pipeline-choreography.md](0004-decision-planning-pipeline-choreography.md) and [0014-decision-skill-inventory-remediation.md](0014-decision-skill-inventory-remediation.md).
 
 **Done signal (current):** Planning skills produce tickets that reach **amigo-duck Approve** where required when authored or changed; backlog shapes match ADR and `docs/agents/*`. **Automated eval harness and golden-set scoring are temporarily out of scope** (token budget); see **Out of scope**.
 
@@ -59,7 +59,7 @@ Planning and refinement duck-skills in this repo produce concise, unambiguous ba
 |------|----------|--------|
 | [0009-sandbox-project-and-harness.md](0009-sandbox-project-and-harness.md) | Build `evals/sandbox_project` and the lightweight eval harness. | out-of-scope |
 | [0010-implement-triage-duck.md](0010-implement-triage-duck.md) | Add `triage-duck` skill per decided design. | needs-detail |
-| [0015-remediate-skill-inventory-findings.md](0015-remediate-skill-inventory-findings.md) | Apply decision 0014 across skills, docs, and backlog canon. | ready |
+| [0015-remediate-skill-inventory-findings.md](0015-remediate-skill-inventory-findings.md) | Apply decision 0014 across skills, docs, and backlog canon. | resolved |
 
 ## Spikes
 
