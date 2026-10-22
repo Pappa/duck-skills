@@ -1,5 +1,5 @@
 Type: epic-duck:task
-Status: ready
+Status: resolved
 Plan: [0001-plan-duck-skills-planning-refinement.md](0001-plan-duck-skills-planning-refinement.md)
 Overview: Document epic-duck flows for ambiguous tickets and remove triage-duck skill promises from canon.
 Blocked by:
@@ -24,8 +24,8 @@ Extend **epic-duck** so “triage” is a documented session mode: classify **Pl
 
 ## Acceptance Criteria
 
-- [ ] **`epic-duck/SKILL.md`**: New or expanded section covers ambiguous-ticket triage — user entry via epic-duck; **question-duck** for classification; unanchored **`Plan: (unanchored)`** + **`needs-triage`**; orphan/wrong **Type** / missing **Plan**; **`ready`** only via **amigo-duck** where applicable; no callable triage helper from other skills.
-- [ ] **`rubber-duck/SKILL.md`**: User-facing triage message points to **epic-duck** only (no **triage-duck**).
-- [ ] **`setup-duck-skills/SKILL.md`**: Done / consumer list does not promise **triage-duck**; lists the seven in-repo planning skills only.
-- [ ] **`docs/agents/backlog.md`** and **`setup-duck-skills/backlog-local.md`**: Unanchored / **`needs-triage`** handover names **epic-duck** only (remove “or triage-duck” / “future triage-duck”).
-- [ ] Plan **0001** Destination and Notes match **0006** (no in-scope **triage-duck** skill) if not already updated in the same change set as this task.
+- [x] **`epic-duck/SKILL.md`**: New or expanded section covers ambiguous-ticket triage — user entry via epic-duck; **question-duck** for classification; unanchored **`Plan: (unanchored)`** + **`needs-triage`**; orphan/wrong **Type** / missing **Plan**; **`ready`** only via **amigo-duck** where applicable; no callable triage helper from other skills.
+- [x] **`rubber-duck/SKILL.md`**: User-facing triage message points to **epic-duck** only (no **triage-duck**).
+- [x] **`setup-duck-skills/SKILL.md`**: Done / consumer list does not promise **triage-duck**; lists the seven in-repo planning skills only.
+- [x] **`docs/agents/backlog.md`** and **`setup-duck-skills/backlog-local.md`**: Unanchored / **`needs-triage`** handover names **epic-duck** only (remove “or triage-duck” / “future triage-duck”).
+- [x] Plan **0001** Destination and Notes match **0006** (no in-scope **triage-duck** skill) if not already updated in the same change set as this task.

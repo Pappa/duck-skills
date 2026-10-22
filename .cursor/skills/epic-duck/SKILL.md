@@ -165,6 +165,21 @@ When any item becomes `resolved` or `out-of-scope`, remove its number from every
 
 **Out of scope** is consciously excluded work — never graduates. Close mis-scoped items and record one line under **Out of scope**.
 
+## Ambiguous ticket triage
+
+When the user invokes **epic-duck** on a backlog item (or a messy backlog), classify the **Plan**, **Type**, and **Status** with **question-duck** until the user confirms.
+
+**Typical cases:**
+
+- **Unanchored implementation items** — **`Plan: (unanchored)`**, **`Status: needs-triage`** from **rubber-duck**: pick or chart a feature plan, set a real **`Plan:`** link, update the parent plan **Tasks** / **Spikes** table when applicable, and move **`Status:`** off **`needs-triage`** when the user confirms the feature.
+- **Orphan or mis-typed items** — wrong **`Type:`**, missing **`Plan:`**, or item on the wrong feature: settle plan, kind (`epic-duck:*` vs implementation **`task`** / **`spike`**), and target **Status** with the user.
+
+**Status rules during triage:**
+
+- After classification, prefer **`needs-detail`** until requirements are sharp.
+- Set **`Status: ready`** only after **amigo-duck** where that gate applies (same as normal epic-duck publish rules).
+- Set **`in-progress`** when this session starts substantive edits on the item (existing rules).
+
 ## Choose a feature (every session)
 
 1. User input that **names or references by number** an existing feature → open it (path, filename, `NNNN` for `NNNN-plan-*`, slug).
@@ -217,7 +232,7 @@ User passes a feature (or child); optional named decision, task, or spike.
 6. Add new children; graduate fog; rule out-of-scope items.
 7. When all children are `resolved` or `out-of-scope` and **Not yet specified** is empty, ask whether the feature is `resolved`, `out-of-scope`, or still `in-progress` with more work.
 
-When attaching an unanchored implementation item (`Plan: (unanchored)` from **rubber-duck**), set a real **`Plan:`** link on that item and move **`Status:`** off `needs-triage` when the user confirms the feature.
+When attaching an unanchored implementation item (`Plan: (unanchored)` from **rubber-duck**), follow **Ambiguous ticket triage** above: set a real **`Plan:`** link and move **`Status:`** off `needs-triage` when the user confirms the feature.
 
 **One child per session** except parallel spikes during charting.
 

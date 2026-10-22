@@ -113,4 +113,4 @@ For custom trackers, write `docs/agents/backlog.md` from the user's description.
 
 ### 5. Done
 
-Tell the user setup is complete and which skills read these files (`epic-duck`, `rubber-duck`, `question-duck`, `architect-duck`, `amigo-duck`, `spike-duck`; **`triage-duck`** when shipped per task **0010**). They can edit `docs/agents/*.md` directly; re-run this skill only to switch trackers or restart config.
+Tell the user setup is complete. **`setup-duck-skills`** seeds these files; the other six in-repo planning skills read them: `epic-duck`, `rubber-duck`, `question-duck`, `architect-duck`, `amigo-duck`, `spike-duck`. They can edit `docs/agents/*.md` directly; re-run this skill only to switch trackers or restart config.

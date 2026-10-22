@@ -24,7 +24,7 @@ Resolution must be documentable in skill text and exercisable in eval scenarios.
 
 **epic-duck** and **rubber-duck** are **not** invoked by each other — only by the user.
 
-**triage-duck:** Out of v1 choreography; revisit after evals and core skills mature (**0006** / **0010** deferred).
+**Ambiguous ticket routing:** No separate triage skill — **epic-duck** + **question-duck** classify **`needs-triage`** and orphan items per resolved **0006** (task **0010** wontfix).
 
 ### Shared behaviours (epic and rubber)
 

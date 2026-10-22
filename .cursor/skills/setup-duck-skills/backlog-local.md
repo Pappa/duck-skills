@@ -135,7 +135,7 @@ Blocked by:
 
 ### Implementation task file body (`Type: task`)
 
-Same header order as planning tasks. **`Plan:`** links to a feature plan file, or **`Plan: (unanchored)`** when **rubber-duck** saved an item before a feature exists (**`Status: needs-triage`** until **epic-duck** or **triage-duck** sets a real plan link).
+Same header order as planning tasks. **`Plan:`** links to a feature plan file, or **`Plan: (unanchored)`** when **rubber-duck** saved an item before a feature exists (**`Status: needs-triage`** until **epic-duck** sets a real plan link).
 
 Deliverable with **`Status: ready`**: same body sections as **`Type: epic-duck:task`** deliverables (**Problem Statement**, **Description**, **Acceptance Criteria**).
 
@@ -214,7 +214,7 @@ Used by **epic-duck**. A **feature plan** is the planning artifact; **decisions*
 - **Child spike**: `Type: epic-duck:spike`, result under `.backlog/spike/`.
 - **Resolve decision**: `## Answer`, `Status: resolved`, one bullet under feature **Decisions so far**, blocker sweep, refresh tables.
 - **Resolve spike**: result file written, spike item `Status: resolved`, update **Spikes** table and **Decisions so far** when appropriate.
-- **Unanchored implementation items**: `Plan: (unanchored)` + `needs-triage` until a feature plan link is set (**epic-duck** or future **triage-duck**).
+- **Unanchored implementation items**: `Plan: (unanchored)` + `needs-triage` until **epic-duck** sets a feature plan link.
 
 ### Starting a session (local)
 
