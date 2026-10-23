@@ -14,8 +14,8 @@ Implement the **`## Answer`** in **0014** in one pass (same PR acceptable). Spli
 
 **Planning vs implementation (summary):**
 
-- **epic-duck** publishes **`Type: epic-duck:decision`**, **`epic-duck:task`**, **`epic-duck:spike`** (planning-era shapes per ADR 0001).
-- **rubber-duck** publishes **`Type: task`**, **`Type: spike`** only — implementation/development work; filenames **`NNNN-task-<slug>.md`**, **`NNNN-spike-<slug>.md`**; same counter and `.backlog/items/`.
+- **epic-duck** publishes **`Type: epic-duck:decision`**, **`epic-duck:task`**, **`epic-duck:spike`** (planning-era shapes per ADR 0001); tasks use **`NNNN-task-<slug>.md`**.
+- **rubber-duck** publishes **`Type: task`**, **`Type: spike`** only — implementation/development work; same task/spike filename patterns; same counter and `.backlog/items/`.
 - Unanchored rubber items: **`Plan: (unanchored)`**, **`Status: needs-triage`**; tell the user the item is not on a feature and will need triage later; **epic-duck** attaches a real `Plan:` when a feature exists.
 
 Update **`docs/agents/backlog.md`** (and setup seeds that mirror it) with implementation item profiles. Extend **amigo-duck** to review planning vs implementation formats. Set **question-duck** / **architect-duck** `disable-model-invocation: true`, **`allow_implicit_invocation: true`** in agent YAML; README not a user entry point for those skills.

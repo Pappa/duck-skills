@@ -18,7 +18,7 @@ All epic-duck artefacts use **`Type: epic-duck:<kind>`** on **local markdown and
 |------|----------------|--------------|
 | Plan | `epic-duck:plan` | `*-plan-*.md` |
 | Decision | `epic-duck:decision` | `*-decision-*.md` |
-| Task | `epic-duck:task` | `<NNNN>-<slug>.md` (slug not `plan-`, `decision-`, `spike-`) |
+| Task | `epic-duck:task` | `<NNNN>-task-<slug>.md` (same filename pattern as implementation `Type: task`; distinguished by `Type:`) |
 | Spike item | `epic-duck:spike` | `*-spike-*.md` |
 
 Future non-planning work (implementation skills) will use a **different** `Type:` prefix in a later ADR. **`epic-duck:task`** is planning-era work only.

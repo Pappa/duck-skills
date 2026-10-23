@@ -53,9 +53,9 @@ Planning and refinement duck-skills in this repo produce concise, unambiguous ba
 
 | Task | Overview | Status |
 |------|----------|--------|
-| [0010-implement-triage-duck.md](0010-implement-triage-duck.md) | Add `triage-duck` skill per decided design. | wontfix |
-| [0015-remediate-skill-inventory-findings.md](0015-remediate-skill-inventory-findings.md) | Apply decision 0014 across skills, docs, and backlog canon. | resolved |
-| [0016-epic-duck-ambiguous-ticket-triage.md](0016-epic-duck-ambiguous-ticket-triage.md) | Document epic-duck triage flows; drop triage-duck promises from canon. | resolved |
+| [0010-task-implement-triage-duck.md](0010-task-implement-triage-duck.md) | Add `triage-duck` skill per decided design. | wontfix |
+| [0015-task-remediate-skill-inventory-findings.md](0015-task-remediate-skill-inventory-findings.md) | Apply decision 0014 across skills, docs, and backlog canon. | resolved |
+| [0016-task-epic-duck-ambiguous-ticket-triage.md](0016-task-epic-duck-ambiguous-ticket-triage.md) | Document epic-duck triage flows; drop triage-duck promises from canon. | resolved |
 
 ## Spikes
 

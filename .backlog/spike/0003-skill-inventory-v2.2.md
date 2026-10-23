@@ -66,7 +66,7 @@ Canonical values (all skills and docs that matter agree): `needs-triage`, `needs
 |---------------|--------------------------|-------------------------|
 | `epic-duck:plan` | `*-plan-*.md` | Destination, tables; no `Plan:` / `Overview:` on plan file |
 | `epic-duck:decision` | `*-decision-*.md` | `## Question` → `## Answer` when resolved |
-| `epic-duck:task` | `<NNNN>-<slug>.md` (slug not `plan-` / `decision-` / `spike-`) | Unblocker: `## Question`; deliverable: **`Status: ready`** + Problem Statement, Description, AC |
+| `epic-duck:task` | `<NNNN>-task-<slug>.md` | Unblocker: `## Question`; deliverable: **`Status: ready`** + Problem Statement, Description, AC |
 | `epic-duck:spike` | `*-spike-*.md` | `## Question`, `Result:` → findings path |
 
 **amigo-duck** branches INVEST rules by **`Type: epic-duck:*`** and **`Status: ready`** on tasks — matches ADR 0001.
@@ -196,7 +196,7 @@ Source: `.cursor/skills/spike-duck/SKILL.md`.
 | **Writes** | Expected: **`Status:`** transitions only (no `Label:` per 0005) |
 | **Invokes** | TBD in 0006 (user-only vs callable from epic-duck / setup) |
 
-Sources: [0006](../items/0006-decision-triage-duck-activation.md), [0010](../items/0010-implement-triage-duck.md), ADR 0001 consequences.
+Sources: [0006](../items/0006-decision-triage-duck-activation.md), [0010](../items/0010-task-implement-triage-duck.md), ADR 0001 consequences.
 
 ### amigo-pato
 

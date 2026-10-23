@@ -10,4 +10,4 @@ Implement `.cursor/skills/triage-duck/` and update `AGENTS.md` / related docs pe
 
 ## Comments
 
-Superseded by [0006](0006-decision-triage-duck-activation.md) **Answer**: no standalone triage skill. Use [0016-epic-duck-ambiguous-ticket-triage.md](0016-epic-duck-ambiguous-ticket-triage.md) instead.
+Superseded by [0006](0006-decision-triage-duck-activation.md) **Answer**: no standalone triage skill. Use [0016-task-epic-duck-ambiguous-ticket-triage.md](0016-task-epic-duck-ambiguous-ticket-triage.md) instead.

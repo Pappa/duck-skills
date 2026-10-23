@@ -6,11 +6,11 @@ Spike: [0003-spike-skill-inventory.md](../items/0003-spike-skill-inventory.md)
 
 ## TLDR
 
-Seven skills exist under `.cursor/skills/`; **`triage-duck` is not implemented** (plan [0001](../items/0001-plan-duck-skills-planning-refinement.md), decision [0006](../items/0006-decision-triage-duck-activation.md), task [0010](../items/0010-implement-triage-duck.md)). After **ADR 0001** and `docs/agents/backlog.md`, local backlog shapes are aligned: first-line **`Type: epic-duck:*`**, unified **`Status:`**, spike items are typed, findings files use `Spike:` + **`## TLDR`** only.
+Seven skills exist under `.cursor/skills/`; **`triage-duck` is not implemented** (plan [0001](../items/0001-plan-duck-skills-planning-refinement.md), decision [0006](../items/0006-decision-triage-duck-activation.md), task [0010](../items/0010-task-implement-triage-duck.md)). After **ADR 0001** and `docs/agents/backlog.md`, local backlog shapes are aligned: first-line **`Type: epic-duck:*`**, unified **`Status:`**, spike items are typed, findings files use `Spike:` + **`## TLDR`** only.
 
 **Artefact ownership:** **`setup-duck-skills`** seeds tracker and domain layout (and optional remote labels). **`epic-duck`** is the primary writer for plans and child items under `.backlog/`. **`spike-duck`** writes spike findings (and may create spike items when none exist). **`rubber-duck`** skill text limits writes to **glossary/ADR**; **`amigo-duck`** produces in-chat reviews (`## amigo-duck review`) and does not publish by itself. **`question-duck`** and **`architect-duck`** have no mandated file writes in their skill text.
 
-**Largest contradictions (v2.1):** Resolved decision [0004](../items/0004-decision-planning-pipeline-choreography.md) says **rubber-duck** may create backlog children on a **confirmed** feature (with **amigo-duck** before publish) and **epic-duck** may invoke **architect-duck** / delegate to **rubber-duck** — but **`rubber-duck/SKILL.md` and `epic-duck/SKILL.md` do not say this** (addressed via [0014](../items/0014-decision-skill-inventory-remediation.md) / [0015](../items/0015-remediate-skill-inventory-findings.md)). **README** still shows `rubber-duck` → backlog **tickets** while the rubber skill omits backlog writes. Plan **Notes** claim epic-duck uses **architect-duck**; epic skill text does not.
+**Largest contradictions (v2.1):** Resolved decision [0004](../items/0004-decision-planning-pipeline-choreography.md) says **rubber-duck** may create backlog children on a **confirmed** feature (with **amigo-duck** before publish) and **epic-duck** may invoke **architect-duck** / delegate to **rubber-duck** — but **`rubber-duck/SKILL.md` and `epic-duck/SKILL.md` do not say this** (addressed via [0014](../items/0014-decision-skill-inventory-remediation.md) / [0015](../items/0015-task-remediate-skill-inventory-findings.md)). **README** still shows `rubber-duck` → backlog **tickets** while the rubber skill omits backlog writes. Plan **Notes** claim epic-duck uses **architect-duck**; epic skill text does not.
 
 Sources: `.cursor/skills/*/SKILL.md`, `docs/agents/backlog.md`, `docs/agents/domain.md`, `docs/agents/ticket-statuses.md`, `docs/adr/0001-backlog-ticket-shapes.md`, `AGENTS.md`, `README.md`, `.backlog/items/0004-decision-planning-pipeline-choreography.md`.
 
@@ -188,7 +188,7 @@ Solid edges: stated in `SKILL.md`. Dotted: 0006 option 2 only. **0004** adds edg
 
 | ID | Topic | A | B | Severity |
 |----|--------|---|---|----------|
-| **R1** | Rubber-duck backlog | `rubber-duck/SKILL.md`: glossary/ADR only | [0004](../items/0004-decision-planning-pipeline-choreography.md) Answer: may write decisions/tasks/spikes on **confirmed** feature + **amigo-duck** | **High** — skill text stale; rubber skill edit ([0015](../items/0015-remediate-skill-inventory-findings.md)) |
+| **R1** | Rubber-duck backlog | `rubber-duck/SKILL.md`: glossary/ADR only | [0004](../items/0004-decision-planning-pipeline-choreography.md) Answer: may write decisions/tasks/spikes on **confirmed** feature + **amigo-duck** | **High** — skill text stale; rubber skill edit ([0015](../items/0015-task-remediate-skill-inventory-findings.md)) |
 | **R2** | Epic-duck + architect | Plan [0001](../items/0001-plan-duck-skills-planning-refinement.md) Notes: epic uses **architect-duck** | `epic-duck/SKILL.md`: no architect-duck; 0004: invoke architect or delegate **rubber-duck** | **High** — epic skill text stale |
 | **R3** | README planning flow | `README.md`: `rubber-duck` → **tickets** | `rubber-duck/SKILL.md`: no backlog | **Medium** — README vs rubber skill |
 | **R4** | README vs 0004 entry points | README lists **question-duck** / **architect-duck** as model-invoked skills | 0004: **not** user-invoked alone in v1 (only inside epic/rubber) | **Low** — description still allows explicit invoke |
@@ -241,7 +241,7 @@ Only **setup-duck-skills** creates remote labels. No in-scope skill writes GitHu
 
 | Ticket | Gap |
 |--------|-----|
-| [0015](../items/0015-remediate-skill-inventory-findings.md) | Reflect 0004 golden paths in epic-duck, rubber-duck, question-duck, architect-duck SKILL.md |
+| [0015](../items/0015-task-remediate-skill-inventory-findings.md) | Reflect 0004 golden paths in epic-duck, rubber-duck, question-duck, architect-duck SKILL.md |
 | **0010** | triage-duck reads/writes once 0006 resolves |
 | README | Optional pass to match 0004 choreography and amigo/spike gates |
 

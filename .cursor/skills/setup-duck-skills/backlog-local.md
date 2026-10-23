@@ -19,7 +19,7 @@ All backlog items share one counter under `.backlog/items/`. Next number = one g
 |------|------|---------|-----------|
 | Plan | `.backlog/items/<NNNN>-plan-<feature-slug>.md` | `epic-duck:plan` | epic-duck |
 | Decision | `.backlog/items/<NNNN>-decision-<slug>.md` | `epic-duck:decision` | epic-duck |
-| Planning task | `.backlog/items/<NNNN>-<slug>.md` — slug must **not** start with `plan-`, `decision-`, or `spike-` | `epic-duck:task` | epic-duck |
+| Planning task | `.backlog/items/<NNNN>-task-<slug>.md` | `epic-duck:task` | epic-duck |
 | Planning spike (item) | `.backlog/items/<NNNN>-spike-<slug>.md` | `epic-duck:spike` | epic-duck |
 | Implementation task | `.backlog/items/<NNNN>-task-<slug>.md` | `task` | rubber-duck |
 | Implementation spike (item) | `.backlog/items/<NNNN>-spike-<slug>.md` | `spike` | rubber-duck |

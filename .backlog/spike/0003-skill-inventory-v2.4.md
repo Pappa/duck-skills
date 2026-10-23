@@ -10,7 +10,7 @@ All three parallel passes agree: **seven in-scope skills ship in `.cursor/skills
 
 The **main open problem is choreography drift**: resolved **[0004](../items/0004-decision-planning-pipeline-choreography.md)** says **rubber-duck** may write backlog children (with **amigo-duck** before publish) and **epic-duck** may invoke **architect-duck** (or delegate **rubber-duck**), but **`epic-duck/SKILL.md` and `rubber-duck/SKILL.md` still describe the older split** (epic = backlog only; rubber = glossary/ADR only). **README** still oversimplifies rubber → “tickets.” Secondary drift: **0002** and **0011** retain **`Label: ready`** / bare **`Type: decision`** prose; **epic-duck** “labelled `epic-duck:plan`” wording confuses local **`Type:`** readers; **spike-duck** vs **epic-duck** spike-item numbering can duplicate `NNNN` if both allocate.
 
-**Recommended follow-ups:** skill edits for **0004** golden paths ([0015](../items/0015-remediate-skill-inventory-findings.md)); **0006** for triage; optional **0002** Answer hygiene; README alignment.
+**Recommended follow-ups:** skill edits for **0004** golden paths ([0015](../items/0015-task-remediate-skill-inventory-findings.md)); **0006** for triage; optional **0002** Answer hygiene; README alignment.
 
 ---
 

@@ -66,7 +66,7 @@ Resolution must produce a single **`## Answer`** that addresses **every row** be
 - **Q9:** existing plan only — **handover TBD** when user has ready artefact but no plan.
 - **Q10–Q12:** amend **0004**; fix README; no user-callable question/architect; batch low-severity fixes.
 - **Q9:** unanchored impl items: **`Status: needs-triage`**, sentinel **`Plan:`**, user message about triage later. **Q9b:** sentinel on `Plan:` line (exact string TBD in Answer).
-- **Q14:** same counter/`.backlog/items/`; filenames **`NNNN-task-<slug>.md`**, **`NNNN-spike-<slug>.md`**; `Type: task` / `Type: spike`.
+- **Q14:** same counter/`.backlog/items/`; filenames **`NNNN-task-<slug>.md`** (planning **`epic-duck:task`** and implementation **`task`**), **`NNNN-spike-<slug>.md`**; `Type:` distinguishes families.
 - **Q15:** `disable-model-invocation: true` + **`allow_implicit_invocation: true`** on question-duck & architect-duck (YAML + README).
 - **Q13:** reword question-duck; reserve **Frontier** for backlog — user reviewing alternatives (see chat).
 
@@ -89,7 +89,7 @@ Resolution must produce a single **`## Answer`** that addresses **every row** be
 
 | Rule | Decision |
 |------|----------|
-| Follow-on work | **One** deliverable task **[0015](0015-remediate-skill-inventory-findings.md)** (`Status: ready`); user may split after reviewing the diff. |
+| Follow-on work | **One** deliverable task **[0015](0015-task-remediate-skill-inventory-findings.md)** (`Status: ready`); user may split after reviewing the diff. |
 | **0002** / **0011** historical prose | **Rewrite in place** — remove all `Label: ready`, bare `Type: decision`, and pre-namespace spike recommendations; text reads as if ADR 0001 always applied. |
 | Edit order | All changes to the same `SKILL.md` in **one** edit pass (planning alignment + low-severity rows for that file). |
 | **0004** | **Amend Answer** to match this decision (rubber impl items only, no rubber decisions, no epic↔rubber delegation). Supersedes conflicting bullets in old **0004** text. |
@@ -99,7 +99,7 @@ Resolution must produce a single **`## Answer`** that addresses **every row** be
 
 | Publisher | `Type:` values | Filename patterns | Purpose |
 |-----------|----------------|-------------------|---------|
-| **epic-duck** | `epic-duck:plan`, `epic-duck:decision`, `epic-duck:task`, `epic-duck:spike` | ADR 0001 (`*-plan-*`, `*-decision-*`, `*-spike-*`, task slug rules) | Planning |
+| **epic-duck** | `epic-duck:plan`, `epic-duck:decision`, `epic-duck:task`, `epic-duck:spike` | `*-plan-*`, `*-decision-*`, `NNNN-task-<slug>.md`, `NNNN-spike-<slug>.md` | Planning |
 | **rubber-duck** | `task`, `spike` (no `epic-duck:` prefix) | `NNNN-task-<slug>.md`, `NNNN-spike-<slug>.md` | Implementation / development |
 
 Shared **NNNN** counter and `.backlog/items/` path. Spike **findings** stay `.backlog/spike/<NNNN>-<slug>.md` (no `Type:` on findings file).
@@ -140,4 +140,8 @@ Shared **NNNN** counter and `.backlog/items/` path. Spike **findings** stay `.ba
 
 ### Implementation
 
-All edits above are tracked in task **[0015-remediate-skill-inventory-findings.md](0015-remediate-skill-inventory-findings.md)** acceptance criteria.
+All edits above are tracked in task **[0015-task-remediate-skill-inventory-findings.md](0015-task-remediate-skill-inventory-findings.md)** acceptance criteria.
+
+### Amendment (planning task filenames)
+
+Planning **`epic-duck:task`** items use **`NNNN-task-<slug>.md`** — the same path pattern as implementation **`Type: task`**. **`Type:`** on the first line distinguishes planning from implementation. ADR 0001 and existing planning task files **0010**, **0015**, **0016** renamed accordingly.

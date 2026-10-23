@@ -6,7 +6,7 @@ Spike: [0011-spike-common-fields-and-skill-needs.md](../items/0011-spike-common-
 
 ## TLDR
 
-**Canon:** `docs/agents/backlog.md` and ADR 0001. First line **`Type:`**, then **`Status:`**. **Planning:** `epic-duck:plan`, `epic-duck:decision`, `epic-duck:task`, `epic-duck:spike` (**epic-duck**). **Implementation:** `task`, `spike` with `NNNN-task-<slug>.md` / `NNNN-spike-<slug>.md` (**rubber-duck**). Deliverable work uses **`Status: ready`** (not `Label:`). **amigo-duck** reviews per kind. Spike **findings**: `Spike:` link + **TLDR** only.
+**Canon:** `docs/agents/backlog.md` and ADR 0001. First line **`Type:`**, then **`Status:`**. **Planning:** `epic-duck:plan`, `epic-duck:decision`, `epic-duck:task`, `epic-duck:spike` (**epic-duck**). **Implementation:** `task`, `spike` (**rubber-duck**). All task items use **`NNNN-task-<slug>.md`**; spike items use **`NNNN-spike-<slug>.md`**; **`Type:`** distinguishes planning from implementation. Deliverable work uses **`Status: ready`** (not `Label:`). **amigo-duck** reviews per kind. Spike **findings**: `Spike:` link + **TLDR** only.
 
 Upstream **writing-for-agents** favours checkable completion criteria and one authoritative doc—maps to testable AC and `backlog.md`. **pr** skill favours fixed sections (Summary, Evidence)—maps to optional `## Evidence` on large ready tasks only.
 
