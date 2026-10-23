@@ -24,11 +24,11 @@ Planning and refinement duck-skills in this repo produce concise, unambiguous ba
 - [Ticket shapes and fields](0005-decision-ticket-shapes-and-fields.md): `Type: epic-duck:*` (first line), unified **`Status:`** (incl. `ready`), deliverable task body sections, spike findings TLDR; ADR `docs/adr/0001-backlog-ticket-shapes.md`.
 - [Common fields](0011-common-fields-and-skill-needs.md): Spike input to **0005**; superseded for headers by ADR 0001.
 - [Planning pipeline choreography](0004-decision-planning-pipeline-choreography.md): Epic = plans + planning `epic-duck:*` children; rubber = single-session impl **`Type: task`** / **`Type: spike`** (and clarity/doc/code); amigo-duck before publish; see **0014** for full split (amends **0004** in remediation).
-- [Skill inventory remediation](0014-decision-skill-inventory-remediation.md): Dispositions for spike **0003** register; planning vs impl backlog families; unanchored `Plan: (unanchored)`; question-duck open/closed rounds.
+- [Skill inventory remediation](0014-decision-skill-inventory-remediation.md): Dispositions for spike **0003** register; planning vs impl backlog families; unanchored `Plan: (unanchored)`; question-duck open/closed rounds; **spike entry** — planning via **epic-duck** (`epic-duck:spike` → **spike-duck**); implementation via **rubber-duck** (`Type: spike` → **spike-duck**); **spike-duck** uses existing spike item when **`Result:`** is set (**C-spike-NNNN**). See also [0004](0004-decision-planning-pipeline-choreography.md) golden paths.
 - [Triage without triage-duck](0006-decision-triage-duck-activation.md): No standalone triage skill; epic-duck + question-duck classify ambiguous tickets; amigo-duck still gates **`ready`**; **0010** wontfix; **0016** documents flows in skills and canon.
 
 ## Not yet specified
-- **Spike entry points (future):** v1 spikes opened through **epic-duck**; possible later: **rubber-duck** or direct **spike-duck** without forbidding other paths yet.
+
 - **Accepted gaps (future):** Quality findings (from amigo-duck or eval metrics) the **operator** explicitly tolerates for a run instead of requiring a fix before publish. v1: not used — sub-Approve lowers **Ticket quality**; notes in **Usability**. Later: optional acceptance with a **score penalty**; rename term TBD.
 
 ## Out of scope
