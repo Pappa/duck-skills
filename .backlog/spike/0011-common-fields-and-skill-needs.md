@@ -76,7 +76,7 @@ Blocked by:                    # optional; comma-separated NNNN
 
 - No backlog fields; glossary/ADR only. Ready tickets may **point to** `GLOSSARY.md` in AC.
 
-### setup-duck-skills / triage-duck (future)
+### setup-duck-skills
 
 - Seeds `backlog.md` + `ticket-statuses.md`. Future triage reads `Status` + optional `Label:`; do not conflate `Status:` (workflow) with `needs-detail` label (triage role)—document in **0006**.
 
@@ -114,7 +114,6 @@ Create `docs/adr/0001-backlog-ticket-shapes.md` (or next free number) containing
 2. Common-fields table (this spike).
 3. Body profiles (templates copied from ADR into `backlog.md`—ADR is rationale + canonical templates; `backlog.md` is agent-facing SSOT per writing-for-agents).
 4. Local vs remote label mapping (one paragraph).
-5. Deferred: triage-duck field interactions (**0006**).
 
 ---
 

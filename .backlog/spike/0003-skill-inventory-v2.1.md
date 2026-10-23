@@ -6,7 +6,7 @@ Spike: [0003-spike-skill-inventory.md](../items/0003-spike-skill-inventory.md)
 
 ## TLDR
 
-Seven skills exist under `.cursor/skills/`; **`triage-duck` is not implemented** (plan [0001](../items/0001-plan-duck-skills-planning-refinement.md), decision [0006](../items/0006-decision-triage-duck-activation.md), task [0010](../items/0010-task-implement-triage-duck.md)). After **ADR 0001** and `docs/agents/backlog.md`, local backlog shapes are aligned: first-line **`Type: epic-duck:*`**, unified **`Status:`**, spike items are typed, findings files use `Spike:` + **`## TLDR`** only.
+Seven skills exist under `.cursor/skills/`; After **ADR 0001** and `docs/agents/backlog.md`, local backlog shapes are aligned: first-line **`Type: epic-duck:*`**, unified **`Status:`**, spike items are typed, findings files use `Spike:` + **`## TLDR`** only.
 
 **Artefact ownership:** **`setup-duck-skills`** seeds tracker and domain layout (and optional remote labels). **`epic-duck`** is the primary writer for plans and child items under `.backlog/`. **`spike-duck`** writes spike findings (and may create spike items when none exist). **`rubber-duck`** skill text limits writes to **glossary/ADR**; **`amigo-duck`** produces in-chat reviews (`## amigo-duck review`) and does not publish by itself. **`question-duck`** and **`architect-duck`** have no mandated file writes in their skill text.
 
@@ -27,7 +27,6 @@ Sources: `.cursor/skills/*/SKILL.md`, `docs/agents/backlog.md`, `docs/agents/dom
 | architect-duck | Yes | None | — |
 | amigo-duck | Yes | None | Invoked by epic-duck (and per 0004, by rubber when publishing) |
 | spike-duck | Yes | Background agent for investigation | — |
-| triage-duck | **No** | — (see [Planned: triage-duck](#planned-triage-duck)) | — |
 
 **Not in scope but present:** `.cursor/skills/amigo-pato/` (separate skill; ignore unless plan expands scope).
 
@@ -45,7 +44,7 @@ Sources: `.cursor/skills/*/SKILL.md`, `docs/agents/backlog.md`, `docs/agents/dom
 | **Backlog** | Seeds operational doc; empty feature index for local mode — does not create plan/child items |
 | **Domain** | Seeds `domain.md`; does not author glossary/ADR body |
 | **Invokes** | None |
-| **Consumers (listed at end of skill)** | `epic-duck`, `rubber-duck`, `question-duck`, `architect-duck`, `amigo-duck`, `spike-duck` — **not** `triage-duck` |
+| **Consumers (listed at end of skill)** | `epic-duck`, `rubber-duck`, `question-duck`, `architect-duck`, `amigo-duck`, `spike-duck` |
 
 Source: `.cursor/skills/setup-duck-skills/SKILL.md`, seed templates under `.cursor/skills/setup-duck-skills/`.
 
@@ -142,21 +141,6 @@ Source: `.cursor/skills/spike-duck/SKILL.md`, `docs/agents/backlog.md` § Spike 
 
 ---
 
-### Planned: triage-duck
-
-| Area | Detail (from backlog decisions, not skill file) |
-|------|--------------------------------------------------|
-| **Reads (expected)** | Backlog items (`Status:`, headers), `docs/agents/ticket-statuses.md`, likely `docs/agents/backlog.md` and feature index |
-| **Writes (expected)** | **`Status:`** transitions (`needs-triage`, `needs-detail`, `ready`, `wontfix`, etc.); possibly `## Comments` — exact rules pending **0006** |
-| **Labels** | Remote: same status strings as setup seeds; local: **`Status:`** field only |
-| **Activation (open)** | User-only vs callable from planning skills — **0006** |
-| **Relation to amigo-duck** | 0006: must clarify who sets **`Status: ready`** and order vs amigo-duck |
-| **ADR 0001** | Triage should assume **unified `Status:`** only (no separate `Label: ready`) |
-
-Sources: `.backlog/items/0006-decision-triage-duck-activation.md`, `docs/adr/0001-backlog-ticket-shapes.md`, `docs/agents/ticket-statuses.md`.
-
----
-
 ## Invocation graph (as coded in skills + 0004 intent)
 
 ```mermaid
@@ -168,7 +152,6 @@ flowchart LR
   arch[architect-duck]
   amigo[amigo-duck]
   spike[spike-duck]
-  triage[triage-duck planned]
 
   setup --> epic
   setup --> rubber
@@ -177,7 +160,6 @@ flowchart LR
   epic --> spike
   rubber --> q
   rubber --> arch
-  triage -.-> epic
 ```
 
 Solid edges: stated in `SKILL.md`. Dotted: 0006 option 2 only. **0004** adds edges **not** in skill files: `epic --> arch`, `epic --> rubber`, `rubber --> amigo`, `rubber --> backlog items`.
@@ -195,7 +177,6 @@ Solid edges: stated in `SKILL.md`. Dotted: 0006 option 2 only. **0004** adds edg
 | **R5** | Spike item creation | `spike-duck`: allocate next `NNNN` spike **item** when creating | `epic-duck`: charting creates spike item first, then spike-duck fills `Result:` | **Low** — spike-duck should prefer existing item/`Result:` (partially stated in spike-duck) |
 | **R6** | Spike resolution bookkeeping | `docs/agents/backlog.md`: resolve spike → update **Decisions so far** when appropriate | `epic-duck/SKILL.md` work-through: explicit steps for **decisions**; spike resolve steps thinner | **Low** — align epic skill with backlog.md |
 | **R7** | Template `## Comments` | `docs/agents/backlog.md` / ADR 0001: optional **Comments** on children | `epic-duck/SKILL.md` embedded templates omit **Comments** | **Low** |
-| **R8** | Setup consumer list | `setup-duck-skills` Done paragraph | Plan includes **triage-duck**; setup does not mention it | **Low** — expected until **0010** |
 | **R9** | Historical spike research | [0011](../spike/0011-common-fields-and-skill-needs.md) (`Type: decision`, `Label: ready`, spike items without `Type:`) | ADR 0001 + current `backlog.md` (`Type: epic-duck:*`, unified **`Status: ready`**) | **None** — 0011 marked superseded |
 
 ### Resolved since v1 (do not re-open)
@@ -242,7 +223,6 @@ Only **setup-duck-skills** creates remote labels. No in-scope skill writes GitHu
 | Ticket | Gap |
 |--------|-----|
 | [0015](../items/0015-task-remediate-skill-inventory-findings.md) | Reflect 0004 golden paths in epic-duck, rubber-duck, question-duck, architect-duck SKILL.md |
-| **0010** | triage-duck reads/writes once 0006 resolves |
 | README | Optional pass to match 0004 choreography and amigo/spike gates |
 
 ---
@@ -257,5 +237,4 @@ Only **setup-duck-skills** creates remote labels. No in-scope skill writes GitHu
 | Rubber backlog rules (intended) | `.backlog/items/0004-decision-planning-pipeline-choreography.md` § Answer |
 | amigo review heading | `.cursor/skills/amigo-duck/SKILL.md`, ADR 0001 |
 | Spike findings shape | `.cursor/skills/spike-duck/SKILL.md`, `docs/agents/backlog.md` |
-| triage-duck absent | No `.cursor/skills/triage-duck/`; plan 0001 Notes |
 | In-scope list | `.backlog/items/0001-plan-duck-skills-planning-refinement.md` § Notes |

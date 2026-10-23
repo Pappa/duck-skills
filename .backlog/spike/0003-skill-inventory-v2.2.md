@@ -6,7 +6,7 @@ Spike: [0003-spike-skill-inventory.md](../items/0003-spike-skill-inventory.md)
 
 ## TLDR
 
-Eight planning skills exist under `.cursor/skills/`; **`triage-duck` is still absent** (planned in [0001](../items/0001-plan-duck-skills-planning-refinement.md), design gated on [0006](../items/0006-decision-triage-duck-activation.md)). **`amigo-pato` is not in the repo** and is **out of plan** — only **`amigo-duck`** is in scope.
+Seven planning skills exist under `.cursor/skills/`; **`amigo-pato` is not in the repo** and is **out of plan** — only **`amigo-duck`** is in scope.
 
 **Canon after decision [0005](../items/0005-decision-ticket-shapes-and-fields.md) and ADR [0001](../../docs/adr/0001-backlog-ticket-shapes.md):** local backlog items use **`Type: epic-duck:<kind>`** (first line) plus a single workflow field **`Status:`**. There is **no `Label:` header** on local markdown; deliverable work is **`Type: epic-duck:task`** with **`Status: ready`** and the deliverable body (not `Label: ready`). On **remote** trackers, **`epic-duck:*` strings are issue labels/tags** (type), while **`Status:` strings may be labels/tags and/or a `Status:` line in the body** — setup templates say “match team practice.”
 
@@ -27,7 +27,6 @@ Invocation graph unchanged from v1: **epic-duck** → question-duck, amigo-duck,
 | architect-duck | Yes | None | rubber-duck |
 | amigo-duck | Yes | None | epic-duck; backlog.md before publish |
 | spike-duck | Yes | Background agent (skill text) | epic-duck |
-| triage-duck | **No** | — (not implemented) | Future per 0006 |
 | amigo-pato | **No** | — | **Out of plan** (not listed on 0001) |
 
 Sources: `.cursor/skills/*/SKILL.md`, [0001](../items/0001-plan-duck-skills-planning-refinement.md) § Notes.
@@ -56,7 +55,6 @@ Canonical values (all skills and docs that matter agree): `needs-triage`, `needs
 | **amigo-duck** | Gates **`Status: ready`** on deliverable **`epic-duck:task`** (full INVEST after Approve). Light INVEST for decisions/spikes at publish time. |
 | **spike-duck** | Sets spike item **`Status: resolved`** when findings file is complete. |
 | **setup-duck-skills** | Seeds `ticket-statuses.md`; on GitHub/GitLab may **create labels** matching status strings. |
-| **triage-duck (future)** | 0006 / 0005: assume **only `Status:`** — no parallel `Label:` workflow (0011’s `Label: ready` is obsolete). |
 
 **`needs-triage` vs `needs-detail`:** both are “not ready to execute.” **Frontier** (epic-duck, `backlog.md`) = unblocked children with **`needs-triage` or `needs-detail`**, lowest `NNNN` first. **Session pool** = unblocked **`ready`**. **Triage-duck** is expected to own transitions involving **`needs-triage`** once built (0006).
 
@@ -105,7 +103,6 @@ No in-scope skill `SKILL.md` still instructs agents to write `Label:` on local f
 | amigo-duck | Explicit per kind | `Status: ready` on deliverable tasks | No |
 | spike-duck | Spike item template via backlog.md | `resolved` on item when done | No |
 | rubber-duck / question-duck / architect-duck | No backlog writes | — | — |
-| triage-duck | N/A | Future: 0006 assumes unified `Status:` only | Must not reintroduce `Label:` |
 
 ---
 
@@ -188,16 +185,6 @@ Source: `.cursor/skills/amigo-duck/SKILL.md`.
 
 Source: `.cursor/skills/spike-duck/SKILL.md`.
 
-### triage-duck (planned)
-
-| | |
-|--|--|
-| **Reads** | Expected: `.backlog/items/*`, `docs/agents/ticket-statuses.md`, plan tables (per 0006) |
-| **Writes** | Expected: **`Status:`** transitions only (no `Label:` per 0005) |
-| **Invokes** | TBD in 0006 (user-only vs callable from epic-duck / setup) |
-
-Sources: [0006](../items/0006-decision-triage-duck-activation.md), [0010](../items/0010-task-implement-triage-duck.md), ADR 0001 consequences.
-
 ### amigo-pato
 
 Not present under `.cursor/skills/` in this workspace. **Out of plan** per 0001 in-scope list. If it appears elsewhere, treat as duplicate/experiment of **amigo-duck**, not a planning-refinement skill.
@@ -249,7 +236,7 @@ flowchart LR
 
 ## Gaps for follow-on work
 
-- **0006 / 0010** — triage-duck reads/writes **`Status:`** only; define who sets **`ready`** vs amigo-duck.
+- **0006** — triage behaviour; define who sets **`ready`** vs amigo-duck.
 - **0002 hygiene** — align Answer text with 0005 (`Status: ready`, `Type: epic-duck:*`).
 - **0004** — choreography; amigo-duck on rubber-duck outputs not specified in rubber-duck.
 - **epic-duck / spike-duck / backlog-github** — small wording fixes (D3, D4, D6).
@@ -266,5 +253,4 @@ flowchart LR
 | Stale `Label: ready` | `.backlog/items/0002-decision-ready-ticket-quality-bar.md` § Answer; `.backlog/spike/0011-common-fields-and-skill-needs.md` |
 | amigo-duck kinds | `.cursor/skills/amigo-duck/SKILL.md` |
 | Remote type + status labels | `.cursor/skills/setup-duck-skills/SKILL.md`, `backlog-github.md`, `backlog-azure-devops.md` |
-| triage-duck future | `.backlog/items/0006-decision-triage-duck-activation.md` |
 | Per-skill I/O | `.cursor/skills/*/SKILL.md` |

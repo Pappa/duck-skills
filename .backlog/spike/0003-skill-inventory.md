@@ -6,7 +6,7 @@ Spike: [0003-spike-skill-inventory.md](../items/0003-spike-skill-inventory.md)
 
 ## TLDR
 
-Eight skills are in scope for the planning-refinement feature; **`triage-duck` is not in the repo yet** (only referenced on the plan). **`setup-duck-skills`** seeds `docs/agents/*` and optional `.backlog/`; **`epic-duck`** is the only skill that routinely **writes** the local backlog. **`rubber-duck`** composes **question-duck** + **architect-duck** and updates **glossary/ADRs**, not backlog tickets. **`amigo-duck`** and **question-duck** are review/interview skills with no mandated file writes. **`spike-duck`** writes spike findings under `.backlog/spike/`.
+Seven skills are in scope for the planning-refinement feature. **`setup-duck-skills`** seeds `docs/agents/*` and optional `.backlog/`; **`epic-duck`** is the only skill that routinely **writes** the local backlog. **`rubber-duck`** composes **question-duck** + **architect-duck** and updates **glossary/ADRs**, not backlog tickets. **`amigo-duck`** and **question-duck** are review/interview skills with no mandated file writes. **`spike-duck`** writes spike findings under `.backlog/spike/`.
 
 Remaining **doc gaps** at time of spike (since addressed in **0005** / ADR 0001): amigo-duck review heading, local `Type: epic-duck:*` on markdown items, spike item `Type` line. (Former `Type: spike` on decision files — **resolved** with decision/task/spike split.)
 
@@ -25,7 +25,6 @@ Sources: `.cursor/skills/*/SKILL.md`, `docs/agents/backlog.md`, `docs/agents/dom
 | architect-duck | Yes | None |
 | amigo-duck | Yes | None |
 | spike-duck | Yes | Background agent |
-| triage-duck | **No** | — |
 
 ---
 
@@ -106,12 +105,6 @@ Source: `.cursor/skills/amigo-duck/SKILL.md`.
 
 Source: `.cursor/skills/spike-duck/SKILL.md`.
 
-### triage-duck (planned)
-
-Not present under `.cursor/skills/`. Plan and `ticket-statuses.md` assume future triage over `needs-triage`, `needs-detail`, `ready`, `wontfix`. **setup-duck-skills** skips label setup unless user plans triage.
-
-Sources: `0001` plan Notes, `docs/agents/ticket-statuses.md`.
-
 ---
 
 ## Dependency graph (invocation)
@@ -160,7 +153,6 @@ flowchart LR
 
 - **0004** — choreography: when rubber-duck vs epic-duck; whether amigo-duck runs on rubber-duck outputs (not specified in rubber-duck).
 - **0005** / **0011** — ADR + harmonise amigo-duck local vs remote vocabulary (C3, C4).
-- **0010** — triage-duck artefact reads/writes once implemented.
 
 ---
 

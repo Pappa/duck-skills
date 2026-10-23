@@ -6,7 +6,7 @@ Spike: [0003-spike-skill-inventory.md](../items/0003-spike-skill-inventory.md)
 
 ## TLDR
 
-All three parallel passes agree: **seven in-scope skills ship in `.cursor/skills/`**; **`triage-duck` is still missing** (0006 / 0010). After **ADR 0001** and `docs/agents/backlog.md`, **local backlog shape is coherent**: first-line **`Type: epic-duck:*`**, single workflow **`Status:`**, spike findings are `Spike:` + **`## TLDR`** only. **No critical contradictions** on file shapes — agents can treat ADR + `backlog.md` as SSOT.
+All three parallel passes agree: **seven in-scope skills ship in `.cursor/skills/`**; After **ADR 0001** and `docs/agents/backlog.md`, **local backlog shape is coherent**: first-line **`Type: epic-duck:*`**, single workflow **`Status:`**, spike findings are `Spike:` + **`## TLDR`** only. **No critical contradictions** on file shapes — agents can treat ADR + `backlog.md` as SSOT.
 
 The **main open problem is choreography drift**: resolved **[0004](../items/0004-decision-planning-pipeline-choreography.md)** says **rubber-duck** may write backlog children (with **amigo-duck** before publish) and **epic-duck** may invoke **architect-duck** (or delegate **rubber-duck**), but **`epic-duck/SKILL.md` and `rubber-duck/SKILL.md` still describe the older split** (epic = backlog only; rubber = glossary/ADR only). **README** still oversimplifies rubber → “tickets.” Secondary drift: **0002** and **0011** retain **`Label: ready`** / bare **`Type: decision`** prose; **epic-duck** “labelled `epic-duck:plan`” wording confuses local **`Type:`** readers; **spike-duck** vs **epic-duck** spike-item numbering can duplicate `NNNN` if both allocate.
 
@@ -25,7 +25,6 @@ The **main open problem is choreography drift**: resolved **[0004](../items/0004
 | architect-duck | Yes | — | domain, glossary, ADR, code | glossary, ADR |
 | amigo-duck | Yes | — | draft ticket + intent | `## amigo-duck review` in chat |
 | spike-duck | Yes | background agent | sources, `backlog.md` | spike findings; may create spike **item** |
-| triage-duck | **No** | TBD (0006) | items, statuses (expected) | `Status:` transitions (expected) |
 
 **Out of plan:** any non-listed skill dir (e.g. experiments); not part of planning-refinement v1.
 
@@ -83,7 +82,6 @@ Solid = stated in orchestrator `SKILL.md`. Dashed = **0004** only.
 | v1 finding | v2.4 status |
 |------------|-------------|
 | C1–C2 epic vs backlog spike/`Type` | **Resolved** (ADR 0001) |
-| triage-duck missing | **Still true** |
 | epic primary backlog writer | **Still true** |
 | amigo before publish | **Still true**; rubber path missing in skill |
 
@@ -105,7 +103,7 @@ Solid = stated in orchestrator `SKILL.md`. Dashed = **0004** only.
 | Dimension | **v2.1** | **v2.2** | **v2.3** |
 |-----------|----------|----------|----------|
 | **Primary lens** | Full per-skill I/O tables + **0004 vs SKILL.md** drift (R1–R9) | Deep **`Status:` / `Label:` / `Type:`** canon and remote mapping | **Composition graphs** (invoke + artefacts) + **severity-ranked** register |
-| **Skill count wording** | “Seven skills” in repo (+ triage planned) | “Eight planning skills” table **including triage row** as absent | “Eight skills; triage not present” |
+| **Skill count wording** | “Seven skills” in repo (+ triage planned) | “Seven planning skills” table **including triage row** as absent | “Seven skills; triage not present” |
 | **amigo-pato** | Notes dir **present**, out of plan | Claims **not in repo** (workspace-dependent) | Not emphasized |
 | **Rubber vs epic backlog** | **High** (R1): 0004 vs rubber SKILL | **D8 “None”** — intentional handoff epic backlog / rubber domain **without** citing 0004 rubber backlog rules | **High H1–H3**: rubber backlog + amigo + epic/architect gaps vs 0004 |
 | **Stale 0002 / 0011 `Label: ready`** | Mentioned via R9 / historical 0011 | **Central** (D1–D2); detailed three-concept table | **Medium M2** in register |

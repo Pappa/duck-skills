@@ -32,7 +32,6 @@ Resolution must produce a single **`## Answer`** that addresses **every row** be
 | R4 | Low | README lists **question-duck** / **architect-duck** as model-invoked vs **0004** v1 entry-point rule |
 | R6 | Low | Spike resolve bookkeeping: `backlog.md` vs `epic-duck/SKILL.md` work-through |
 | R7 | Low | Optional **`## Comments`** on child templates in epic-duck vs `backlog.md` / ADR |
-| R8 | Low | **setup-duck-skills** consumer list omits **triage-duck** (planned) |
 
 ### Cosmetic / hygiene (v2.3 — required)
 
@@ -42,7 +41,7 @@ Resolution must produce a single **`## Answer`** that addresses **every row** be
 
 ### Explicitly out of this decision’s scope
 
-- **triage-duck** behaviour and activation — decision **0006** and task **0010**
+- **triage** behaviour and activation — decision **0006**
 - **Eval harness** — out of scope on plan **0001**
 - **v1 C1–C2** — already resolved (ADR 0001); no action unless Answer records “verified closed”
 - **R9** / v2.4 “resolved since v1” rows — confirm closed only; no new design
@@ -77,7 +76,7 @@ Resolution must produce a single **`## Answer`** that addresses **every row** be
 | Axis | Result |
 |------|--------|
 | Fit | Matches user intent: one decision to disposition all spike 0003 open findings. |
-| Complete | Enumerates v2.4 register, v2.1 extras, cosmetic L3; boundaries to 0006/0010 and eval out-of-scope are explicit. |
+| Complete | Enumerates v2.4 register, v2.1 extras, cosmetic L3; boundaries to 0006 and eval out-of-scope are explicit. |
 | Plain language | Tables scan by ID; resolution outputs are defined (disposition, artefact, acceptance). |
 | INVEST | Decision-sized; testable Answer checklist per row. |
 
@@ -106,7 +105,7 @@ Shared **NNNN** counter and `.backlog/items/` path. Spike **findings** stay `.ba
 
 **rubber-duck** does **not** create `epic-duck:decision` or any planning-type item.
 
-**Unanchored handover:** When the user has no feature plan, rubber may still write an impl item with **`Plan: (unanchored)`**, **`Status: needs-triage`**, correct **NNNN** and impl `Type:`. Rubber **must** tell the user the ticket is **not associated with a feature** and **will need to be triaged later**. **epic-duck** (or triage-duck when it exists) attaches a real `Plan:` link when a feature is chosen.
+**Unanchored handover:** When the user has no feature plan, rubber may still write an impl item with **`Plan: (unanchored)`**, **`Status: needs-triage`**, correct **NNNN** and impl `Type:`. Rubber **must** tell the user the ticket is **not associated with a feature** and **will need to be triaged later**. **epic-duck** attaches a real `Plan:` link when a feature is chosen.
 
 **amigo-duck** runs before publish for **both** families; skill text must describe review rules per `Type:` profile.
 
@@ -127,7 +126,6 @@ Shared **NNNN** counter and `.backlog/items/` path. Spike **findings** stay `.ba
 | **R4** | Fix now | `README.md`, question/architect YAML | Not user entry points; implicit invocation enabled. |
 | **R6** | Fix now | `epic-duck/SKILL.md` | Spike resolve steps match `backlog.md` (plan tables / **Decisions so far** when appropriate). |
 | **R7** | Fix now | `epic-duck/SKILL.md` templates | Optional **`## Comments`** on child templates per `backlog.md`. |
-| **R8** | Fix now | `setup-duck-skills/SKILL.md` | Consumer list notes **triage-duck** when shipped (**0010**). |
 | **L3** | Fix now | `spike-duck/SKILL.md` | “authoritative” spelled correctly. |
 | **v1 C1–C2** | Verified closed | — | ADR 0001; no further action. |
 | **R9** | Verified closed | — | Superseded by **0005**/ADR. |
@@ -144,4 +142,4 @@ All edits above are tracked in task **[0015-task-remediate-skill-inventory-findi
 
 ### Amendment (planning task filenames)
 
-Planning **`epic-duck:task`** items use **`NNNN-task-<slug>.md`** — the same path pattern as implementation **`Type: task`**. **`Type:`** on the first line distinguishes planning from implementation. ADR 0001 and existing planning task files **0010**, **0015**, **0016** renamed accordingly.
+Planning **`epic-duck:task`** items use **`NNNN-task-<slug>.md`** — the same path pattern as implementation **`Type: task`**. **`Type:`** on the first line distinguishes planning from implementation. ADR 0001 and existing planning task files **0015**, **0016** renamed accordingly.

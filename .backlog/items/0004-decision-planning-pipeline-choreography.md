@@ -6,7 +6,7 @@ Blocked by:
 
 ## Question
 
-When should a user choose **epic-duck** vs **rubber-duck**, and what is the ordered handoff between setup, planning, amigo-duck, spike-duck, and triage-duck?
+When should a user choose **epic-duck** vs **rubber-duck**, and what is the ordered handoff between setup, planning, amigo-duck, and spike-duck?
 
 Resolution must be documentable in skill text and exercisable in eval scenarios.
 
@@ -24,7 +24,7 @@ Resolution must be documentable in skill text and exercisable in eval scenarios.
 
 **epic-duck** and **rubber-duck** are **not** invoked by each other — only by the user.
 
-**Ambiguous ticket routing:** No separate triage skill — **epic-duck** + **question-duck** classify **`needs-triage`** and orphan items per resolved **0006** (task **0010** wontfix).
+**Ambiguous ticket routing:** No separate triage skill — **epic-duck** + **question-duck** classify **`needs-triage`** and orphan items per resolved **0006**.
 
 ### Shared behaviours (epic and rubber)
 

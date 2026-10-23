@@ -1,12 +1,12 @@
 Type: epic-duck:decision
 Status: resolved
 Plan: [0001-plan-duck-skills-planning-refinement.md](0001-plan-duck-skills-planning-refinement.md)
-Overview: Decide triage-duck role, status workflow, and activation model.
+Overview: Decide triage role, status workflow, and activation model.
 Blocked by:
 
 ## Question
 
-What is **triage-duck** responsible for relative to **amigo-duck** and unified **`Status:`** in `docs/agents/ticket-statuses.md` (`needs-triage`, `needs-detail`, `ready`, `wontfix`, etc.)?
+Should there be a **triage-duck** skill? If so, what is **triage-duck** responsible for relative to **amigo-duck** and unified **`Status:`** in `docs/agents/ticket-statuses.md` (`needs-triage`, `needs-detail`, `ready`, `wontfix`, etc.)?
 
 Record and decide between at least these implementation options:
 
@@ -17,7 +17,7 @@ Resolution must state default **status** transitions, who may set **`Status: rea
 
 ## Answer
 
-**No separate `triage-duck` skill.** Keep **`needs-triage`** (and the rest of unified **`Status:`**) as backlog vocabulary. **epic-duck** owns classification and routing for ambiguous tickets, with **question-duck** for HITL interviews. Task **0010** is **wontfix**; follow-on deliverable **0016** updates epic-duck and aligned docs.
+**No separate `triage-duck` skill.** Keep **`needs-triage`** (and the rest of unified **`Status:`**) as backlog vocabulary. **epic-duck** owns classification and routing for ambiguous tickets, with **question-duck** for HITL interviews. Follow-on deliverable **0016** updates epic-duck and aligned docs.
 
 ### Scope of “triage” (epic-duck)
 

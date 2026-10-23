@@ -28,7 +28,7 @@ Update **`docs/agents/backlog.md`** (and setup seeds that mirror it) with implem
 
 ## Out of Scope
 
-- **triage-duck** skill (**0006** / **0010**)
+- **triage** behaviour (**0006**)
 - Eval harness (descoped on plan **0001**)
 - New ADR number unless required — prefer extending `backlog.md` + short note in ADR 0001 consequences if needed
 
@@ -41,7 +41,7 @@ Update **`docs/agents/backlog.md`** (and setup seeds that mirror it) with implem
 - [x] **`question-duck/agents/openai.yml`** and **`architect-duck/agents/openai.yml`**: `policy.allow_implicit_invocation: true`; interface text matches SKILL (no typos).
 - [x] **`spike-duck/SKILL.md`**: prefer existing spike item when epic set `Result:`; fix **L3** typo; numbering guidance **C-spike-NNNN**.
 - [x] **`docs/agents/backlog.md`** (+ **`setup-duck-skills/backlog-local.md`** parity): implementation **`Type: task`** / **`Type: spike`**; filenames; **`Plan: (unanchored)`**; rubber vs epic planning table; backlog **Frontier** unchanged.
-- [x] **`setup-duck-skills/backlog-github.md`**: frontier includes **`needs-triage`** (**C-github-frontier**); **R8** triage-duck mention in setup consumer list when shipped.
+- [x] **`setup-duck-skills/backlog-github.md`**: frontier includes **`needs-triage`** (**C-github-frontier**).
 - [x] **`README.md`**: planning flow matches **0014**; rubber vs epic; **question-duck** / **architect-duck** not user entry points (**C-readme-rubber**, **R4**).
 - [x] **`amigo-duck/SKILL.md`**: distinct review paths for **`Type: epic-duck:*`** vs **`Type: task`** / **`Type: spike`** (**Q8**).
 - [x] **`0004-decision-planning-pipeline-choreography.md`**: Answer rewritten — rubber impl items only, no rubber decisions, no epic↔rubber delegation, architect via epic/rubber only (**Q10**).

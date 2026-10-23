@@ -2,7 +2,7 @@ Spike: [0003-spike-skill-inventory.md](../items/0003-spike-skill-inventory.md)
 
 # Skill inventory v2.3 — composition graph and contradiction severity
 
-**Scope:** In-repo skills under `.cursor/skills/` (eight skills; **`triage-duck` not present**). Sources: skill `SKILL.md` files, `docs/agents/*`, `docs/adr/0001-backlog-ticket-shapes.md`, `AGENTS.md`, `README.md`, resolved decision [0004](../items/0004-decision-planning-pipeline-choreography.md). Per-skill read/write tables remain in [v1](./0003-skill-inventory.md); this pass adds **composition** (who invokes whom, what artefacts flow) and a **severity-ranked contradiction register** after ADR 0001.
+**Scope:** In-repo skills under `.cursor/skills/` (seven skills). Sources: skill `SKILL.md` files, `docs/agents/*`, `docs/adr/0001-backlog-ticket-shapes.md`, `AGENTS.md`, `README.md`, resolved decision [0004](../items/0004-decision-planning-pipeline-choreography.md). Per-skill read/write tables remain in [v1](./0003-skill-inventory.md); this pass adds **composition** (who invokes whom, what artefacts flow) and a **severity-ranked contradiction register** after ADR 0001.
 
 ## TLDR
 
@@ -81,7 +81,6 @@ Sources: `.cursor/skills/question-duck/SKILL.md`, `.cursor/skills/spike-duck/SKI
 | architect-duck | — | rubber-duck; 0004 also epic-duck (undocumented in epic SKILL) |
 | amigo-duck | — | epic-duck (all ticket types before publish); 0004 also rubber-duck |
 | spike-duck | Background agent | epic-duck (spike children); user/model per description |
-| triage-duck | — | **Not in repo** (0006 / 0010) |
 
 ### README vs plan entry points
 
@@ -183,7 +182,7 @@ Sorted by severity (Critical → Low). IDs are **v2.3** (v1 C1–C2 marked resol
 | `docs/agents/ticket-statuses.md` vs setup seed | Match |
 | `docs/agents/domain.md` vs setup seed | Match |
 | `AGENTS.md` pointers | Match backlog / ticket-statuses / domain paths |
-| `README.md` skill list vs `.cursor/skills/` | Eight skills; triage-duck only on roadmap |
+| `README.md` skill list vs `.cursor/skills/` | Seven skills |
 | ADR 0001 vs amigo-duck / epic-duck templates | `Type: epic-duck:*`, deliverable task body, spike TLDR |
 
 ---

@@ -6,15 +6,15 @@ Blocked by:
 
 ## Problem Statement
 
-Decision **[0006](0006-decision-triage-duck-activation.md)** cancels a separate **triage-duck** skill but skills and backlog docs still tell agents to expect **triage-duck** or “triage later” via a future skill. Without explicit **epic-duck** guidance, maintainers may not know how to route **`needs-triage`** and mis-typed items.
+Decision **[0006](0006-decision-triage-activation.md)** cancels a separate **triage-duck** skill but skills and backlog docs still tell agents to expect “triage later” via a future skill. Without explicit **epic-duck** guidance, maintainers may not know how to route **`needs-triage`** and mis-typed items.
 
 ## Description
 
-Extend **epic-duck** so “triage” is a documented session mode: classify **Plan**, **Type**, and **Status** for ambiguous tickets using **question-duck**, per the **0006** Answer. Align **rubber-duck**, **setup-duck-skills**, and **`docs/agents/backlog.md`** (and setup seeds that mirror it) so only **epic-duck** handles unanchored and orphan routing. Do not add `.cursor/skills/triage-duck/`.
+Extend **epic-duck** so “triage” is a documented session mode: classify **Plan**, **Type**, and **Status** for ambiguous tickets using **question-duck**, per the **0006** Answer. Align **rubber-duck**, **setup-duck-skills**, and **`docs/agents/backlog.md`** (and setup seeds that mirror it) so only **epic-duck** handles unanchored and orphan routing.
 
 ## Notes
 
-- **0004** Answer still mentions deferred triage-duck; add a one-line cross-reference to **0006** in **Comments** or amend the Answer triage bullet when editing is in scope for the implementer.
+- **0004** Answer still mentions deferred triage decision; add a one-line cross-reference to **0006** in **Comments** or amend the Answer triage bullet when editing is in scope for the implementer.
 - Historical spike/decision text may still say “planned triage-duck”; change only live skills and `docs/agents/*` unless the user expands scope.
 
 ## Out of Scope
