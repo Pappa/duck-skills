@@ -10,7 +10,9 @@ Implement one or more features specified in a backlog ticket or requirements the
 
 ## Spec and session baseline
 
-If the user gives a ticket reference (by name or number), fetch it from the backlog per `docs/agents/backlog.md` and confirm the title before starting work. If the reference is ambiguous, ask. Treat that ticket file as the **spec** for **review-duck** unless the user points elsewhere.
+If the user gives a ticket reference (by name or number), fetch it from the backlog per `docs/agents/backlog.md` and confirm the title before starting work. If the reference is ambiguous, ask. If the user provides no information about which ticket to work on, list the `ready` tasks and spikes, and recommend the order they should be worked on.
+
+Treat that ticket file as the **spec** for **review-duck** unless the user points elsewhere.
 
 At session start, record the review baseline: `git rev-parse HEAD` (the commit before implementation changes). Pass this SHA to **review-duck** as the fixed point when reviewing this work.
 
