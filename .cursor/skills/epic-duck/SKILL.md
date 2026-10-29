@@ -16,7 +16,7 @@ The plan is a single ticket on this repo's backlog. On **local** markdown use **
 
 The plan is iterative and documents progress towards the goal, a completed feature. It lists the decisions made so far and acts as an index to the tickets that contain the decision's details.
 
-**Where to find the backlog** Details about the backlog and issue tracker can be found in `docs/agents/backlog.md`. If you can't find it, tell the user to run `/setup-duck-skills`. Consult the tracker doc's "Epic-duck operations" section for how to work with the backlog.
+**Where to find the backlog.** Details about the backlog can be found in `docs/agents/backlog.md`. If you can't find it, tell the user to run `/setup-duck-skills`. Consult the tracker doc's "Epic-duck operations" section for how to work with the backlog.
 
 ### Creating the plan
 

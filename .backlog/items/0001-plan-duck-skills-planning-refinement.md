@@ -7,7 +7,7 @@ Planning and refinement duck-skills in this repo produce concise, unambiguous ba
 
 ## Notes
 
-**In-scope skills (only):** `setup-duck-skills`, `epic-duck`, `rubber-duck`, `question-duck`, `architect-duck`, `amigo-duck`, `spike-duck`. Development, implementation, and testing skills are a separate future feature.
+**In-scope skills (planning batch):** `setup-duck-skills`, `epic-duck`, `rubber-duck`, `question-duck`, `architect-duck`, `amigo-duck`, `spike-duck`. **Implementation batch (shipped separately):** `dev-duck`, `test-duck`, `review-duck` — see repo `README.md`.
 
 **Composition (not duplication):** `rubber-duck` and `epic-duck` both use `question-duck` and `architect-duck` (orchestrators invoke them; not user entry points). **epic-duck** also uses `amigo-duck` and `spike-duck` for planning backlog work. **epic-duck** publishes `epic-duck:*` planning items; **rubber-duck** publishes implementation `Type: task` / `Type: spike`. See [0004-decision-planning-pipeline-choreography.md](0004-decision-planning-pipeline-choreography.md) and [0014-decision-skill-inventory-remediation.md](0014-decision-skill-inventory-remediation.md).
 

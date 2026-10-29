@@ -1,0 +1,5 @@
+interface:
+  display_name: "review-duck"
+  short_description: "Review changes since a fixed point (commit, branch, tag, merge-base) on Standards and Spec. Use for a branch, PR, WIP diff, review since X, or dev-duck session baseline review."
+policy:
+  allow_implicit_invocation: true

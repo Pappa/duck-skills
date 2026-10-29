@@ -1,0 +1,5 @@
+interface:
+  display_name: "test-duck"
+  short_description: "Test-driven development (red → green); composed by dev-duck"
+policy:
+  allow_implicit_invocation: true

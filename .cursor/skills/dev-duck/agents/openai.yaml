@@ -1,0 +1,5 @@
+interface:
+  display_name: "dev-duck"
+  short_description: "Implement backlog tickets or user-provided requirements using test-duck and review-duck."
+policy:
+  allow_implicit_invocation: false

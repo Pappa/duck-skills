@@ -18,7 +18,7 @@ Reach a **concrete outcome** in one user-invoked session. Typical outcomes:
 Apply both:
 
 1. **question-duck** — round-based Q&A until assumptions are documented and decisions are sharp.
-2. **architect-duck** — challenge vocabulary, stress-test scenarios, update `GLOSSARY.md` and `docs/adr/` when terms and decisions land. **architect-duck** never invokes **rubber-duck**.
+2. **architect-duck** — system design vocabulary, stress-test scenarios, update `GLOSSARY.md` and `docs/adr/` when terms and decisions land. **architect-duck** never invokes **rubber-duck**.
 
 Read `docs/agents/domain.md` for glossary layout. If missing, tell the user to run `/setup-duck-skills`.
 

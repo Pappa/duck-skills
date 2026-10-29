@@ -39,15 +39,18 @@ Supports GitHub, GitLab, Azure DevOps Boards, local markdown, or a custom tracke
 | `setup-duck-skills` | Configure tracker, domain docs, ticket status vocabulary |
 | `epic-duck`         | Large, unclear work → feature plan + **planning** backlog items (`Type: epic-duck:*`) |
 | `rubber-duck`       | Single-session outcomes: clarity, docs/code, **implementation** `Type: task` / `Type: spike` |
+| `dev-duck`          | Implement a backlog **task** or user spec: TDD → review → fix (see pipeline below) |
 
 ### Composed skills (not user entry points)
 
-Used inside **epic-duck** or **rubber-duck** only:
+Used inside **epic-duck**, **rubber-duck**, or **dev-duck**:
 
 | Skill            | Purpose |
 |------------------|---------|
 | `question-duck`  | Round-based design interview |
-| `architect-duck` | Glossary and ADR updates while designing |
+| `architect-duck` | System design (deep modules, boundaries), glossary, and ADRs while designing |
+| `test-duck`      | Red → green TDD at agreed test boundaries (**dev-duck** reads this skill) |
+| `review-duck`    | Two-axis review: Standards + Spec (**dev-duck** reads this skill) |
 
 ### Other skills (model may invoke)
 
@@ -56,6 +59,16 @@ Used inside **epic-duck** or **rubber-duck** only:
 | `amigo-duck` | Backlog ticket quality before publish |
 | `spike-duck` | Time-boxed investigation; findings as Markdown |
 
+## Implementation pipeline (`dev-duck`)
+
+User entry: **`/dev-duck`** (or attach the skill) with a backlog ticket or requirements.
+
+1. Record `git rev-parse HEAD` as the review baseline.
+2. Read **`test-duck`** — vertical-slice TDD at pre-agreed public boundaries; escalate interface shape to **`architect-duck`** when needed.
+3. Read **`review-duck`** — diff since the baseline; spec = ticket file unless the user says otherwise.
+4. Fix review findings; re-run checks. Commit only when the user asks or explicitly included commit in the session.
+
+**`test-duck`** and **`review-duck`** have `disable-model-invocation: true` and implicit invocation from **dev-duck** (same pattern as **question-duck** / **architect-duck** under epic/rubber).
 
 ## Typical planning flow
 
@@ -75,6 +88,8 @@ flowchart LR
 - **epic-duck** — chart a feature and resolve **planning** decisions, tasks, and spikes on the backlog.
 - **rubber-duck** — one session: shared understanding, domain docs, or **implementation** backlog items (not planning `epic-duck:decision` items).
 
+Implementation **tasks** from the backlog are typically built with **dev-duck** (pipeline above).
+
 ## Roadmap
 
-Planned next batches: build (`implement`, `tdd`), quality (`code-review`, `diagnosing-bugs`), ship (`pr`, CI loop).
+Shipped: **dev-duck**, **test-duck**, **review-duck**. Planned next: quality (`diagnosing-bugs`), ship (`pr`, CI loop skills aligned with this repo).
