@@ -10,20 +10,24 @@ Implement one or more features specified in a backlog ticket or requirements the
 
 ## Spec and session baseline
 
-If the user gives a ticket reference (by name or number), fetch it from the backlog per `docs/agents/backlog.md` and confirm the title before starting work. If the reference is ambiguous, ask. If the user provides no information about which ticket to work on, list the `ready` tasks and spikes, and recommend the order they should be worked on.
+If the user gives a ticket reference (by name or number), fetch it from the backlog per `docs/agents/backlog.md` and confirm the title before starting work. If the reference is ambiguous, ask. If the user provides no information about which ticket to work on or provides a reference to a feature plan, list the `ready` tasks and spikes, and recommend the order they should be worked on.
 
 Treat that ticket file as the **spec** for **review-duck** unless the user points elsewhere.
 
 At session start, record the review baseline: `git rev-parse HEAD` (the commit before implementation changes). Pass this SHA to **review-duck** as the fixed point when reviewing this work.
 
+## Software design
+
+When module shape or test boundaries are unclear call the Skill tool `architect-duck`.
+
 ## Implementation pipeline
 
-1. Read and follow `.cursor/skills/test-duck/SKILL.md` for the full red → green loop. Agree **test boundaries** with the user when not already clear (see test-duck). Do not bulk-write tests; one vertical slice at a time.
+1. Agree **test boundaries** with the user if they are not already clear.
 
-2. Run type checking, linting, and tests as test-duck and this repo's tooling expect — regularly during work and again before review.
+2. If the implementation requires changes to source code, call the Skill tool `test-duck` to delegate unit testing to it.
 
-3. Read and follow `.cursor/skills/review-duck/SKILL.md`. Use the session baseline SHA as the fixed point. Pass the backlog ticket path (or user spec path) as the spec source.
+3. Run type checking, linting, and tests as this repo's tooling expect — regularly during work and again before review.
 
-4. Address review findings (including structural improvements deferred from the TDD loop). Re-run type checking, linting, and tests.
+4. Once the implementation of code and unit tests are complere, call the Skill tool `review-duck`. Use the session baseline SHA as the fixed point. Pass the backlog ticket path (or user spec path) as the spec source.
 
-When module shape or test boundaries are unclear during test-duck, read and follow `.cursor/skills/architect-duck/SKILL.md`.
+5. Address review findings (including structural improvements deferred from the TDD loop). Re-run type checking, linting, and tests.

@@ -23,7 +23,7 @@ All backlog items share one counter under `.backlog/items/`. Next number = one g
 | Planning spike (item) | `.backlog/items/<NNNN>-spike-<slug>.md` | `epic-duck:spike` | epic-duck |
 | Implementation task | `.backlog/items/<NNNN>-task-<slug>.md` | `task` | rubber-duck |
 | Implementation spike (item) | `.backlog/items/<NNNN>-spike-<slug>.md` | `spike` | rubber-duck |
-| Spike (findings) | `.backlog/spike/<NNNN>-<slug>.md` | (none) | spike-duck |
+| Spike (findings) | `.backlog/spikes/<NNNN>-<slug>.md` | (none) | spike-duck |
 
 **Planning** items (`epic-duck:*`) support feature charting and refinement. **Implementation** items (`task`, `spike`) are for development work from **rubber-duck** sessions. Same **NNNN** counter for all rows.
 
@@ -61,7 +61,7 @@ Section order:
 7. **Tasks** — table: **Task**, **Overview**, **Status**
 8. **Spikes** — table: **Spike**, **Overview**, **Status**
 
-Plan, decision, task, and spike item files all live in `.backlog/items/`. Link children from the feature file with same-directory paths, e.g. `[0004-decision-login-flow.md](0004-decision-login-flow.md)`. Link spike results with `[0006-oauth.md](../spike/0006-oauth.md)`.
+Plan, decision, task, and spike item files all live in `.backlog/items/`. Link children from the feature file with same-directory paths, e.g. `[0004-decision-login-flow.md](0004-decision-login-flow.md)`. Link spike results with `[0006-oauth.md](../spikes/0006-oauth.md)`.
 
 Remote: plan issue/work item tagged `epic-duck:plan`; local plan uses `Type: epic-duck:plan` + `features.md` + `*-plan-*.md` filename.
 
@@ -146,7 +146,7 @@ Type: spike
 Status: needs-detail
 Plan: [0003-plan-auth.md](0003-plan-auth.md)
 Overview: One sentence for the index table.
-Result: [0006-oauth.md](../spike/0006-oauth.md)
+Result: [0006-oauth.md](../spikes/0006-oauth.md)
 Blocked by:
 
 ## Question
@@ -163,7 +163,7 @@ Type: epic-duck:spike
 Status: needs-detail
 Plan: [0003-plan-auth.md](0003-plan-auth.md)
 Overview: One sentence for the index table.
-Result: [0006-oauth.md](../spike/0006-oauth.md)
+Result: [0006-oauth.md](../spikes/0006-oauth.md)
 Blocked by:
 
 ## Question
@@ -173,7 +173,7 @@ Blocked by:
 ## Comments
 ```
 
-Findings live only in `.backlog/spike/<NNNN>-<slug>.md`:
+Findings live only in `.backlog/spikes/<NNNN>-<slug>.md`:
 
 ```markdown
 Spike: [0006-spike-oauth.md](../items/0006-spike-oauth.md)
@@ -211,7 +211,7 @@ Used by **epic-duck**. A **feature plan** is the planning artifact; **decisions*
 - **Plan file**: `.backlog/items/<NNNN>-plan-<slug>.md` with `Type: epic-duck:plan`.
 - **Child decision**: `Type: epic-duck:decision`, `Plan:` backlink, `Status:`.
 - **Child task**: `Type: epic-duck:task`, `Plan:` backlink, `Status:`.
-- **Child spike**: `Type: epic-duck:spike`, result under `.backlog/spike/`.
+- **Child spike**: `Type: epic-duck:spike`, result under `.backlog/spikes/`.
 - **Resolve decision**: `## Answer`, `Status: resolved`, one bullet under feature **Decisions so far**, blocker sweep, refresh tables.
 - **Resolve spike**: result file written, spike item `Status: resolved`, update **Spikes** table and **Decisions so far** when appropriate.
 - **Unanchored implementation items**: `Plan: (unanchored)` + `needs-triage` until **epic-duck** sets a feature plan link.

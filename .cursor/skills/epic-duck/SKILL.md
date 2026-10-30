@@ -116,7 +116,7 @@ Type: epic-duck:spike
 Status: needs-detail
 Plan: [0003-plan-auth.md](0003-plan-auth.md)
 Overview: One sentence.
-Result: [0005-oauth.md](../spike/0005-oauth.md)
+Result: [0005-oauth.md](../spikes/0005-oauth.md)
 Blocked by:
 
 ## Question
@@ -124,7 +124,7 @@ Blocked by:
 ## Comments
 ```
 
-Findings in `.backlog/spike/<NNNN>-<slug>.md`. Delegate investigation to the `spike-duck` skill.
+Findings in `.backlog/spikes/<NNNN>-<slug>.md`. Delegate investigation to the `spike-duck` skill.
 
 ### Skills invoked
 

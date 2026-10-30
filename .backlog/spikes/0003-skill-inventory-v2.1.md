@@ -131,7 +131,7 @@ Source: `.cursor/skills/amigo-duck/SKILL.md`, ADR 0001 § Quality gates.
 | Area | Detail |
 |------|--------|
 | **Reads** | Primary sources per question; `docs/agents/backlog.md` for paths |
-| **Writes** | `.backlog/spike/<NNNN>-<slug>.md` (findings: `Spike:` link, **`## TLDR`**, citations); may create `.backlog/items/<NNNN>-spike-<slug>.md` when allocating a new spike item; sets spike item **`Status: resolved`** when complete; may update parent plan **Spikes** / **Decisions so far** when epic-duck expects |
+| **Writes** | `.backlog/spikes/<NNNN>-<slug>.md` (findings: `Spike:` link, **`## TLDR`**, citations); may create `.backlog/items/<NNNN>-spike-<slug>.md` when allocating a new spike item; sets spike item **`Status: resolved`** when complete; may update parent plan **Spikes** / **Decisions so far** when epic-duck expects |
 | **Labels** | None |
 | **Backlog** | Spike item + findings; findings have **no** `Type:` or `Status:` |
 | **Domain** | None |
@@ -177,7 +177,7 @@ Solid edges: stated in `SKILL.md`. Dotted: 0006 option 2 only. **0004** adds edg
 | **R5** | Spike item creation | `spike-duck`: allocate next `NNNN` spike **item** when creating | `epic-duck`: charting creates spike item first, then spike-duck fills `Result:` | **Low** — spike-duck should prefer existing item/`Result:` (partially stated in spike-duck) |
 | **R6** | Spike resolution bookkeeping | `docs/agents/backlog.md`: resolve spike → update **Decisions so far** when appropriate | `epic-duck/SKILL.md` work-through: explicit steps for **decisions**; spike resolve steps thinner | **Low** — align epic skill with backlog.md |
 | **R7** | Template `## Comments` | `docs/agents/backlog.md` / ADR 0001: optional **Comments** on children | `epic-duck/SKILL.md` embedded templates omit **Comments** | **Low** |
-| **R9** | Historical spike research | [0011](../spike/0011-common-fields-and-skill-needs.md) (`Type: decision`, `Label: ready`, spike items without `Type:`) | ADR 0001 + current `backlog.md` (`Type: epic-duck:*`, unified **`Status: ready`**) | **None** — 0011 marked superseded |
+| **R9** | Historical spike research | [0011](../spikes/0011-common-fields-and-skill-needs.md) (`Type: decision`, `Label: ready`, spike items without `Type:`) | ADR 0001 + current `backlog.md` (`Type: epic-duck:*`, unified **`Status: ready`**) | **None** — 0011 marked superseded |
 
 ### Resolved since v1 (do not re-open)
 
@@ -212,7 +212,7 @@ Solid edges: stated in `SKILL.md`. Dotted: 0006 option 2 only. **0004** adds edg
 |---------|-----------------|----------------------|
 | Local `.backlog/items/*` | `Status:` field | `Type: epic-duck:<kind>` first line |
 | GitHub/GitLab/Azure (setup seeds) | Labels/tags mirroring status strings | `epic-duck:plan` / `decision` / `task` / `spike` labels |
-| Spike findings `.backlog/spike/*` | None | None; `Spike:` backlink only |
+| Spike findings `.backlog/spikes/*` | None | None; `Spike:` backlink only |
 
 Only **setup-duck-skills** creates remote labels. No in-scope skill writes GitHub labels during normal planning.
 

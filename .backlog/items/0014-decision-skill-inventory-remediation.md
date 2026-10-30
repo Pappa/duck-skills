@@ -6,7 +6,7 @@ Blocked by:
 
 ## Question
 
-For each open finding from skill inventory spike **0003** ([v2.4 synthesis](../spike/0003-skill-inventory-v2.4.md); detail in [v2.1](../spike/0003-skill-inventory-v2.1.md)–[v2.3](../spike/0003-skill-inventory-v2.3.md)), what is the **disposition** (fix now, defer with owner, or explicitly accept as-is) and **what changes** (file paths, wording rules)?
+For each open finding from skill inventory spike **0003** ([v2.4 synthesis](../spikes/0003-skill-inventory-v2.4.md); detail in [v2.1](../spikes/0003-skill-inventory-v2.1.md)–[v2.3](../spikes/0003-skill-inventory-v2.3.md)), what is the **disposition** (fix now, defer with owner, or explicitly accept as-is) and **what changes** (file paths, wording rules)?
 
 Resolution must produce a single **`## Answer`** that addresses **every row** below. For each row: **disposition**, **owner artefact** (skill, doc, backlog item, or none), and **acceptance** (how we know it is done). Do **not** re-litigate ADR 0001 shapes or re-open **0004** choreography intent — only align skills and docs to **0004** and current canon.
 
@@ -101,7 +101,7 @@ Resolution must produce a single **`## Answer`** that addresses **every row** be
 | **epic-duck** | `epic-duck:plan`, `epic-duck:decision`, `epic-duck:task`, `epic-duck:spike` | `*-plan-*`, `*-decision-*`, `NNNN-task-<slug>.md`, `NNNN-spike-<slug>.md` | Planning |
 | **rubber-duck** | `task`, `spike` (no `epic-duck:` prefix) | `NNNN-task-<slug>.md`, `NNNN-spike-<slug>.md` | Implementation / development |
 
-Shared **NNNN** counter and `.backlog/items/` path. Spike **findings** stay `.backlog/spike/<NNNN>-<slug>.md` (no `Type:` on findings file).
+Shared **NNNN** counter and `.backlog/items/` path. Spike **findings** stay `.backlog/spikes/<NNNN>-<slug>.md` (no `Type:` on findings file).
 
 **rubber-duck** does **not** create `epic-duck:decision` or any planning-type item.
 

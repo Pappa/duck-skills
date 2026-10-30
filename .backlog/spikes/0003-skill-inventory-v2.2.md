@@ -43,7 +43,7 @@ Sources: `.cursor/skills/*/SKILL.md`, [0001](../items/0001-plan-duck-skills-plan
 | **Workflow state** | **`Status:`** on every item file | Same strings as **labels/tags** and/or **`Status:`** in issue body | `docs/agents/ticket-statuses.md` |
 | **`Label:` (header)** | **Not used** in current canon | N/A as a markdown header | Superseded: spike 0011 proposed `Label: ready`; **0005 rejected** that in favour of **`Status: ready`** |
 
-**Spike findings** (`.backlog/spike/*.md`): **no `Type:` or `Status:`**; lead with `Spike:` backlink and **`## TLDR`** (ADR 0001, `backlog.md`).
+**Spike findings** (`.backlog/spikes/*.md`): **no `Type:` or `Status:`**; lead with `Spike:` backlink and **`## TLDR`** (ADR 0001, `backlog.md`).
 
 ### `Status:` — single workflow field
 
@@ -179,7 +179,7 @@ Source: `.cursor/skills/amigo-duck/SKILL.md`.
 | | |
 |--|--|
 | **Reads** | Primary sources; `docs/agents/backlog.md` for paths |
-| **Writes** | `.backlog/items/<NNNN>-spike-<slug>.md` when creating item; `.backlog/spike/<NNNN>-<slug>.md` findings |
+| **Writes** | `.backlog/items/<NNNN>-spike-<slug>.md` when creating item; `.backlog/spikes/<NNNN>-<slug>.md` findings |
 | **Backlog** | May allocate `NNNN` when creating spike item; should prefer existing item when epic-duck already linked **`Result:`** |
 | **Invokes** | Background agent (skill text) |
 
@@ -250,7 +250,7 @@ flowchart LR
 | In-scope skill list | `.backlog/items/0001-plan-duck-skills-planning-refinement.md` |
 | `Type:` + `Status:` canon | `docs/adr/0001-backlog-ticket-shapes.md`, `docs/agents/backlog.md` |
 | No `Label:` header | `.backlog/items/0005-decision-ticket-shapes-and-fields.md` § Answer |
-| Stale `Label: ready` | `.backlog/items/0002-decision-ready-ticket-quality-bar.md` § Answer; `.backlog/spike/0011-common-fields-and-skill-needs.md` |
+| Stale `Label: ready` | `.backlog/items/0002-decision-ready-ticket-quality-bar.md` § Answer; `.backlog/spikes/0011-common-fields-and-skill-needs.md` |
 | amigo-duck kinds | `.cursor/skills/amigo-duck/SKILL.md` |
 | Remote type + status labels | `.cursor/skills/setup-duck-skills/SKILL.md`, `backlog-github.md`, `backlog-azure-devops.md` |
 | Per-skill I/O | `.cursor/skills/*/SKILL.md` |

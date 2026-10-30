@@ -6,7 +6,7 @@ Accepted (decision [0005](../../.backlog/items/0005-decision-ticket-shapes-and-f
 
 ## Context
 
-Planning skills publish to one shared backlog (local markdown and remote trackers). We need one field canon so agents and humans do not guess at headers, workflow state, or body profiles. Spike [0011](../../.backlog/spike/0011-common-fields-and-skill-needs.md) surveyed skill needs; decision 0005 locked the model.
+Planning skills publish to one shared backlog (local markdown and remote trackers). We need one field canon so agents and humans do not guess at headers, workflow state, or body profiles. Spike [0011](../../.backlog/spikes/0011-common-fields-and-skill-needs.md) surveyed skill needs; decision 0005 locked the model.
 
 ## Decision
 
@@ -40,7 +40,7 @@ Result: <link>          # spike items only, when allocated
 Blocked by: <NNNN, …>  # omit line when empty
 ```
 
-**Spike findings** (`.backlog/spike/`): no `Type:` or `Status:`; first line `Spike:` backlink; then **`## TLDR`**; cite sources in body.
+**Spike findings** (`.backlog/spikes/`): no `Type:` or `Status:`; first line `Spike:` backlink; then **`## TLDR`**; cite sources in body.
 
 ### Unified workflow (`Status:`)
 

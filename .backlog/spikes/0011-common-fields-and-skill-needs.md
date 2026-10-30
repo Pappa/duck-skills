@@ -10,7 +10,7 @@ Spike: [0011-spike-common-fields-and-skill-needs.md](../items/0011-spike-common-
 
 Upstream **writing-for-agents** favours checkable completion criteria and one authoritative doc—maps to testable AC and `backlog.md`. **pr** skill favours fixed sections (Summary, Evidence)—maps to optional `## Evidence` on large ready tasks only.
 
-Sources: `docs/agents/backlog.md`, `.cursor/skills/*/SKILL.md`, `.backlog/spike/0003-skill-inventory.md`, `~/.agents/skills/writing-for-agents/SKILL.md`, `~/.agents/skills/pr/SKILL.md`.
+Sources: `docs/agents/backlog.md`, `.cursor/skills/*/SKILL.md`, `.backlog/spikes/0003-skill-inventory.md`, `~/.agents/skills/writing-for-agents/SKILL.md`, `~/.agents/skills/pr/SKILL.md`.
 
 ---
 
@@ -22,7 +22,7 @@ Sources: `docs/agents/backlog.md`, `.cursor/skills/*/SKILL.md`, `.backlog/spike/
 | **Decision** | `<NNNN>-decision-<slug>.md` | + `Plan`, `Overview`, `Type: decision`, `Blocked by` | `## Question`; when resolved `## Answer`; `## Comments` |
 | **Task** | `<NNNN>-<slug>.md` (slug not `plan-`, `decision-`, `spike-`) | + `Type: task`, optional `Label:` | **Branch A — unblocker:** `## Question` (+ `## Answer` when resolved). **Branch B — ready:** `Label: ready` + `## Acceptance criteria` (+ optional `## User intent`, `## Out of scope for this ticket`) |
 | **Spike item** | `*-spike-*.md` | + `Plan`, `Overview`, `Result`, `Blocked by` (no `Type:`) | `## Question`; `## Comments` |
-| **Spike findings** | `.backlog/spike/<NNNN>-*.md` | `Spike:` link line | **TLDR**; research sections; cite sources |
+| **Spike findings** | `.backlog/spikes/<NNNN>-*.md` | `Spike:` link line | **TLDR**; research sections; cite sources |
 | **Ready deliverable** | Task with `Label: ready` | Same as task branch B | amigo-duck treats draft as story + AC (INVEST full) |
 
 Spikes are always spike **items** (+ findings file), never a `Type:` on decision or task files.

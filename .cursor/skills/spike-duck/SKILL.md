@@ -19,7 +19,7 @@ When the repo uses `.backlog/`:
 
 1. If a spike **item** already exists (e.g. **epic-duck** charting set `Result:` or created `<NNNN>-spike-<slug>.md`), use that **NNNN** and path — **do not** allocate a new number.
 2. Otherwise allocate the next shared `NNNN` under `.backlog/items/` (same counter as all backlog items). Create or update the spike **item** at `.backlog/items/<NNNN>-spike-<slug>.md` (planning `Type: epic-duck:spike`) or `<NNNN>-spike-<slug>.md` (implementation `Type: spike` per `docs/agents/backlog.md`) with `Plan:` backlink, `Overview:`, `Question`, and `Result:` pointing to the findings path.
-3. Write findings to `.backlog/spike/<NNNN>-<slug>.md`. At the top, link back: `Spike: [<NNNN>-spike-<slug>.md](../items/<NNNN>-spike-<slug>.md)`.
+3. Write findings to `.backlog/spikes/<NNNN>-<slug>.md`. At the top, link back: `Spike: [<NNNN>-spike-<slug>.md](../items/<NNNN>-spike-<slug>.md)`.
 4. Set spike item `Status: resolved` when the result file is complete; update the parent feature plan **Spikes** table and **Decisions so far** when epic-duck or the user expects it.
 
 If the repo has no `.backlog/` convention yet, put the file somewhere sensible and say where.

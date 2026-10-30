@@ -41,7 +41,7 @@ Use the **shared `NNNN` counter** with all other backlog items.
 - **`Plan:`** — link to an **existing** feature plan file when the user has confirmed the feature. If there is **no** feature yet, use **`Plan: (unanchored)`**, set **`Status: needs-triage`**, allocate the correct **NNNN**, and tell the user explicitly: the ticket is **not associated with a feature** and **will need to be triaged later** via **epic-duck**.
 - Run **amigo-duck** before publish; use the review path for **`Type: task`** or **`Type: spike`** (not `epic-duck:*`).
 
-**spike** items link findings under `.backlog/spike/`; prefer an existing spike item when **epic-duck** or a prior step already set **`Result:`**.
+**spike** items link findings under `.backlog/spikes/`; prefer an existing spike item when **epic-duck** or a prior step already set **`Result:`**.
 
 ## Publish checklist
 

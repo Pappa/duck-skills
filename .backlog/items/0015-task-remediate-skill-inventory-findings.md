@@ -46,7 +46,7 @@ Update **`docs/agents/backlog.md`** (and setup seeds that mirror it) with implem
 - [x] **`amigo-duck/SKILL.md`**: distinct review paths for **`Type: epic-duck:*`** vs **`Type: task`** / **`Type: spike`** (**Q8**).
 - [x] **`0004-decision-planning-pipeline-choreography.md`**: Answer rewritten — rubber impl items only, no rubber decisions, no epic↔rubber delegation, architect via epic/rubber only (**Q10**).
 - [x] **`0002-decision-ready-ticket-quality-bar.md`**: Answer uses **`Status: ready`**, **`Type: epic-duck:*`** only — no `Label:` or bare `Type: decision` (**Q2**).
-- [x] **`../spike/0011-common-fields-and-skill-needs.md`**: historical `Label:` / pre-namespace prose removed or rewritten to ADR canon (**C-0011-stale**).
+- [x] **`../spikes/0011-common-fields-and-skill-needs.md`**: historical `Label:` / pre-namespace prose removed or rewritten to ADR canon (**C-0011-stale**).
 - [x] Plan **0001** Notes: still states epic uses **architect-duck**; consistent with epic skill (**C-plan-notes**).
 - [x] **v1 C1–C2**: recorded as verified closed in **0014** (no code change required unless audit finds regression).
 

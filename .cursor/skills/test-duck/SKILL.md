@@ -28,7 +28,7 @@ It is not possible or valuable to test every edge-case. Focus on the critical pa
 
 Ask: "What's the public interface of this unit, and which boundaries should be tested?" Give each proposed boundary a one-line note on what it catches and what it misses.
 
-When the shape of that interface is itself in question (how deep the module is, where the boundary belongs, what the interface should expose), read and follow `.cursor/skills/architect-duck/SKILL.md`.
+When the shape of that interface is itself in question (how deep the module is, where the boundary belongs, what the interface should expose), call the Skill tool `architect-duck`.
 
 ## Anti-patterns
 

@@ -20,7 +20,7 @@ Planning and refinement duck-skills in this repo produce concise, unambiguous ba
 ## Decisions so far
 
 - [Ready ticket quality bar](0002-decision-ready-ticket-quality-bar.md): One ticket family; amigo-duck gate for **`Status: ready`**; scored evals (Ticket quality, Decision resolution metric, Skill usage, Usability) with per-skill pass thresholds; v1 no accepted-gaps workflow.
-- [Skill inventory](../spike/0003-skill-inventory-v2.4.md): v2 synthesis — seven skills in repo; ADR 0001 shapes aligned; **0004** vs epic/rubber `SKILL.md` choreography drift (high); v1 retained at [0003-skill-inventory.md](../spike/0003-skill-inventory.md).
+- [Skill inventory](../spikes/0003-skill-inventory-v2.4.md): v2 synthesis — seven skills in repo; ADR 0001 shapes aligned; **0004** vs epic/rubber `SKILL.md` choreography drift (high); v1 retained at [0003-skill-inventory.md](../spikes/0003-skill-inventory.md).
 - [Ticket shapes and fields](0005-decision-ticket-shapes-and-fields.md): `Type: epic-duck:*` (first line), unified **`Status:`** (incl. `ready`), deliverable task body sections, spike findings TLDR; ADR `docs/adr/0001-backlog-ticket-shapes.md`.
 - [Common fields](0011-common-fields-and-skill-needs.md): Spike input to **0005**; superseded for headers by ADR 0001.
 - [Planning pipeline choreography](0004-decision-planning-pipeline-choreography.md): Epic = plans + planning `epic-duck:*` children; rubber = single-session impl **`Type: task`** / **`Type: spike`** (and clarity/doc/code); amigo-duck before publish; see **0014** for full split (amends **0004** in remediation).

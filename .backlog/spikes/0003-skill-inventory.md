@@ -6,7 +6,7 @@ Spike: [0003-spike-skill-inventory.md](../items/0003-spike-skill-inventory.md)
 
 ## TLDR
 
-Seven skills are in scope for the planning-refinement feature. **`setup-duck-skills`** seeds `docs/agents/*` and optional `.backlog/`; **`epic-duck`** is the only skill that routinely **writes** the local backlog. **`rubber-duck`** composes **question-duck** + **architect-duck** and updates **glossary/ADRs**, not backlog tickets. **`amigo-duck`** and **question-duck** are review/interview skills with no mandated file writes. **`spike-duck`** writes spike findings under `.backlog/spike/`.
+Seven skills are in scope for the planning-refinement feature. **`setup-duck-skills`** seeds `docs/agents/*` and optional `.backlog/`; **`epic-duck`** is the only skill that routinely **writes** the local backlog. **`rubber-duck`** composes **question-duck** + **architect-duck** and updates **glossary/ADRs**, not backlog tickets. **`amigo-duck`** and **question-duck** are review/interview skills with no mandated file writes. **`spike-duck`** writes spike findings under `.backlog/spikes/`.
 
 Remaining **doc gaps** at time of spike (since addressed in **0005** / ADR 0001): amigo-duck review heading, local `Type: epic-duck:*` on markdown items, spike item `Type` line. (Former `Type: spike` on decision files — **resolved** with decision/task/spike split.)
 
@@ -100,7 +100,7 @@ Source: `.cursor/skills/amigo-duck/SKILL.md`.
 | | |
 |--|--|
 | **Reads** | Primary sources per question; `docs/agents/backlog.md` for paths |
-| **Writes** | `.backlog/items/<NNNN>-spike-<slug>.md` (when creating item), `.backlog/spike/<NNNN>-<slug>.md` findings |
+| **Writes** | `.backlog/items/<NNNN>-spike-<slug>.md` (when creating item), `.backlog/spikes/<NNNN>-<slug>.md` findings |
 | **Backlog** | Spike item + findings; sets item `resolved` when complete |
 
 Source: `.cursor/skills/spike-duck/SKILL.md`.

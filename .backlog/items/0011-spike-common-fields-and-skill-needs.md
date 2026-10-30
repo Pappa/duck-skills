@@ -2,7 +2,7 @@ Type: epic-duck:spike
 Status: resolved
 Plan: [0001-plan-duck-skills-planning-refinement.md](0001-plan-duck-skills-planning-refinement.md)
 Overview: Recommend common ticket fields vs per-type exceptions from skill needs and upstream references.
-Result: [0011-common-fields-and-skill-needs.md](../spike/0011-common-fields-and-skill-needs.md)
+Result: [0011-common-fields-and-skill-needs.md](../spikes/0011-common-fields-and-skill-needs.md)
 Blocked by:
 
 ## Question
@@ -13,4 +13,4 @@ Investigate in-repo skills under `.cursor/skills/` (how each defines inputs/outp
 
 ## Comments
 
-Resolved in [0011-common-fields-and-skill-needs.md](../spike/0011-common-fields-and-skill-needs.md). **0005** unblocked to codify in `backlog.md`, skills, and ADR.
+Resolved in [0011-common-fields-and-skill-needs.md](../spikes/0011-common-fields-and-skill-needs.md). **0005** unblocked to codify in `backlog.md`, skills, and ADR.

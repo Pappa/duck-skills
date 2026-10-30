@@ -16,7 +16,7 @@ Resolution must cover: relationship to **amigo-duck** axes; minimum fields per t
 
 - **Planning family** — `Type: epic-duck:plan`, `epic-duck:decision`, `epic-duck:task`, `epic-duck:spike` (see ADR 0001 and `docs/agents/backlog.md`).
 - **Implementation family** — plain **`Type: task`** and **`Type: spike`** from **rubber-duck** (development work; filenames `NNNN-task-<slug>.md`, `NNNN-spike-<slug>.md`).
-- **Spike findings** — `.backlog/spike/*` with `Spike:` backlink and **TLDR** only (no `Type:`).
+- **Spike findings** — `.backlog/spikes/*` with `Spike:` backlink and **TLDR** only (no `Type:`).
 - Field canon: [0005-decision-ticket-shapes-and-fields.md](0005-decision-ticket-shapes-and-fields.md), decision **[0014](0014-decision-skill-inventory-remediation.md)**.
 
 ### Quality gate (tickets)
