@@ -4,7 +4,7 @@ description: Round-based Q&A to remove ambiguities and reach a shared understand
 disable-model-invocation: true
 ---
 
-Interrogate a plan or design using a thorough, round-based Q&A interview until all assumptions are documented, no ambiguities remain, and a shared understanding with the user is reached. Use this skill when refining a feature, resolving a planning decision, or sharpening a design before making changes to docs, requirements, backlog items, or code.
+Interrogate a plan or design using a thorough, round-based Q&A interview until all assumptions are documented, no ambiguities remain, and a shared understanding with the user is reached. Use this skill when refining an epic, resolving a planning decision, or sharpening a design before making changes to docs, requirements, backlog items, or code.
 
 Interview the user until you reach **shared understanding**. Model the work as a **design tree**: decisions branch into dependent decisions.
 

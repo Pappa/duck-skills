@@ -1,20 +1,18 @@
 ---
 name: epic-duck
-description: Chart a large, unclear or ambiguous piece of work as a plan with decisions on the backlog, then resolve one decision per session until the route to the destination is clear. Use for multi-session planning, unclear scope, epic-duck, or feature-based planning.
+description: Organise a large, complex or ambiguous piece of work as an unfolding plan with decisions on the backlog, then resolve one decision per session until the plan is clear. Use for multi-session planning, unclear scope, or feature-based planning.
 disable-model-invocation: true
 ---
 
-A **destination** is a feature too big to implement in one session and still ambiguous or unclear — the steps are not well defined. 
+An **epic** is a piece of work that's still too big, fuzzy or ambiguous — the details are not well defined. The path to the goal is unclear.
 
-**Epic duck** help define the steps of the **plan** on the backlog, then resolves **decisions**, **tasks**, and **spikes** one at a time. Default mode is **plan, don't do**: each decision ticket resolves a question, not deliverables.
+**Epic duck** help turn a fuzzy epic into a clear **plan** on the backlog, resolving **decisions**, **tasks**, and **spikes** one at a time. Default mode is **plan, don't do**: each decision ticket resolves a question, not deliverables.
 
 **Refer by name** in human-readable plain langauge: titles and overviews, not bare numbers.
 
 ## The Plan
 
-The plan is a single ticket on this repo's backlog. On **local** markdown use **`Type: epic-duck:plan`** (first line), `features.md`, and `*-plan-*.md`. On **remote** trackers, label/tag **`epic-duck:plan`**. Its children are **planning-era** items: `epic-duck:decision`, `epic-duck:task`, and `epic-duck:spike` only (not implementation `Type: task` / `Type: spike` from **rubber-duck** — see `docs/agents/backlog.md`).
-
-The plan is iterative and documents progress towards the goal, a completed feature. It lists the decisions made so far and acts as an index to the tickets that contain the decision's details.
+The plan is a single ticket on this repo's backlog. The plan is iterative and documents progress towards the goal, a completed feature. It lists the decisions made so far and acts as an index to the tickets that contain the decision's details.
 
 **Where to find the backlog.** Details about the backlog can be found in `docs/agents/backlog.md`. If you can't find it, tell the user to run `/setup-duck-skills`. Consult the tracker doc's "Epic-duck operations" section for how to work with the backlog.
 
@@ -22,7 +20,7 @@ The plan is iterative and documents progress towards the goal, a completed featu
 
 Don't assume you understand the users inital request, plan or idea. **Always**, use the `question-duck` skill to dig into the idea, ask questions to clarify requirements and edge cases, ensure all assumptions are documented and that you and the user have a **shared understanding**.
 
-Use the `amigo-duck` skill to review the draft ticket, and take their suggestions on board to update the ticket before adding it to the backlog.
+Use the `amigo-duck` skill to review the draft ticket, and take its suggestions on board to update the ticket before adding it to the backlog.
 
 ### Plan body
 
@@ -171,8 +169,8 @@ When the user invokes **epic-duck** on a backlog item (or a messy backlog), clas
 
 **Typical cases:**
 
-- **Unanchored implementation items** — **`Plan: (unanchored)`**, **`Status: needs-triage`** from **rubber-duck**: pick or chart a feature plan, set a real **`Plan:`** link, update the parent plan **Tasks** / **Spikes** table when applicable, and move **`Status:`** off **`needs-triage`** when the user confirms the feature.
-- **Orphan or mis-typed items** — wrong **`Type:`**, missing **`Plan:`**, or item on the wrong feature: settle plan, kind (`epic-duck:*` vs implementation **`task`** / **`spike`**), and target **Status** with the user.
+- **Unanchored implementation items** — **`Plan: (unanchored)`**, **`Status: needs-triage`** from **rubber-duck**: pick or create an epic plan, set a real **`Plan:`** link, update the parent plan **Tasks** / **Spikes** table when applicable, and move **`Status:`** off **`needs-triage`** when the user confirms the epic.
+- **Orphan or mis-typed items** — wrong **`Type:`**, missing **`Plan:`**, or item on the wrong epic: settle plan, kind (`epic-duck:*` vs implementation **`task`** / **`spike`**), and target **Status** with the user.
 
 **Status rules during triage:**
 
@@ -180,21 +178,21 @@ When the user invokes **epic-duck** on a backlog item (or a messy backlog), clas
 - Set **`Status: ready`** only after **amigo-duck** where that gate applies (same as normal epic-duck publish rules).
 - Set **`in-progress`** when this session starts substantive edits on the item (existing rules).
 
-## Choose a feature (every session)
+## Choose an epic (every session)
 
-1. User input that **names or references by number** an existing feature → open it (path, filename, `NNNN` for `NNNN-plan-*`, slug).
-2. User input that references `NNNN` for a non-feature item → open that child and its `Plan:` parent.
-3. User input that is a **close name match** to a row in `features.md` → confirm filename, overview, and status with the user.
-4. User input that describes **new work** and no existing feature → chart a new feature (allocate `NNNN`, row in `features.md`, `Status: needs-detail`).
-5. Otherwise → list every `needs-detail` and `in-progress` feature from `features.md` (number order); user picks. Empty list → offer to chart.
+1. User input that **names or references by number** an existing epic → open it (path, filename, `NNNN` for `NNNN-plan-*`, slug).
+2. User input that references `NNNN` for a non-epic item → open that child and its `Plan:` parent.
+3. User input that is a **close name match** to a row in `epics.md` → confirm filename, overview, and status with the user.
+4. User input that describes **new work** and no existing epic → chart a new epic (allocate `NNNN`, row in `epics.md`, `Status: needs-detail`).
+5. Otherwise → list every `needs-detail` and `in-progress` epic from `epics.md` (number order); user picks. Empty list → offer to chart.
 
-`resolved` / `out-of-scope` features are not listed. If the user names one, confirm before setting `in-progress` and continuing.
+`resolved` / `out-of-scope` epics are not listed. If the user names one, confirm before setting `in-progress` and continuing.
 
 ### Local git check (once, before writes)
 
-If `git status` shows changes to the **feature file only**:
+If `git status` shows changes to the **epic file only**:
 
-- Diff vs `HEAD` (untracked feature file = plan-level change).
+- Diff vs `HEAD` (untracked epic file = plan-level change).
 - Hunks only under **Decisions** / **Tasks** / **Spikes** → warn; ask to continue.
 - Any plan section changed → ask how to proceed. Decline or wait → no writes.
 
@@ -208,31 +206,31 @@ Do not re-check mid-session. Other clones are invisible.
 4. If neither **`ready`** nor **`in-progress`** candidates → list up to **five** **frontier** children (`needs-triage` or `needs-detail`, unblocked); same overflow rule; user picks. Set **`Status: in-progress`** when this session starts work on the chosen item.
 5. If no children yet, continue **charting**.
 
-## Chart the feature (invocation)
+## Chart the epic (invocation)
 
-User brings a loose idea (often after feature selection above).
+User brings a loose idea (often after epic selection above).
 
 1. **Destination** — use `question-duck` until scope and destination are clear.
-2. **Breadth-first pass** — surface open decisions. If no fog remains (small enough for one session), stop and ask how to proceed without a full feature chart.
-3. **Create or update feature** with Destination, Notes, empty Decisions so far, fog in **Not yet specified**, empty **Decisions** / **Tasks** / **Spikes** tables.
+2. **Breadth-first pass** — surface open decisions. If no fog remains (small enough for one session), stop and ask how to proceed without a full epic chart.
+3. **Create or update epic** with Destination, Notes, empty Decisions so far, fog in **Not yet specified**, empty **Decisions** / **Tasks** / **Spikes** tables.
 4. **Create children** you can specify now; run **amigo-duck** on each deliverable backlog ticket before publish; **wire blocking in a second pass** (numbers must exist).
 5. **Spike items** — optional parallel subagents on `spike/<name>` branches; link findings; do not merge throwaway branches.
 
 Stop after charting; do not resolve children in this session except parallel spikes.
 
-## Work through the feature (invocation)
+## Work through the epic (invocation)
 
-User passes a feature (or child); optional named decision, task, or spike.
+User passes an epic (or child); optional named decision, task, or spike.
 
-1. Load feature body (not every child unless needed).
+1. Load epic body (not every child unless needed).
 2. Git check (local) and pick child (above). Set `in-progress` when this session starts work (after confirmation if required).
 3. Resolve per `Type` or spike workflow. Use **Notes** for extra skills.
 4. **Resolve decision**: `## Answer`, `Status: resolved`, append **Decisions so far**, blocker sweep, refresh tables.
 5. **Resolve spike**: findings file complete (via **spike-duck**), spike item `Status: resolved`, update plan **Spikes** table and **Decisions so far** when appropriate (`docs/agents/backlog.md`).
 6. Add new children; graduate fog; rule out-of-scope items.
-7. When all children are `resolved` or `out-of-scope` and **Not yet specified** is empty, ask whether the feature is `resolved`, `out-of-scope`, or still `in-progress` with more work.
+7. When all children are `resolved` or `out-of-scope` and **Not yet specified** is empty, ask whether the epic is `resolved`, `out-of-scope`, or still `in-progress` with more work.
 
-When attaching an unanchored implementation item (`Plan: (unanchored)` from **rubber-duck**), follow **Ambiguous ticket triage** above: set a real **`Plan:`** link and move **`Status:`** off `needs-triage` when the user confirms the feature.
+When attaching an unanchored implementation item (`Plan: (unanchored)` from **rubber-duck**), follow **Ambiguous ticket triage** above: set a real **`Plan:`** link and move **`Status:`** off `needs-triage` when the user confirms the epic.
 
 **One child per session** except parallel spikes during charting.
 

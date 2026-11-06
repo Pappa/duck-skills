@@ -74,7 +74,7 @@ Published with plain **`Type: task`** or **`Type: spike`** (no `epic-duck:` pref
 
 **`Type: task`** / **`Type: spike`** not yet ready: **amigo-duck** on fit, complete/unambiguous, and plain language; light INVEST.
 
-**`Plan: (unanchored)`** with **`Status: needs-triage`**: flag that the item must be linked to a feature before execution; fit review should note missing plan context.
+**`Plan: (unanchored)`** with **`Status: needs-triage`**: flag that the item must be linked to an epic before execution; fit review should note missing plan context.
 
 **`Type: spike`** (implementation): clear **Question** on the item; findings file uses **TLDR** only (no `Type:` on findings).
 

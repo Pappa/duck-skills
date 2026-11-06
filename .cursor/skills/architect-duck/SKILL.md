@@ -1,12 +1,12 @@
 ---
 name: architect-duck
-description: Design and re-design software systems and keep the code, project documentation and domain-model documentation aligned and up to date.
+description: Design and re-design software systems. Keep the code, documentation, domain-model and architectural decisions (ADRs) aligned and up to date.
 disable-model-invocation: true
 ---
 
 # Architect duck
 
-Design and re-design software systems and keep the code, project documentation and domain-model documentation aligned and up to date.
+Design and re-design software systems. Keep the code, documentation, domain-model and architectural decisions (ADRs) aligned and up to date.
 
 Challenge terminology, stress-test design scenarios, refactor the system for new use-cases and update GLOSSARY.md and ADRs as significant decisions are made.
 

@@ -27,7 +27,7 @@ Future non-planning work (implementation skills) will use a **different** `Type:
 
 **First line is always `Type:`**, then `Status:`, then the rest.
 
-**Plan** (`Type: epic-duck:plan`): no `Plan:` or `Overview:` — use **Destination** as the one-line index blurb in `features.md`.
+**Plan** (`Type: epic-duck:plan`): no `Plan:` or `Overview:` — use **Destination** as the one-line index blurb in `epics.md`.
 
 **Child** (decision, task, spike item):
 

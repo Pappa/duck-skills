@@ -10,7 +10,7 @@ Implement one or more features specified in a backlog ticket or requirements the
 
 ## Spec and session baseline
 
-If the user gives a ticket reference (by name or number), fetch it from the backlog per `docs/agents/backlog.md` and confirm the title before starting work. If the reference is ambiguous, ask. If the user provides no information about which ticket to work on or provides a reference to a feature plan, list the `ready` tasks and spikes, and recommend the order they should be worked on.
+If the user gives a ticket reference (by name or number), fetch it from the backlog per `docs/agents/backlog.md` and confirm the title before starting work. If the reference is ambiguous, ask. If the user provides no information about which ticket to work on or provides a reference to an epic plan, list the `ready` tasks and spikes, and recommend the order they should be worked on.
 
 Treat that ticket file as the **spec** for **review-duck** unless the user points elsewhere.
 

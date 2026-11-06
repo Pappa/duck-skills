@@ -35,7 +35,7 @@ Sources: `.cursor/skills/*/SKILL.md`, `docs/agents/backlog.md`, `docs/agents/dom
 | | |
 |--|--|
 | **Reads** | `git remote`, `AGENTS.md` / `CLAUDE.md`, `GLOSSARY.md`, `GLOSSARY-MAP.md`, `docs/adr/`, `docs/agents/`, `.backlog/` |
-| **Writes** | `docs/agents/backlog.md`, `docs/agents/domain.md`, optional `docs/agents/ticket-statuses.md`, `AGENTS.md` or `CLAUDE.md` (Agent skills block), `.backlog/features.md` when local backlog chosen; may create GitHub/GitLab labels |
+| **Writes** | `docs/agents/backlog.md`, `docs/agents/domain.md`, optional `docs/agents/ticket-statuses.md`, `AGENTS.md` or `CLAUDE.md` (Agent skills block), `.backlog/epics.md` when local backlog chosen; may create GitHub/GitLab labels |
 | **Backlog** | Seeds tracker doc; creates empty feature index for local mode |
 | **Domain** | Seeds `domain.md`; does not write glossary/ADR content |
 | **Labels** | Optional copy of `ticket-statuses.md` defaults |
@@ -46,8 +46,8 @@ Source: `.cursor/skills/setup-duck-skills/SKILL.md`.
 
 | | |
 |--|--|
-| **Reads** | `docs/agents/backlog.md`, `.backlog/features.md`, plan and child item files, `git status` (feature-file check) |
-| **Writes** | `.backlog/items/*` (plans, decisions, tasks, spike items), `.backlog/features.md`, plan **Decisions** / **Tasks** / **Spikes** tables; spike **findings** via spike-duck |
+| **Reads** | `docs/agents/backlog.md`, `.backlog/epics.md`, plan and child item files, `git status` (feature-file check) |
+| **Writes** | `.backlog/items/*` (plans, decisions, tasks, spike items), `.backlog/epics.md`, plan **Decisions** / **Tasks** / **Spikes** tables; spike **findings** via spike-duck |
 | **Backlog** | Primary writer for plans, decisions, tasks, spikes, blocking, status |
 | **Domain** | Does not update glossary/ADR |
 | **Status** | Local items use `Status:` per `ticket-statuses.md`; remote uses tags including `epic-duck:*` |
@@ -141,7 +141,7 @@ flowchart LR
 | C3 | Remote labels on local tickets | amigo-duck: remote `` `epic-duck:decision` `` etc. | Local backlog has no `epic-duck:*` tags; spikes have no `Type:` line | **Medium** — clarify local vs remote in amigo-duck |
 | C4 | Review heading | amigo-duck output: `## 3 amigos session` | Skill name is **amigo-duck**; separate `3-amigos` skill may exist elsewhere | **Low** — naming/consistency for eval artefacts |
 | C5 | Spike numbering | spike-duck: “Allocate the next shared `NNNN`” when creating spike item | epic-duck charting creates spike item first, then spike-duck fills result | **Low** — spike-duck should say “use existing spike item when `Result:` already linked” |
-| C6 | Plan label | epic-duck: plan labelled `epic-duck:plan` | Local tracker uses `features.md` + `*-plan-*.md` filename, not a label field | **Medium** — document local equivalent |
+| C6 | Plan label | epic-duck: plan labelled `epic-duck:plan` | Local tracker uses `epics.md` + `*-plan-*.md` filename, not a label field | **Medium** — document local equivalent |
 | C7 | Rubber vs epic backlog | rubber-duck: no backlog writes | epic-duck: backlog-only planning | **None** — intentional; **0004** should document handoff |
 | C8 | Glossary in decision tickets | amigo-duck: define terms or point to `GLOSSARY.md` | epic-duck decisions use `## Question` not AC | **Low** — amigo-duck already allows light INVEST for decisions |
 

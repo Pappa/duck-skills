@@ -24,8 +24,8 @@ Read `docs/agents/domain.md` for glossary layout. If missing, tell the user to r
 
 ## What rubber-duck does **not** publish
 
-- **No** `epic-duck:plan`, **`epic-duck:decision`**, or other **planning-era** `Type: epic-duck:*` items — use **epic-duck** for feature plans and planning children.
-- **No** `epic-duck:task` or `epic-duck:spike` — those are for **planning** work under a feature plan.
+- **No** `epic-duck:plan`, **`epic-duck:decision`**, or other **planning-era** `Type: epic-duck:*` items — use **epic-duck** for epic plans and planning children.
+- **No** `epic-duck:task` or `epic-duck:spike` — those are for **planning** work under an epic plan.
 
 ## Implementation backlog items
 
@@ -38,7 +38,7 @@ When the session produces follow-on **implementation** work, publish under `.bac
 
 Use the **shared `NNNN` counter** with all other backlog items.
 
-- **`Plan:`** — link to an **existing** feature plan file when the user has confirmed the feature. If there is **no** feature yet, use **`Plan: (unanchored)`**, set **`Status: needs-triage`**, allocate the correct **NNNN**, and tell the user explicitly: the ticket is **not associated with a feature** and **will need to be triaged later** via **epic-duck**.
+- **`Plan:`** — link to an **existing** epic plan file when the user has confirmed the feature. If there is **no** feature yet, use **`Plan: (unanchored)`**, set **`Status: needs-triage`**, allocate the correct **NNNN**, and tell the user explicitly: the ticket is **not associated with an epic** and **will need to be triaged later** via **epic-duck**.
 - Run **amigo-duck** before publish; use the review path for **`Type: task`** or **`Type: spike`** (not `epic-duck:*`).
 
 **spike** items link findings under `.backlog/spikes/`; prefer an existing spike item when **epic-duck** or a prior step already set **`Result:`**.

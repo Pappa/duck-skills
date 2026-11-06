@@ -21,7 +21,7 @@ Resolution must state default **status** transitions, who may set **`Status: rea
 
 ### Scope of “triage” (epic-duck)
 
-- **Unanchored implementation items** — **`Plan: (unanchored)`**, **`Status: needs-triage`** from **rubber-duck**: user invokes **epic-duck**; session picks or creates a feature plan, sets a real **`Plan:`** link, and moves **`Status:`** off **`needs-triage`** when the user confirms.
+- **Unanchored implementation items** — **`Plan: (unanchored)`**, **`Status: needs-triage`** from **rubber-duck**: user invokes **epic-duck**; session picks or creates an epic plan, sets a real **`Plan:`** link, and moves **`Status:`** off **`needs-triage`** when the user confirms.
 - **Orphan or mis-typed items** — wrong **`Type:`**, missing **`Plan:`**, or item on the wrong feature: same epic-duck session with **question-duck** to settle plan, kind, and target status.
 
 ### Entry points and choreography

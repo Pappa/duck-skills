@@ -18,8 +18,8 @@ The **main open problem is choreography drift**: resolved **[0004](../items/0004
 
 | Skill | In repo | Invokes (`SKILL.md`) | Primary reads | Primary writes |
 |-------|---------|----------------------|---------------|----------------|
-| setup-duck-skills | Yes | — | remotes, agent docs, `.backlog/` | `docs/agents/*`, `AGENTS.md`/`CLAUDE.md`, `.backlog/features.md`; remote status + `epic-duck:*` labels |
-| epic-duck | Yes | question-duck, amigo-duck, spike-duck | `backlog.md`, `features.md`, items, `ticket-statuses` | `.backlog/items/*`, plan tables, blocker sweeps |
+| setup-duck-skills | Yes | — | remotes, agent docs, `.backlog/` | `docs/agents/*`, `AGENTS.md`/`CLAUDE.md`, `.backlog/epics.md`; remote status + `epic-duck:*` labels |
+| epic-duck | Yes | question-duck, amigo-duck, spike-duck | `backlog.md`, `epics.md`, items, `ticket-statuses` | `.backlog/items/*`, plan tables, blocker sweeps |
 | rubber-duck | Yes | question-duck, architect-duck | `domain.md` | `GLOSSARY.md`, `docs/adr/*` (**skill text**); **0004** also backlog children |
 | question-duck | Yes | subagents | repo (via subagents) | none mandated |
 | architect-duck | Yes | — | domain, glossary, ADR, code | glossary, ADR |

@@ -113,7 +113,7 @@ No in-scope skill `SKILL.md` still instructs agents to write `Label:` on local f
 | | |
 |--|--|
 | **Reads** | `git remote`, `AGENTS.md` / `CLAUDE.md`, `GLOSSARY.md`, `GLOSSARY-MAP.md`, `docs/adr/`, `docs/agents/`, `.backlog/` |
-| **Writes** | `docs/agents/backlog.md`, `docs/agents/domain.md`, optional `docs/agents/ticket-statuses.md`, agent skills block in `AGENTS.md` / `CLAUDE.md`, `.backlog/features.md` (local mode); may create remote **labels/tags** for **status strings** and **`epic-duck:*`** |
+| **Writes** | `docs/agents/backlog.md`, `docs/agents/domain.md`, optional `docs/agents/ticket-statuses.md`, agent skills block in `AGENTS.md` / `CLAUDE.md`, `.backlog/epics.md` (local mode); may create remote **labels/tags** for **status strings** and **`epic-duck:*`** |
 | **Backlog** | Seeds tracker doc; empty feature index for local mode |
 | **Domain** | Seeds `domain.md` only |
 | **Invokes** | None |
@@ -124,8 +124,8 @@ Source: `.cursor/skills/setup-duck-skills/SKILL.md`.
 
 | | |
 |--|--|
-| **Reads** | `docs/agents/backlog.md`, `.backlog/features.md`, plan and child items, `git status` (feature-file guard), `docs/agents/ticket-statuses.md` (by reference) |
-| **Writes** | `.backlog/items/*`, `.backlog/features.md`, plan **Decisions** / **Tasks** / **Spikes** tables, **Decisions so far**; delegates spike **findings** to spike-duck |
+| **Reads** | `docs/agents/backlog.md`, `.backlog/epics.md`, plan and child items, `git status` (feature-file guard), `docs/agents/ticket-statuses.md` (by reference) |
+| **Writes** | `.backlog/items/*`, `.backlog/epics.md`, plan **Decisions** / **Tasks** / **Spikes** tables, **Decisions so far**; delegates spike **findings** to spike-duck |
 | **Backlog** | Primary writer; sets **`Type:`** and **`Status:`** on items |
 | **Domain** | No glossary/ADR writes |
 | **Invokes** | question-duck (charting, decisions), amigo-duck (pre-publish, all types per skill), spike-duck (spike items) |

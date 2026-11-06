@@ -105,7 +105,7 @@ Shared **NNNN** counter and `.backlog/items/` path. Spike **findings** stay `.ba
 
 **rubber-duck** does **not** create `epic-duck:decision` or any planning-type item.
 
-**Unanchored handover:** When the user has no feature plan, rubber may still write an impl item with **`Plan: (unanchored)`**, **`Status: needs-triage`**, correct **NNNN** and impl `Type:`. Rubber **must** tell the user the ticket is **not associated with a feature** and **will need to be triaged later**. **epic-duck** attaches a real `Plan:` link when a feature is chosen.
+**Unanchored handover:** When the user has no epic plan, rubber may still write an impl item with **`Plan: (unanchored)`**, **`Status: needs-triage`**, correct **NNNN** and impl `Type:`. Rubber **must** tell the user the ticket is **not associated with an epic** and **will need to be triaged later**. **epic-duck** attaches a real `Plan:` link when an epic is chosen.
 
 **amigo-duck** runs before publish for **both** families; skill text must describe review rules per `Type:` profile.
 

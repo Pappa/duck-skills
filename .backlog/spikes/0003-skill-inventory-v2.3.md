@@ -112,7 +112,7 @@ flowchart LR
   end
 
   subgraph backlog[".backlog/"]
-    features[features.md]
+    epics[epics.md]
     items[items/*]
     spike_find[spike/*]
   end
@@ -120,13 +120,13 @@ flowchart LR
   setup -->|W| backlog_md
   setup -->|W| domain_md
   setup -->|W| status_md
-  setup -->|W| features
+  setup -->|W| epics
   setup -->|W| AGENTS[AGENTS.md / CLAUDE.md]
 
   epic -->|R| backlog_md
-  epic -->|R| features
+  epic -->|R| epics
   epic -->|W| items
-  epic -->|W| features
+  epic -->|W| epics
 
   rubber -->|R| domain_md
   rubber -->|W| gloss

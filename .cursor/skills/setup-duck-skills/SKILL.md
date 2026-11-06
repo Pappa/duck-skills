@@ -48,7 +48,7 @@ For **Azure DevOps**, also confirm org, project, and team (for area path default
 
 Record the choice in `docs/agents/backlog.md` using a seed template from this folder.
 
-if the choice was a local backlog, create the empty backlog here: `.backlog/features.md`.
+if the choice was a local backlog, create the empty backlog here: `.backlog/epics.md`.
 
 **Section B: Ticket status vocabulary**
 

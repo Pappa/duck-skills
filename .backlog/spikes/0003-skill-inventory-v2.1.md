@@ -39,7 +39,7 @@ Sources: `.cursor/skills/*/SKILL.md`, `docs/agents/backlog.md`, `docs/agents/dom
 | Area | Detail |
 |------|--------|
 | **Reads** | `git remote` / `.git/config`, `AGENTS.md` / `CLAUDE.md`, `GLOSSARY.md`, `GLOSSARY-MAP.md`, `docs/adr/`, `docs/agents/`, `.backlog/`, monorepo signals |
-| **Writes** | `docs/agents/backlog.md`, `docs/agents/domain.md`, `docs/agents/ticket-statuses.md` (if defaults accepted), `AGENTS.md` or `CLAUDE.md` (`## Agent skills` block), `.backlog/features.md` when local tracker chosen; custom `backlog.md` from user description |
+| **Writes** | `docs/agents/backlog.md`, `docs/agents/domain.md`, `docs/agents/ticket-statuses.md` (if defaults accepted), `AGENTS.md` or `CLAUDE.md` (`## Agent skills` block), `.backlog/epics.md` when local tracker chosen; custom `backlog.md` from user description |
 | **Labels (remote)** | On GitHub/GitLab: create labels for each default **`Status:`** string and **`epic-duck:*`** types if missing |
 | **Backlog** | Seeds operational doc; empty feature index for local mode — does not create plan/child items |
 | **Domain** | Seeds `domain.md`; does not author glossary/ADR body |
@@ -54,9 +54,9 @@ Source: `.cursor/skills/setup-duck-skills/SKILL.md`, seed templates under `.curs
 
 | Area | Detail |
 |------|--------|
-| **Reads** | `docs/agents/backlog.md` (incl. Epic-duck operations), `.backlog/features.md`, plan and child files under `.backlog/items/`, `docs/agents/ticket-statuses.md`; `git status` / diff vs `HEAD` on feature file (local, once per session before writes) |
-| **Writes** | `.backlog/items/*` (plans, decisions, tasks, spike items), `.backlog/features.md`, plan sections and **Decisions** / **Tasks** / **Spikes** tables; decision `## Answer`; blocker sweeps on `Blocked by:`; spike **findings** delegated to **spike-duck** (not authored inline in epic skill) |
-| **Labels** | Skill prose: plan “labelled `epic-duck:plan`” — on **local** markdown, equivalent is **`Type: epic-duck:plan`** + `features.md` + `*-plan-*.md` (`docs/agents/backlog.md`) |
+| **Reads** | `docs/agents/backlog.md` (incl. Epic-duck operations), `.backlog/epics.md`, plan and child files under `.backlog/items/`, `docs/agents/ticket-statuses.md`; `git status` / diff vs `HEAD` on feature file (local, once per session before writes) |
+| **Writes** | `.backlog/items/*` (plans, decisions, tasks, spike items), `.backlog/epics.md`, plan sections and **Decisions** / **Tasks** / **Spikes** tables; decision `## Answer`; blocker sweeps on `Blocked by:`; spike **findings** delegated to **spike-duck** (not authored inline in epic skill) |
+| **Labels** | Skill prose: plan “labelled `epic-duck:plan`” — on **local** markdown, equivalent is **`Type: epic-duck:plan`** + `epics.md` + `*-plan-*.md` (`docs/agents/backlog.md`) |
 | **Backlog** | Primary planner/publisher for feature charting and child lifecycle |
 | **Domain** | Skill text: **no** glossary/ADR updates (domain work is rubber/architect per 0004, but **not** stated in epic `SKILL.md`) |
 | **Invokes** | **`question-duck`** (plan creation, charting destination, resolving decisions), **`amigo-duck`** (before publish; all ticket types), **`spike-duck`** (spike children) |
@@ -186,7 +186,7 @@ Solid edges: stated in `SKILL.md`. Dotted: 0006 option 2 only. **0004** adds edg
 | C1–C2 | Spike/decision `Type:` confusion — **ADR 0001** + `Type: epic-duck:spike` on items |
 | C3 (partial) | amigo-duck now uses **`## amigo-duck review`** and `Type: epic-duck:*` in skill text — remote vs local tag mapping still agent judgment on GitHub |
 | C4 | amigo heading — **fixed** in amigo-duck skill (ADR 0001) |
-| C6 (partial) | Local plan equivalent documented in `backlog.md` (Type + `features.md`) |
+| C6 (partial) | Local plan equivalent documented in `backlog.md` (Type + `epics.md`) |
 
 ### Cross-check: `AGENTS.md` and `README.md`
 

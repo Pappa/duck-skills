@@ -18,7 +18,7 @@ Sources: `docs/agents/backlog.md`, `.cursor/skills/*/SKILL.md`, `.backlog/spikes
 
 | Kind | File pattern | Common fields | Body profile |
 |------|----------------|---------------|--------------|
-| **Plan** | `*-plan-*.md` | `Status` only at item level; indexed in `features.md` | Destination, Notes, Decisions so far, Not yet specified, Out of scope, Decisions, Tasks, Spikes |
+| **Plan** | `*-plan-*.md` | `Status` only at item level; indexed in `epics.md` | Destination, Notes, Decisions so far, Not yet specified, Out of scope, Decisions, Tasks, Spikes |
 | **Decision** | `<NNNN>-decision-<slug>.md` | + `Plan`, `Overview`, `Type: decision`, `Blocked by` | `## Question`; when resolved `## Answer`; `## Comments` |
 | **Task** | `<NNNN>-<slug>.md` (slug not `plan-`, `decision-`, `spike-`) | + `Type: task`, optional `Label:` | **Branch A — unblocker:** `## Question` (+ `## Answer` when resolved). **Branch B — ready:** `Label: ready` + `## Acceptance criteria` (+ optional `## User intent`, `## Out of scope for this ticket`) |
 | **Spike item** | `*-spike-*.md` | + `Plan`, `Overview`, `Result`, `Blocked by` (no `Type:`) | `## Question`; `## Comments` |
@@ -42,7 +42,7 @@ Label: ready                   # optional; only roles from ticket-statuses.md
 Blocked by:                    # optional; comma-separated NNNN
 ```
 
-**Plans** start with `Status:` then **Destination** (acts as overview for `features.md`). No `Plan:` line.
+**Plans** start with `Status:` then **Destination** (acts as overview for `epics.md`). No `Plan:` line.
 
 **Remote trackers** (GitHub/GitLab/Azure): map `Type` + `Label` to `epic-duck:<type>` tags and triage labels per `setup-duck-skills/backlog-*.md`; do not duplicate tag names as extra markdown fields on local files.
 
@@ -101,7 +101,7 @@ No third `Type:` value needed if **ready** is expressed via `Label:` on `Type: t
 | ID | Action |
 |----|--------|
 | C3 | Edit `amigo-duck/SKILL.md`: local kind names (`decision`, `task`, spike item, `Label: ready`). |
-| C6 | Document in `backlog.md`: local plan ≡ remote `epic-duck:plan` via `features.md` + filename. |
+| C6 | Document in `backlog.md`: local plan ≡ remote `epic-duck:plan` via `epics.md` + filename. |
 | Implement-without-ready pattern | Migrate implement tasks to `Label: ready` + AC **or** formal `## Spec` section (0005 decision). |
 
 ---

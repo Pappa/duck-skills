@@ -34,14 +34,14 @@ Resolution must be documentable in skill text and exercisable in eval scenarios.
 
 ### Rubber-duck backlog rules
 
-- Prefer items on a **confirmed** feature plan (`Plan:` → plan file). If the user has no plan yet, may write **`Plan: (unanchored)`**, **`Status: needs-triage`**, correct **NNNN**, and tell the user the ticket is **not associated with a feature** and **will need to be triaged later**.
-- May create **`Type: task`** and **`Type: spike`** implementation items (`NNNN-task-<slug>.md`, `NNNN-spike-<slug>.md`). **No** `epic-duck:decision`. **No** new feature plans.
+- Prefer items on a **confirmed** epic plan (`Plan:` → plan file). If the user has no plan yet, may write **`Plan: (unanchored)`**, **`Status: needs-triage`**, correct **NNNN**, and tell the user the ticket is **not associated with an epic** and **will need to be triaged later**.
+- May create **`Type: task`** and **`Type: spike`** implementation items (`NNNN-task-<slug>.md`, `NNNN-spike-<slug>.md`). **No** `epic-duck:decision`. **No** new epic plans.
 - **spike-duck** writes findings for implementation spikes.
 
 ### Epic-duck backlog rules
 
 - Owns charting, fog, child resolution, and **planning** spike items (`Type: epic-duck:spike`).
-- Publishes only **`Type: epic-duck:decision`**, **`epic-duck:task`**, **`epic-duck:spike`** under a feature plan.
+- Publishes only **`Type: epic-duck:decision`**, **`epic-duck:task`**, **`epic-duck:spike`** under an epic plan.
 - May attach a real **`Plan:`** to unanchored implementation items created by rubber.
 
 ### Missing backlog
