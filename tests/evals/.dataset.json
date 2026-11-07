@@ -1,0 +1,242 @@
+[
+  {
+    "input": "How do I configure GitHub backlog tracking for duck-skills in a new repo?",
+    "expected_output": "Recommend: setup-duck-skills — Configure a repo for duck-skills — backlog tracker (GitHub, GitLab, Azure DevOps, local markdown, or custom), ticket status vocabulary, and domain doc layout. Run once per repo before using other duck skills.",
+    "expected_tools": [
+      {
+        "name": "search_skills",
+        "inputParameters": {
+          "query": "How do I configure GitHub backlog tracking for duck-skills in a new repo?"
+        }
+      }
+    ]
+  },
+  {
+    "input": "Which skill helps me split a huge ambiguous feature into backlog items?",
+    "expected_output": "Recommend: setup-duck-skills — Configure a repo for duck-skills — backlog tracker (GitHub, GitLab, Azure DevOps, local markdown, or custom), ticket status vocabulary, and domain doc layout. Run once per repo before using other duck skills.",
+    "expected_tools": [
+      {
+        "name": "search_skills",
+        "inputParameters": {
+          "query": "Which skill helps me split a huge ambiguous feature into backlog items?"
+        }
+      }
+    ]
+  },
+  {
+    "input": "I need red-green TDD for a backlog task — what skill?",
+    "expected_output": "Recommend: setup-duck-skills — Configure a repo for duck-skills — backlog tracker (GitHub, GitLab, Azure DevOps, local markdown, or custom), ticket status vocabulary, and domain doc layout. Run once per repo before using other duck skills.",
+    "expected_tools": [
+      {
+        "name": "search_skills",
+        "inputParameters": {
+          "query": "I need red-green TDD for a backlog task — what skill?"
+        }
+      }
+    ]
+  },
+  {
+    "input": "Review my branch changes against coding standards before merge",
+    "expected_output": "Recommend: review-duck — Review changes since a fixed point (commit, branch, tag, merge-base) on Standards and Spec. Use for a branch, PR, WIP diff, review since X, or dev-duck session baseline review.",
+    "expected_tools": [
+      {
+        "name": "search_skills",
+        "inputParameters": {
+          "query": "Review my branch changes against coding standards before merge"
+        }
+      }
+    ]
+  },
+  {
+    "input": "Time-boxed research on an API with findings saved as markdown",
+    "expected_output": "Recommend: question-duck — Round-based Q&A to remove ambiguities and reach a shared understanding with the user.",
+    "expected_tools": [
+      {
+        "name": "search_skills",
+        "inputParameters": {
+          "query": "Time-boxed research on an API with findings saved as markdown"
+        }
+      }
+    ]
+  },
+  {
+    "input": "Run a design interview with rounds of questions",
+    "expected_output": "Recommend: architect-duck — Design and re-design software systems. Keep the code, documentation, domain-model and architectural decisions (ADRs) aligned and up to date.",
+    "expected_tools": [
+      {
+        "name": "search_skills",
+        "inputParameters": {
+          "query": "Run a design interview with rounds of questions"
+        }
+      }
+    ]
+  },
+  {
+    "input": "Check whether my backlog ticket is ready to publish",
+    "expected_output": "Recommend: amigo-duck — Reviews backlog tickets and requirements before being published — fit to the user's request, completeness, unambiguous acceptance criteria, ISO 24495 plain language, and Agile INVEST criteria.",
+    "expected_tools": [
+      {
+        "name": "search_skills",
+        "inputParameters": {
+          "query": "Check whether my backlog ticket is ready to publish"
+        }
+      }
+    ]
+  },
+  {
+    "input": "Implement a ready task with tests and code review",
+    "expected_output": "Recommend: review-duck — Review changes since a fixed point (commit, branch, tag, merge-base) on Standards and Spec. Use for a branch, PR, WIP diff, review since X, or dev-duck session baseline review.",
+    "expected_tools": [
+      {
+        "name": "search_skills",
+        "inputParameters": {
+          "query": "Implement a ready task with tests and code review"
+        }
+      }
+    ]
+  },
+  {
+    "input": "One session to clarify scope and add implementation tasks",
+    "expected_output": "Recommend: epic-duck — Organise a large, complex or ambiguous piece of work as an unfolding plan with decisions on the backlog, then resolve one decision per session until the plan is clear. Use for multi-session planning, unclear scope, or feature-based planning.",
+    "expected_tools": [
+      {
+        "name": "search_skills",
+        "inputParameters": {
+          "query": "One session to clarify scope and add implementation tasks"
+        }
+      }
+    ]
+  },
+  {
+    "input": "Design deep modules and write ADRs",
+    "expected_output": "Recommend: architect-duck — Design and re-design software systems. Keep the code, documentation, domain-model and architectural decisions (ADRs) aligned and up to date.",
+    "expected_tools": [
+      {
+        "name": "search_skills",
+        "inputParameters": {
+          "query": "Design deep modules and write ADRs"
+        }
+      }
+    ]
+  },
+  {
+    "input": "What skill runs once per repository for tracker setup?",
+    "expected_output": "Recommend: setup-duck-skills — Configure a repo for duck-skills — backlog tracker (GitHub, GitLab, Azure DevOps, local markdown, or custom), ticket status vocabulary, and domain doc layout. Run once per repo before using other duck skills.",
+    "expected_tools": [
+      {
+        "name": "search_skills",
+        "inputParameters": {
+          "query": "What skill runs once per repository for tracker setup?"
+        }
+      }
+    ]
+  },
+  {
+    "input": "epic planning for multi-session unclear scope",
+    "expected_output": "Recommend: epic-duck — Organise a large, complex or ambiguous piece of work as an unfolding plan with decisions on the backlog, then resolve one decision per session until the plan is clear. Use for multi-session planning, unclear scope, or feature-based planning.",
+    "expected_tools": [
+      {
+        "name": "search_skills",
+        "inputParameters": {
+          "query": "epic planning for multi-session unclear scope"
+        }
+      }
+    ]
+  },
+  {
+    "input": "Which duck skill handles spike findings markdown?",
+    "expected_output": "Recommend: setup-duck-skills — Configure a repo for duck-skills — backlog tracker (GitHub, GitLab, Azure DevOps, local markdown, or custom), ticket status vocabulary, and domain doc layout. Run once per repo before using other duck skills.",
+    "expected_tools": [
+      {
+        "name": "search_skills",
+        "inputParameters": {
+          "query": "Which duck skill handles spike findings markdown?"
+        }
+      }
+    ]
+  },
+  {
+    "input": "Need INVEST and plain-language ticket review",
+    "expected_output": "Recommend: review-duck — Review changes since a fixed point (commit, branch, tag, merge-base) on Standards and Spec. Use for a branch, PR, WIP diff, review since X, or dev-duck session baseline review.",
+    "expected_tools": [
+      {
+        "name": "search_skills",
+        "inputParameters": {
+          "query": "Need INVEST and plain-language ticket review"
+        }
+      }
+    ]
+  },
+  {
+    "input": "dev pipeline with test-duck and review-duck",
+    "expected_output": "Recommend: dev-duck — Implement backlog tickets or user-provided requirements using test-duck and review-duck.",
+    "expected_tools": [
+      {
+        "name": "search_skills",
+        "inputParameters": {
+          "query": "dev pipeline with test-duck and review-duck"
+        }
+      }
+    ]
+  },
+  {
+    "input": "rubber duck single session implementation backlog",
+    "expected_output": "Recommend: rubber-duck — Single-session design and delivery prep — shared understanding, domain docs, and implementation backlog items. Use for rubber-duck sessions or when the user invokes rubber-duck.",
+    "expected_tools": [
+      {
+        "name": "search_skills",
+        "inputParameters": {
+          "query": "rubber duck single session implementation backlog"
+        }
+      }
+    ]
+  },
+  {
+    "input": "architect glossary and boundaries",
+    "expected_output": "Recommend: architect-duck — Design and re-design software systems. Keep the code, documentation, domain-model and architectural decisions (ADRs) aligned and up to date.",
+    "expected_tools": [
+      {
+        "name": "search_skills",
+        "inputParameters": {
+          "query": "architect glossary and boundaries"
+        }
+      }
+    ]
+  },
+  {
+    "input": "Where is ticket status vocabulary documented via setup?",
+    "expected_output": "Recommend: setup-duck-skills — Configure a repo for duck-skills — backlog tracker (GitHub, GitLab, Azure DevOps, local markdown, or custom), ticket status vocabulary, and domain doc layout. Run once per repo before using other duck skills.",
+    "expected_tools": [
+      {
+        "name": "search_skills",
+        "inputParameters": {
+          "query": "Where is ticket status vocabulary documented via setup?"
+        }
+      }
+    ]
+  },
+  {
+    "input": "Large complex work unfolding plan with decisions",
+    "expected_output": "Recommend: epic-duck — Organise a large, complex or ambiguous piece of work as an unfolding plan with decisions on the backlog, then resolve one decision per session until the plan is clear. Use for multi-session planning, unclear scope, or feature-based planning.",
+    "expected_tools": [
+      {
+        "name": "search_skills",
+        "inputParameters": {
+          "query": "Large complex work unfolding plan with decisions"
+        }
+      }
+    ]
+  },
+  {
+    "input": "question rounds to remove ambiguities",
+    "expected_output": "Recommend: question-duck — Round-based Q&A to remove ambiguities and reach a shared understanding with the user.",
+    "expected_tools": [
+      {
+        "name": "search_skills",
+        "inputParameters": {
+          "query": "question rounds to remove ambiguities"
+        }
+      }
+    ]
+  }
+]
