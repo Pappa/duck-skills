@@ -17,8 +17,8 @@ defaults:
     env:
       DEBUG: "1"
   provider: local # docker | local (use local for quick iteration)
-  trials: 5 # number of independent runs per task
-  timeout: 300 # seconds before agent is killed
+  trials: 3 # number of independent runs per task
+  timeout: 120 # seconds before agent is killed
   threshold: 0.8 # minimum pass rate for --ci mode
   # grader_model: claude-sonnet-5   # pin the LLM judge's model (default: latest, resolved via the provider's API)
   #                                 # env vars override the default too: ANTHROPIC_MODEL / OPENAI_MODEL / GEMINI_MODEL
@@ -32,6 +32,7 @@ tasks:
     instruction: |
       Do a time-boxed spike to answer the question:
          "How do I write an eval with skillgrade using a Cursor acp agent?""
+      Complete the spike within 30 seconds. Just gather as much information as possible in the time available.
 
     workspace:
       # Files to copy into the agent's workspace before it starts.
