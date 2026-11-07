@@ -352,12 +352,16 @@ source = { editable = "." }
 [package.dev-dependencies]
 dev = [
     { name = "deepeval" },
+    { name = "pytest" },
 ]
 
 [package.metadata]
 
 [package.metadata.requires-dev]
-dev = [{ name = "deepeval", specifier = ">=4.3.3" }]
+dev = [
+    { name = "deepeval", specifier = ">=4.3.3" },
+    { name = "pytest", specifier = ">=8.0" },
+]
 
 [[package]]
 name = "execnet"
