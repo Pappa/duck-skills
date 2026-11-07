@@ -170,7 +170,7 @@ Sorted by severity (Critical → Low). IDs are **v2.3** (v1 C1–C2 marked resol
 | **L1** | **Low** | Plan label wording | `epic-duck/SKILL.md`: plan “labelled `epic-duck:plan`” | Local: `Type: epic-duck:plan` + filename; no GitHub label | Same as v1 C6; backlog.md explains local |
 | **L2** | **Low** | Standalone leaf invocation | 0001 / 0004: prefer epic/rubber wrappers | `question-duck` / `architect-duck` descriptions invite direct invoke; README lists as model-invoked | Intentional flexibility vs choreography doc |
 | **L3** | **Low** | Spike-duck typo | `spike-duck/SKILL.md`: “authritative” | — | Cosmetic |
-| **—** | **Resolved** | Spike as decision type | v1 C1–C2 | ADR 0001 + `Type: epic-duck:spike` item files | — |
+| **—** | **Resolved** | Spike as decision type | v1 C1–C2 | ADR 0001 + `Type: spike` item files | — |
 | **—** | **Resolved** | amigo review heading | v1 C4 | `amigo-duck/SKILL.md` + ADR 0001: `## amigo-duck review` | — |
 | **—** | **None** | Epic backlog vs rubber domain | epic: backlog; rubber skill: domain-only **today** | 0004 intends rubber backlog | Intentional **once skills match 0004**; currently **H1** |
 

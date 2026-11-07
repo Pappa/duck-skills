@@ -6,7 +6,7 @@ Spike: [0003-spike-skill-inventory.md](../items/0003-spike-skill-inventory.md)
 
 ## TLDR
 
-All three parallel passes agree: **seven in-scope skills ship in `.cursor/skills/`**; After **ADR 0001** and `docs/agents/backlog.md`, **local backlog shape is coherent**: first-line **`Type: epic-duck:*`**, single workflow **`Status:`**, spike findings are `Spike:` + **`## TLDR`** only. **No critical contradictions** on file shapes — agents can treat ADR + `backlog.md` as SSOT.
+All three parallel passes agree: **seven in-scope skills ship in `.cursor/skills/`**; After **ADR 0001** and `docs/agents/backlog.md`, **local backlog shape is coherent**: first-line **`Type:`** (`epic-duck:plan`, `epic-duck:decision`, `task`, `spike`), single workflow **`Status:`**, spike findings are `Spike:` + **`## TLDR`** only. **No critical contradictions** on file shapes — agents can treat ADR + `backlog.md` as SSOT.
 
 The **main open problem is choreography drift**: resolved **[0004](../items/0004-decision-planning-pipeline-choreography.md)** says **rubber-duck** may write backlog children (with **amigo-duck** before publish) and **epic-duck** may invoke **architect-duck** (or delegate **rubber-duck**), but **`epic-duck/SKILL.md` and `rubber-duck/SKILL.md` still describe the older split** (epic = backlog only; rubber = glossary/ADR only). **README** still oversimplifies rubber → “tickets.” Secondary drift: **0002** and **0011** retain **`Label: ready`** / bare **`Type: decision`** prose; **epic-duck** “labelled `epic-duck:plan`” wording confuses local **`Type:`** readers; **spike-duck** vs **epic-duck** spike-item numbering can duplicate `NNNN` if both allocate.
 
@@ -73,7 +73,7 @@ Solid = stated in orchestrator `SKILL.md`. Dashed = **0004** only.
 | **C-frontier-term** | Low | “frontier” in question-duck vs epic/backlog | glossary optional |
 | **C-plan-notes** | Low | Plan Notes: epic uses architect-duck; epic SKILL omits | align plan or skill |
 
-**Resolved since v1:** spike-as-decision `Type` (ADR 0001); amigo review heading; local `Type: epic-duck:*` on items.
+**Resolved since v1:** spike-as-decision `Type` (ADR 0001); amigo review heading; local `Type:` on all item files.
 
 ---
 

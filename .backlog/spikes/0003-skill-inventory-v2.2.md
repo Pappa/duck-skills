@@ -8,7 +8,7 @@ Spike: [0003-spike-skill-inventory.md](../items/0003-spike-skill-inventory.md)
 
 Seven planning skills exist under `.cursor/skills/`; **`amigo-pato` is not in the repo** and is **out of plan** — only **`amigo-duck`** is in scope.
 
-**Canon after decision [0005](../items/0005-decision-ticket-shapes-and-fields.md) and ADR [0001](../../docs/adr/0001-backlog-ticket-shapes.md):** local backlog items use **`Type: epic-duck:<kind>`** (first line) plus a single workflow field **`Status:`**. There is **no `Label:` header** on local markdown; deliverable work is **`Type: epic-duck:task`** with **`Status: ready`** and the deliverable body (not `Label: ready`). On **remote** trackers, **`epic-duck:*` strings are issue labels/tags** (type), while **`Status:` strings may be labels/tags and/or a `Status:` line in the body** — setup templates say “match team practice.”
+**Canon after decision [0005](../items/0005-decision-ticket-shapes-and-fields.md) and ADR [0001](../../docs/adr/0001-backlog-ticket-shapes.md):** local backlog items use first-line **`Type:`** (`epic-duck:plan`, `epic-duck:decision`, `task`, `spike`) plus a single workflow field **`Status:`**. There is **no `Label:` header** on local markdown; deliverable work is **`Type: task`** with **`Status: ready`** and the deliverable body (not `Label: ready`). On **remote** trackers, type labels match **`Type:`** (`epic-duck:plan`, `epic-duck:decision`, `task`, `spike`); **`Status:`** strings may be labels/tags and/or a `Status:` line in the body — setup templates say “match team practice.”
 
 **Skills aligned with canon:** `epic-duck`, `amigo-duck`, `setup-duck-skills` seeds, `docs/agents/backlog.md`, and live `.backlog/items/*` headers. **Residual drift:** resolved decision **[0002](../items/0002-decision-ready-ticket-quality-bar.md)** and spike **[0011](./0011-common-fields-and-skill-needs.md)** still describe **`Label: ready`** and bare **`Type: decision`**; remote **GitHub** template **Frontier** omits **`needs-triage`**. **`epic-duck`** prose still says plans are “labelled” without pointing local readers at **`Type:`**.
 
@@ -39,7 +39,7 @@ Sources: `.cursor/skills/*/SKILL.md`, [0001](../items/0001-plan-duck-skills-plan
 
 | Concept | Local markdown | Remote (GitHub / GitLab / Azure DevOps) | Who defines it |
 |---------|----------------|----------------------------------------|----------------|
-| **Kind / role** | First-line **`Type: epic-duck:<kind>`** (`plan` \| `decision` \| `task` \| `spike`) | Label/tag **`epic-duck:plan`**, **`epic-duck:decision`**, etc. | ADR 0001, `docs/agents/backlog.md`, epic-duck templates |
+| **Kind / role** | First-line **`Type:`** (`epic-duck:plan` \| `epic-duck:decision` \| `task` \| `spike`) | Matching label/tag on remote trackers | ADR 0001, `docs/agents/backlog.md`, epic-duck templates |
 | **Workflow state** | **`Status:`** on every item file | Same strings as **labels/tags** and/or **`Status:`** in issue body | `docs/agents/ticket-statuses.md` |
 | **`Label:` (header)** | **Not used** in current canon | N/A as a markdown header | Superseded: spike 0011 proposed `Label: ready`; **0005 rejected** that in favour of **`Status: ready`** |
 
@@ -52,24 +52,24 @@ Canonical values (all skills and docs that matter agree): `needs-triage`, `needs
 | Skill / doc | How it uses `Status:` |
 |-------------|------------------------|
 | **epic-duck** | Sets `in-progress` when a session claims a child; offers **`ready`** pool for work; resolves to `resolved` / terminal states; syncs plan tables. |
-| **amigo-duck** | Gates **`Status: ready`** on deliverable **`epic-duck:task`** (full INVEST after Approve). Light INVEST for decisions/spikes at publish time. |
+| **amigo-duck** | Gates **`Status: ready`** on deliverable **`Type: task`** (full INVEST after Approve). Light INVEST for decisions/spikes at publish time. |
 | **spike-duck** | Sets spike item **`Status: resolved`** when findings file is complete. |
 | **setup-duck-skills** | Seeds `ticket-statuses.md`; on GitHub/GitLab may **create labels** matching status strings. |
 
 **`needs-triage` vs `needs-detail`:** both are “not ready to execute.” **Frontier** (epic-duck, `backlog.md`) = unblocked children with **`needs-triage` or `needs-detail`**, lowest `NNNN` first. **Session pool** = unblocked **`ready`**. **Triage-duck** is expected to own transitions involving **`needs-triage`** once built (0006).
 
-### `Type: epic-duck:*` — kind, not workflow
+### `Type:` — kind, not workflow
 
 | `Type:` value | Filename pattern (local) | Body profile (summary) |
 |---------------|--------------------------|-------------------------|
 | `epic-duck:plan` | `*-plan-*.md` | Destination, tables; no `Plan:` / `Overview:` on plan file |
 | `epic-duck:decision` | `*-decision-*.md` | `## Question` → `## Answer` when resolved |
-| `epic-duck:task` | `<NNNN>-task-<slug>.md` | Unblocker: `## Question`; deliverable: **`Status: ready`** + Problem Statement, Description, AC |
-| `epic-duck:spike` | `*-spike-*.md` | `## Question`, `Result:` → findings path |
+| `task` | `<NNNN>-task-<slug>.md` | Unblocker: `## Question`; deliverable: **`Status: ready`** + Problem Statement, Description, AC |
+| `spike` | `*-spike-*.md` | `## Question`, `Result:` → findings path |
 
-**amigo-duck** branches INVEST rules by **`Type: epic-duck:*`** and **`Status: ready`** on tasks — matches ADR 0001.
+**amigo-duck** branches INVEST rules by **`Type:`** and **`Status: ready`** on tasks — matches ADR 0001.
 
-**epic-duck** “Ticket types” section maps HITL/AFK to **`epic-duck:decision`**, **`epic-duck:task`**, **`epic-duck:spike`** — aligned.
+**epic-duck** “Ticket types” section maps HITL/AFK to **`epic-duck:decision`**, **`task`**, **`spike`** — aligned.
 
 **Wording gap:** epic-duck says the plan is “labelled `epic-duck:plan`.” On **local** markdown that means **`Type: epic-duck:plan`**, not a GitHub label. Agents on local backlog should not search for a `Label:` field.
 
@@ -77,7 +77,7 @@ Canonical values (all skills and docs that matter agree): `needs-triage`, `needs
 
 | Field | Remote representation | setup-duck-skills |
 |-------|----------------------|-------------------|
-| Kind | Label/tag `epic-duck:<kind>` | Creates type labels on GitHub/GitLab setup (SKILL.md §4) |
+| Kind | Label/tag matching **`Type:`** (`epic-duck:plan`, `epic-duck:decision`, `task`, `spike`) | Creates type labels on GitHub/GitLab setup (SKILL.md §4) |
 | Workflow | Status strings as labels/tags **and/or** `Status:` in body | Same strings seeded in `ticket-statuses.md`; templates say “match team practice” |
 
 Example from Azure seed: tags like `ready;epic-duck:plan` — **workflow and type coexist as separate tags** (`setup-duck-skills/backlog-azure-devops.md`).

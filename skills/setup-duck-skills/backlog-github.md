@@ -27,7 +27,7 @@ Apply **amigo-duck** to the draft, then create a GitHub issue.
 Used by **epic-duck**. The **feature** (parent) is one issue labelled `epic-duck:plan`; **children** are sub-issues. Use the same **`Status:`** strings as local markdown (`docs/agents/ticket-statuses.md`) — as labels and/or `Status:` in the body (match team practice).
 
 - **Plan**: issue labelled `epic-duck:plan` (Destination, Notes, Decisions, fog, Out of scope in body).
-- **Child**: sub-issue of the feature (or `Part of #<parent>` in body). Label `epic-duck:<type>` (`spike` | `decision` | `task`).
+- **Child**: sub-issue of the feature (or `Part of #<parent>` in body). Label **`epic-duck:decision`**, **`task`**, or **`spike`** to match first-line **`Type:`** in the body.
 - **Blocking**: native issue dependencies — `gh api --method POST repos/<owner>/<repo>/issues/<child>/dependencies/blocked_by -f issue_id=<blocker-db-id>` where `issue_id` is the blocker's database id (`gh api repos/<owner>/<repo>/issues/<n> --jq .id`). Fallback: `Blocked by: #n` at top of body.
 - **Frontier**: children in `needs-triage` or `needs-detail` (or open) with no open blockers; lowest id first.
 - **Claim**: `gh issue edit <n> --add-assignee @me` before other work (session-long on remote; no per-round toggle).

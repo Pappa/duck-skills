@@ -92,7 +92,7 @@ Set **`Status: ready`** when the question is sharp enough to resolve. `Type:` is
 Unblocker:
 
 ```markdown
-Type: epic-duck:task
+Type: task
 Status: needs-detail
 Plan: [0003-plan-auth.md](0003-plan-auth.md)
 Overview: One sentence.
@@ -110,7 +110,7 @@ Deliverable (`Status: ready` after **amigo-duck** **Approve**): **Problem Statem
 ### Spike item
 
 ```markdown
-Type: epic-duck:spike
+Type: spike
 Status: needs-detail
 Plan: [0003-plan-auth.md](0003-plan-auth.md)
 Overview: One sentence.
@@ -138,8 +138,8 @@ Single field **`Status:`** on all items — `docs/agents/ticket-statuses.md` (`n
 ## Ticket types
 
 - **epic-duck:decision** (HITL): live interview — `question-duck` skill; agent never answers for the human.
-- **epic-duck:task** (HITL or AFK): unblocker (`## Question`) or deliverable (`Status: ready` + acceptance body).
-- **epic-duck:spike** (AFK): spike item + `spike-duck` skill.
+- **task** (HITL or AFK): unblocker (`## Question`) or deliverable (`Status: ready` + acceptance body).
+- **spike** (AFK): spike item + `spike-duck` skill.
 
 For all ticket types, use the `amigo-duck` skill to review and improve the ticket requirements.
 
@@ -170,7 +170,7 @@ When the user invokes **epic-duck** on a backlog item (or a messy backlog), clas
 **Typical cases:**
 
 - **Unanchored implementation items** — **`Plan: (unanchored)`**, **`Status: needs-triage`** from **rubber-duck**: pick or create an epic plan, set a real **`Plan:`** link, update the parent plan **Tasks** / **Spikes** table when applicable, and move **`Status:`** off **`needs-triage`** when the user confirms the epic.
-- **Orphan or mis-typed items** — wrong **`Type:`**, missing **`Plan:`**, or item on the wrong epic: settle plan, kind (`epic-duck:*` vs implementation **`task`** / **`spike`**), and target **Status** with the user.
+- **Orphan or mis-typed items** — wrong **`Type:`**, missing **`Plan:`**, or item on the wrong epic: settle plan, kind (`epic-duck:plan` / `epic-duck:decision` vs **`task`** / **`spike`**), and target **Status** with the user.
 
 **Status rules during triage:**
 

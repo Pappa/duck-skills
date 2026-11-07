@@ -15,17 +15,17 @@ Plans, decisions, tasks, and spikes live under `.backlog/`. Rationale: `docs/adr
 
 All backlog items share one counter under `.backlog/items/`. Next number = one greater than the highest existing `NNNN` prefix (four digits, from `0001`). Deleted numbers are never reused.
 
-| Kind | Path | `Type:` | Publisher |
+| Kind | Path | `Type:` | Publisher(s) |
 |------|------|---------|-----------|
 | Plan | `.backlog/items/<NNNN>-plan-<feature-slug>.md` | `epic-duck:plan` | epic-duck |
 | Decision | `.backlog/items/<NNNN>-decision-<slug>.md` | `epic-duck:decision` | epic-duck |
-| Planning task | `.backlog/items/<NNNN>-task-<slug>.md` | `epic-duck:task` | epic-duck |
-| Planning spike (item) | `.backlog/items/<NNNN>-spike-<slug>.md` | `epic-duck:spike` | epic-duck |
-| Implementation task | `.backlog/items/<NNNN>-task-<slug>.md` | `task` | rubber-duck |
-| Implementation spike (item) | `.backlog/items/<NNNN>-spike-<slug>.md` | `spike` | rubber-duck |
-| Spike (findings) | `.backlog/spikes/<NNNN>-<slug>.md` | (none) | spike-duck |
+| Task | `.backlog/items/<NNNN>-task-<slug>.md` | `task` | epic-duck, rubber-duck |
+| Spike (item) | `.backlog/items/<NNNN>-spike-<slug>.md` | `spike` | epic-duck, rubber-duck |
+| Spike (results) | `.backlog/spikes/<NNNN>-<slug>.md` | (none) | epic-duck, spike-duck |
 
-**Planning** items (`epic-duck:*`) support feature charting and refinement. **Implementation** items (`task`, `spike`) are for development work from **rubber-duck** sessions. Same **NNNN** counter for all rows.
+**Planning** items (`epic-duck:plan`, `epic-duck:decision`) support feature charting and refinement.
+**Implementation** items (`task`, `spike`) may be created and used by **epic-duck** or **rubber-duck**.
+Same **NNNN** counter for all rows.
 
 ### Common header
 
@@ -86,7 +86,7 @@ When the question is sharp enough to schedule resolution, set **`Status: ready`*
 ### Task file body (unblocker)
 
 ```markdown
-Type: epic-duck:task
+Type: task
 Status: needs-detail
 Plan: [0003-plan-auth.md](0003-plan-auth.md)
 Overview: One sentence for the index table.
@@ -104,7 +104,7 @@ Blocked by:
 After **amigo-duck Verdict: Approve**, publish with **`Status: ready`** and:
 
 ```markdown
-Type: epic-duck:task
+Type: task
 Status: ready
 Plan: [0003-plan-auth.md](0003-plan-auth.md)
 Overview: One sentence for the index table.
@@ -133,33 +133,12 @@ Blocked by:
 
 `## Notes` and `## Out of Scope` are optional; **Problem Statement**, **Description**, and **Acceptance Criteria** are required for deliverable tasks.
 
-### Implementation task file body (`Type: task`)
+**`Plan:`** links to an epic plan file when the item belongs to an epic. Use **`Plan: (unanchored)`** and **`Status: needs-triage`** when **rubber-duck** saved an item before an epic exists (**epic-duck** sets a real `Plan:` link at triage).
 
-Same header order as planning tasks. **`Plan:`** links to an epic plan file, or **`Plan: (unanchored)`** when **rubber-duck** saved an item before an epic exists (**`Status: needs-triage`** until **epic-duck** sets a real plan link).
-
-Deliverable with **`Status: ready`**: same body sections as **`Type: epic-duck:task`** deliverables (**Problem Statement**, **Description**, **Acceptance Criteria**).
-
-### Implementation spike item file body (`Type: spike`)
+### Spike item file body (`Type: spike`)
 
 ```markdown
 Type: spike
-Status: needs-detail
-Plan: [0003-plan-auth.md](0003-plan-auth.md)
-Overview: One sentence for the index table.
-Result: [0006-oauth.md](../spikes/0006-oauth.md)
-Blocked by:
-
-## Question
-
-## Comments
-```
-
-Use **`Plan: (unanchored)`** and **`Status: needs-triage`** under the same rules as implementation tasks.
-
-### Planning spike item file body (`Type: epic-duck:spike`)
-
-```markdown
-Type: epic-duck:spike
 Status: needs-detail
 Plan: [0003-plan-auth.md](0003-plan-auth.md)
 Overview: One sentence for the index table.
@@ -172,6 +151,8 @@ Blocked by:
 
 ## Comments
 ```
+
+Use **`Plan: (unanchored)`** and **`Status: needs-triage`** under the same rules as tasks.
 
 Findings live only in `.backlog/spikes/<NNNN>-<slug>.md`:
 
@@ -198,7 +179,7 @@ Append discussion under `## Comments` on decisions, tasks, and spikes.
 
 ## When a skill says "publish to the backlog"
 
-Apply **amigo-duck** to the draft (planning **`Type: epic-duck:*`** or implementation **`Type: task`** / **`Type: spike`**), then create the item file(s) under `.backlog/items/` and update the parent feature’s **Decisions** / **Tasks** / **Spikes** tables when **`Plan:`** links to an epic (and `epics.md` when **epic-duck** adds an epic).
+Apply **amigo-duck** to the draft (**`Type: epic-duck:plan`** / **`epic-duck:decision`**, or **`Type: task`** / **`Type: spike`**), then create the item file(s) under `.backlog/items/` and update the parent feature’s **Decisions** / **Tasks** / **Spikes** tables when **`Plan:`** links to an epic (and `epics.md` when **epic-duck** adds an epic).
 
 ## When a skill says "fetch the relevant ticket"
 
@@ -210,11 +191,11 @@ Used by **epic-duck**. A **epic plan** is the planning artifact; **decisions**, 
 
 - **Plan file**: `.backlog/items/<NNNN>-plan-<slug>.md` with `Type: epic-duck:plan`.
 - **Child decision**: `Type: epic-duck:decision`, `Plan:` backlink, `Status:`.
-- **Child task**: `Type: epic-duck:task`, `Plan:` backlink, `Status:`.
-- **Child spike**: `Type: epic-duck:spike`, result under `.backlog/spikes/`.
+- **Child task**: `Type: task`, `Plan:` backlink, `Status:`.
+- **Child spike**: `Type: spike`, result under `.backlog/spikes/`.
 - **Resolve decision**: `## Answer`, `Status: resolved`, one bullet under feature **Decisions so far**, blocker sweep, refresh tables.
 - **Resolve spike**: result file written, spike item `Status: resolved`, update **Spikes** table and **Decisions so far** when appropriate.
-- **Unanchored implementation items**: `Plan: (unanchored)` + `needs-triage` until **epic-duck** sets an epic plan link.
+- **Unanchored items**: `Plan: (unanchored)` + `needs-triage` until **epic-duck** sets an epic plan link.
 
 ### Starting a session (local)
 

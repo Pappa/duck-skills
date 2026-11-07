@@ -59,13 +59,13 @@ Resolution must produce a single **`## Answer`** that addresses **every row** be
 - **Q1:** One remediation **task** for now; user may split later if change list too large.
 - **Q2:** Amend **0002** and **0011** bodies — remove legacy `Label:` / bare `Type:` prose entirely (rewrite as if always ADR canon).
 - **Q3:** Same session for all edits touching the same `SKILL.md`.
-- **Q4 (corrected):** **epic-duck** → `epic-duck:decision` | `epic-duck:task` | `epic-duck:spike` (planning). **rubber-duck** → plain **`Type: task`** | **`Type: spike`** (implementation/dev only; not planning). No rubber decisions. Session outcomes: clarity, doc/code change, or impl task/spike. question-duck + architect-duck; no epic↔rubber delegation.
+- **Q4 (corrected):** **epic-duck** → `epic-duck:plan` | `epic-duck:decision` | `task` | `spike`. **rubber-duck** → **`Type: task`** | **`Type: spike`** only (no plan/decision). Session outcomes: clarity, doc/code change, or task/spike. question-duck + architect-duck; no epic↔rubber delegation.
 - **Q5–Q6:** Epic invokes **architect-duck** like rubber; aligned wording.
 - **Q8:** amigo-duck must review both planning and implementation item formats.
 - **Q9:** existing plan only — **handover TBD** when user has ready artefact but no plan.
 - **Q10–Q12:** amend **0004**; fix README; no user-callable question/architect; batch low-severity fixes.
 - **Q9:** unanchored impl items: **`Status: needs-triage`**, sentinel **`Plan:`**, user message about triage later. **Q9b:** sentinel on `Plan:` line (exact string TBD in Answer).
-- **Q14:** same counter/`.backlog/items/`; filenames **`NNNN-task-<slug>.md`** (planning **`epic-duck:task`** and implementation **`task`**), **`NNNN-spike-<slug>.md`**; `Type:` distinguishes families.
+- **Q14:** same counter/`.backlog/items/`; filenames **`NNNN-task-<slug>.md`**, **`NNNN-spike-<slug>.md`**; **`Type:`** on first line (`epic-duck:plan`, `epic-duck:decision`, `task`, `spike`).
 - **Q15:** `disable-model-invocation: true` + **`allow_implicit_invocation: true`** on question-duck & architect-duck (YAML + README).
 - **Q13:** reword question-duck; reserve **Frontier** for backlog — user reviewing alternatives (see chat).
 
@@ -80,7 +80,7 @@ Resolution must produce a single **`## Answer`** that addresses **every row** be
 | Plain language | Tables scan by ID; resolution outputs are defined (disposition, artefact, acceptance). |
 | INVEST | Decision-sized; testable Answer checklist per row. |
 
-**Assumption:** “Resolve” means agreed disposition and change spec — implementation may land in follow-on **epic-duck:task** items created in the same Answer.
+**Assumption:** “Resolve” means agreed disposition and change spec — follow-on work may land in **`Type: task`** items created in the same Answer.
 
 ## Answer
 
@@ -94,20 +94,20 @@ Resolution must produce a single **`## Answer`** that addresses **every row** be
 | **0004** | **Amend Answer** to match this decision (rubber impl items only, no rubber decisions, no epic↔rubber delegation). Supersedes conflicting bullets in old **0004** text. |
 | Orchestrator invocation | **epic-duck** and **rubber-duck** are user-invoked only (`disable-model-invocation`); they do **not** delegate to each other. **question-duck** / **architect-duck**: not user-invoked; **`allow_implicit_invocation: true`** so epic/rubber can use them. Do not add prose restating YAML flags. |
 
-### Two backlog families
+### Backlog publishers
 
-| Publisher | `Type:` values | Filename patterns | Purpose |
-|-----------|----------------|-------------------|---------|
-| **epic-duck** | `epic-duck:plan`, `epic-duck:decision`, `epic-duck:task`, `epic-duck:spike` | `*-plan-*`, `*-decision-*`, `NNNN-task-<slug>.md`, `NNNN-spike-<slug>.md` | Planning |
-| **rubber-duck** | `task`, `spike` (no `epic-duck:` prefix) | `NNNN-task-<slug>.md`, `NNNN-spike-<slug>.md` | Implementation / development |
+| Publisher | Exclusive `Type:` | May also publish | Filename patterns |
+|-----------|-------------------|------------------|-------------------|
+| **epic-duck** | `epic-duck:plan`, `epic-duck:decision` | `task`, `spike` under a plan | `*-plan-*`, `*-decision-*`, `NNNN-task-<slug>.md`, `NNNN-spike-<slug>.md` |
+| **rubber-duck** | — | `task`, `spike` | `NNNN-task-<slug>.md`, `NNNN-spike-<slug>.md` |
 
 Shared **NNNN** counter and `.backlog/items/` path. Spike **findings** stay `.backlog/spikes/<NNNN>-<slug>.md` (no `Type:` on findings file).
 
-**rubber-duck** does **not** create `epic-duck:decision` or any planning-type item.
+**rubber-duck** does **not** create `epic-duck:plan` or `epic-duck:decision`.
 
-**Unanchored handover:** When the user has no epic plan, rubber may still write an impl item with **`Plan: (unanchored)`**, **`Status: needs-triage`**, correct **NNNN** and impl `Type:`. Rubber **must** tell the user the ticket is **not associated with an epic** and **will need to be triaged later**. **epic-duck** attaches a real `Plan:` link when an epic is chosen.
+**Unanchored handover:** When the user has no epic plan, rubber may still write an item with **`Plan: (unanchored)`**, **`Status: needs-triage`**, correct **NNNN**, and **`Type: task`** or **`Type: spike`**. Rubber **must** tell the user the ticket is **not associated with an epic** and **will need to be triaged later**. **epic-duck** attaches a real `Plan:` link when an epic is chosen.
 
-**amigo-duck** runs before publish for **both** families; skill text must describe review rules per `Type:` profile.
+**amigo-duck** runs before publish; skill text describes review rules per `Type:`.
 
 ### Register dispositions
 
@@ -140,6 +140,6 @@ Shared **NNNN** counter and `.backlog/items/` path. Spike **findings** stay `.ba
 
 All edits above are tracked in task **[0015-task-remediate-skill-inventory-findings.md](0015-task-remediate-skill-inventory-findings.md)** acceptance criteria.
 
-### Amendment (planning task filenames)
+### Task and spike filenames
 
-Planning **`epic-duck:task`** items use **`NNNN-task-<slug>.md`** — the same path pattern as implementation **`Type: task`**. **`Type:`** on the first line distinguishes planning from implementation. ADR 0001 and existing planning task files **0015**, **0016** renamed accordingly.
+All **`Type: task`** and **`Type: spike`** items use **`NNNN-task-<slug>.md`** and **`NNNN-spike-<slug>.md`** under `.backlog/items/` (shared counter with plan and decision files).

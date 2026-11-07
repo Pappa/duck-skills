@@ -2,11 +2,11 @@ Spike: [0011-spike-common-fields-and-skill-needs.md](../items/0011-spike-common-
 
 # Common fields and ticket shapes
 
-> **Superseded** for field canon by decision [0005](../items/0005-decision-ticket-shapes-and-fields.md), ADR 0001, and decision **[0014](../items/0014-decision-skill-inventory-remediation.md)** (implementation `Type: task` / `Type: spike`). Below tables retain spike-era research; **do not** follow `Label:` or bare `Type: decision` rows.
+> **Superseded** for field canon by decision [0005](../items/0005-decision-ticket-shapes-and-fields.md), ADR 0001, and decision **[0014](../items/0014-decision-skill-inventory-remediation.md)**. Below tables retain spike-era research; **do not** follow `Label:` or bare `Type: decision` rows.
 
 ## TLDR
 
-**Canon:** `docs/agents/backlog.md` and ADR 0001. First line **`Type:`**, then **`Status:`**. **Planning:** `epic-duck:plan`, `epic-duck:decision`, `epic-duck:task`, `epic-duck:spike` (**epic-duck**). **Implementation:** `task`, `spike` (**rubber-duck**). All task items use **`NNNN-task-<slug>.md`**; spike items use **`NNNN-spike-<slug>.md`**; **`Type:`** distinguishes planning from implementation. Deliverable work uses **`Status: ready`** (not `Label:`). **amigo-duck** reviews per kind. Spike **findings**: `Spike:` link + **TLDR** only.
+**Canon:** `docs/agents/backlog.md` and ADR 0001. First line **`Type:`**, then **`Status:`**. **Epic-duck-exclusive:** `epic-duck:plan`, `epic-duck:decision`. **Shared:** `task`, `spike` (epic-duck or rubber-duck). Paths **`NNNN-task-<slug>.md`**, **`NNNN-spike-<slug>.md`**. Deliverable work uses **`Status: ready`** (not `Label:`). **amigo-duck** reviews per kind. Spike **findings**: `Spike:` link + **TLDR** only.
 
 Upstream **writing-for-agents** favours checkable completion criteria and one authoritative doc—maps to testable AC and `backlog.md`. **pr** skill favours fixed sections (Summary, Evidence)—maps to optional `## Evidence` on large ready tasks only.
 
@@ -44,7 +44,7 @@ Blocked by:                    # optional; comma-separated NNNN
 
 **Plans** start with `Status:` then **Destination** (acts as overview for `epics.md`). No `Plan:` line.
 
-**Remote trackers** (GitHub/GitLab/Azure): map `Type` + `Label` to `epic-duck:<type>` tags and triage labels per `setup-duck-skills/backlog-*.md`; do not duplicate tag names as extra markdown fields on local files.
+**Remote trackers** (GitHub/GitLab/Azure): map first-line **`Type:`** to type labels/tags (`epic-duck:plan`, `epic-duck:decision`, `task`, `spike`) and triage labels per `setup-duck-skills/backlog-*.md`; do not duplicate tag names as extra markdown fields on local files.
 
 ---
 
@@ -59,7 +59,7 @@ Blocked by:                    # optional; comma-separated NNNN
 | `Type: task` (no ready) | `## Question` or spec pointer; deliverable clear | Light–medium |
 | Spike item (pre-publish) | `## Question` | Light |
 
-**Skill change (0005):** Replace `` `epic-duck:spike` `` with “spike **item**” / “findings file”; rename output heading from `## 3 amigos session` to `## amigo-duck review` (eval artefacts depend on stable heading).
+**Skill change (0005):** Use “spike **item**” / “findings file” in skill prose; rename output heading from `## 3 amigos session` to `## amigo-duck review` (eval artefacts depend on stable heading).
 
 ### epic-duck
 

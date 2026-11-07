@@ -6,7 +6,7 @@ Spike: [0003-spike-skill-inventory.md](../items/0003-spike-skill-inventory.md)
 
 ## TLDR
 
-Seven skills exist under `.cursor/skills/`; After **ADR 0001** and `docs/agents/backlog.md`, local backlog shapes are aligned: first-line **`Type: epic-duck:*`**, unified **`Status:`**, spike items are typed, findings files use `Spike:` + **`## TLDR`** only.
+Seven skills exist under `.cursor/skills/`; After **ADR 0001** and `docs/agents/backlog.md`, local backlog shapes are aligned: first-line **`Type:`** per kind table, unified **`Status:`**, spike items are typed, findings files use `Spike:` + **`## TLDR`** only.
 
 **Artefact ownership:** **`setup-duck-skills`** seeds tracker and domain layout (and optional remote labels). **`epic-duck`** is the primary writer for plans and child items under `.backlog/`. **`spike-duck`** writes spike findings (and may create spike items when none exist). **`rubber-duck`** skill text limits writes to **glossary/ADR**; **`amigo-duck`** produces in-chat reviews (`## amigo-duck review`) and does not publish by itself. **`question-duck`** and **`architect-duck`** have no mandated file writes in their skill text.
 
@@ -183,7 +183,7 @@ Solid edges: stated in `SKILL.md`. Dotted: 0006 option 2 only. **0004** adds edg
 
 | v1 ID | Resolution |
 |-------|------------|
-| C1–C2 | Spike/decision `Type:` confusion — **ADR 0001** + `Type: epic-duck:spike` on items |
+| C1–C2 | Spike/decision `Type:` confusion — **ADR 0001** + `Type: spike` on spike items |
 | C3 (partial) | amigo-duck now uses **`## amigo-duck review`** and `Type: epic-duck:*` in skill text — remote vs local tag mapping still agent judgment on GitHub |
 | C4 | amigo heading — **fixed** in amigo-duck skill (ADR 0001) |
 | C6 (partial) | Local plan equivalent documented in `backlog.md` (Type + `epics.md`) |

@@ -1,7 +1,7 @@
-Type: epic-duck:task
+Type: task
 Status: resolved
 Plan: [0001-plan-duck-skills-planning-refinement.md](0001-plan-duck-skills-planning-refinement.md)
-Overview: Apply decision 0014 — align skills, docs, and backlog canon to planning vs implementation items and spike 0003 register.
+Overview: Apply decision 0014 — align skills, docs, and backlog canon to publisher rules and spike 0003 register.
 Blocked by:
 
 ## Problem Statement
@@ -12,13 +12,13 @@ Spike **0003** (v2.4) and decision **[0014](0014-decision-skill-inventory-remedi
 
 Implement the **`## Answer`** in **0014** in one pass (same PR acceptable). Split into follow-on tasks only if the user chooses after review.
 
-**Planning vs implementation (summary):**
+**Publisher rules (summary):**
 
-- **epic-duck** publishes **`Type: epic-duck:decision`**, **`epic-duck:task`**, **`epic-duck:spike`** (planning-era shapes per ADR 0001); tasks use **`NNNN-task-<slug>.md`**.
-- **rubber-duck** publishes **`Type: task`**, **`Type: spike`** only — implementation/development work; same task/spike filename patterns; same counter and `.backlog/items/`.
+- **epic-duck** publishes **`Type: epic-duck:plan`**, **`Type: epic-duck:decision`**, and may publish **`Type: task`** / **`Type: spike`** under a plan.
+- **rubber-duck** publishes **`Type: task`** and **`Type: spike`** only — not plan or decision.
 - Unanchored rubber items: **`Plan: (unanchored)`**, **`Status: needs-triage`**; tell the user the item is not on an epic and will need triage later; **epic-duck** attaches a real `Plan:` when an epic exists.
 
-Update **`docs/agents/backlog.md`** (and setup seeds that mirror it) with implementation item profiles. Extend **amigo-duck** to review planning vs implementation formats. Set **question-duck** / **architect-duck** `disable-model-invocation: true`, **`allow_implicit_invocation: true`** in agent YAML; README not a user entry point for those skills.
+Update **`docs/agents/backlog.md`** (and setup seeds that mirror it). Set **question-duck** / **architect-duck** `disable-model-invocation: true`, **`allow_implicit_invocation: true`** in agent YAML; README not a user entry point for those skills.
 
 ## Notes
 
@@ -40,12 +40,12 @@ Update **`docs/agents/backlog.md`** (and setup seeds that mirror it) with implem
 - [x] **`architect-duck/SKILL.md`**: `disable-model-invocation: true`.
 - [x] **`question-duck/agents/openai.yml`** and **`architect-duck/agents/openai.yml`**: `policy.allow_implicit_invocation: true`; interface text matches SKILL (no typos).
 - [x] **`spike-duck/SKILL.md`**: prefer existing spike item when epic set `Result:`; fix **L3** typo; numbering guidance **C-spike-NNNN**.
-- [x] **`docs/agents/backlog.md`** (+ **`setup-duck-skills/backlog-local.md`** parity): implementation **`Type: task`** / **`Type: spike`**; filenames; **`Plan: (unanchored)`**; rubber vs epic planning table; backlog **Frontier** unchanged.
+- [x] **`docs/agents/backlog.md`** (+ **`setup-duck-skills/backlog-local.md`** parity): **`Type: task`** / **`Type: spike`**; filenames; **`Plan: (unanchored)`**; publisher table; backlog **Frontier** unchanged.
 - [x] **`setup-duck-skills/backlog-github.md`**: frontier includes **`needs-triage`** (**C-github-frontier**).
 - [x] **`README.md`**: planning flow matches **0014**; rubber vs epic; **question-duck** / **architect-duck** not user entry points (**C-readme-rubber**, **R4**).
-- [x] **`amigo-duck/SKILL.md`**: distinct review paths for **`Type: epic-duck:*`** vs **`Type: task`** / **`Type: spike`** (**Q8**).
+- [x] **`amigo-duck/SKILL.md`**: review paths per **`Type:`** (**Q8**).
 - [x] **`0004-decision-planning-pipeline-choreography.md`**: Answer rewritten — rubber impl items only, no rubber decisions, no epic↔rubber delegation, architect via epic/rubber only (**Q10**).
-- [x] **`0002-decision-ready-ticket-quality-bar.md`**: Answer uses **`Status: ready`**, **`Type: epic-duck:*`** only — no `Label:` or bare `Type: decision` (**Q2**).
+- [x] **`0002-decision-ready-ticket-quality-bar.md`**: Answer uses **`Status: ready`**, current **`Type:`** vocabulary — no `Label:` or bare `Type: decision` (**Q2**).
 - [x] **`../spikes/0011-common-fields-and-skill-needs.md`**: historical `Label:` / pre-namespace prose removed or rewritten to ADR canon (**C-0011-stale**).
 - [x] Plan **0001** Notes: still states epic uses **architect-duck**; consistent with epic skill (**C-plan-notes**).
 - [x] **v1 C1–C2**: recorded as verified closed in **0014** (no code change required unless audit finds regression).

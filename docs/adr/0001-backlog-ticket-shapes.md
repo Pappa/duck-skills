@@ -12,16 +12,14 @@ Planning skills publish to one shared backlog (local markdown and remote tracker
 
 ### Namespace
 
-All epic-duck artefacts use **`Type: epic-duck:<kind>`** on **local markdown and remote** tags/labels:
+Epic-duck planning artefacts use **`Type: epic-duck:<kind>`** on **local markdown and remote** tags/labels:
 
 | Kind | `Type:` value | File pattern |
 |------|----------------|--------------|
 | Plan | `epic-duck:plan` | `*-plan-*.md` |
 | Decision | `epic-duck:decision` | `*-decision-*.md` |
-| Task | `epic-duck:task` | `<NNNN>-task-<slug>.md` (same filename pattern as implementation `Type: task`; distinguished by `Type:`) |
-| Spike item | `epic-duck:spike` | `*-spike-*.md` |
 
-Future non-planning work (implementation skills) will use a **different** `Type:` prefix in a later ADR. **`epic-duck:task`** is planning-era work only.
+**`Type: task`** and **`Type: spike`** use the same file patterns (`<NNNN>-task-<slug>.md`, `*-spike-*.md`); see `docs/agents/backlog.md`.
 
 ### Header order
 
@@ -32,7 +30,7 @@ Future non-planning work (implementation skills) will use a **different** `Type:
 **Child** (decision, task, spike item):
 
 ```text
-Type: epic-duck:<kind>
+Type: epic-duck:decision | task | spike
 Status: <workflow>
 Plan: [<NNNN>-plan-<slug>.md](<same-dir>)
 Overview: <one sentence>
@@ -62,9 +60,9 @@ Workflow state is a single field **`Status:`** (see `docs/agents/ticket-statuses
 
 **Decision** (`epic-duck:decision`): `## Question`; when resolved `## Answer`; optional `## Comments`.
 
-**Task — unblocker** (`epic-duck:task`, not `ready`): `## Question` (+ `## Answer` when resolved); optional `## Comments`.
+**Task — unblocker** (`Type: task`, not `ready`): `## Question` (+ `## Answer` when resolved); optional `## Comments`.
 
-**Task — deliverable** (`epic-duck:task`, `Status: ready`): after amigo-duck **Approve**:
+**Task — deliverable** (`Type: task`, `Status: ready`): after amigo-duck **Approve**:
 
 - `## Problem Statement`
 - `## Description`
@@ -93,7 +91,8 @@ Header **`Overview:`** remains one line for plan index tables.
 
 ## Consequences
 
-- Planning backlog items use `Type: epic-duck:*` and the unified `Status:` vocabulary.
-- Implementation items use plain **`Type: task`** and **`Type: spike`** (rubber-duck); documented in `docs/agents/backlog.md` (decision **0014**).
+- Epic-duck-exclusive kinds: **`Type: epic-duck:plan`**, **`Type: epic-duck:decision`**.
+- **`Type: task`** and **`Type: spike`** are shared child kinds; **epic-duck** and **rubber-duck** may publish (see `docs/agents/backlog.md`).
+- Unified **`Status:`** vocabulary on all typed items.
 - Update epic-duck, rubber-duck, amigo-duck, setup-duck-skills backlog templates.
 - Triage-duck (**0006**) should assume unified `Status:` only.

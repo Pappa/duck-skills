@@ -1,4 +1,4 @@
-Type: epic-duck:task
+Type: task
 Status: resolved
 Plan: [0001-plan-duck-skills-planning-refinement.md](0001-plan-duck-skills-planning-refinement.md)
 Overview: Document epic-duck flows for ambiguous tickets and remove triage-duck skill promises from canon.

@@ -11,7 +11,7 @@ Reach a **concrete outcome** in one user-invoked session. Typical outcomes:
 1. **Clarity** — shared understanding with the user (no file publish required).
 2. **Domain or product docs** — updates to `GLOSSARY.md`, `docs/adr/`, or other repo docs.
 3. **Code changes** — when the user explicitly continues into implementation in the same session.
-4. **Implementation backlog items** — **`Type: task`** or **`Type: spike`** for development work (see below).
+4. **Backlog items** — **`Type: task`** or **`Type: spike`** for follow-on work (see below).
 
 ## Skills used in every session
 
@@ -24,12 +24,11 @@ Read `docs/agents/domain.md` for glossary layout. If missing, tell the user to r
 
 ## What rubber-duck does **not** publish
 
-- **No** `epic-duck:plan`, **`epic-duck:decision`**, or other **planning-era** `Type: epic-duck:*` items — use **epic-duck** for epic plans and planning children.
-- **No** `epic-duck:task` or `epic-duck:spike` — those are for **planning** work under an epic plan.
+- **No** `Type: epic-duck:plan` or **`Type: epic-duck:decision`** — use **epic-duck** for epic plans and decisions.
 
-## Implementation backlog items
+## Backlog items
 
-When the session produces follow-on **implementation** work, publish under `.backlog/items/` per `docs/agents/backlog.md`:
+When the session produces follow-on work, publish under `.backlog/items/` per `docs/agents/backlog.md`:
 
 | `Type:` | Filename pattern |
 |---------|------------------|
@@ -39,7 +38,7 @@ When the session produces follow-on **implementation** work, publish under `.bac
 Use the **shared `NNNN` counter** with all other backlog items.
 
 - **`Plan:`** — link to an **existing** epic plan file when the user has confirmed the feature. If there is **no** feature yet, use **`Plan: (unanchored)`**, set **`Status: needs-triage`**, allocate the correct **NNNN**, and tell the user explicitly: the ticket is **not associated with an epic** and **will need to be triaged later** via **epic-duck**.
-- Run **amigo-duck** before publish; use the review path for **`Type: task`** or **`Type: spike`** (not `epic-duck:*`).
+- Run **amigo-duck** before publish; use the review path for **`Type: task`** or **`Type: spike`**.
 
 **spike** items link findings under `.backlog/spikes/`; prefer an existing spike item when **epic-duck** or a prior step already set **`Result:`**.
 

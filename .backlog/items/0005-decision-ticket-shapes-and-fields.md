@@ -22,14 +22,14 @@ What exact shapes and required fields must epic-duck decisions, tasks, spike ite
 |------|---------|
 | Plan | `epic-duck:plan` |
 | Decision | `epic-duck:decision` |
-| Task (planning) | `epic-duck:task` |
-| Spike item | `epic-duck:spike` |
+| Task | `task` |
+| Spike item | `spike` |
 
 **Header order:** **`Type:` first**, then `Status:`, then `Plan:` → `Overview:` → optional `Result:` (spike) → optional `Blocked by:`.
 
 Plans omit `Plan:` / `Overview:`; **Destination** is the index one-liner.
 
-Future **implementation** backlog items use a different `Type:` prefix (later feature). **`epic-duck:task`** is planning-only.
+**`Type: task`** and **`Type: spike`** may be published by **epic-duck** or **rubber-duck** (see `docs/agents/backlog.md`).
 
 ### Unified `Status:`
 
@@ -39,23 +39,23 @@ Future **implementation** backlog items use a different `Type:` prefix (later fe
 - **`needs-triage`** — maintainer must classify; state not decidable without user input.
 - **`wontfix`** — closed, no action (parallel to **`resolved`** with outcome).
 
-Deliverable **`epic-duck:task`**: set **`Status: ready`** only after **amigo-duck Verdict: Approve** ([0002](0002-decision-ready-ticket-quality-bar.md)).
+Deliverable **`Type: task`**: set **`Status: ready`** only after **amigo-duck Verdict: Approve** ([0002](0002-decision-ready-ticket-quality-bar.md)).
 
 ### Body profiles
 
 | `Type:` | Body |
 |---------|------|
 | `epic-duck:decision` | `## Question`; `## Answer` when resolved; optional `## Comments` |
-| `epic-duck:task` (unblocker) | `## Question` (+ `## Answer`); not `ready` |
-| `epic-duck:task` (`Status: ready`) | **Problem Statement**, **Description**, optional **Notes**, **Out of Scope**, **Acceptance Criteria** (required) |
-| `epic-duck:spike` | `## Question`; optional `## Comments` |
+| `task` (unblocker) | `## Question` (+ `## Answer`); not `ready` |
+| `task` (`Status: ready`) | **Problem Statement**, **Description**, optional **Notes**, **Out of Scope**, **Acceptance Criteria** (required) |
+| `spike` | `## Question`; optional `## Comments` |
 | Spike findings | `Spike:` link; **`## TLDR`**; no `Type`/`Status` on file |
 
 No separate **`## Spec`** branch; spec pointers use unblocker **Question** or become **`ready`** deliverables when an agent should execute.
 
 ### Skill / doc updates
 
-- **amigo-duck:** review heading **`## amigo-duck review`**; kinds use `Type: epic-duck:*` and **`Status: ready`** gate.
+- **amigo-duck:** review heading **`## amigo-duck review`**; per-kind review rules and **`Status: ready`** gate on deliverable **`Type: task`**.
 - **epic-duck**, **setup-duck-skills** `backlog-*.md`: templates aligned with `backlog.md`.
 - Migrate existing `.backlog/items/*` to this header and type scheme.
 

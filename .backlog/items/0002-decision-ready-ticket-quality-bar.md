@@ -14,14 +14,14 @@ Resolution must cover: relationship to **amigo-duck** axes; minimum fields per t
 
 ### Ticket families and exceptions
 
-- **Planning family** — `Type: epic-duck:plan`, `epic-duck:decision`, `epic-duck:task`, `epic-duck:spike` (see ADR 0001 and `docs/agents/backlog.md`).
-- **Implementation family** — plain **`Type: task`** and **`Type: spike`** from **rubber-duck** (development work; filenames `NNNN-task-<slug>.md`, `NNNN-spike-<slug>.md`).
+- **Planning family** — `Type: epic-duck:plan`, `epic-duck:decision` (see ADR 0001 and `docs/agents/backlog.md`).
+- **Implementation family** — **`Type: task`** and **`Type: spike`** (development work; filenames `NNNN-task-<slug>.md`, `NNNN-spike-<slug>.md`).
 - **Spike findings** — `.backlog/spikes/*` with `Spike:` backlink and **TLDR** only (no `Type:`).
 - Field canon: [0005-decision-ticket-shapes-and-fields.md](0005-decision-ticket-shapes-and-fields.md), decision **[0014](0014-decision-skill-inventory-remediation.md)**.
 
 ### Quality gate (tickets)
 
-- **`Status: ready` deliverables** (`Type: epic-duck:task` or **`Type: task`**): Must reach **amigo-duck Verdict: Approve** on all four axes (fit, complete/unambiguous, ISO plain language, full INVEST) before publish.
+- **`Status: ready` deliverables** (**`Type: task`**): Must reach **amigo-duck Verdict: Approve** on all four axes (fit, complete/unambiguous, ISO plain language, full INVEST) before publish.
 - **Non-ready tasks and spike items:** **amigo-duck** on fit + complete/unambiguous + plain language; INVEST per amigo-duck (light for decision-shaped and spike-item work).
 - **`Type: epic-duck:decision`:** Same amigo-duck path as other decisions, **plus** the **Decision resolution** metric below on eval runs (when evals are in scope).
 - **Meta-quality:** Ship evals that validate **amigo-duck** behavior (golden set) and **skill usage** (agents follow invoked skills and docs) before treating amigo-duck as a hard gate in automation (eval harness work descoped from plan **0001**; details TBD if reprioritised).
@@ -68,4 +68,4 @@ Each eval run produces:
 
 ## Comments
 
-Field canon (headers, `Type: epic-duck:*`, **`Status: ready`** gate wording): [0005](0005-decision-ticket-shapes-and-fields.md), `docs/adr/0001-backlog-ticket-shapes.md`.
+Field canon (headers, `Type:` vocabulary, **`Status: ready`** gate wording): [0005](0005-decision-ticket-shapes-and-fields.md), `docs/adr/0001-backlog-ticket-shapes.md`.

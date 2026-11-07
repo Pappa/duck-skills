@@ -98,7 +98,7 @@ Update an existing `## Agent skills` block in place; do not duplicate.
 [single-context or multi-context]. See `docs/agents/domain.md`.
 ```
 
-On GitHub or GitLab, create tracker tags for status strings and `epic-duck:*` types if missing (`gh label create` / `glab label create`).
+On GitHub or GitLab, create tracker tags for **`Status:`** strings and type labels **`epic-duck:plan`**, **`epic-duck:decision`**, **`task`**, and **`spike`** if missing (`gh label create` / `glab label create`).
 
 **Seed templates:**
 

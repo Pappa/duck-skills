@@ -31,8 +31,8 @@ Supports GitHub, GitLab, Azure DevOps Boards, local markdown, or a custom tracke
 | Skill               | Purpose |
 |---------------------|---------|
 | `setup-duck-skills` | Configure tracker, domain docs, ticket status vocabulary |
-| `epic-duck`         | Large, unclear work → epic plan + **planning** backlog items (`Type: epic-duck:*`) |
-| `rubber-duck`       | Single-session outcomes: clarity, docs/code, **implementation** `Type: task` / `Type: spike` |
+| `epic-duck`         | Large, unclear work → epic plan + children (`epic-duck:plan`, `epic-duck:decision`, `task`, `spike`) |
+| `rubber-duck`       | Single-session outcomes: clarity, docs/code, backlog **`Type: task`** / **`Type: spike`** |
 | `dev-duck`          | Implement a backlog **task** or user spec: TDD → review → fix (see pipeline below) |
 
 ### Model-invoked skills
@@ -60,15 +60,14 @@ flowchart LR
   big[Large or unclear work]
   small[Single-session outcome]
   plan[Feature plan]
-  planItems[Planning items epic-duck:*]
-  implItems[Implementation task or spike]
+  children[Decisions tasks spikes]
   ed[epic-duck]
   rd[rubber-duck]
-  big --> ed --> plan --> planItems
-  small --> rd --> implItems
+  big --> ed --> plan --> children
+  small --> rd --> children
 ```
 
-- **epic-duck** — Plan a large or complex epic, and resolve **planning** decisions, tasks, and spikes on the backlog.
-- **rubber-duck** — one session: shared understanding, domain docs, or **implementation** backlog items (not planning `epic-duck:decision` items).
+- **epic-duck** — Plan a large or complex epic; resolve **decisions**; publish **tasks** and **spikes** under the plan.
+- **rubber-duck** — one session: shared understanding, domain docs, or backlog **`Type: task`** / **`Type: spike`** (not **`epic-duck:plan`** or **`epic-duck:decision`**).
 
 Implementation **tasks** from the backlog are implemented with **dev-duck**.
